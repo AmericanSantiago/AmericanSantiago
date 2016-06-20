@@ -17,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSLog(@"测试一些东西~");
+    
     // Override point for customization after application launch.
     
 //    NSError *error;

@@ -38,6 +38,18 @@
 
 
 #pragma mark - 按钮方法
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSString *urlStr = @"/Login";
+    NSDictionary *dic = @{@"username":@"123456",@"password":@"123456"};
+    
+    
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlStr andParameters:dic complete:^(NSDictionary *resultDic, NSString *errorString) {
+       
+        NSLog(@"%@",resultDic);
+        
+    }];
+}
 
 #pragma mark - 自定义方法
 

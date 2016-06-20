@@ -11,8 +11,8 @@
 @interface LBNetWorkingManager : NSObject
 
 //POST
-+(NSURLSessionDataTask *)loadPostAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSMutableDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
++(NSURLSessionDataTask *)loadPostAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
 
-+(NSURLSessionDataTask *)loadGetAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSMutableDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
++(NSURLSessionDataTask *)loadGetAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
 
 @end

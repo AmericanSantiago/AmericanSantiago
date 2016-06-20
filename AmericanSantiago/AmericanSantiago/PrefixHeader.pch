@@ -20,6 +20,7 @@
 #import "UIImageView+WebCache.h"//图片缓存
 #import "UIButton+WebCache.h"
 #import "JSONKit.h"//json解析
+#import "LBNetWorkingManager.h"//网络请求管理类
 
 #define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
 #define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO

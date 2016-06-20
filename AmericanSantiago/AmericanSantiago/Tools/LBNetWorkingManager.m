@@ -11,7 +11,7 @@
 @implementation LBNetWorkingManager
 
 //POST
-+(NSURLSessionDataTask *)loadPostAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSMutableDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete{
++(NSURLSessionDataTask *)loadPostAfNetWorkingWithUrl:(NSString *)urlString andParameters:(NSDictionary *)params complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete{
     ShowNetworkActivityIndicator();
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -49,8 +49,10 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"error2 -- %@",error.localizedDescription);
         NSLog(@"错误描述%@",[error localizedDescription]);
+        NSLog(@"%@",@(error.code));
         
-        
+//        com.alamofire.serialization.response.error.data
+//        com.alamofire.serialization.response.error.data
         NSData *data = [[error userInfo] objectForKey:@"com.alamofire.serialization.response.error.data"];
         NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
         id object = [string objectFromJSONString];
