@@ -19,8 +19,46 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    NSError *error;
+//    [[AVAudioSession sharedInstance] setActive:YES error:&error];//加上这句可以在按音量键的时候不显示音量提示视图
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+     
+                                             selector:@selector(volumeChanged:)
+     
+                                                 name:@"AVSystemController_SystemVolumeDidChangeNotification"
+     
+                                               object:nil];
+    
+    
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];//注，ios9上不加这一句会无效，加了这一句后，
+    
+    //在移除通知时候加上这句[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    
+    
+    [self setRootViewController];
+    
     [self.window makeKeyAndVisible];
     return YES;
+}
+#pragma mark -- 改变音量
+-(void)volumeChanged:(NSNotification *)noti
+
+{
+    
+    float volume =
+    
+    [[[noti userInfo]
+      
+      objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"]
+     
+     floatValue];
+    
+    NSLog(@"volumn is %f", volume);
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -52,19 +90,11 @@
         _window = ({
             UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
             window.backgroundColor = [UIColor whiteColor];
-            // 登录成功，跳转
-            RootViewController *rootViewController = [[RootViewController alloc] init];
-//            rootViewController.viewControllers = @[[[InfoViewController alloc]init],
-//                                                   [[BankViewController alloc] init],
-//                                                   [[MoneyManagerViewController alloc] init],
-//                                                   [[TPCardViewController alloc] init],
-//                                                   [[FaceCommonViewController alloc] init],
-//                                                   [[MapViewController alloc] init],
-//                                                   [[MyBankViewController alloc] init]];
+//            // 登录成功，跳转
+//            RootViewController *rootViewController = [[RootViewController alloc] init];
+//            
+//            window.rootViewController = rootViewController;
             
-            window.rootViewController = rootViewController;
-            
-            //            window.rootViewController = [[LoginViewController alloc] init];
             window;
         });
     }

@@ -44,10 +44,10 @@
         SetViewController *setVC = [[SetViewController alloc]init];
         LBTranslationController *setTC = [[LBTranslationController alloc]initWithRootViewController:setVC];
         
-        ScreenshotViewController *screenshotVC = [[ScreenshotViewController alloc]init];
-        LBTranslationController *screenshotTC = [[LBTranslationController alloc]initWithRootViewController:screenshotVC];
+//        ScreenshotViewController *screenshotVC = [[ScreenshotViewController alloc]init];
+//        LBTranslationController *screenshotTC = [[LBTranslationController alloc]initWithRootViewController:screenshotVC];
         
-        self.viewControllers = @[homeTC,figureTC,parentsTC,setTC,screenshotTC];
+        self.viewControllers = @[homeTC,figureTC,parentsTC,setTC];
         [self selectedWithIndex:0];
     }
     return self;
@@ -107,11 +107,19 @@
     _currentViewController = currentViewController;
 }
 
+
 #pragma mark - RootLeftViewDelegate
 - (void)selectedWithIndex:(NSInteger)index
 {
     if (self.viewControllers.count > 0) {
-        self.currentViewController = self.viewControllers[index];
+        if (index == 4) {
+            
+            return;
+        }
+        else{
+            self.currentViewController = self.viewControllers[index];
+        }
+        
     }
 }
 

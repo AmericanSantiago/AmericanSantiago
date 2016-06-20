@@ -10,6 +10,19 @@
 
 @interface SetViewController ()
 
+@property (nonatomic, strong) UIImageView                       * headimageView;
+@property (nonatomic, strong) UILabel                                   * nameLabel;
+
+@property (nonatomic,strong)UISlider *volumeSlider;
+@property (nonatomic,strong)UISlider *slider1;
+@property (nonatomic,assign)CGPoint firstPoint;
+@property (nonatomic,assign)CGPoint secondPoint;
+
+@property (nonatomic, strong) UISlider  * brightnessSlider;
+@property (nonatomic, strong) UISlider  * slider2;
+
+@property (nonatomic ,strong) UIButton * exitButton;
+
 @end
 
 @implementation SetViewController
@@ -18,21 +31,182 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"设置";
+    [self initializeDataSource];
+    [self initializeUserInterface];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark -- initialize
+- (void)initializeDataSource
+{
+
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)initializeUserInterface
+{
+    
+    UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
+    backgroundView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:backgroundView];
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    label.center = FLEXIBLE_CENTER(400, 50);
+    label.text = @"设置";
+    label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+    [self.view addSubview:label];
+    
+    
+//    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, 400, 40)];
+//    
+//    volumeView.center = CGPointMake(400,370);//设置中心点，让音量视图不显示在屏幕中
+//    volumeView.backgroundColor = [UIColor yellowColor];
+//    [volumeView sizeToFit];
+//    
+//    [self.view addSubview:volumeView];
+    
+    NSArray * titleArray = [[NSArray alloc] initWithObjects:@"音量设置",@"亮度设置", nil];
+    for (int i = 0 ; i < 2; i ++ ) {
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(300) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
+        label.text = titleArray[i];
+        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        label.textColor = [UIColor grayColor];
+//        label.backgroundColor = [UIColor yellowColor];
+        [self.view addSubview:label];
+    }
+    
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    [self.view addSubview:volumeView];
+    [volumeView sizeToFit];
+    NSLog(@"%@",volumeView.subviews);
+    
+    self.slider1 = [[UISlider alloc]init];
+    self.slider1.backgroundColor = [UIColor blueColor];
+    for (UIControl *view in volumeView.subviews) {
+        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
+            NSLog(@"1");
+            self.slider1 = (UISlider *)view;
+        }
+    }
+    self.slider1.autoresizesSubviews = NO;
+    self.slider1.autoresizingMask = UIViewAutoresizingNone;
+    [self.view addSubview:self.slider1];
+    self.slider1.hidden = YES;
+    NSLog(@"%f",self.slider1.value);
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(200), FLEXIBLE_NUM(310), FLEXIBLE_NUM(500), FLEXIBLE_NUM(20))];
+    slider1.tag = 1000;
+    slider1.minimumValue = self.slider1.minimumValue;
+    slider1.maximumValue = self.slider1.maximumValue;
+    slider1.value = self.slider1.value;
+    [slider1 addTarget:self action:@selector(updateVolumeValue:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider1];
+    
+    
+    //获取系统屏幕当前的亮度值
+    float brightnessValue = [UIScreen mainScreen].brightness;
+    //屏幕亮度控制
+    self.slider2 = [[UISlider alloc]init];
+    self.slider2.backgroundColor = [UIColor blueColor];
+//    for (UIControl *view in volumeView.subviews) {
+//        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
+//            NSLog(@"2");
+//            self.slider2 = (UISlider *)view;
+//        }
+//    }
+    self.slider2.autoresizesSubviews = NO;
+    self.slider2.autoresizingMask = UIViewAutoresizingNone;
+    [self.view addSubview:self.slider2];
+    self.slider2.hidden = YES;
+    NSLog(@"%f",self.slider1.value);
+
+    UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(200), FLEXIBLE_NUM(390), FLEXIBLE_NUM(500), FLEXIBLE_NUM(20))];
+    slider2.tag = 1000;
+    slider2.minimumValue = self.slider2.minimumValue;
+    slider2.maximumValue = self.slider2.maximumValue;
+//    slider2.value = self.slider2.value;
+    slider2.value = brightnessValue;
+    [slider2 addTarget:self action:@selector(updateBrightnessValue:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider2];
+    
+    _exitButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(220), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(50))];
+        button.backgroundColor = [UIColor colorWithRed:59/255.0 green:174/255.0 blue:251/255.0 alpha:1];
+        button.layer.cornerRadius = FLEXIBLE_NUM(8);
+        [button setTitle:@"退   出   登   录" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        [button addTarget:self action:@selector(exitButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    
+    
+    
 }
-*/
+
+#pragma mark -- buttonClick
+- (void) exitButtonClick: (UIButton *)sender
+{
+    NSLog(@"退出登录");
+    UIAlertAction * alertAction = [[UIAlertAction alloc] init];
+    
+    
+}
+
+
+#pragma mark --音量控制
+- (void)updateVolumeValue:(UISlider *)slider{
+    self.slider1.value = slider.value;
+}
+
+- (void)volumeChange
+{
+    [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.volumeSlider.value];
+    
+}
+#pragma mark -- 音量增加收拾
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    for(UITouch *touch in event.allTouches) {
+        
+        self.firstPoint = [touch locationInView:self.view];
+        
+    }
+    
+    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
+    slider.value = self.slider1.value;
+    NSLog(@"touchesBegan");
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    for(UITouch *touch in event.allTouches) {
+        
+        self.secondPoint = [touch locationInView:self.view];
+        
+    }
+    NSLog(@"firstPoint==%f || secondPoint===%f",self.firstPoint.y,self.secondPoint.y);
+    NSLog(@"first-second==%f",self.firstPoint.y - self.secondPoint.y);
+    
+    self.slider1.value += (self.firstPoint.y - self.secondPoint.y)/500.0;
+    
+    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
+    slider.value = self.slider1.value;
+    NSLog(@"value == %f",self.slider1.value);
+    self.firstPoint = self.secondPoint;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesEnded");
+    self.firstPoint = self.secondPoint = CGPointZero;
+}
+
+#pragma mark -- 亮度控制
+- (void)updateBrightnessValue:(UISlider *)slider{
+
+    //设置系统屏幕的亮度值
+    [[UIScreen mainScreen] setBrightness:slider.value];
+}
+
+
+
 
 @end

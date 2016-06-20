@@ -21,23 +21,38 @@
 #import "UIButton+WebCache.h"
 #import "JSONKit.h"//json解析
 
+#define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+
+#define BASE_URL @"http://115.28.156.240:8080/Yes123Server"
+
 //通用类**************************************
 #import "AppDelegate.h"
+#import "NSString+Category.h"
 #import "BaseViewController.h"
 #import "LBTranslationController.h"
+
+//零零碎碎的延展**************************************
+#import "AppDelegate+Category.h"
+#import "UIButton+Category.h"
+#import "UIView+Category.h"
+
+//音量控制
+#import<MediaPlayer/MediaPlayer.h>
 
 //屏幕适配相关**************************************
 #import "FlexibleFrame.h"//适配
 #define WINDOW ((AppDelegate *)[UIApplication sharedApplication].delegate).window//window
-#define LEFTVIEW_W FLEXIBLE_NUM(200)
+#define LEFTVIEW_W FLEXIBLE_NUM(200)            
 
 #define MAINSCRREN_B [UIScreen mainScreen].bounds
 #define MAINSCRREN_W [UIScreen mainScreen].bounds.size.width
 #define MAINSCRREN_H [UIScreen mainScreen].bounds.size.height
+#define TABBAR_H 48
 
 #define BASESCRREN_B CGRectMake(0,0,MAINSCRREN_W-LEFTVIEW_W,MAINSCRREN_H)
-#define BASESCRREN_W BASESCRREN.frame.size.width
-#define BASESCRREN_H BASESCRREN.frame.size.height
+#define BASESCRREN_W BASESCRREN_B.size.width
+#define BASESCRREN_H BASESCRREN_B.size.height
 
 #define FLEXIBLE_FRAME(x,y,w,h) [FlexibleFrame frameFromIphone5Frame:CGRectMake(x, y, w, h)]
 #define FLEFRAME(frame) [FlexibleFrame frameFromIphone5Frame:frame]
@@ -69,6 +84,7 @@
 #define _33B982 ARGB_COLOR(51, 185, 130, 1)
 #define _F7F7F7 ARGB_COLOR(247, 247, 247, 1)
 
+#define THEMECOLOR_BUTTON     _COLOR(59, 174, 251, 1)    //按钮色
 
 //通用标记
 //1.系统常用
@@ -78,10 +94,13 @@
 #define LABEL_TAG 400
 
 //2.系统偶尔
+#define HINTLABEL_TAG 410
 
 //3.第三方/自定义
-
 //#define MJHEADER_TAG 1000
 //#define MJFOOTER_TAG 2000
+#define INDICATORVIEW_TAG 3000
+
+
 
 #endif /* PrefixHeader_pch */
