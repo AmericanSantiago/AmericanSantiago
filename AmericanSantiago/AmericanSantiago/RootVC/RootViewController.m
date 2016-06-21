@@ -21,6 +21,9 @@
 @interface RootViewController ()<RootLeftViewDelegate>
 
 @property (strong, nonatomic) RootLeftView *leftView;
+@property (strong, nonatomic) RootLeftView *rightView;
+@property (strong, nonatomic) UIButton *lastBtn;
+
 @property (strong, nonatomic) LBTranslationController *currentViewController;
 @property (strong, nonatomic) UIView *contentView;
 
@@ -48,7 +51,9 @@
 //        LBTranslationController *screenshotTC = [[LBTranslationController alloc]initWithRootViewController:screenshotVC];
         
         self.viewControllers = @[homeTC,figureTC,parentsTC,setTC];
-        [self selectedWithIndex:0];
+        UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [tempBtn setTitle:@"主页" forState:UIControlStateNormal];
+        [self selectedActionBtn:tempBtn];
     }
     return self;
 }
@@ -70,23 +75,37 @@
 #pragma mark - 视图初始化
 - (void)initializeUserInterface
 {
-    [self.view addSubview:self.leftView];
     [self.view addSubview:self.contentView];
+    [self.view addSubview:self.leftView];
+    [self.view addSubview:self.rightView];
 }
 #pragma mark - 各种Getter
 - (RootLeftView *)leftView
 {
     if (!_leftView) {
-        _leftView = [[RootLeftView alloc]init];
+        _leftView = [[RootLeftView alloc]initTitles:@[@"主页",@"截图",@"返回"]];
         _leftView.delegate = self;
+        [_leftView setOriginX:FLEXIBLE_NUM(35)];
+        [_leftView setOriginY:FLEXIBLE_NUM(69)];
     }
     return _leftView;
+}
+
+- (RootLeftView *)rightView
+{
+    if (!_rightView) {
+        _rightView = [[RootLeftView alloc]initTitles:@[@"人物",@"家长",@"设置"]];
+        _rightView.delegate = self;
+        [_rightView setOriginX:MAINSCRREN_W - FLEXIBLE_NUM(35)-FLEXIBLE_NUM(61)];
+        [_rightView setOriginY:FLEXIBLE_NUM(69)];
+    }
+    return _rightView;
 }
 
 - (UIView *)contentView
 {
     if (!_contentView) {
-        _contentView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.leftView.frame),0,MAINSCRREN_W-self.leftView.frame.size.width,MAINSCRREN_H)];
+        _contentView = [[UIView alloc]initWithFrame:MAINSCRREN_B];
         _contentView.backgroundColor = [UIColor grayColor];
     }
     return _contentView;
@@ -109,18 +128,24 @@
 
 
 #pragma mark - RootLeftViewDelegate
-- (void)selectedWithIndex:(NSInteger)index
+- (void)selectedActionBtn:(UIButton *)sender
 {
-    if (self.viewControllers.count > 0) {
-        if (index == 4) {
-            
-            return;
-        }
-        else{
+    if (self.lastBtn != sender) {
+        self.lastBtn.selected = NO;
+        sender.selected = YES;
+        self.lastBtn = sender;
+        NSArray *titleArray = @[@"主页",@"人物",@"家长",@"设置"];
+        NSInteger index = [titleArray indexOfObject:sender.titleLabel.text];
+        if (index != NSNotFound) {
             self.currentViewController = self.viewControllers[index];
         }
-        
     }
+    
+}
+
+- (void)selectedScreenshotBtn:(UIButton *)sender
+{
+    [AppDelegate showHintLabelWithMessage:@"截图"];
 }
 
 - (void)selectedBackBtn:(UIButton *)sender

@@ -10,28 +10,53 @@
 
 @interface WorldViewController ()
 
+@property (nonatomic, strong) UIButton                              * backBuutton;
+
 @end
 
 @implementation WorldViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initializeDataSource];
+    [self initializeUserInterface];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark -- initialize
+- (void)initializeDataSource
+{
+    
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initializeUserInterface
+{
+    
+    self.view.backgroundColor = [UIColor redColor];
+    
+    UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
+    [backgroundView setImage:[UIImage imageNamed:@"二级界面 World_North1.png"]];
+    [self.view addSubview:backgroundView];
+    
+    
+    _backBuutton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+                button.backgroundColor = [UIColor clearColor];
+//        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    
+    
 }
-*/
+
+- (void) backButtonCLick: (UIButton *)sender
+{
+    [self.translationController popViewController];
+    
+    
+}
 
 @end

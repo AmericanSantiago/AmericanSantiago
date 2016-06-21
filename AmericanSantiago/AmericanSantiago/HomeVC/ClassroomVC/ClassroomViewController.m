@@ -7,10 +7,13 @@
 //
 
 #import "ClassroomViewController.h"
+#import "BlackboardViewController.h"
 
 @interface ClassroomViewController ()
 
 @property (nonatomic, strong) UIButton                              * backBuutton;
+@property (nonatomic, strong) UIButton                              * doorButton;
+
 
 @end
 
@@ -35,12 +38,12 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"主界面11.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"主界面1.png"]];
     [self.view addSubview:backgroundView];
                                                                                  
     
     _backBuutton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(60), FLEXIBLE_NUM(70), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
 //        button.backgroundColor = [UIColor yellowColor];
         [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
@@ -48,9 +51,26 @@
         button;
     });
     
+    _doorButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(440), FLEXIBLE_NUM(360), FLEXIBLE_NUM(80), FLEXIBLE_NUM(200))];
+        button.backgroundColor = [UIColor yellowColor];
+        [button addTarget:self action:@selector(doorButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
     
     
 }
+
+#pragma mark -- buttonCLick
+- (void) doorButtonCLick: (UIButton *) sender
+{
+    BlackboardViewController * blackgroundVC = [[BlackboardViewController alloc] init];
+    [self.translationController pushViewController:blackgroundVC];
+    
+}
+
 
 - (void) backButtonCLick: (UIButton *)sender
 {

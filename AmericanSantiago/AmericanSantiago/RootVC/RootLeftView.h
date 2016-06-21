@@ -10,8 +10,9 @@
 
 @protocol RootLeftViewDelegate <NSObject>
 
-- (void)selectedWithIndex:(NSInteger)index;
+- (void)selectedActionBtn:(UIButton *)sender;
 - (void)selectedBackBtn:(UIButton *)sender;
+- (void)selectedScreenshotBtn:(UIButton *)sender;
 
 @end
 
@@ -19,6 +20,7 @@
 
 @property (assign, nonatomic) id<RootLeftViewDelegate>delegate;
 
+- (instancetype)initTitles:(NSArray *)titles;
 
 
 @end

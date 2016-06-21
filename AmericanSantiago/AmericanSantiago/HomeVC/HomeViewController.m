@@ -16,7 +16,7 @@
 
 @interface HomeViewController ()
 
-@property (nonatomic, strong) UIView                                * backgroundView;
+@property (nonatomic, strong) UIImageView                    * backgroundView;
 @property (nonatomic, strong) UIImageView                    * bigImageView;
 
 @end
@@ -33,27 +33,46 @@
     self.title = @"主页";
     
     _backgroundView = ({
-        UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
+        UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:BASESCRREN_B];
         backgroundView.backgroundColor = [UIColor whiteColor];
+        [backgroundView setImage:[UIImage imageNamed:@"root_bg"]];
         [self.view addSubview:backgroundView];
         backgroundView;
     });
     
     _bigImageView = ({
-        UIImageView * bigView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(80), FLEXIBLE_NUM(80), FLEXIBLE_NUM(630), FLEXIBLE_NUM(470))];
-        bigView.backgroundColor = [UIColor yellowColor];
-        [bigView setImage:[UIImage imageNamed:@"主界面1"]];
+        UIImageView * bigView = [[UIImageView alloc] initWithFrame:CGRectMake(0,FLEXIBLE_NUM(77),FLEXIBLE_NUM(720), FLEXIBLE_NUM(484))];
+        bigView.center = CGPointMake(BASESCRREN_W/2,bigView.center.y);
+        //        bigView.backgroundColor = [UIColor yellowColor];
+        [bigView setImage:[UIImage imageNamed:@"home_school_bg"]];
+        bigView.layer.cornerRadius = FLEXIBLE_NUM(10);
+        bigView.layer.masksToBounds = YES;
+        bigView.layer.borderColor = [UIColor whiteColor].CGColor;
+        bigView.layer.borderWidth = FLEXIBLE_NUM(4);
         [self.view addSubview:bigView];
         bigView;
     });
     
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"主界面1",@"主界面2",@"主界面3",@"主界面4",@"主界面5", nil];
+    
+    CGFloat width = FLEXIBLE_NUM(166);
+    CGFloat height = FLEXIBLE_NUM(114);
+    CGFloat offset = (BASESCRREN_W-FLEXIBLE_NUM(36)*2-width*picArray.count)/(picArray.count-1);
+    CGFloat maxX = FLEXIBLE_NUM(36)-offset;
+    CGFloat maxY = BASESCRREN_H - (BASESCRREN_H-CGRectGetMaxY(_bigImageView.frame))/2 - height/2;
+    
     for (int i = 0 ; i < 5; i ++) {
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake( FLEXIBLE_NUM(43) + 200 * i , BASESCRREN_H - FLEXIBLE_NUM(140), FLEXIBLE_NUM(135), FLEXIBLE_NUM(100))];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
         button.backgroundColor = [UIColor yellowColor];
         button.tag = 1 + i;
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]] forState:UIControlStateNormal];
+        button.layer.cornerRadius = FLEXIBLE_NUM(8);
+        button.layer.masksToBounds = YES;
+        button.layer.borderColor = [UIColor whiteColor].CGColor;
+        button.layer.borderWidth = FLEXIBLE_NUM(3);
+        
+        maxX = CGRectGetMaxX(button.frame);
         [self.view addSubview:button];
     }
 }
@@ -63,9 +82,8 @@
 - (void) buttonClick:(UIButton *) sender
 {
     NSLog(@"button.tag == %ld",(long)sender.tag);
-//    [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld%ld",(long)sender.tag,(long)sender.tag]]];
     [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag]]];
-    
+    _backgroundView.tag = sender.tag;
 }
 
 
@@ -77,18 +95,40 @@
 //跳转
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-//    switch (<#expression#>) {
-//        case <#constant#>:
-//            <#statements#>
-//            break;
-//            
-//        default:
-//            break;
-//    }
+    switch (_backgroundView.tag) {
+        case 1:{
+            ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
+            [self.translationController pushViewController:classroomVC];
+        }
+            break;
+        case 2:{
+            WorldViewController * worldVC = [[WorldViewController alloc] init];
+            [self.translationController pushViewController:worldVC];
+        }
+            break;
+        case 3:{
+            PlaygroundViewController * playgroundVC = [[PlaygroundViewController alloc] init];
+            [self.translationController pushViewController:playgroundVC];
+        }
+            break;
+        case 4:{
+            CityViewController * cityVC = [[CityViewController alloc] init];
+            [self.translationController pushViewController:cityVC];
+        }
+            break;
+        case 5:{
+            BuildingViewController * bulidingVC = [[BuildingViewController alloc] init];
+            [self.translationController pushViewController:bulidingVC];
+        }
+            
+            break;
+        default:
+            break;
+    }
     
     
-    ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
-    [self.translationController pushViewController:classroomVC];
+//    ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
+//    [self.translationController pushViewController:classroomVC];
     
     
 //    BaseViewController *baseVC = [[BaseViewController alloc]init];

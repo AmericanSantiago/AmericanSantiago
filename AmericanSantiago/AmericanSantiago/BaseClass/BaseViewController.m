@@ -24,7 +24,7 @@
 {
     self = [super init];
     if (self) {
-        self.view.frame = BASESCRREN_B;
+        self.view.frame = MAINSCRREN_B;
     }
     return self;
 }

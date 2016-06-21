@@ -51,7 +51,8 @@
 #define MAINSCRREN_H [UIScreen mainScreen].bounds.size.height
 #define TABBAR_H 48
 
-#define BASESCRREN_B CGRectMake(0,0,MAINSCRREN_W-LEFTVIEW_W,MAINSCRREN_H)
+//#define BASESCRREN_B CGRectMake(0,0,MAINSCRREN_W-LEFTVIEW_W,MAINSCRREN_H)
+#define BASESCRREN_B [UIScreen mainScreen].bounds
 #define BASESCRREN_W BASESCRREN_B.size.width
 #define BASESCRREN_H BASESCRREN_B.size.height
 

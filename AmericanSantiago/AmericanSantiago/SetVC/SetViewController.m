@@ -45,8 +45,9 @@
 - (void)initializeUserInterface
 {
     
-    UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
+    UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
     backgroundView.backgroundColor = [UIColor whiteColor];
+    [backgroundView setImage:[UIImage imageNamed:@"设置音量bg"]];
     [self.view addSubview:backgroundView];
     
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
@@ -54,6 +55,16 @@
     label.text = @"设置";
     label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
     [self.view addSubview:label];
+    
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(80), FLEXIBLE_NUM(180), FLEXIBLE_NUM(650), FLEXIBLE_NUM(400))];
+    view1.backgroundColor = [UIColor colorWithRed:254/255.0 green:240/255.0 blue:202/255.0 alpha:1];
+    view1.layer.cornerRadius = FLEXIBLE_NUM(15);
+    view1.layer.borderWidth = FLEXIBLE_NUM(5);
+    view1.layer.masksToBounds = YES;
+    view1.clipsToBounds = YES;
+    view1.layer.borderColor = [[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1] CGColor];
+    [self.view addSubview:view1];
+    
     
     
 //    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(0, 0, 400, 40)];
@@ -64,14 +75,20 @@
 //    
 //    [self.view addSubview:volumeView];
     
-    NSArray * titleArray = [[NSArray alloc] initWithObjects:@"音量设置",@"亮度设置", nil];
+    NSArray * titleArray = [[NSArray alloc] initWithObjects:@"音量",@"亮度", nil];
+    NSArray * picArray = [[NSArray alloc] initWithObjects:@"矢量智能对象@3x",@"图层-5@3x", nil];
     for (int i = 0 ; i < 2; i ++ ) {
-        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(300) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
+        
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(130) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(35))];
+        [imageView setImage:[UIImage imageNamed:picArray[i]]];
+        [view1 addSubview:imageView];
+        
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(130) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
         label.text = titleArray[i];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
-        label.textColor = [UIColor grayColor];
+        label.textColor = [UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1];
+        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(28)];
 //        label.backgroundColor = [UIColor yellowColor];
-        [self.view addSubview:label];
+        [view1 addSubview:label];
     }
     
     MPVolumeView *volumeView = [[MPVolumeView alloc] init];
@@ -93,10 +110,11 @@
     self.slider1.hidden = YES;
     NSLog(@"%f",self.slider1.value);
 
-    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(200), FLEXIBLE_NUM(310), FLEXIBLE_NUM(500), FLEXIBLE_NUM(20))];
+    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(260), FLEXIBLE_NUM(320), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider1.tag = 1000;
     slider1.minimumValue = self.slider1.minimumValue;
     slider1.maximumValue = self.slider1.maximumValue;
+    [slider1 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
     slider1.value = self.slider1.value;
     [slider1 addTarget:self action:@selector(updateVolumeValue:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider1];
@@ -119,25 +137,26 @@
     self.slider2.hidden = YES;
     NSLog(@"%f",self.slider1.value);
 
-    UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(200), FLEXIBLE_NUM(390), FLEXIBLE_NUM(500), FLEXIBLE_NUM(20))];
+    UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(260), FLEXIBLE_NUM(400), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider2.tag = 1000;
     slider2.minimumValue = self.slider2.minimumValue;
     slider2.maximumValue = self.slider2.maximumValue;
+    [slider2 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
 //    slider2.value = self.slider2.value;
     slider2.value = brightnessValue;
     [slider2 addTarget:self action:@selector(updateBrightnessValue:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider2];
     
-    _exitButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(220), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(50))];
-        button.backgroundColor = [UIColor colorWithRed:59/255.0 green:174/255.0 blue:251/255.0 alpha:1];
-        button.layer.cornerRadius = FLEXIBLE_NUM(8);
-        [button setTitle:@"退   出   登   录" forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
-        [button addTarget:self action:@selector(exitButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        button;
-    });
+//    _exitButton = ({
+//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(220), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(50))];
+//        button.backgroundColor = [UIColor colorWithRed:59/255.0 green:174/255.0 blue:251/255.0 alpha:1];
+//        button.layer.cornerRadius = FLEXIBLE_NUM(8);
+//        [button setTitle:@"退   出   登   录" forState:UIControlStateNormal];
+//        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+//        [button addTarget:self action:@selector(exitButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:button];
+//        button;
+//    });
     
     
     

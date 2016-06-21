@@ -48,7 +48,7 @@
 - (void)setRootViewController
 {
     NSString *loginInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginInfo"];
-    if (!loginInfo) {
+    if (loginInfo) {
         LoginViewController *lrVC = [[LoginViewController alloc]init];
         UINavigationController *lrNC = [[UINavigationController alloc]initWithRootViewController:lrVC];
         self.window.rootViewController = lrNC;
