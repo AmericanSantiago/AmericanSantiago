@@ -52,8 +52,8 @@
     });
     
     _doorButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(440), FLEXIBLE_NUM(360), FLEXIBLE_NUM(80), FLEXIBLE_NUM(200))];
-        button.backgroundColor = [UIColor yellowColor];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(560), FLEXIBLE_NUM(340), FLEXIBLE_NUM(80), FLEXIBLE_NUM(170))];
+        button.backgroundColor = [UIColor clearColor];
         [button addTarget:self action:@selector(doorButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;

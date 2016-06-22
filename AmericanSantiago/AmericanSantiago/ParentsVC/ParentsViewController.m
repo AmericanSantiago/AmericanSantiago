@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UILabel                           * numLabel;             //小红花数量label
 @property (nonatomic, strong) UITextView                       * detailTextView;
 
+@property (nonatomic, strong) UIView                                * chartView;                // 图表View
+
 @end
 
 @implementation ParentsViewController
@@ -56,12 +58,12 @@
     timeLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:FLEXIBLE_NUM(30)];
     [timeView addSubview:timeLabel];
     
-    UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(600), FLEXIBLE_NUM(50), FLEXIBLE_NUM(70), FLEXIBLE_NUM(70))];
+    UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(70), FLEXIBLE_NUM(70))];
     [flowerView setImage:[UIImage imageNamed:@"小红花@3x"]];
     [self.view addSubview:flowerView];
     
     _numLabel = ({
-        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(700), FLEXIBLE_NUM(50), FLEXIBLE_NUM(100), FLEXIBLE_NUM(60))];
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(820), FLEXIBLE_NUM(50), FLEXIBLE_NUM(100), FLEXIBLE_NUM(60))];
         label.textColor = [UIColor colorWithRed:145/255.0 green:106/255.0 blue:46/255.0 alpha:1];
         label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(35)];
         label.text = @"28";
@@ -70,7 +72,7 @@
     });
     
     _detailTextView = ({
-        UITextView * label = [[UITextView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(90), FLEXIBLE_NUM(160), FLEXIBLE_NUM(640), FLEXIBLE_NUM(170))];
+        UITextView * label = [[UITextView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(160), FLEXIBLE_NUM(640), FLEXIBLE_NUM(170))];
         label.text = @"At WWDC we made lots of major announcements. iOS 10 is our biggest release yet, with incredible features in Messages and an all-new design for Maps, Photos, and Apple Music. With macOS Sierra, Siri makes its debut on your desktop and Apple Pay comes to the web. The latest watchOS offers easier navigation and a big boost in performance. And the updated tvOS brings expanded Siri searches.";
 //        [label sizeToFit];
         label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(27)];
@@ -79,6 +81,15 @@
         [self.view addSubview:label];
         label;
     });
+    
+    _chartView = ({
+        UIView * chartView = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))];
+        chartView.backgroundColor = [UIColor yellowColor];
+        
+        [self.view addSubview:chartView];
+        chartView;
+    });
+    
     
     
     

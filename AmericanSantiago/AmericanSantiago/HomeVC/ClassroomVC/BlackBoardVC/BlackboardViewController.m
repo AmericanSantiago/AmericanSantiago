@@ -35,7 +35,7 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"三级界面 Classroom.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
     [self.view addSubview:backgroundView];
     
     

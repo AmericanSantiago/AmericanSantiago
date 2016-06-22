@@ -17,7 +17,7 @@
                BlueprintIdentifier = "8C0EF2F91D0417A700194D16"
                BuildableName = "AmericanSantiago.app"
                BlueprintName = "AmericanSantiago"
-               ReferencedContainer = "container:z.xcodeproj">
+               ReferencedContainer = "container:AmericanSantiago.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "8C0EF3121D0417A800194D16"
                BuildableName = "AmericanSantiagoTests.xctest"
                BlueprintName = "AmericanSantiagoTests"
-               ReferencedContainer = "container:z.xcodeproj">
+               ReferencedContainer = "container:AmericanSantiago.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "8C0EF31D1D0417A800194D16"
                BuildableName = "AmericanSantiagoUITests.xctest"
                BlueprintName = "AmericanSantiagoUITests"
-               ReferencedContainer = "container:z.xcodeproj">
+               ReferencedContainer = "container:AmericanSantiago.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "8C0EF2F91D0417A700194D16"
             BuildableName = "AmericanSantiago.app"
             BlueprintName = "AmericanSantiago"
-            ReferencedContainer = "container:z.xcodeproj">
+            ReferencedContainer = "container:AmericanSantiago.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "8C0EF2F91D0417A700194D16"
             BuildableName = "AmericanSantiago.app"
             BlueprintName = "AmericanSantiago"
-            ReferencedContainer = "container:z.xcodeproj">
+            ReferencedContainer = "container:AmericanSantiago.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "8C0EF2F91D0417A700194D16"
             BuildableName = "AmericanSantiago.app"
             BlueprintName = "AmericanSantiago"
-            ReferencedContainer = "container:z.xcodeproj">
+            ReferencedContainer = "container:AmericanSantiago.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -53,7 +53,8 @@
 //    backgroundView.alpha = 0.6;
     [self.view addSubview:backgroundView];
     
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(100), FLEXIBLE_NUM(450), FLEXIBLE_NUM(500))];
+    //框
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(120), FLEXIBLE_NUM(100), FLEXIBLE_NUM(450), FLEXIBLE_NUM(500))];
     view1.backgroundColor = [UIColor whiteColor];
     view1.layer.cornerRadius = FLEXIBLE_NUM(15);
     view1.layer.borderWidth = FLEXIBLE_NUM(5);
@@ -61,7 +62,6 @@
     view1.clipsToBounds = YES;
     view1.layer.borderColor = [[UIColor orangeColor] CGColor];
     [self.view addSubview:view1];
-    
     
     NSArray * titleArray = [[NSArray alloc] initWithObjects:@"全名",@"昵称",@"生日",@"年龄",@"性别" ,nil];
     for (int i = 0; i < 5; i ++) {
@@ -151,7 +151,7 @@
     
     
     _figerImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(490), FLEXIBLE_NUM(200), FLEXIBLE_NUM(250), FLEXIBLE_NUM(300))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(590), FLEXIBLE_NUM(200), FLEXIBLE_NUM(250), FLEXIBLE_NUM(300))];
 //        imageView.backgroundColor = [UIColor yellowColor];
         imageView.image = [UIImage imageNamed:@"boy.jpg"];
         [self.view addSubview:imageView];
@@ -160,9 +160,9 @@
     
     _buttonIndex = @"1";
     _genderButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(720), FLEXIBLE_NUM(280), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(870), FLEXIBLE_NUM(320), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
         button.tag = 321;
-        [button setBackgroundImage:[UIImage imageNamed:@"button_right"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
 //        button.backgroundColor = [UIColor yellowColor];
         [button addTarget:self action:@selector(genderButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
@@ -183,42 +183,44 @@
         [_figerImageView setImage:[UIImage imageNamed:@"girl.jpg"]];
         _buttonIndex = @"0";
         _genderTextField.text = @"女";
+        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
     }else{
         [_figerImageView setImage:[UIImage imageNamed:@"boy.jpg"]];
         _buttonIndex = @"1";
         _genderTextField.text = @"男";
+        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
     }
     
 }
 
-- (void) boyButtonClick: (UIButton *)sender
-{
-    NSLog(@"boy!");
-    for (int i = 0; i < 2; i ++) {
-        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
-        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
-    }
-    
-    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG];
-    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
-    
-    [_figerImageView setImage:[UIImage imageNamed:@"boy.jpg"]];
-    
-}
-- (void) girlButtonClick: (UIButton *)sender
-{
-    NSLog(@"girl!");
-    for (int i = 0; i < 2; i ++) {
-        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
-        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
-    }
-    
-    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + 1];
-    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
-    
-    [_figerImageView setImage:[UIImage imageNamed:@"girl.jpg"]];
-    
-}
+//- (void) boyButtonClick: (UIButton *)sender
+//{
+//    NSLog(@"boy!");
+//    for (int i = 0; i < 2; i ++) {
+//        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
+//        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
+//    }
+//    
+//    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG];
+//    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
+//    
+//    [_figerImageView setImage:[UIImage imageNamed:@"boy.jpg"]];
+//    
+//}
+//- (void) girlButtonClick: (UIButton *)sender
+//{
+//    NSLog(@"girl!");
+//    for (int i = 0; i < 2; i ++) {
+//        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
+//        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
+//    }
+//    
+//    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + 1];
+//    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
+//    
+//    [_figerImageView setImage:[UIImage imageNamed:@"girl.jpg"]];
+//    
+//}
 
 - (void) buttonClick:(UIButton *) sender
 {

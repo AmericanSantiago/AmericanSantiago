@@ -56,7 +56,8 @@
     label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
     [self.view addSubview:label];
     
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(80), FLEXIBLE_NUM(180), FLEXIBLE_NUM(650), FLEXIBLE_NUM(400))];
+    //框
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(160), FLEXIBLE_NUM(180), FLEXIBLE_NUM(650), FLEXIBLE_NUM(400))];
     view1.backgroundColor = [UIColor colorWithRed:254/255.0 green:240/255.0 blue:202/255.0 alpha:1];
     view1.layer.cornerRadius = FLEXIBLE_NUM(15);
     view1.layer.borderWidth = FLEXIBLE_NUM(5);
@@ -110,14 +111,14 @@
     self.slider1.hidden = YES;
     NSLog(@"%f",self.slider1.value);
 
-    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(260), FLEXIBLE_NUM(320), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
+    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(140), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider1.tag = 1000;
     slider1.minimumValue = self.slider1.minimumValue;
     slider1.maximumValue = self.slider1.maximumValue;
     [slider1 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
     slider1.value = self.slider1.value;
     [slider1 addTarget:self action:@selector(updateVolumeValue:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:slider1];
+    [view1 addSubview:slider1];
     
     
     //获取系统屏幕当前的亮度值
@@ -137,7 +138,7 @@
     self.slider2.hidden = YES;
     NSLog(@"%f",self.slider1.value);
 
-    UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(260), FLEXIBLE_NUM(400), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
+    UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(220), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider2.tag = 1000;
     slider2.minimumValue = self.slider2.minimumValue;
     slider2.maximumValue = self.slider2.maximumValue;
@@ -145,7 +146,7 @@
 //    slider2.value = self.slider2.value;
     slider2.value = brightnessValue;
     [slider2 addTarget:self action:@selector(updateBrightnessValue:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:slider2];
+    [view1 addSubview:slider2];
     
 //    _exitButton = ({
 //        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(220), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(50))];

@@ -35,7 +35,7 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"二级界面 World_North1.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"地球图标1bg.png"]];
     [self.view addSubview:backgroundView];
     
     

@@ -124,12 +124,7 @@
             break;
         default:
             break;
-    }
-    
-    
-//    ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
-//    [self.translationController pushViewController:classroomVC];
-    
+    }    
     
 //    BaseViewController *baseVC = [[BaseViewController alloc]init];
 //    baseVC.title = [NSString stringWithFormat:@"%@主页",@([self.title integerValue])];
