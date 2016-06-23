@@ -17,10 +17,10 @@
 
 #import "UIKit+AFNetworking.h"//网络请求
 //#import "NetworkingManager.h"//网络请求
-//#import "UIImageView+WebCache.h"//图片缓存
-//#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"//图片缓存
+#import "UIButton+WebCache.h"
 #import "JSONKit.h"//json解析
-//#import "LBNetWorkingManager.h"//网络请求管理类
+#import "LBNetWorkingManager.h"//网络请求管理类
 
 
 
