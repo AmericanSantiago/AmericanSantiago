@@ -44,7 +44,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = BUTTON_TAG + i;
         button.frame = CGRectMake(0,maxY+offsetY, width, height);
-        button.backgroundColor = [UIColor whiteColor];
+//        button.backgroundColor = [UIColor whiteColor];
         NSString *imageName = [NSString stringWithFormat:@"%@",self.titles[i]];
         [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];

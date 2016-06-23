@@ -7,13 +7,14 @@
 //
 
 #import "ClassroomViewController.h"
-#import "BlackboardViewController.h"
+#import "HomeModel.h"
+
 
 @interface ClassroomViewController ()
 
-@property (nonatomic, strong) UIButton                              * backBuutton;
-@property (nonatomic, strong) UIButton                              * doorButton;
+@property (nonatomic, strong) UIButton                              * mathButton;
 
+@property (nonatomic ,strong) HomeModel                      * homeModel;
 
 @end
 
@@ -25,10 +26,26 @@
     [self initializeUserInterface];
 }
 
+- (void)dealloc
+{
+    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    
+    
+}
+
 #pragma mark -- initialize
 - (void)initializeDataSource
 {
+    _homeModel = [[HomeModel alloc] init];
+    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
+    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"classroom"];
     
 }
 
@@ -38,46 +55,20 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"主界面1.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
     [self.view addSubview:backgroundView];
-                                                                                 
     
-    _backBuutton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
-//        button.backgroundColor = [UIColor yellowColor];
-        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        button;
-    });
-    
-    _doorButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(560), FLEXIBLE_NUM(340), FLEXIBLE_NUM(80), FLEXIBLE_NUM(170))];
-        button.backgroundColor = [UIColor clearColor];
-        [button addTarget:self action:@selector(doorButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        button;
-    });
-    
+
+//    _mathButton = ({
+//        
+//        
+//    });
     
     
 }
 
 #pragma mark -- buttonCLick
-- (void) doorButtonCLick: (UIButton *) sender
-{
-    BlackboardViewController * blackgroundVC = [[BlackboardViewController alloc] init];
-    [self.translationController pushViewController:blackgroundVC];
-    
-}
 
-
-- (void) backButtonCLick: (UIButton *)sender
-{
-    [self.translationController popViewController];
-    
-    
-}
 
 
 @end

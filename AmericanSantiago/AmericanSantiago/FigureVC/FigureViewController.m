@@ -152,8 +152,8 @@
     
     _figerImageView = ({
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(590), FLEXIBLE_NUM(200), FLEXIBLE_NUM(250), FLEXIBLE_NUM(300))];
-//        imageView.backgroundColor = [UIColor yellowColor];
-        imageView.image = [UIImage imageNamed:@"boy.jpg"];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.image = [UIImage imageNamed:@"boy.png"];
         [self.view addSubview:imageView];
         imageView;
     });
@@ -180,12 +180,12 @@
 {
     NSLog(@"buttonIndex == %@",_buttonIndex);
     if ([_buttonIndex isEqualToString:@"1"]) {
-        [_figerImageView setImage:[UIImage imageNamed:@"girl.jpg"]];
+        [_figerImageView setImage:[UIImage imageNamed:@"girl.png"]];
         _buttonIndex = @"0";
         _genderTextField.text = @"女";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
     }else{
-        [_figerImageView setImage:[UIImage imageNamed:@"boy.jpg"]];
+        [_figerImageView setImage:[UIImage imageNamed:@"boy.png"]];
         _buttonIndex = @"1";
         _genderTextField.text = @"男";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];

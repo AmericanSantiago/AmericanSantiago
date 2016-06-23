@@ -13,24 +13,63 @@
 #import "CityViewController.h"
 #import "BuildingViewController.h"
 #import "PlaygroundViewController.h"
+#import "HomeModel.h"
+
 
 @interface HomeViewController ()
 
 @property (nonatomic, strong) UIImageView                    * backgroundView;
 @property (nonatomic, strong) UIImageView                    * bigImageView;
 
+@property (nonatomic ,strong) HomeModel                         * homeModel;
+
 @end
 
 @implementation HomeViewController
-
-- (void)viewWillAppear:(BOOL)animated {
-
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"主页";
+    [self initializeDataSource];
+    [self initializeUserInterface];
+}
+
+- (void)dealloc
+{
+    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    
+    
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+
+}
+
+- (void)initializeDataSource
+{
+    _homeModel = [[HomeModel alloc] init];
+    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
+    
+//    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"home"];
+//    [_homeModel getGetNextConceptWithUsername:@"mwk" SubjectId:@"1"];       
+    
+//    [_homeModel sendGameLogWithUsername:@"mwk" conceptId:@"1" gameId:@"1" learningType:@"L" duration:@"10" clickCount:@"100" log:@"1"];
+    
+    
+    
+}
+
+#pragma mark - 视图初始化
+- (void)initializeUserInterface
+{
     
     _backgroundView = ({
         UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:BASESCRREN_B];
@@ -75,13 +114,13 @@
         maxX = CGRectGetMaxX(button.frame);
         [self.view addSubview:button];
     }
+    
 }
-
 
 #pragma mark -- button action
 - (void) buttonClick:(UIButton *) sender
 {
-    NSLog(@"button.tag == %ld",(long)sender.tag);
+//    NSLog(@"button.tag == %ld",(long)sender.tag);
     [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag]]];
     _backgroundView.tag = sender.tag;
 }
@@ -130,6 +169,7 @@
 //    baseVC.title = [NSString stringWithFormat:@"%@主页",@([self.title integerValue])];
 //    [self.translationController pushViewController:baseVC];
 }
+
 
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "ParentsViewController.h"
+#import "ParentsModel.h"
+
 
 @interface ParentsViewController ()
 
@@ -14,6 +16,9 @@
 @property (nonatomic, strong) UITextView                       * detailTextView;
 
 @property (nonatomic, strong) UIView                                * chartView;                // 图表View
+
+@property (nonatomic, strong) ParentsModel                      * parentsModel;
+
 
 @end
 
@@ -26,9 +31,26 @@
     [self initializeUserInterface];
 }
 
-- (void)initializeDataSource
+
+- (void)dealloc
+{
+    [_parentsModel  removeObserver:self forKeyPath:@"learningStatisticsData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     
+    
+    
+}
+
+- (void)initializeDataSource
+{
+    _parentsModel = [[ParentsModel alloc] init];
+    [_parentsModel addObserver:self forKeyPath:@"learningStatisticsData" options:NSKeyValueObservingOptionNew context:nil];
+    
+    [_parentsModel getLearningStatisticsWithUsername:@"mwk"];
     
 }
 

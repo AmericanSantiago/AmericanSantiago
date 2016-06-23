@@ -33,7 +33,7 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"图书馆bg.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"宠物店bg.png"]];
     //    backgroundView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:backgroundView];
     

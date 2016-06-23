@@ -7,10 +7,15 @@
 //
 
 #import "BuildingViewController.h"
+#import "HomeModel.h"
+#import "TVViewController.h"
 
 @interface BuildingViewController ()
 
-@property (nonatomic, strong) UIButton                              * backBuutton;
+@property (nonatomic, strong) UIButton                              * enterButton;
+
+@property (nonatomic, strong) HomeModel                      * homeModel;
+
 
 @end
 
@@ -22,10 +27,26 @@
     [self initializeUserInterface];
 }
 
+- (void)dealloc
+{
+    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    
+    
+}
+
 #pragma mark -- initialize
 - (void)initializeDataSource
 {
+    _homeModel = [[HomeModel alloc] init];
+    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
+    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"buidling"];
     
 }
 
@@ -35,28 +56,28 @@
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView setImage:[UIImage imageNamed:@"主界面5.png"]];
+    [backgroundView setImage:[UIImage imageNamed:@"小区bg2.png"]];
     [self.view addSubview:backgroundView];
     
-    
-    _backBuutton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
-        //        button.backgroundColor = [UIColor yellowColor];
-        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+    _enterButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(470), FLEXIBLE_NUM(342), FLEXIBLE_NUM(80), FLEXIBLE_NUM(80))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(enterButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
     });
     
     
+}
+
+#pragma mark -- buttonClick
+- (void) enterButtonClick: (UIButton *) sender
+{
+    TVViewController * TVVC = [[TVViewController alloc] init];
+    [self.translationController pushViewController:TVVC];
     
 }
 
-- (void) backButtonCLick: (UIButton *)sender
-{
-    [self.translationController popViewController];
-    
-    
-}
+
 
 @end

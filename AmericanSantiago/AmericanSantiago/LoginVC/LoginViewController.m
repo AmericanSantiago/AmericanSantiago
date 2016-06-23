@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "LoginModel.h"
+#import "RegisterViewController.h"
 
 @interface LoginViewController ()
 
@@ -15,6 +17,8 @@
 
 @property (nonatomic, strong) UIButton                          * registerButton;
 @property (nonatomic ,strong) UIButton                          * loginButton;
+
+@property (nonatomic, strong) LoginModel                    * loginModel;
 
 @end
 
@@ -28,10 +32,39 @@
     [self initializeUserInterface];
 }
 
+- (void)dealloc
+{
+    [_loginModel removeObserver:self forKeyPath:@"registerData"];
+    [_loginModel removeObserver:self forKeyPath:@"loginData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"loginData"]) {
+        if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
+            
+//            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"loginInfo"];
+//            [self.navigationController removeFromParentViewController];
+            
+            
+        }
+        
+        
+    }
+    
+    
+}
+
 #pragma mark - 数据初始化
 - (void)initializeDataSource
 {
     self.title = @"登录";
+    
+    _loginModel = [[LoginModel alloc] init];
+    [_loginModel addObserver:self forKeyPath:@"registerData" options:NSKeyValueObservingOptionNew context:nil];
+    [_loginModel addObserver:self forKeyPath:@"loginData" options:NSKeyValueObservingOptionNew context:nil];
+    
 }
 
 #pragma mark - 视图初始化
@@ -107,23 +140,19 @@
 #pragma mark - 按钮方法
 - (void) loginButtonClick: (UIButton *) sender
 {
-    NSString *urlStr = @"/Login";
-    NSDictionary *dic = @{@"username":@"123456",@"password":@"123456"};
     
-    NSString * urlStr1 = @"/Register";
-    NSDictionary * dic1 = @{@"username":@"123456",@"password":@"123456",@"nickname":@"mwk",@"birthday":@"19930102",@"gender":@"0",@"character":@"boy"};
-    
-    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlStr1 andParameters:dic1 complete:^(NSDictionary *resultDic, NSString *errorString) {
-        
-        NSLog(@"result == %@",resultDic);
-        
-    }];
+    [_loginModel loginWithUsername:_userNameTextField.text Password:_passwdTextField.text];
+
     
 }
 
 - (void) registerButtonClick: (UIButton *) sender
 {
     
+    RegisterViewController * registerVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
+    
+//    [_loginModel registerWithUsername:@"123456" Password:@"123" nickname:@"mwk" birthday:@"19930102" gender:@"0" character:@"boy"];
     
 }
 
@@ -132,15 +161,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSString *urlStr = @"/Login";
-    NSDictionary *dic = @{@"username":@"123456",@"password":@"123456"};
     
     
-    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlStr andParameters:dic complete:^(NSDictionary *resultDic, NSString *errorString) {
-       
-        NSLog(@"%@",resultDic);
-        
-    }];
+    
+    
 }
 
 #pragma mark - 自定义方法
