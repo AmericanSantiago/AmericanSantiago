@@ -73,13 +73,19 @@
     _webView = ({
         UIWebView * webView = [[UIWebView alloc] initWithFrame:BASESCRREN_B];
         webView.delegate = self;
-                webView.backgroundColor = [UIColor greenColor];
+        webView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:webView];
         webView;
     });
     
     [self loadDocument:@"index" fileTypeName:@"apple" inView:_webView];
     
+}
+
+#pragma mark - UIWebViewDelegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"加载完成")
 }
 
 #pragma mark -- buttonCLick
