@@ -85,7 +85,7 @@
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"加载完成")
+    NSLog(@"加载完成");
 }
 
 #pragma mark -- buttonCLick
@@ -103,7 +103,7 @@
     //找路径  直接这么找Htmls/3_1_City_petstore/cat/3_I.1_VDEO_CNT_SERIES（index在哪就找它上一层）ok? ok
     
     
-    NSString *directoryString = [NSString stringWithFormat:@"Htmls/chick/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
+    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
     NSURL * url = [NSURL URLWithString:filePath];
     
