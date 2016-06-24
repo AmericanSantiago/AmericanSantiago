@@ -53,15 +53,24 @@
 //    [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
 //    [self.view addSubview:backgroundView];
 //    
-    _webView = ({
-        UIWebView * webView = [[UIWebView alloc] initWithFrame:FLEXIBLE_FRAME(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-        webView.delegate = self;
+//    _webView = ({
+//        UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
+//        webView.delegate = self;
 //        webView.backgroundColor = [UIColor greenColor];
+//        [self.view addSubview:webView];
+//        webView;
+//    });
+
+    _webView = ({
+        UIWebView * webView = [[UIWebView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), BASESCRREN_W, BASESCRREN_H)];
+        webView.delegate = self;
         [self.view addSubview:webView];
         webView;
     });
     
+    
     [self loadDocument:@"index.html" inView:_webView];
+     
 
 //    NSString *path = [[NSBundle mainBundle] bundlePath];
 //    NSURL *baseURL = [NSURL fileURLWithPath:path];

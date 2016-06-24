@@ -50,7 +50,13 @@
             
         }
         
-        
+    }
+    if ([keyPath isEqualToString:@"registerData"]) {
+        if ([[_loginModel.registerData valueForKey:@"errorCode"] integerValue] == 0) {
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+        }
     }
     
     

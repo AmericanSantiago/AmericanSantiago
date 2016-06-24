@@ -68,7 +68,7 @@
     
 
     _mathButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(340), FLEXIBLE_NUM(580), FLEXIBLE_NUM(80), FLEXIBLE_NUM(100))];
         button.backgroundColor = [UIColor yellowColor];
         [button addTarget:self action:@selector(mathButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
