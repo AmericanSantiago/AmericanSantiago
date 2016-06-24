@@ -15440,7 +15440,8 @@ cc.RemoveSelf = cc.ActionInstant.extend({
         this.target.removeFromParent(this._isNeedCleanUp);
     },
     /**
-     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it .
+     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it
+.
      * @param isNeedCleanUp
      * @returns {boolean}
      */
@@ -20631,7 +20632,8 @@ cc.LabelBMFont = cc.SpriteBatchNode.extend({
         this._cascadeColorEnabled = cascadeColorEnabled;
     },
     /**
-     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it .
+     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it
+.
      */
     init: function () {
         return this.initWithString(null, null, null, null, null);
@@ -21992,7 +21994,8 @@ cc.ClippingNode = cc.Node.extend({
         }
     },
     /**
-     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it .
+     * Initialization of the node, please do not call this function by yourself, you should pass the parameters to constructor to initialize it
+.
      * @function
      * @param {cc.Node} [stencil=null]
      */

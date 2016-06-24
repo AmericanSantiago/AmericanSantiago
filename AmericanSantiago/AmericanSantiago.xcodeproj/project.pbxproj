@@ -58,6 +58,7 @@
 		8C1DDA371D1C1FE3005D1F24 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DDA171D1C1FE3005D1F24 /* UIWebView+AFNetworking.m */; };
 		8C1DDA3A1D1C1FFC005D1F24 /* LBNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DDA391D1C1FFC005D1F24 /* LBNetWorkingManager.m */; };
 		8C1DDCB51D1CDC53005D1F24 /* Htmls in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DDCB41D1CDC53005D1F24 /* Htmls */; };
+		8C1DDCB71D1D1788005D1F24 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1DDCB61D1D1788005D1F24 /* WebKit.framework */; };
 		8C22986A1D198C80002C0F80 /* root_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298681D198C80002C0F80 /* root_bg.png */; };
 		8C22986B1D198C80002C0F80 /* root_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298691D198C80002C0F80 /* root_bg@2x.png */; };
 		8C2298831D19969A002C0F80 /* home_city_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298791D19969A002C0F80 /* home_city_bg.png */; };
@@ -317,6 +318,7 @@
 		8C1DDA381D1C1FFC005D1F24 /* LBNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNetWorkingManager.h; sourceTree = "<group>"; };
 		8C1DDA391D1C1FFC005D1F24 /* LBNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNetWorkingManager.m; sourceTree = "<group>"; };
 		8C1DDCB41D1CDC53005D1F24 /* Htmls */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Htmls; sourceTree = "<group>"; };
+		8C1DDCB61D1D1788005D1F24 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8C2298681D198C80002C0F80 /* root_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = root_bg.png; sourceTree = "<group>"; };
 		8C2298691D198C80002C0F80 /* root_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "root_bg@2x.png"; sourceTree = "<group>"; };
 		8C2298791D19969A002C0F80 /* home_city_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_city_bg.png; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1DDCB71D1D1788005D1F24 /* WebKit.framework in Frameworks */,
 				D85315821D0B590500BBA6D3 /* AudioToolbox.framework in Frameworks */,
 				D85315801D0B57AE00BBA6D3 /* AVFoundation.framework in Frameworks */,
 				D853157E1D0B57A400BBA6D3 /* MediaPlayer.framework in Frameworks */,
@@ -568,6 +571,7 @@
 		8C0EF2F11D0417A700194D16 = {
 			isa = PBXGroup;
 			children = (
+				8C1DDCB61D1D1788005D1F24 /* WebKit.framework */,
 				D85315811D0B590500BBA6D3 /* AudioToolbox.framework */,
 				D853157F1D0B57AE00BBA6D3 /* AVFoundation.framework */,
 				D853157D1D0B57A400BBA6D3 /* MediaPlayer.framework */,
@@ -1606,6 +1610,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1622,6 +1627,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
