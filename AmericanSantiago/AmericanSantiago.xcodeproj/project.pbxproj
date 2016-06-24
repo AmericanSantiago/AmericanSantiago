@@ -57,6 +57,7 @@
 		8C1DDA361D1C1FE3005D1F24 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DDA151D1C1FE3005D1F24 /* UIRefreshControl+AFNetworking.m */; };
 		8C1DDA371D1C1FE3005D1F24 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DDA171D1C1FE3005D1F24 /* UIWebView+AFNetworking.m */; };
 		8C1DDA3A1D1C1FFC005D1F24 /* LBNetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DDA391D1C1FFC005D1F24 /* LBNetWorkingManager.m */; };
+		8C1DDCB51D1CDC53005D1F24 /* Htmls in Resources */ = {isa = PBXBuildFile; fileRef = 8C1DDCB41D1CDC53005D1F24 /* Htmls */; };
 		8C22986A1D198C80002C0F80 /* root_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298681D198C80002C0F80 /* root_bg.png */; };
 		8C22986B1D198C80002C0F80 /* root_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298691D198C80002C0F80 /* root_bg@2x.png */; };
 		8C2298831D19969A002C0F80 /* home_city_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298791D19969A002C0F80 /* home_city_bg.png */; };
@@ -129,114 +130,6 @@
 		D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB491D1CC55C00830B55 /* 主界面4.png */; };
 		D80BFB4C1D1CC60500830B55 /* 城市bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB4B1D1CC60500830B55 /* 城市bg.png */; };
 		D80BFB501D1CC82D00830B55 /* 超市bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB4F1D1CC82D00830B55 /* 超市bg.png */; };
-		D80BFBE51D1CC95C00830B55 /* baseConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB5C1D1CC95C00830B55 /* baseConfig.js */; };
-		D80BFBE61D1CC95C00830B55 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB5D1D1CC95C00830B55 /* common.js */; };
-		D80BFBE71D1CC95C00830B55 /* component.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB5E1D1CC95C00830B55 /* component.js */; };
-		D80BFBE81D1CC95C00830B55 /* moduleConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB5F1D1CC95C00830B55 /* moduleConfig.js */; };
-		D80BFBE91D1CC95C00830B55 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB601D1CC95C00830B55 /* config.js */; };
-		D80BFBEA1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB621D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */; };
-		D80BFBEB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB631D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */; };
-		D80BFBEC1D1CC95C00830B55 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB641D1CC95C00830B55 /* index.html */; };
-		D80BFBED1D1CC95C00830B55 /* bg_mall.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB661D1CC95C00830B55 /* bg_mall.png */; };
-		D80BFBEE1D1CC95C00830B55 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB671D1CC95C00830B55 /* bgm.mp3 */; };
-		D80BFBEF1D1CC95C00830B55 /* Item_1_Balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB681D1CC95C00830B55 /* Item_1_Balloon.png */; };
-		D80BFBF01D1CC95C00830B55 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB6A1D1CC95C00830B55 /* 1.wav */; };
-		D80BFBF11D1CC95C00830B55 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB6B1D1CC95C00830B55 /* 2.wav */; };
-		D80BFBF21D1CC95C00830B55 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB6C1D1CC95C00830B55 /* 3.wav */; };
-		D80BFBF31D1CC95C00830B55 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB6E1D1CC95C00830B55 /* num1.png */; };
-		D80BFBF41D1CC95C00830B55 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB6F1D1CC95C00830B55 /* num2.png */; };
-		D80BFBF51D1CC95C00830B55 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB701D1CC95C00830B55 /* num3.png */; };
-		D80BFBF61D1CC95C00830B55 /* question.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB711D1CC95C00830B55 /* question.mp3 */; };
-		D80BFBF71D1CC95C00830B55 /* question.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB721D1CC95C00830B55 /* question.wav */; };
-		D80BFBF81D1CC95C00830B55 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB731D1CC95C00830B55 /* right.mp3 */; };
-		D80BFBF91D1CC95C00830B55 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB741D1CC95C00830B55 /* wrong.mp3 */; };
-		D80BFBFA1D1CC95C00830B55 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB761D1CC95C00830B55 /* app.js */; };
-		D80BFBFB1D1CC95C00830B55 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB771D1CC95C00830B55 /* main.js */; };
-		D80BFBFC1D1CC95C00830B55 /* project.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB781D1CC95C00830B55 /* project.js */; };
-		D80BFBFD1D1CC95C00830B55 /* resource.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB791D1CC95C00830B55 /* resource.js */; };
-		D80BFBFE1D1CC95C00830B55 /* BG4.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB7A1D1CC95C00830B55 /* BG4.png */; };
-		D80BFBFF1D1CC95C00830B55 /* Item_1_Balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB7B1D1CC95C00830B55 /* Item_1_Balloon.png */; };
-		D80BFC001D1CC95C00830B55 /* baseConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB7F1D1CC95C00830B55 /* baseConfig.js */; };
-		D80BFC011D1CC95C00830B55 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB801D1CC95C00830B55 /* common.js */; };
-		D80BFC021D1CC95C00830B55 /* component.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB811D1CC95C00830B55 /* component.js */; };
-		D80BFC031D1CC95C00830B55 /* moduleConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB821D1CC95C00830B55 /* moduleConfig.js */; };
-		D80BFC041D1CC95C00830B55 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB831D1CC95C00830B55 /* config.js */; };
-		D80BFC051D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB851D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */; };
-		D80BFC061D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB861D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */; };
-		D80BFC071D1CC95C00830B55 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB871D1CC95C00830B55 /* index.html */; };
-		D80BFC081D1CC95C00830B55 /* bg_mall.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB891D1CC95C00830B55 /* bg_mall.png */; };
-		D80BFC091D1CC95C00830B55 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB8A1D1CC95C00830B55 /* bgm.mp3 */; };
-		D80BFC0A1D1CC95C00830B55 /* Item_1_SDS.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB8B1D1CC95C00830B55 /* Item_1_SDS.png */; };
-		D80BFC0B1D1CC95C00830B55 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB8D1D1CC95C00830B55 /* 1.wav */; };
-		D80BFC0C1D1CC95C00830B55 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB8E1D1CC95C00830B55 /* 2.wav */; };
-		D80BFC0D1D1CC95C00830B55 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB8F1D1CC95C00830B55 /* 3.wav */; };
-		D80BFC0E1D1CC95C00830B55 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB911D1CC95C00830B55 /* num1.png */; };
-		D80BFC0F1D1CC95C00830B55 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB921D1CC95C00830B55 /* num2.png */; };
-		D80BFC101D1CC95C00830B55 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB931D1CC95C00830B55 /* num3.png */; };
-		D80BFC111D1CC95C00830B55 /* question.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB941D1CC95C00830B55 /* question.mp3 */; };
-		D80BFC121D1CC95C00830B55 /* question.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB951D1CC95C00830B55 /* question.wav */; };
-		D80BFC131D1CC95C00830B55 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB961D1CC95C00830B55 /* right.mp3 */; };
-		D80BFC141D1CC95C00830B55 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB971D1CC95C00830B55 /* wrong.mp3 */; };
-		D80BFC151D1CC95C00830B55 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB991D1CC95C00830B55 /* app.js */; };
-		D80BFC161D1CC95C00830B55 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB9A1D1CC95C00830B55 /* main.js */; };
-		D80BFC171D1CC95C00830B55 /* project.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB9B1D1CC95C00830B55 /* project.js */; };
-		D80BFC181D1CC95C00830B55 /* resource.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB9C1D1CC95C00830B55 /* resource.js */; };
-		D80BFC191D1CC95C00830B55 /* BG3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB9D1D1CC95C00830B55 /* BG3.png */; };
-		D80BFC1A1D1CC95C00830B55 /* Item_1_SDS.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB9E1D1CC95C00830B55 /* Item_1_SDS.png */; };
-		D80BFC1B1D1CC95C00830B55 /* baseConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA21D1CC95C00830B55 /* baseConfig.js */; };
-		D80BFC1C1D1CC95C00830B55 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA31D1CC95C00830B55 /* common.js */; };
-		D80BFC1D1D1CC95C00830B55 /* component.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA41D1CC95C00830B55 /* component.js */; };
-		D80BFC1E1D1CC95C00830B55 /* moduleConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA51D1CC95C00830B55 /* moduleConfig.js */; };
-		D80BFC1F1D1CC95C00830B55 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA61D1CC95C00830B55 /* config.js */; };
-		D80BFC201D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA81D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */; };
-		D80BFC211D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBA91D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */; };
-		D80BFC221D1CC95C00830B55 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBAA1D1CC95C00830B55 /* index.html */; };
-		D80BFC231D1CC95C00830B55 /* bg_mall.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBAC1D1CC95C00830B55 /* bg_mall.png */; };
-		D80BFC241D1CC95C00830B55 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBAD1D1CC95C00830B55 /* bgm.mp3 */; };
-		D80BFC251D1CC95C00830B55 /* Item_1_ToyBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBAE1D1CC95C00830B55 /* Item_1_ToyBoy.png */; };
-		D80BFC261D1CC95C00830B55 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB01D1CC95C00830B55 /* 1.wav */; };
-		D80BFC271D1CC95C00830B55 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB11D1CC95C00830B55 /* 2.wav */; };
-		D80BFC281D1CC95C00830B55 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB21D1CC95C00830B55 /* 3.wav */; };
-		D80BFC291D1CC95C00830B55 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB41D1CC95C00830B55 /* num1.png */; };
-		D80BFC2A1D1CC95C00830B55 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB51D1CC95C00830B55 /* num2.png */; };
-		D80BFC2B1D1CC95C00830B55 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB61D1CC95C00830B55 /* num3.png */; };
-		D80BFC2C1D1CC95C00830B55 /* question.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB71D1CC95C00830B55 /* question.mp3 */; };
-		D80BFC2D1D1CC95C00830B55 /* question.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB81D1CC95C00830B55 /* question.wav */; };
-		D80BFC2E1D1CC95C00830B55 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBB91D1CC95C00830B55 /* right.mp3 */; };
-		D80BFC2F1D1CC95C00830B55 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBBA1D1CC95C00830B55 /* wrong.mp3 */; };
-		D80BFC301D1CC95C00830B55 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBBC1D1CC95C00830B55 /* app.js */; };
-		D80BFC311D1CC95C00830B55 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBBD1D1CC95C00830B55 /* main.js */; };
-		D80BFC321D1CC95C00830B55 /* project.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBBE1D1CC95C00830B55 /* project.js */; };
-		D80BFC331D1CC95C00830B55 /* resource.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBBF1D1CC95C00830B55 /* resource.js */; };
-		D80BFC341D1CC95C00830B55 /* BG1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC01D1CC95C00830B55 /* BG1.png */; };
-		D80BFC351D1CC95C00830B55 /* Item_1_ToyBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC11D1CC95C00830B55 /* Item_1_ToyBoy.png */; };
-		D80BFC361D1CC95C00830B55 /* baseConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC51D1CC95C00830B55 /* baseConfig.js */; };
-		D80BFC371D1CC95C00830B55 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC61D1CC95C00830B55 /* common.js */; };
-		D80BFC381D1CC95C00830B55 /* component.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC71D1CC95C00830B55 /* component.js */; };
-		D80BFC391D1CC95C00830B55 /* moduleConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC81D1CC95C00830B55 /* moduleConfig.js */; };
-		D80BFC3A1D1CC95C00830B55 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBC91D1CC95C00830B55 /* config.js */; };
-		D80BFC3B1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBCB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */; };
-		D80BFC3C1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBCC1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */; };
-		D80BFC3D1D1CC95C00830B55 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBCD1D1CC95C00830B55 /* index.html */; };
-		D80BFC3E1D1CC95C00830B55 /* bg_mall.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBCF1D1CC95C00830B55 /* bg_mall.png */; };
-		D80BFC3F1D1CC95C00830B55 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD01D1CC95C00830B55 /* bgm.mp3 */; };
-		D80BFC401D1CC95C00830B55 /* Item_1_ToyGirl.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD11D1CC95C00830B55 /* Item_1_ToyGirl.png */; };
-		D80BFC411D1CC95C00830B55 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD31D1CC95C00830B55 /* 1.wav */; };
-		D80BFC421D1CC95C00830B55 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD41D1CC95C00830B55 /* 2.wav */; };
-		D80BFC431D1CC95C00830B55 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD51D1CC95C00830B55 /* 3.wav */; };
-		D80BFC441D1CC95C00830B55 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD71D1CC95C00830B55 /* num1.png */; };
-		D80BFC451D1CC95C00830B55 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD81D1CC95C00830B55 /* num2.png */; };
-		D80BFC461D1CC95C00830B55 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBD91D1CC95C00830B55 /* num3.png */; };
-		D80BFC471D1CC95C00830B55 /* question.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBDA1D1CC95C00830B55 /* question.mp3 */; };
-		D80BFC481D1CC95C00830B55 /* question.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBDB1D1CC95C00830B55 /* question.wav */; };
-		D80BFC491D1CC95C00830B55 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBDC1D1CC95C00830B55 /* right.mp3 */; };
-		D80BFC4A1D1CC95C00830B55 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBDD1D1CC95C00830B55 /* wrong.mp3 */; };
-		D80BFC4B1D1CC95C00830B55 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBDF1D1CC95C00830B55 /* app.js */; };
-		D80BFC4C1D1CC95C00830B55 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBE01D1CC95C00830B55 /* main.js */; };
-		D80BFC4D1D1CC95C00830B55 /* project.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBE11D1CC95C00830B55 /* project.js */; };
-		D80BFC4E1D1CC95C00830B55 /* resource.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBE21D1CC95C00830B55 /* resource.js */; };
-		D80BFC4F1D1CC95C00830B55 /* BG2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBE31D1CC95C00830B55 /* BG2.png */; };
-		D80BFC501D1CC95C00830B55 /* Item_1_ToyGirl.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFBE41D1CC95C00830B55 /* Item_1_ToyGirl.png */; };
 		D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFC511D1CCA7100830B55 /* 小红花@3x.png */; };
 		D80BFC541D1CCA7D00830B55 /* 小红花@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFC531D1CCA7D00830B55 /* 小红花@2x.png */; };
 		D80BFC561D1CCC2600830B55 /* 退出登录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFC551D1CCC2600830B55 /* 退出登录@2x.png */; };
@@ -423,6 +316,7 @@
 		8C1DDA171D1C1FE3005D1F24 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		8C1DDA381D1C1FFC005D1F24 /* LBNetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNetWorkingManager.h; sourceTree = "<group>"; };
 		8C1DDA391D1C1FFC005D1F24 /* LBNetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNetWorkingManager.m; sourceTree = "<group>"; };
+		8C1DDCB41D1CDC53005D1F24 /* Htmls */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Htmls; sourceTree = "<group>"; };
 		8C2298681D198C80002C0F80 /* root_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = root_bg.png; sourceTree = "<group>"; };
 		8C2298691D198C80002C0F80 /* root_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "root_bg@2x.png"; sourceTree = "<group>"; };
 		8C2298791D19969A002C0F80 /* home_city_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_city_bg.png; sourceTree = "<group>"; };
@@ -506,114 +400,6 @@
 		D80BFB491D1CC55C00830B55 /* 主界面4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面4.png"; sourceTree = "<group>"; };
 		D80BFB4B1D1CC60500830B55 /* 城市bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "城市bg.png"; sourceTree = "<group>"; };
 		D80BFB4F1D1CC82D00830B55 /* 超市bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "超市bg.png"; sourceTree = "<group>"; };
-		D80BFB5C1D1CC95C00830B55 /* baseConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = baseConfig.js; sourceTree = "<group>"; };
-		D80BFB5D1D1CC95C00830B55 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
-		D80BFB5E1D1CC95C00830B55 /* component.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = component.js; sourceTree = "<group>"; };
-		D80BFB5F1D1CC95C00830B55 /* moduleConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moduleConfig.js; sourceTree = "<group>"; };
-		D80BFB601D1CC95C00830B55 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
-		D80BFB621D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.js"; sourceTree = "<group>"; };
-		D80BFB631D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.min.js"; sourceTree = "<group>"; };
-		D80BFB641D1CC95C00830B55 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D80BFB661D1CC95C00830B55 /* bg_mall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mall.png; sourceTree = "<group>"; };
-		D80BFB671D1CC95C00830B55 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		D80BFB681D1CC95C00830B55 /* Item_1_Balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_Balloon.png; sourceTree = "<group>"; };
-		D80BFB6A1D1CC95C00830B55 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		D80BFB6B1D1CC95C00830B55 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		D80BFB6C1D1CC95C00830B55 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		D80BFB6E1D1CC95C00830B55 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
-		D80BFB6F1D1CC95C00830B55 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
-		D80BFB701D1CC95C00830B55 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
-		D80BFB711D1CC95C00830B55 /* question.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = question.mp3; sourceTree = "<group>"; };
-		D80BFB721D1CC95C00830B55 /* question.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = question.wav; sourceTree = "<group>"; };
-		D80BFB731D1CC95C00830B55 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
-		D80BFB741D1CC95C00830B55 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
-		D80BFB761D1CC95C00830B55 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
-		D80BFB771D1CC95C00830B55 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
-		D80BFB781D1CC95C00830B55 /* project.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = project.js; sourceTree = "<group>"; };
-		D80BFB791D1CC95C00830B55 /* resource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = resource.js; sourceTree = "<group>"; };
-		D80BFB7A1D1CC95C00830B55 /* BG4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG4.png; sourceTree = "<group>"; };
-		D80BFB7B1D1CC95C00830B55 /* Item_1_Balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_Balloon.png; sourceTree = "<group>"; };
-		D80BFB7F1D1CC95C00830B55 /* baseConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = baseConfig.js; sourceTree = "<group>"; };
-		D80BFB801D1CC95C00830B55 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
-		D80BFB811D1CC95C00830B55 /* component.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = component.js; sourceTree = "<group>"; };
-		D80BFB821D1CC95C00830B55 /* moduleConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moduleConfig.js; sourceTree = "<group>"; };
-		D80BFB831D1CC95C00830B55 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
-		D80BFB851D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.js"; sourceTree = "<group>"; };
-		D80BFB861D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.min.js"; sourceTree = "<group>"; };
-		D80BFB871D1CC95C00830B55 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D80BFB891D1CC95C00830B55 /* bg_mall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mall.png; sourceTree = "<group>"; };
-		D80BFB8A1D1CC95C00830B55 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		D80BFB8B1D1CC95C00830B55 /* Item_1_SDS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_SDS.png; sourceTree = "<group>"; };
-		D80BFB8D1D1CC95C00830B55 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		D80BFB8E1D1CC95C00830B55 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		D80BFB8F1D1CC95C00830B55 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		D80BFB911D1CC95C00830B55 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
-		D80BFB921D1CC95C00830B55 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
-		D80BFB931D1CC95C00830B55 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
-		D80BFB941D1CC95C00830B55 /* question.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = question.mp3; sourceTree = "<group>"; };
-		D80BFB951D1CC95C00830B55 /* question.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = question.wav; sourceTree = "<group>"; };
-		D80BFB961D1CC95C00830B55 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
-		D80BFB971D1CC95C00830B55 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
-		D80BFB991D1CC95C00830B55 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
-		D80BFB9A1D1CC95C00830B55 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
-		D80BFB9B1D1CC95C00830B55 /* project.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = project.js; sourceTree = "<group>"; };
-		D80BFB9C1D1CC95C00830B55 /* resource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = resource.js; sourceTree = "<group>"; };
-		D80BFB9D1D1CC95C00830B55 /* BG3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG3.png; sourceTree = "<group>"; };
-		D80BFB9E1D1CC95C00830B55 /* Item_1_SDS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_SDS.png; sourceTree = "<group>"; };
-		D80BFBA21D1CC95C00830B55 /* baseConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = baseConfig.js; sourceTree = "<group>"; };
-		D80BFBA31D1CC95C00830B55 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
-		D80BFBA41D1CC95C00830B55 /* component.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = component.js; sourceTree = "<group>"; };
-		D80BFBA51D1CC95C00830B55 /* moduleConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moduleConfig.js; sourceTree = "<group>"; };
-		D80BFBA61D1CC95C00830B55 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
-		D80BFBA81D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.js"; sourceTree = "<group>"; };
-		D80BFBA91D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.min.js"; sourceTree = "<group>"; };
-		D80BFBAA1D1CC95C00830B55 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D80BFBAC1D1CC95C00830B55 /* bg_mall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mall.png; sourceTree = "<group>"; };
-		D80BFBAD1D1CC95C00830B55 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		D80BFBAE1D1CC95C00830B55 /* Item_1_ToyBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_ToyBoy.png; sourceTree = "<group>"; };
-		D80BFBB01D1CC95C00830B55 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		D80BFBB11D1CC95C00830B55 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		D80BFBB21D1CC95C00830B55 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		D80BFBB41D1CC95C00830B55 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
-		D80BFBB51D1CC95C00830B55 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
-		D80BFBB61D1CC95C00830B55 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
-		D80BFBB71D1CC95C00830B55 /* question.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = question.mp3; sourceTree = "<group>"; };
-		D80BFBB81D1CC95C00830B55 /* question.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = question.wav; sourceTree = "<group>"; };
-		D80BFBB91D1CC95C00830B55 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
-		D80BFBBA1D1CC95C00830B55 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
-		D80BFBBC1D1CC95C00830B55 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
-		D80BFBBD1D1CC95C00830B55 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
-		D80BFBBE1D1CC95C00830B55 /* project.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = project.js; sourceTree = "<group>"; };
-		D80BFBBF1D1CC95C00830B55 /* resource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = resource.js; sourceTree = "<group>"; };
-		D80BFBC01D1CC95C00830B55 /* BG1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG1.png; sourceTree = "<group>"; };
-		D80BFBC11D1CC95C00830B55 /* Item_1_ToyBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_ToyBoy.png; sourceTree = "<group>"; };
-		D80BFBC51D1CC95C00830B55 /* baseConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = baseConfig.js; sourceTree = "<group>"; };
-		D80BFBC61D1CC95C00830B55 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
-		D80BFBC71D1CC95C00830B55 /* component.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = component.js; sourceTree = "<group>"; };
-		D80BFBC81D1CC95C00830B55 /* moduleConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moduleConfig.js; sourceTree = "<group>"; };
-		D80BFBC91D1CC95C00830B55 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
-		D80BFBCB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.js"; sourceTree = "<group>"; };
-		D80BFBCC1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.min.js"; sourceTree = "<group>"; };
-		D80BFBCD1D1CC95C00830B55 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		D80BFBCF1D1CC95C00830B55 /* bg_mall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mall.png; sourceTree = "<group>"; };
-		D80BFBD01D1CC95C00830B55 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		D80BFBD11D1CC95C00830B55 /* Item_1_ToyGirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_ToyGirl.png; sourceTree = "<group>"; };
-		D80BFBD31D1CC95C00830B55 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		D80BFBD41D1CC95C00830B55 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		D80BFBD51D1CC95C00830B55 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		D80BFBD71D1CC95C00830B55 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
-		D80BFBD81D1CC95C00830B55 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
-		D80BFBD91D1CC95C00830B55 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
-		D80BFBDA1D1CC95C00830B55 /* question.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = question.mp3; sourceTree = "<group>"; };
-		D80BFBDB1D1CC95C00830B55 /* question.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = question.wav; sourceTree = "<group>"; };
-		D80BFBDC1D1CC95C00830B55 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
-		D80BFBDD1D1CC95C00830B55 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
-		D80BFBDF1D1CC95C00830B55 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
-		D80BFBE01D1CC95C00830B55 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
-		D80BFBE11D1CC95C00830B55 /* project.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = project.js; sourceTree = "<group>"; };
-		D80BFBE21D1CC95C00830B55 /* resource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = resource.js; sourceTree = "<group>"; };
-		D80BFBE31D1CC95C00830B55 /* BG2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG2.png; sourceTree = "<group>"; };
-		D80BFBE41D1CC95C00830B55 /* Item_1_ToyGirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_ToyGirl.png; sourceTree = "<group>"; };
 		D80BFC511D1CCA7100830B55 /* 小红花@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小红花@3x.png"; sourceTree = "<group>"; };
 		D80BFC531D1CCA7D00830B55 /* 小红花@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小红花@2x.png"; sourceTree = "<group>"; };
 		D80BFC551D1CCC2600830B55 /* 退出登录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "退出登录@2x.png"; sourceTree = "<group>"; };
@@ -807,7 +593,7 @@
 			children = (
 				8C0EF3001D0417A700194D16 /* AppDelegate.h */,
 				8C0EF3011D0417A700194D16 /* AppDelegate.m */,
-				8C1DDA3B1D1CC7EB005D1F24 /* Files */,
+				8C1DDCB41D1CDC53005D1F24 /* Htmls */,
 				8C0EF3CC1D043F4900194D16 /* Images */,
 				8C0EED231D183B80007ADAC4 /* Tools */,
 				8C0EF3381D0418A400194D16 /* HighTech */,
@@ -899,7 +685,6 @@
 		8C0EF3CC1D043F4900194D16 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D80BFB581D1CC95C00830B55 /* 3_1_City_mall */,
 				D853189A1D1BCFD500BBA6D3 /* 地球 */,
 				8C2298B91D199BF9002C0F80 /* 1 */,
 				8C2298BA1D199BF9002C0F80 /* 背景 */,
@@ -1016,13 +801,6 @@
 				8C1DDA171D1C1FE3005D1F24 /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
-			sourceTree = "<group>";
-		};
-		8C1DDA3B1D1CC7EB005D1F24 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Files;
 			sourceTree = "<group>";
 		};
 		8C22985B1D198C26002C0F80 /* rootImages */ = {
@@ -1287,983 +1065,6 @@
 			path = "主界面背景";
 			sourceTree = "<group>";
 		};
-		D80BFB581D1CC95C00830B55 /* 3_1_City_mall */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB591D1CC95C00830B55 /* balloon */,
-				D80BFB7C1D1CC95C00830B55 /* santa tree */,
-				D80BFB9F1D1CC95C00830B55 /* toyboy */,
-				D80BFBC21D1CC95C00830B55 /* toygirl */,
-			);
-			path = 3_1_City_mall;
-			sourceTree = "<group>";
-		};
-		D80BFB591D1CC95C00830B55 /* balloon */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB7A1D1CC95C00830B55 /* BG4.png */,
-				D80BFB7B1D1CC95C00830B55 /* Item_1_Balloon.png */,
-			);
-			path = balloon;
-			sourceTree = "<group>";
-		};
-		D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5B1D1CC95C00830B55 /* common */,
-				D80BFB601D1CC95C00830B55 /* config.js */,
-				D80BFB611D1CC95C00830B55 /* frameworks */,
-				D80BFB641D1CC95C00830B55 /* index.html */,
-				D80BFB651D1CC95C00830B55 /* res */,
-				D80BFB751D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB5B1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5C1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB5D1D1CC95C00830B55 /* common.js */,
-				D80BFB5E1D1CC95C00830B55 /* component.js */,
-				D80BFB5F1D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB611D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB621D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB631D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB651D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB661D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB671D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB681D1CC95C00830B55 /* Item_1_Balloon.png */,
-				D80BFB691D1CC95C00830B55 /* number */,
-				D80BFB6D1D1CC95C00830B55 /* nums */,
-				D80BFB711D1CC95C00830B55 /* question.mp3 */,
-				D80BFB721D1CC95C00830B55 /* question.wav */,
-				D80BFB731D1CC95C00830B55 /* right.mp3 */,
-				D80BFB741D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB691D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6A1D1CC95C00830B55 /* 1.wav */,
-				D80BFB6B1D1CC95C00830B55 /* 2.wav */,
-				D80BFB6C1D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB6D1D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6E1D1CC95C00830B55 /* num1.png */,
-				D80BFB6F1D1CC95C00830B55 /* num2.png */,
-				D80BFB701D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB751D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB761D1CC95C00830B55 /* app.js */,
-				D80BFB771D1CC95C00830B55 /* main.js */,
-				D80BFB781D1CC95C00830B55 /* project.js */,
-				D80BFB791D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB7C1D1CC95C00830B55 /* santa tree */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB9D1D1CC95C00830B55 /* BG3.png */,
-				D80BFB9E1D1CC95C00830B55 /* Item_1_SDS.png */,
-			);
-			path = "santa tree";
-			sourceTree = "<group>";
-		};
-		D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-			isa = PBXGroup;
-			children = (
-				D80BFB591D1CC95C00830B55 /* balloon */,
-				D80BFB7C1D1CC95C00830B55 /* santa tree */,
-				D80BFB9F1D1CC95C00830B55 /* toyboy */,
-				D80BFBC21D1CC95C00830B55 /* toygirl */,
-			);
-			path = 3_1_City_mall;
-			sourceTree = "<group>";
-		};
-		D80BFB591D1CC95C00830B55 /* balloon */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB7A1D1CC95C00830B55 /* BG4.png */,
-				D80BFB7B1D1CC95C00830B55 /* Item_1_Balloon.png */,
-			);
-			path = balloon;
-			sourceTree = "<group>";
-		};
-		D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5B1D1CC95C00830B55 /* common */,
-				D80BFB601D1CC95C00830B55 /* config.js */,
-				D80BFB611D1CC95C00830B55 /* frameworks */,
-				D80BFB641D1CC95C00830B55 /* index.html */,
-				D80BFB651D1CC95C00830B55 /* res */,
-				D80BFB751D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB5B1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5C1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB5D1D1CC95C00830B55 /* common.js */,
-				D80BFB5E1D1CC95C00830B55 /* component.js */,
-				D80BFB5F1D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB611D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB621D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB631D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB651D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB661D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB671D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB681D1CC95C00830B55 /* Item_1_Balloon.png */,
-				D80BFB691D1CC95C00830B55 /* number */,
-				D80BFB6D1D1CC95C00830B55 /* nums */,
-				D80BFB711D1CC95C00830B55 /* question.mp3 */,
-				D80BFB721D1CC95C00830B55 /* question.wav */,
-				D80BFB731D1CC95C00830B55 /* right.mp3 */,
-				D80BFB741D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB691D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6A1D1CC95C00830B55 /* 1.wav */,
-				D80BFB6B1D1CC95C00830B55 /* 2.wav */,
-				D80BFB6C1D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB6D1D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6E1D1CC95C00830B55 /* num1.png */,
-				D80BFB6F1D1CC95C00830B55 /* num2.png */,
-				D80BFB701D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB751D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB761D1CC95C00830B55 /* app.js */,
-				D80BFB771D1CC95C00830B55 /* main.js */,
-				D80BFB781D1CC95C00830B55 /* project.js */,
-				D80BFB791D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB7C1D1CC95C00830B55 /* santa tree */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB9D1D1CC95C00830B55 /* BG3.png */,
-				D80BFB9E1D1CC95C00830B55 /* Item_1_SDS.png */,
-			);
-			path = "santa tree";
-			sourceTree = "<group>";
-		};
-		D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7E1D1CC95C00830B55 /* common */,
-				D80BFB831D1CC95C00830B55 /* config.js */,
-				D80BFB841D1CC95C00830B55 /* frameworks */,
-				D80BFB871D1CC95C00830B55 /* index.html */,
-				D80BFB881D1CC95C00830B55 /* res */,
-				D80BFB981D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB7E1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7F1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB801D1CC95C00830B55 /* common.js */,
-				D80BFB811D1CC95C00830B55 /* component.js */,
-				D80BFB821D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB841D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB851D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB861D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB881D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB891D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB8A1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB8B1D1CC95C00830B55 /* Item_1_SDS.png */,
-				D80BFB8C1D1CC95C00830B55 /* number */,
-				D80BFB901D1CC95C00830B55 /* nums */,
-				D80BFB941D1CC95C00830B55 /* question.mp3 */,
-				D80BFB951D1CC95C00830B55 /* question.wav */,
-				D80BFB961D1CC95C00830B55 /* right.mp3 */,
-				D80BFB971D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB8C1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB8D1D1CC95C00830B55 /* 1.wav */,
-				D80BFB8E1D1CC95C00830B55 /* 2.wav */,
-				D80BFB8F1D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB901D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB911D1CC95C00830B55 /* num1.png */,
-				D80BFB921D1CC95C00830B55 /* num2.png */,
-				D80BFB931D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB981D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB991D1CC95C00830B55 /* app.js */,
-				D80BFB9A1D1CC95C00830B55 /* main.js */,
-				D80BFB9B1D1CC95C00830B55 /* project.js */,
-				D80BFB9C1D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB9F1D1CC95C00830B55 /* toyboy */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFBC01D1CC95C00830B55 /* BG1.png */,
-				D80BFBC11D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-			);
-			path = toyboy;
-			sourceTree = "<group>";
-		};
-		D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA11D1CC95C00830B55 /* common */,
-				D80BFBA61D1CC95C00830B55 /* config.js */,
-				D80BFBA71D1CC95C00830B55 /* frameworks */,
-				D80BFBAA1D1CC95C00830B55 /* index.html */,
-				D80BFBAB1D1CC95C00830B55 /* res */,
-				D80BFBBB1D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFBA11D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA21D1CC95C00830B55 /* baseConfig.js */,
-				D80BFBA31D1CC95C00830B55 /* common.js */,
-				D80BFBA41D1CC95C00830B55 /* component.js */,
-				D80BFBA51D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFBA71D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA81D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFBA91D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFBAB1D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBAC1D1CC95C00830B55 /* bg_mall.png */,
-				D80BFBAD1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFBAE1D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-				D80BFBAF1D1CC95C00830B55 /* number */,
-				D80BFBB31D1CC95C00830B55 /* nums */,
-				D80BFBB71D1CC95C00830B55 /* question.mp3 */,
-				D80BFBB81D1CC95C00830B55 /* question.wav */,
-				D80BFBB91D1CC95C00830B55 /* right.mp3 */,
-				D80BFBBA1D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFBAF1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB01D1CC95C00830B55 /* 1.wav */,
-				D80BFBB11D1CC95C00830B55 /* 2.wav */,
-				D80BFBB21D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFBB31D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB41D1CC95C00830B55 /* num1.png */,
-				D80BFBB51D1CC95C00830B55 /* num2.png */,
-				D80BFBB61D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFBBB1D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBBC1D1CC95C00830B55 /* app.js */,
-				D80BFBBD1D1CC95C00830B55 /* main.js */,
-				D80BFBBE1D1CC95C00830B55 /* project.js */,
-				D80BFBBF1D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFBC21D1CC95C00830B55 /* toygirl */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC31D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFBE31D1CC95C00830B55 /* BG2.png */,
-				D80BFBE41D1CC95C00830B55 /* Item_1_ToyGirl.png */,
-			);
-			path = toygirl;
-			sourceTree = "<group>";
-		};
-		D80BFBC31D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC41D1CC95C00830B55 /* common */,
-				D80BFBC91D1CC95C00830B55 /* config.js */,
-				D80BFBCA1D1CC95C00830B55 /* frameworks */,
-				D80BFBCD1D1CC95C00830B55 /* index.html */,
-				D80BFBCE1D1CC95C00830B55 /* res */,
-				D80BFBDE1D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB7E1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7F1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB801D1CC95C00830B55 /* common.js */,
-				D80BFB811D1CC95C00830B55 /* component.js */,
-				D80BFB821D1CC95C00830B55 /* moduleConfig.js */,
-		D80BFBC41D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC51D1CC95C00830B55 /* baseConfig.js */,
-				D80BFBC61D1CC95C00830B55 /* common.js */,
-				D80BFBC71D1CC95C00830B55 /* component.js */,
-				D80BFBC81D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB841D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB851D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB861D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-		D80BFBCA1D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBCB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFBCC1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB881D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB891D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB8A1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB8B1D1CC95C00830B55 /* Item_1_SDS.png */,
-				D80BFB8C1D1CC95C00830B55 /* number */,
-				D80BFB901D1CC95C00830B55 /* nums */,
-				D80BFB941D1CC95C00830B55 /* question.mp3 */,
-				D80BFB951D1CC95C00830B55 /* question.wav */,
-				D80BFB961D1CC95C00830B55 /* right.mp3 */,
-				D80BFB971D1CC95C00830B55 /* wrong.mp3 */,
-		D80BFBCE1D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBCF1D1CC95C00830B55 /* bg_mall.png */,
-				D80BFBD01D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFBD11D1CC95C00830B55 /* Item_1_ToyGirl.png */,
-				D80BFBD21D1CC95C00830B55 /* number */,
-				D80BFBD61D1CC95C00830B55 /* nums */,
-				D80BFBDA1D1CC95C00830B55 /* question.mp3 */,
-				D80BFBDB1D1CC95C00830B55 /* question.wav */,
-				D80BFBDC1D1CC95C00830B55 /* right.mp3 */,
-				D80BFBDD1D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB8C1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB8D1D1CC95C00830B55 /* 1.wav */,
-				D80BFB8E1D1CC95C00830B55 /* 2.wav */,
-				D80BFB8F1D1CC95C00830B55 /* 3.wav */,
-		D80BFBD21D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBD31D1CC95C00830B55 /* 1.wav */,
-				D80BFBD41D1CC95C00830B55 /* 2.wav */,
-				D80BFBD51D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB901D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB911D1CC95C00830B55 /* num1.png */,
-				D80BFB921D1CC95C00830B55 /* num2.png */,
-				D80BFB931D1CC95C00830B55 /* num3.png */,
-		D80BFBD61D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBD71D1CC95C00830B55 /* num1.png */,
-				D80BFBD81D1CC95C00830B55 /* num2.png */,
-				D80BFBD91D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB981D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB991D1CC95C00830B55 /* app.js */,
-				D80BFB9A1D1CC95C00830B55 /* main.js */,
-				D80BFB9B1D1CC95C00830B55 /* project.js */,
-				D80BFB9C1D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB9F1D1CC95C00830B55 /* toyboy */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFBC01D1CC95C00830B55 /* BG1.png */,
-				D80BFBC11D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-			);
-			path = toyboy;
-			sourceTree = "<group>";
-		};
-		D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA11D1CC95C00830B55 /* common */,
-				D80BFBA61D1CC95C00830B55 /* config.js */,
-				D80BFBA71D1CC95C00830B55 /* frameworks */,
-				D80BFBAA1D1CC95C00830B55 /* index.html */,
-				D80BFBAB1D1CC95C00830B55 /* res */,
-				D80BFBBB1D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFBA11D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA21D1CC95C00830B55 /* baseConfig.js */,
-				D80BFBA31D1CC95C00830B55 /* common.js */,
-				D80BFBA41D1CC95C00830B55 /* component.js */,
-				D80BFBA51D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFBA71D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA81D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFBA91D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFBAB1D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBAC1D1CC95C00830B55 /* bg_mall.png */,
-				D80BFBAD1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFBAE1D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-				D80BFBAF1D1CC95C00830B55 /* number */,
-				D80BFBB31D1CC95C00830B55 /* nums */,
-				D80BFBB71D1CC95C00830B55 /* question.mp3 */,
-				D80BFBB81D1CC95C00830B55 /* question.wav */,
-				D80BFBB91D1CC95C00830B55 /* right.mp3 */,
-				D80BFBBA1D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFBAF1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB01D1CC95C00830B55 /* 1.wav */,
-				D80BFBB11D1CC95C00830B55 /* 2.wav */,
-				D80BFBB21D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFBB31D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB41D1CC95C00830B55 /* num1.png */,
-				D80BFBB51D1CC95C00830B55 /* num2.png */,
-				D80BFBB61D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFBBB1D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-			isa = PBXGroup;
-			children = (
-				D80BFB591D1CC95C00830B55 /* balloon */,
-				D80BFB7C1D1CC95C00830B55 /* santa tree */,
-				D80BFB9F1D1CC95C00830B55 /* toyboy */,
-				D80BFBC21D1CC95C00830B55 /* toygirl */,
-			);
-			path = 3_1_City_mall;
-			sourceTree = "<group>";
-		};
-		D80BFB591D1CC95C00830B55 /* balloon */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB7A1D1CC95C00830B55 /* BG4.png */,
-				D80BFB7B1D1CC95C00830B55 /* Item_1_Balloon.png */,
-			);
-			path = balloon;
-			sourceTree = "<group>";
-		};
-		D80BFB5A1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5B1D1CC95C00830B55 /* common */,
-				D80BFB601D1CC95C00830B55 /* config.js */,
-				D80BFB611D1CC95C00830B55 /* frameworks */,
-				D80BFB641D1CC95C00830B55 /* index.html */,
-				D80BFB651D1CC95C00830B55 /* res */,
-				D80BFB751D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB5B1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB5C1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB5D1D1CC95C00830B55 /* common.js */,
-				D80BFB5E1D1CC95C00830B55 /* component.js */,
-				D80BFB5F1D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB611D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB621D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB631D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB651D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB661D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB671D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB681D1CC95C00830B55 /* Item_1_Balloon.png */,
-				D80BFB691D1CC95C00830B55 /* number */,
-				D80BFB6D1D1CC95C00830B55 /* nums */,
-				D80BFB711D1CC95C00830B55 /* question.mp3 */,
-				D80BFB721D1CC95C00830B55 /* question.wav */,
-				D80BFB731D1CC95C00830B55 /* right.mp3 */,
-				D80BFB741D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB691D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6A1D1CC95C00830B55 /* 1.wav */,
-				D80BFB6B1D1CC95C00830B55 /* 2.wav */,
-				D80BFB6C1D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB6D1D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB6E1D1CC95C00830B55 /* num1.png */,
-				D80BFB6F1D1CC95C00830B55 /* num2.png */,
-				D80BFB701D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB751D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB761D1CC95C00830B55 /* app.js */,
-				D80BFB771D1CC95C00830B55 /* main.js */,
-				D80BFB781D1CC95C00830B55 /* project.js */,
-				D80BFB791D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB7C1D1CC95C00830B55 /* santa tree */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFB9D1D1CC95C00830B55 /* BG3.png */,
-				D80BFB9E1D1CC95C00830B55 /* Item_1_SDS.png */,
-			);
-			path = "santa tree";
-			sourceTree = "<group>";
-		};
-		D80BFB7D1D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7E1D1CC95C00830B55 /* common */,
-				D80BFB831D1CC95C00830B55 /* config.js */,
-				D80BFB841D1CC95C00830B55 /* frameworks */,
-				D80BFB871D1CC95C00830B55 /* index.html */,
-				D80BFB881D1CC95C00830B55 /* res */,
-				D80BFB981D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFB7E1D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB7F1D1CC95C00830B55 /* baseConfig.js */,
-				D80BFB801D1CC95C00830B55 /* common.js */,
-				D80BFB811D1CC95C00830B55 /* component.js */,
-				D80BFB821D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFB841D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB851D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFB861D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFB881D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB891D1CC95C00830B55 /* bg_mall.png */,
-				D80BFB8A1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFB8B1D1CC95C00830B55 /* Item_1_SDS.png */,
-				D80BFB8C1D1CC95C00830B55 /* number */,
-				D80BFB901D1CC95C00830B55 /* nums */,
-				D80BFB941D1CC95C00830B55 /* question.mp3 */,
-				D80BFB951D1CC95C00830B55 /* question.wav */,
-				D80BFB961D1CC95C00830B55 /* right.mp3 */,
-				D80BFB971D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFB8C1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB8D1D1CC95C00830B55 /* 1.wav */,
-				D80BFB8E1D1CC95C00830B55 /* 2.wav */,
-				D80BFB8F1D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFB901D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB911D1CC95C00830B55 /* num1.png */,
-				D80BFB921D1CC95C00830B55 /* num2.png */,
-				D80BFB931D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFB981D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFB991D1CC95C00830B55 /* app.js */,
-				D80BFB9A1D1CC95C00830B55 /* main.js */,
-				D80BFB9B1D1CC95C00830B55 /* project.js */,
-				D80BFB9C1D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFB9F1D1CC95C00830B55 /* toyboy */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFBC01D1CC95C00830B55 /* BG1.png */,
-				D80BFBC11D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-			);
-			path = toyboy;
-			sourceTree = "<group>";
-		};
-		D80BFBA01D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA11D1CC95C00830B55 /* common */,
-				D80BFBA61D1CC95C00830B55 /* config.js */,
-				D80BFBA71D1CC95C00830B55 /* frameworks */,
-				D80BFBAA1D1CC95C00830B55 /* index.html */,
-				D80BFBAB1D1CC95C00830B55 /* res */,
-				D80BFBBB1D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFBA11D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA21D1CC95C00830B55 /* baseConfig.js */,
-				D80BFBA31D1CC95C00830B55 /* common.js */,
-				D80BFBA41D1CC95C00830B55 /* component.js */,
-				D80BFBA51D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFBA71D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBA81D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFBA91D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFBAB1D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBAC1D1CC95C00830B55 /* bg_mall.png */,
-				D80BFBAD1D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFBAE1D1CC95C00830B55 /* Item_1_ToyBoy.png */,
-				D80BFBAF1D1CC95C00830B55 /* number */,
-				D80BFBB31D1CC95C00830B55 /* nums */,
-				D80BFBB71D1CC95C00830B55 /* question.mp3 */,
-				D80BFBB81D1CC95C00830B55 /* question.wav */,
-				D80BFBB91D1CC95C00830B55 /* right.mp3 */,
-				D80BFBBA1D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFBAF1D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB01D1CC95C00830B55 /* 1.wav */,
-				D80BFBB11D1CC95C00830B55 /* 2.wav */,
-				D80BFBB21D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFBB31D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBB41D1CC95C00830B55 /* num1.png */,
-				D80BFBB51D1CC95C00830B55 /* num2.png */,
-				D80BFBB61D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFBBB1D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBBC1D1CC95C00830B55 /* app.js */,
-				D80BFBBD1D1CC95C00830B55 /* main.js */,
-				D80BFBBE1D1CC95C00830B55 /* project.js */,
-				D80BFBBF1D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		D80BFBC21D1CC95C00830B55 /* toygirl */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC31D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
-				D80BFBE31D1CC95C00830B55 /* BG2.png */,
-				D80BFBE41D1CC95C00830B55 /* Item_1_ToyGirl.png */,
-			);
-			path = toygirl;
-			sourceTree = "<group>";
-		};
-		D80BFBC31D1CC95C00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC41D1CC95C00830B55 /* common */,
-				D80BFBC91D1CC95C00830B55 /* config.js */,
-				D80BFBCA1D1CC95C00830B55 /* frameworks */,
-				D80BFBCD1D1CC95C00830B55 /* index.html */,
-				D80BFBCE1D1CC95C00830B55 /* res */,
-				D80BFBDE1D1CC95C00830B55 /* src */,
-			);
-			path = 3_I.1_VDEO_CNT_SERIES;
-			sourceTree = "<group>";
-		};
-		D80BFBC41D1CC95C00830B55 /* common */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBC51D1CC95C00830B55 /* baseConfig.js */,
-				D80BFBC61D1CC95C00830B55 /* common.js */,
-				D80BFBC71D1CC95C00830B55 /* component.js */,
-				D80BFBC81D1CC95C00830B55 /* moduleConfig.js */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		D80BFBCA1D1CC95C00830B55 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBCB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js */,
-				D80BFBCC1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js */,
-			);
-			path = frameworks;
-			sourceTree = "<group>";
-		};
-		D80BFBCE1D1CC95C00830B55 /* res */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBCF1D1CC95C00830B55 /* bg_mall.png */,
-				D80BFBD01D1CC95C00830B55 /* bgm.mp3 */,
-				D80BFBD11D1CC95C00830B55 /* Item_1_ToyGirl.png */,
-				D80BFBD21D1CC95C00830B55 /* number */,
-				D80BFBD61D1CC95C00830B55 /* nums */,
-				D80BFBDA1D1CC95C00830B55 /* question.mp3 */,
-				D80BFBDB1D1CC95C00830B55 /* question.wav */,
-				D80BFBDC1D1CC95C00830B55 /* right.mp3 */,
-				D80BFBDD1D1CC95C00830B55 /* wrong.mp3 */,
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		D80BFBD21D1CC95C00830B55 /* number */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBD31D1CC95C00830B55 /* 1.wav */,
-				D80BFBD41D1CC95C00830B55 /* 2.wav */,
-				D80BFBD51D1CC95C00830B55 /* 3.wav */,
-			);
-			path = number;
-			sourceTree = "<group>";
-		};
-		D80BFBD61D1CC95C00830B55 /* nums */ = {
-			isa = PBXGroup;
-			children = (
-				D80BFBD71D1CC95C00830B55 /* num1.png */,
-				D80BFBD81D1CC95C00830B55 /* num2.png */,
-				D80BFBD91D1CC95C00830B55 /* num3.png */,
-			);
-			path = nums;
-			sourceTree = "<group>";
-		};
-		D80BFBDE1D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-		D80BFBDE1D1CC95C00830B55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-			isa = PBXGroup;
-			children = (
-				D80BFBDF1D1CC95C00830B55 /* app.js */,
-				D80BFBE01D1CC95C00830B55 /* main.js */,
-				D80BFBE11D1CC95C00830B55 /* project.js */,
-				D80BFBE21D1CC95C00830B55 /* resource.js */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		D85317AB1D19E08300BBA6D3 /* CinemaVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2465,61 +1266,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D80BFBFB1D1CC95C00830B55 /* main.js in Resources */,
 				8C2299041D199BF9002C0F80 /* 家bg.png in Resources */,
 				D85318A61D1BCFD500BBA6D3 /* North4.jpg in Resources */,
 				8C22990D1D199BF9002C0F80 /* 首页bg.png in Resources */,
-				D80BFBE61D1CC95C00830B55 /* common.js in Resources */,
 				8C22992A1D199BF9002C0F80 /* 向左@3x.png in Resources */,
 				8C0EF30D1D0417A700194D16 /* LaunchScreen.storyboard in Resources */,
-				D80BFBF21D1CC95C00830B55 /* 3.wav in Resources */,
 				D853186C1D1BAE5100BBA6D3 /* 注册全.png in Resources */,
-				D80BFC161D1CC95C00830B55 /* main.js in Resources */,
-				D80BFC0D1D1CC95C00830B55 /* 3.wav in Resources */,
-				D80BFC001D1CC95C00830B55 /* baseConfig.js in Resources */,
-				D80BFC411D1CC95C00830B55 /* 1.wav in Resources */,
-				D80BFC501D1CC95C00830B55 /* Item_1_ToyGirl.png in Resources */,
-				D80BFC261D1CC95C00830B55 /* 1.wav in Resources */,
-				D80BFC391D1CC95C00830B55 /* moduleConfig.js in Resources */,
-				D80BFC021D1CC95C00830B55 /* component.js in Resources */,
 				8C22990B1D199BF9002C0F80 /* 设置音量bg.png in Resources */,
 				8C22991E1D199BF9002C0F80 /* 矢量智能对象@2x.png in Resources */,
 				8C2298831D19969A002C0F80 /* home_city_bg.png in Resources */,
 				8C2299201D199BF9002C0F80 /* 设置时间@2x.png in Resources */,
-				D80BFC461D1CC95C00830B55 /* num3.png in Resources */,
-				D80BFC2C1D1CC95C00830B55 /* question.mp3 in Resources */,
-				D80BFC431D1CC95C00830B55 /* 3.wav in Resources */,
-				D80BFBEA1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */,
 				8C2299081D199BF9002C0F80 /* 电影院2bg.png in Resources */,
+				8C1DDCB51D1CDC53005D1F24 /* Htmls in Resources */,
 				8C2299221D199BF9002C0F80 /* left@3x.png in Resources */,
 				D85318721D1BB26A00BBA6D3 /* girl1.png in Resources */,
 				D85318A71D1BCFD500BBA6D3 /* South1.jpg in Resources */,
 				8C2299251D199BF9002C0F80 /* planeright@3x.png in Resources */,
 				8C22991D1D199BF9002C0F80 /* 登录@2x.png in Resources */,
-				D80BFC091D1CC95C00830B55 /* bgm.mp3 in Resources */,
-				D80BFC131D1CC95C00830B55 /* right.mp3 in Resources */,
 				8C2299061D199BF9002C0F80 /* 小区bg.png in Resources */,
-				D80BFC1B1D1CC95C00830B55 /* baseConfig.js in Resources */,
-				D80BFC2F1D1CC95C00830B55 /* wrong.mp3 in Resources */,
-				D80BFC111D1CC95C00830B55 /* question.mp3 in Resources */,
 				D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */,
-				D80BFBF31D1CC95C00830B55 /* num1.png in Resources */,
-				D80BFC241D1CC95C00830B55 /* bgm.mp3 in Resources */,
-				D80BFBF11D1CC95C00830B55 /* 2.wav in Resources */,
-				D80BFC371D1CC95C00830B55 /* common.js in Resources */,
 				8C0EF30A1D0417A700194D16 /* Assets.xcassets in Resources */,
 				D80BFB501D1CC82D00830B55 /* 超市bg.png in Resources */,
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
-				D80BFC311D1CC95C00830B55 /* main.js in Resources */,
-				D80BFBF91D1CC95C00830B55 /* wrong.mp3 in Resources */,
-				D80BFC381D1CC95C00830B55 /* component.js in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
-				D80BFBE71D1CC95C00830B55 /* component.js in Resources */,
-				D80BFC2A1D1CC95C00830B55 /* num2.png in Resources */,
-				D80BFC4C1D1CC95C00830B55 /* main.js in Resources */,
-				D80BFC221D1CC95C00830B55 /* index.html in Resources */,
-				D80BFC051D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */,
 				8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */,
 				8C2298FE1D199BF9002C0F80 /* 商场bg.png in Resources */,
 				D85317CD1D1A6E1300BBA6D3 /* 设置@3x.png in Resources */,
@@ -2527,173 +1297,80 @@
 				8C2299321D199BF9002C0F80 /* 矢量智能对象@3x.png in Resources */,
 				8C2299121D199BF9002C0F80 /* right@2x.png in Resources */,
 				8C22991C1D199BF9002C0F80 /* 用户名密码@2x.png in Resources */,
-				D80BFC251D1CC95C00830B55 /* Item_1_ToyBoy.png in Resources */,
 				D85318A31D1BCFD500BBA6D3 /* North1.jpg in Resources */,
 				8C2299341D199BF9002C0F80 /* 设置时间@3x.png in Resources */,
 				D80BFC5A1D1CCE7600830B55 /* 退出.png in Resources */,
 				D80BFC561D1CCC2600830B55 /* 退出登录@2x.png in Resources */,
 				D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */,
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
-				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
 				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
-				D80BFC3E1D1CC95C00830B55 /* bg_mall.png in Resources */,
-				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
-				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
-				D80BFC3E1D1CC95C00830B55 /* bg_mall.png in Resources */,
-				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
-				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
-				D80BFC3E1D1CC95C00830B55 /* bg_mall.png in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
 				D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */,
 				8C2298871D19969A002C0F80 /* home_map_bg.png in Resources */,
-				D80BFC171D1CC95C00830B55 /* project.js in Resources */,
 				D80BFC661D1CD0EA00830B55 /* brightness_bar.png in Resources */,
 				D85318571D1B7AAA00BBA6D3 /* boy.png in Resources */,
-				D80BFBF61D1CC95C00830B55 /* question.mp3 in Resources */,
-				D80BFBF81D1CC95C00830B55 /* right.mp3 in Resources */,
 				D85317D51D1A6E1E00BBA6D3 /* 返回@2x.png in Resources */,
-				D80BFC3F1D1CC95C00830B55 /* bgm.mp3 in Resources */,
 				8C22986A1D198C80002C0F80 /* root_bg.png in Resources */,
 				D85318841D1BC3A100BBA6D3 /* 厨房bg.jpg in Resources */,
 				D85318761D1BB47700BBA6D3 /* 黄向左@3x.png in Resources */,
 				8C2299031D199BF9002C0F80 /* 地球图标2bg.png in Resources */,
 				8C22990C1D199BF9002C0F80 /* 课堂bg.png in Resources */,
-				D80BFC3C1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */,
 				8C22992B1D199BF9002C0F80 /* 图层-5@3x.png in Resources */,
-				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
-				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
 				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
 				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
 				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
-				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
-				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
-				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
-				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
-				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
-				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
-				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
-				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
-				D80BFC3A1D1CC95C00830B55 /* config.js in Resources */,
-				D80BFBF01D1CC95C00830B55 /* 1.wav in Resources */,
 				D80BFB421D1CC34000830B55 /* 主界面3.png in Resources */,
-				D80BFC0A1D1CC95C00830B55 /* Item_1_SDS.png in Resources */,
 				8C22991B1D199BF9002C0F80 /* 注册@2x.png in Resources */,
 				D85318711D1BB26A00BBA6D3 /* boy1.png in Resources */,
 				D85317D71D1A6E1E00BBA6D3 /* 截图@2x.png in Resources */,
 				D85318791D1BB48200BBA6D3 /* 黄向右@2x.png in Resources */,
-				D80BFC0B1D1CC95C00830B55 /* 1.wav in Resources */,
 				D80BFC641D1CD0E000830B55 /* 屏幕快照 2016-06-24 上午10.21.39.png in Resources */,
-				D80BFC491D1CC95C00830B55 /* right.mp3 in Resources */,
-				D80BFBE81D1CC95C00830B55 /* moduleConfig.js in Resources */,
-				D80BFC1D1D1CC95C00830B55 /* component.js in Resources */,
-				D80BFC121D1CC95C00830B55 /* question.wav in Resources */,
 				8C2299051D199BF9002C0F80 /* 家长反馈bg.png in Resources */,
-				D80BFC451D1CC95C00830B55 /* num2.png in Resources */,
-				D80BFC2D1D1CC95C00830B55 /* question.wav in Resources */,
-				D80BFC4A1D1CC95C00830B55 /* wrong.mp3 in Resources */,
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
-				D80BFC281D1CC95C00830B55 /* 3.wav in Resources */,
 				D80BFB4C1D1CC60500830B55 /* 城市bg.png in Resources */,
-				D80BFC1A1D1CC95C00830B55 /* Item_1_SDS.png in Resources */,
-				D80BFBEE1D1CC95C00830B55 /* bgm.mp3 in Resources */,
-				D80BFC4D1D1CC95C00830B55 /* project.js in Resources */,
-				D80BFC481D1CC95C00830B55 /* question.wav in Resources */,
 				8C2299011D199BF9002C0F80 /* 地图图标4bg.png in Resources */,
-				D80BFBF51D1CC95C00830B55 /* num3.png in Resources */,
 				8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */,
-				D80BFBFD1D1CC95C00830B55 /* resource.js in Resources */,
-				D80BFBFF1D1CC95C00830B55 /* Item_1_Balloon.png in Resources */,
 				8C2299091D199BF9002C0F80 /* 电影院bg.png in Resources */,
-				D80BFC361D1CC95C00830B55 /* baseConfig.js in Resources */,
-				D80BFBED1D1CC95C00830B55 /* bg_mall.png in Resources */,
-				D80BFC1F1D1CC95C00830B55 /* config.js in Resources */,
-				D80BFC041D1CC95C00830B55 /* config.js in Resources */,
 				8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */,
-				D80BFC191D1CC95C00830B55 /* BG3.png in Resources */,
-				D80BFC141D1CC95C00830B55 /* wrong.mp3 in Resources */,
-				D80BFBE91D1CC95C00830B55 /* config.js in Resources */,
 				D80BFC6C1D1CD1EF00830B55 /* 圆角矩形-2@3x.png in Resources */,
 				D85318581D1B7AAA00BBA6D3 /* girl.png in Resources */,
-				D80BFBEF1D1CC95C00830B55 /* Item_1_Balloon.png in Resources */,
 				D85317C91D1A6E1300BBA6D3 /* 返回@3x.png in Resources */,
 				8C2298841D19969A002C0F80 /* home_city_bg@2x.png in Resources */,
-				D80BFBF71D1CC95C00830B55 /* question.wav in Resources */,
 				D85317CA1D1A6E1300BBA6D3 /* 家长@3x.png in Resources */,
 				8C2299001D199BF9002C0F80 /* 地图图标3bg.png in Resources */,
 				D80BFC581D1CCC3000830B55 /* 退出登录@3x.png in Resources */,
-				D80BFBF41D1CC95C00830B55 /* num2.png in Resources */,
 				8C2298861D19969A002C0F80 /* home_community_bg@2x.png in Resources */,
 				8C2299291D199BF9002C0F80 /* 向右@3x.png in Resources */,
-				D80BFC1C1D1CC95C00830B55 /* common.js in Resources */,
-				D80BFC321D1CC95C00830B55 /* project.js in Resources */,
-				D80BFC081D1CC95C00830B55 /* bg_mall.png in Resources */,
-				D80BFBEB1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */,
-				D80BFBE51D1CC95C00830B55 /* baseConfig.js in Resources */,
-				D80BFC441D1CC95C00830B55 /* num1.png in Resources */,
 				8C2299311D199BF9002C0F80 /* 登录@3x.png in Resources */,
 				D85317D81D1A6E1E00BBA6D3 /* 人物@2x.png in Resources */,
-				D80BFC421D1CC95C00830B55 /* 2.wav in Resources */,
 				8C2299231D199BF9002C0F80 /* planedown@3x.png in Resources */,
 				D853187E1D1BBB9900BBA6D3 /* 小区bg2.png in Resources */,
-				D80BFBFE1D1CC95C00830B55 /* BG4.png in Resources */,
-				D80BFC231D1CC95C00830B55 /* bg_mall.png in Resources */,
 				8C22990E1D199BF9002C0F80 /* left@2x.png in Resources */,
 				8C22988A1D19969A002C0F80 /* home_playground_bg@2x.png in Resources */,
 				8C2298FD1D199BF9002C0F80 /* 卧室bg.png in Resources */,
-				D80BFC011D1CC95C00830B55 /* common.js in Resources */,
-				D80BFC301D1CC95C00830B55 /* app.js in Resources */,
 				D80BFC541D1CCA7D00830B55 /* 小红花@2x.png in Resources */,
-				D80BFC401D1CC95C00830B55 /* Item_1_ToyGirl.png in Resources */,
 				D853187A1D1BB48200BBA6D3 /* 黄向左@2x.png in Resources */,
 				8C2299071D199BF9002C0F80 /* 排版girl-bg.png in Resources */,
-				D80BFC101D1CC95C00830B55 /* num3.png in Resources */,
-				D80BFC3B1D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */,
 				8C22988C1D19969A002C0F80 /* home_school_bg@2x.png in Resources */,
 				D80BFC6A1D1CD19A00830B55 /* 圆角矩形-2@2x.png in Resources */,
-				D80BFC0F1D1CC95C00830B55 /* num2.png in Resources */,
 				8C22992F1D199BF9002C0F80 /* 注册@3x.png in Resources */,
-				D80BFC471D1CC95C00830B55 /* question.mp3 in Resources */,
-				D80BFC3D1D1CC95C00830B55 /* index.html in Resources */,
 				8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */,
-				D80BFC211D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */,
 				D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */,
 				D85318A41D1BCFD500BBA6D3 /* North2.jpg in Resources */,
-				D80BFC151D1CC95C00830B55 /* app.js in Resources */,
-				D80BFC4F1D1CC95C00830B55 /* BG2.png in Resources */,
-				D80BFC4E1D1CC95C00830B55 /* resource.js in Resources */,
 				D80BFB481D1CC47500830B55 /* 宠物店bg.png in Resources */,
-				D80BFC181D1CC95C00830B55 /* resource.js in Resources */,
-				D80BFBFC1D1CC95C00830B55 /* project.js in Resources */,
 				D85317CE1D1A6E1300BBA6D3 /* 主页@3x.png in Resources */,
 				8C22986B1D198C80002C0F80 /* root_bg@2x.png in Resources */,
 				8C2299301D199BF9002C0F80 /* 用户名密码@3x.png in Resources */,
-				D80BFBEC1D1CC95C00830B55 /* index.html in Resources */,
 				D85317CB1D1A6E1300BBA6D3 /* 截图@3x.png in Resources */,
 				8C2298891D19969A002C0F80 /* home_playground_bg.png in Resources */,
-				D80BFC0C1D1CC95C00830B55 /* 2.wav in Resources */,
-				D80BFC1E1D1CC95C00830B55 /* moduleConfig.js in Resources */,
-				D80BFC341D1CC95C00830B55 /* BG1.png in Resources */,
 				D85317D61D1A6E1E00BBA6D3 /* 家长@2x.png in Resources */,
-				D80BFC2E1D1CC95C00830B55 /* right.mp3 in Resources */,
-				D80BFC071D1CC95C00830B55 /* index.html in Resources */,
-				D80BFBFA1D1CC95C00830B55 /* app.js in Resources */,
-				D80BFC061D1CC95C00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */,
 				D85318A51D1BCFD500BBA6D3 /* North3.jpg in Resources */,
-				D80BFC4B1D1CC95C00830B55 /* app.js in Resources */,
 				D853186E1D1BAF7D00BBA6D3 /* 注册选择人物bg.png in Resources */,
-				D80BFC331D1CC95C00830B55 /* resource.js in Resources */,
 				8C2299171D199BF9002C0F80 /* 图层-5@2x.png in Resources */,
-				D80BFC0E1D1CC95C00830B55 /* num1.png in Resources */,
 				8C2298FF1D199BF9002C0F80 /* 图书馆bg.png in Resources */,
 				D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */,
-				D80BFC351D1CC95C00830B55 /* Item_1_ToyBoy.png in Resources */,
-				D80BFC291D1CC95C00830B55 /* num1.png in Resources */,
 				D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */,
-				D80BFC271D1CC95C00830B55 /* 2.wav in Resources */,
-				D80BFC201D1CC95C00830B55 /* cocos2d-js-v3.1.custom.js in Resources */,
-				D80BFC2B1D1CC95C00830B55 /* num3.png in Resources */,
-				D80BFC031D1CC95C00830B55 /* moduleConfig.js in Resources */,
 				D853186A1D1B953100BBA6D3 /* 注册选择人物.png in Resources */,
 				8C2299241D199BF9002C0F80 /* planeleft@3x.png in Resources */,
 				D85318A81D1BCFD500BBA6D3 /* South2.jpg in Resources */,

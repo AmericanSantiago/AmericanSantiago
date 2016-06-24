@@ -22,21 +22,15 @@
 
 @implementation ClassroomViewController
 
-- (void)dealloc
-{
-    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeDataSource];
     [self initializeUserInterface];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)dealloc
 {
-    [super viewDidAppear:animated];
-    
+    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
 }
 
 #pragma mark -- observe
@@ -79,32 +73,14 @@
     _webView = ({
         UIWebView * webView = [[UIWebView alloc] initWithFrame:BASESCRREN_B];
         webView.delegate = self;
-        webView.backgroundColor = [UIColor greenColor];
-
+                webView.backgroundColor = [UIColor greenColor];
         [self.view addSubview:webView];
         webView;
     });
     
+    [self loadDocument:@"index" fileTypeName:@"apple" inView:_webView];
     
-    [self loadDocument:@"index" inView:_webView];
 }
-
-#pragma mark - UIWebViewDelegate
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    NSLog(@"加载成功");
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    NSLog(@"加载失败：%@",error);
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    NSLog(@"开始加载~");
-}
-
 
 #pragma mark -- buttonCLick
 - (void) mathButtonClick: (UIButton *) sender
@@ -114,46 +90,15 @@
     
 }
 
--(void)loadDocument:(NSString*)documentName inView:(UIWebView*)webView
+-(void)loadDocument:(NSString*)documentName fileTypeName:(NSString *)fileTypeName inView:(UIWebView*)webView
 {
-    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",@"pine"];
-    NSString *path = [[NSBundle mainBundle] pathForResource:documentName ofType:@"html" inDirectory:directoryString];
-    
-    NSURL * url = [NSURL URLWithString:path];
+    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
+    NSURL * url = [NSURL URLWithString:filePath];
     
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
-    
     [webView loadRequest:request];
-    
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"apple_index" ofType:@"html"];
-//    
-//    NSString *htmlString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    
-//    NSString *basePath = [[NSBundle mainBundle] bundlePath];
-//    
-//    NSURL *baseURL = [NSURL fileURLWithPath:basePath];
-////    NSURL *baseURL = [NSBundle bundleWithURL:<#(nonnull NSURL *)#>]
-//    
-//    [_webView loadHTMLString:htmlString baseURL:baseURL];
- 
-//    NSURL *url = [[NSBundle mainBundle] URLForResource:documentName withExtension:@"html"];
-////    NSString *path = [[NSBundle mainBundle] pathForResource:documentName ofType:@"html"];
-////    NSString *htmlString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    NSString *htmlString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
-//    
-////    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-////    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-//    
-//    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-//    NSURL *baseURL = [NSURL fileURLWithPath:bundlePath];
-//    
-//    [webView loadHTMLString:htmlString baseURL:baseURL];
-//    
-////    [webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:path]];
-////    NSURL *url = [NSURL fileURLWithPath:path];
-////    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-////    [webView loadRequest:request];
 }
 
 @end
