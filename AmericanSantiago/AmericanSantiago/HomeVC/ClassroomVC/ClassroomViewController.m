@@ -70,15 +70,15 @@
     });
     
     
-//    _webView = ({
-//        UIWebView * webView = [[UIWebView alloc] initWithFrame:FLEXIBLE_FRAME(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-//        webView.delegate = self;
-//                webView.backgroundColor = [UIColor greenColor];
-//        [self.view addSubview:webView];
-//        webView;
-//    });
-//    
-//    [self loadDocument:@"index.html" inView:_webView];
+    _webView = ({
+        UIWebView * webView = [[UIWebView alloc] initWithFrame:BASESCRREN_B];
+        webView.delegate = self;
+                webView.backgroundColor = [UIColor greenColor];
+        [self.view addSubview:webView];
+        webView;
+    });
+    
+    [self loadDocument:@"index" fileTypeName:@"apple" inView:_webView];
     
 }
 
@@ -90,12 +90,15 @@
     
 }
 
-//-(void)loadDocument:(NSString*)documentName inView:(UIWebView*)webView
-//{
-//    NSString *path = [[NSBundle mainBundle] pathForResource:documentName ofType:nil];
-//    NSURL *url = [NSURL fileURLWithPath:path];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [webView loadRequest:request];
-//}
+-(void)loadDocument:(NSString*)documentName fileTypeName:(NSString *)fileTypeName inView:(UIWebView*)webView
+{
+    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
+    NSURL * url = [NSURL URLWithString:filePath];
+    
+    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    
+    [webView loadRequest:request];
+}
 
 @end
