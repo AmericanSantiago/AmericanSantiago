@@ -57,7 +57,7 @@
     [self.view addSubview:label];
     
     //框
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(160), FLEXIBLE_NUM(180), FLEXIBLE_NUM(650), FLEXIBLE_NUM(400))];
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(210), FLEXIBLE_NUM(200), FLEXIBLE_NUM(600), FLEXIBLE_NUM(340))];
     view1.backgroundColor = [UIColor colorWithRed:254/255.0 green:240/255.0 blue:202/255.0 alpha:1];
     view1.layer.cornerRadius = FLEXIBLE_NUM(15);
     view1.layer.borderWidth = FLEXIBLE_NUM(5);
@@ -111,12 +111,24 @@
     self.slider1.hidden = YES;
     NSLog(@"%f",self.slider1.value);
 
+    UIImage *stetchLeftTrack= [UIImage imageNamed:@"圆角矩形-2@2x"];
+    UIImage *stetchRightTrack = [UIImage imageNamed:@"圆角矩形-2@2x"];
+    //滑块图片
+    UIImage *thumbImage = [UIImage imageNamed:@"调节钮@3x"];
+    
     UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(140), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider1.tag = 1000;
     slider1.minimumValue = self.slider1.minimumValue;
     slider1.maximumValue = self.slider1.maximumValue;
     [slider1 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
     slider1.value = self.slider1.value;
+    
+    [slider1 setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
+    [slider1 setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal];
+    //注意这里要加UIControlStateHightlighted的状态，否则当拖动滑块时滑块将变成原生的控件
+    [slider1 setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    [slider1 setThumbImage:thumbImage forState:UIControlStateNormal];
+    
     [slider1 addTarget:self action:@selector(updateVolumeValue:) forControlEvents:UIControlEventValueChanged];
     [view1 addSubview:slider1];
     
@@ -144,20 +156,28 @@
     slider2.maximumValue = self.slider2.maximumValue;
     [slider2 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
 //    slider2.value = self.slider2.value;
+    
+    [slider2 setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
+    [slider2 setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal];
+    //注意这里要加UIControlStateHightlighted的状态，否则当拖动滑块时滑块将变成原生的控件
+    [slider2 setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    [slider2 setThumbImage:thumbImage forState:UIControlStateNormal];
+    
     slider2.value = brightnessValue;
     [slider2 addTarget:self action:@selector(updateBrightnessValue:) forControlEvents:UIControlEventValueChanged];
     [view1 addSubview:slider2];
     
-//    _exitButton = ({
-//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(220), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(50))];
+    _exitButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(335), FLEXIBLE_NUM(600), FLEXIBLE_NUM(350), FLEXIBLE_NUM(70))];
 //        button.backgroundColor = [UIColor colorWithRed:59/255.0 green:174/255.0 blue:251/255.0 alpha:1];
-//        button.layer.cornerRadius = FLEXIBLE_NUM(8);
+        button.layer.cornerRadius = FLEXIBLE_NUM(8);
+        [button setImage:[UIImage imageNamed:@"退出"] forState:UIControlStateNormal];
 //        [button setTitle:@"退   出   登   录" forState:UIControlStateNormal];
-//        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
-//        [button addTarget:self action:@selector(exitButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-//        [self.view addSubview:button];
-//        button;
-//    });
+        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        [button addTarget:self action:@selector(exitButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
     
     
     
@@ -168,7 +188,7 @@
 - (void) exitButtonClick: (UIButton *)sender
 {
     NSLog(@"退出登录");
-    UIAlertAction * alertAction = [[UIAlertAction alloc] init];
+//    UIAlertAction * alertAction = [[UIAlertAction alloc] init];
     
     
 }

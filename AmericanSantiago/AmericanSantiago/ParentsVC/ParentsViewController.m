@@ -80,14 +80,14 @@
     timeLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:FLEXIBLE_NUM(30)];
     [timeView addSubview:timeLabel];
     
-    UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(70), FLEXIBLE_NUM(70))];
+    UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
     [flowerView setImage:[UIImage imageNamed:@"小红花@3x"]];
     [self.view addSubview:flowerView];
     
     _numLabel = ({
-        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(820), FLEXIBLE_NUM(50), FLEXIBLE_NUM(100), FLEXIBLE_NUM(60))];
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(815), FLEXIBLE_NUM(60), FLEXIBLE_NUM(100), FLEXIBLE_NUM(60))];
         label.textColor = [UIColor colorWithRed:145/255.0 green:106/255.0 blue:46/255.0 alpha:1];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(35)];
+        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(38)];
         label.text = @"28";
         [self.view addSubview:label];
         label;
