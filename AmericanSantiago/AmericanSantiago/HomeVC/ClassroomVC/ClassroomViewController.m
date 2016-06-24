@@ -8,13 +8,15 @@
 
 #import "ClassroomViewController.h"
 #import "HomeModel.h"
+#import "MathViewController.h"
 
-
-@interface ClassroomViewController ()
+@interface ClassroomViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIButton                              * mathButton;
 
 @property (nonatomic ,strong) HomeModel                      * homeModel;
+
+@property (nonatomic, strong) UIWebView                     * webView;
 
 @end
 
@@ -59,16 +61,41 @@
     [self.view addSubview:backgroundView];
     
 
-//    _mathButton = ({
-//        
-//        
-//    });
+    _mathButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
+        button.backgroundColor = [UIColor yellowColor];
+        [button addTarget:self action:@selector(mathButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
     
+    
+//    _webView = ({
+//        UIWebView * webView = [[UIWebView alloc] initWithFrame:FLEXIBLE_FRAME(0, 0, BASESCRREN_W, MAINSCRREN_H)];
+//        webView.delegate = self;
+//                webView.backgroundColor = [UIColor greenColor];
+//        [self.view addSubview:webView];
+//        webView;
+//    });
+//    
+//    [self loadDocument:@"index.html" inView:_webView];
     
 }
 
 #pragma mark -- buttonCLick
+- (void) mathButtonClick: (UIButton *) sender
+{
+    MathViewController * mathVC = [[MathViewController alloc] init];
+    [self.translationController pushViewController:mathVC];
+    
+}
 
-
+//-(void)loadDocument:(NSString*)documentName inView:(UIWebView*)webView
+//{
+//    NSString *path = [[NSBundle mainBundle] pathForResource:documentName ofType:nil];
+//    NSURL *url = [NSURL fileURLWithPath:path];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [webView loadRequest:request];
+//}
 
 @end

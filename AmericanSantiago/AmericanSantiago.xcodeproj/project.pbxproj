@@ -127,6 +127,32 @@
 		8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */; };
 		8C2299381D199BF9002C0F80 /* 主界面3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298FA1D199BF9002C0F80 /* 主界面3.png */; };
 		8C2299391D199BF9002C0F80 /* 主界面4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298FB1D199BF9002C0F80 /* 主界面4.png */; };
+		D80BFB051D1CAE1E00830B55 /* MathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80BFB041D1CAE1E00830B55 /* MathViewController.m */; };
+		D80BFB261D1CAECC00830B55 /* baseConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB081D1CAECC00830B55 /* baseConfig.js */; };
+		D80BFB271D1CAECC00830B55 /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB091D1CAECC00830B55 /* common.js */; };
+		D80BFB281D1CAECC00830B55 /* component.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB0A1D1CAECC00830B55 /* component.js */; };
+		D80BFB291D1CAECC00830B55 /* moduleConfig.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB0B1D1CAECC00830B55 /* moduleConfig.js */; };
+		D80BFB2A1D1CAECC00830B55 /* config.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB0C1D1CAECC00830B55 /* config.js */; };
+		D80BFB2B1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB0E1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.js */; };
+		D80BFB2C1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB0F1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.min.js */; };
+		D80BFB2D1D1CAECC00830B55 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB101D1CAECC00830B55 /* index.html */; };
+		D80BFB2E1D1CAECC00830B55 /* bg_mall.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB121D1CAECC00830B55 /* bg_mall.png */; };
+		D80BFB2F1D1CAECC00830B55 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB131D1CAECC00830B55 /* bgm.mp3 */; };
+		D80BFB301D1CAECC00830B55 /* Item_1_SDS.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB141D1CAECC00830B55 /* Item_1_SDS.png */; };
+		D80BFB311D1CAECC00830B55 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB161D1CAECC00830B55 /* 1.wav */; };
+		D80BFB321D1CAECC00830B55 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB171D1CAECC00830B55 /* 2.wav */; };
+		D80BFB331D1CAECC00830B55 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB181D1CAECC00830B55 /* 3.wav */; };
+		D80BFB341D1CAECC00830B55 /* num1.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1A1D1CAECC00830B55 /* num1.png */; };
+		D80BFB351D1CAECC00830B55 /* num2.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1B1D1CAECC00830B55 /* num2.png */; };
+		D80BFB361D1CAECC00830B55 /* num3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1C1D1CAECC00830B55 /* num3.png */; };
+		D80BFB371D1CAECC00830B55 /* question.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1D1D1CAECC00830B55 /* question.mp3 */; };
+		D80BFB381D1CAECC00830B55 /* question.wav in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1E1D1CAECC00830B55 /* question.wav */; };
+		D80BFB391D1CAECC00830B55 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB1F1D1CAECC00830B55 /* right.mp3 */; };
+		D80BFB3A1D1CAECC00830B55 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB201D1CAECC00830B55 /* wrong.mp3 */; };
+		D80BFB3B1D1CAECC00830B55 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB221D1CAECC00830B55 /* app.js */; };
+		D80BFB3C1D1CAECC00830B55 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB231D1CAECC00830B55 /* main.js */; };
+		D80BFB3D1D1CAECC00830B55 /* project.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB241D1CAECC00830B55 /* project.js */; };
+		D80BFB3E1D1CAECC00830B55 /* resource.js in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB251D1CAECC00830B55 /* resource.js */; };
 		D853157E1D0B57A400BBA6D3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D853157D1D0B57A400BBA6D3 /* MediaPlayer.framework */; };
 		D85315801D0B57AE00BBA6D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D853157F1D0B57AE00BBA6D3 /* AVFoundation.framework */; };
 		D85315821D0B590500BBA6D3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85315811D0B590500BBA6D3 /* AudioToolbox.framework */; };
@@ -383,6 +409,33 @@
 		8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "地球图标1bg.png"; path = "../主界面背景/地球图标1bg.png"; sourceTree = "<group>"; };
 		8C2298FA1D199BF9002C0F80 /* 主界面3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面3.png"; sourceTree = "<group>"; };
 		8C2298FB1D199BF9002C0F80 /* 主界面4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面4.png"; sourceTree = "<group>"; };
+		D80BFB031D1CAE1E00830B55 /* MathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathViewController.h; sourceTree = "<group>"; };
+		D80BFB041D1CAE1E00830B55 /* MathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathViewController.m; sourceTree = "<group>"; };
+		D80BFB081D1CAECC00830B55 /* baseConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = baseConfig.js; sourceTree = "<group>"; };
+		D80BFB091D1CAECC00830B55 /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = common.js; sourceTree = "<group>"; };
+		D80BFB0A1D1CAECC00830B55 /* component.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = component.js; sourceTree = "<group>"; };
+		D80BFB0B1D1CAECC00830B55 /* moduleConfig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = moduleConfig.js; sourceTree = "<group>"; };
+		D80BFB0C1D1CAECC00830B55 /* config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = config.js; sourceTree = "<group>"; };
+		D80BFB0E1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.js"; sourceTree = "<group>"; };
+		D80BFB0F1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "cocos2d-js-v3.1.custom.min.js"; sourceTree = "<group>"; };
+		D80BFB101D1CAECC00830B55 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Images/3_I.1_VDEO_CNT_SERIES/index.html; sourceTree = "<group>"; };
+		D80BFB121D1CAECC00830B55 /* bg_mall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mall.png; sourceTree = "<group>"; };
+		D80BFB131D1CAECC00830B55 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
+		D80BFB141D1CAECC00830B55 /* Item_1_SDS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Item_1_SDS.png; sourceTree = "<group>"; };
+		D80BFB161D1CAECC00830B55 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		D80BFB171D1CAECC00830B55 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		D80BFB181D1CAECC00830B55 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		D80BFB1A1D1CAECC00830B55 /* num1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num1.png; sourceTree = "<group>"; };
+		D80BFB1B1D1CAECC00830B55 /* num2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num2.png; sourceTree = "<group>"; };
+		D80BFB1C1D1CAECC00830B55 /* num3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num3.png; sourceTree = "<group>"; };
+		D80BFB1D1D1CAECC00830B55 /* question.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = question.mp3; sourceTree = "<group>"; };
+		D80BFB1E1D1CAECC00830B55 /* question.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = question.wav; sourceTree = "<group>"; };
+		D80BFB1F1D1CAECC00830B55 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
+		D80BFB201D1CAECC00830B55 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		D80BFB221D1CAECC00830B55 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
+		D80BFB231D1CAECC00830B55 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		D80BFB241D1CAECC00830B55 /* project.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = project.js; sourceTree = "<group>"; };
+		D80BFB251D1CAECC00830B55 /* resource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = resource.js; sourceTree = "<group>"; };
 		D853157D1D0B57A400BBA6D3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D853157F1D0B57AE00BBA6D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D85315811D0B590500BBA6D3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -566,6 +619,7 @@
 			children = (
 				8C0EF3001D0417A700194D16 /* AppDelegate.h */,
 				8C0EF3011D0417A700194D16 /* AppDelegate.m */,
+				D80BFB101D1CAECC00830B55 /* index.html */,
 				8C0EF3CC1D043F4900194D16 /* Images */,
 				8C0EED231D183B80007ADAC4 /* Tools */,
 				8C0EF3381D0418A400194D16 /* HighTech */,
@@ -657,6 +711,7 @@
 		8C0EF3CC1D043F4900194D16 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D80BFB061D1CAECC00830B55 /* 3_I.1_VDEO_CNT_SERIES */,
 				D853189A1D1BCFD500BBA6D3 /* 地球 */,
 				8C2298B91D199BF9002C0F80 /* 1 */,
 				8C2298BA1D199BF9002C0F80 /* 背景 */,
@@ -866,6 +921,8 @@
 			children = (
 				8C22989B1D199B70002C0F80 /* ClassroomViewController.h */,
 				8C22989C1D199B70002C0F80 /* ClassroomViewController.m */,
+				D80BFB031D1CAE1E00830B55 /* MathViewController.h */,
+				D80BFB041D1CAE1E00830B55 /* MathViewController.m */,
 			);
 			path = ClassroomVC;
 			sourceTree = "<group>";
@@ -1022,6 +1079,85 @@
 				D85318851D1BC56600BBA6D3 /* 主界面5.png */,
 			);
 			path = "主界面背景";
+			sourceTree = "<group>";
+		};
+		D80BFB061D1CAECC00830B55 /* 3_I.1_VDEO_CNT_SERIES */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB071D1CAECC00830B55 /* common */,
+				D80BFB0C1D1CAECC00830B55 /* config.js */,
+				D80BFB0D1D1CAECC00830B55 /* frameworks */,
+				D80BFB111D1CAECC00830B55 /* res */,
+				D80BFB211D1CAECC00830B55 /* src */,
+			);
+			path = 3_I.1_VDEO_CNT_SERIES;
+			sourceTree = "<group>";
+		};
+		D80BFB071D1CAECC00830B55 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB081D1CAECC00830B55 /* baseConfig.js */,
+				D80BFB091D1CAECC00830B55 /* common.js */,
+				D80BFB0A1D1CAECC00830B55 /* component.js */,
+				D80BFB0B1D1CAECC00830B55 /* moduleConfig.js */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		D80BFB0D1D1CAECC00830B55 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB0E1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.js */,
+				D80BFB0F1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.min.js */,
+			);
+			path = frameworks;
+			sourceTree = "<group>";
+		};
+		D80BFB111D1CAECC00830B55 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB121D1CAECC00830B55 /* bg_mall.png */,
+				D80BFB131D1CAECC00830B55 /* bgm.mp3 */,
+				D80BFB141D1CAECC00830B55 /* Item_1_SDS.png */,
+				D80BFB151D1CAECC00830B55 /* number */,
+				D80BFB191D1CAECC00830B55 /* nums */,
+				D80BFB1D1D1CAECC00830B55 /* question.mp3 */,
+				D80BFB1E1D1CAECC00830B55 /* question.wav */,
+				D80BFB1F1D1CAECC00830B55 /* right.mp3 */,
+				D80BFB201D1CAECC00830B55 /* wrong.mp3 */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		D80BFB151D1CAECC00830B55 /* number */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB161D1CAECC00830B55 /* 1.wav */,
+				D80BFB171D1CAECC00830B55 /* 2.wav */,
+				D80BFB181D1CAECC00830B55 /* 3.wav */,
+			);
+			path = number;
+			sourceTree = "<group>";
+		};
+		D80BFB191D1CAECC00830B55 /* nums */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB1A1D1CAECC00830B55 /* num1.png */,
+				D80BFB1B1D1CAECC00830B55 /* num2.png */,
+				D80BFB1C1D1CAECC00830B55 /* num3.png */,
+			);
+			path = nums;
+			sourceTree = "<group>";
+		};
+		D80BFB211D1CAECC00830B55 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D80BFB221D1CAECC00830B55 /* app.js */,
+				D80BFB231D1CAECC00830B55 /* main.js */,
+				D80BFB241D1CAECC00830B55 /* project.js */,
+				D80BFB251D1CAECC00830B55 /* resource.js */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		D85317AB1D19E08300BBA6D3 /* CinemaVC */ = {
@@ -1225,6 +1361,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80BFB311D1CAECC00830B55 /* 1.wav in Resources */,
+				D80BFB291D1CAECC00830B55 /* moduleConfig.js in Resources */,
 				8C2299041D199BF9002C0F80 /* 家bg.png in Resources */,
 				D85318A61D1BCFD500BBA6D3 /* North4.jpg in Resources */,
 				8C22990D1D199BF9002C0F80 /* 首页bg.png in Resources */,
@@ -1233,34 +1371,45 @@
 				D853186C1D1BAE5100BBA6D3 /* 注册全.png in Resources */,
 				8C22990B1D199BF9002C0F80 /* 设置音量bg.png in Resources */,
 				8C22991E1D199BF9002C0F80 /* 矢量智能对象@2x.png in Resources */,
+				D80BFB3E1D1CAECC00830B55 /* resource.js in Resources */,
 				8C2298831D19969A002C0F80 /* home_city_bg.png in Resources */,
 				8C2299201D199BF9002C0F80 /* 设置时间@2x.png in Resources */,
 				8C2299081D199BF9002C0F80 /* 电影院2bg.png in Resources */,
 				8C2299221D199BF9002C0F80 /* left@3x.png in Resources */,
 				D85318721D1BB26A00BBA6D3 /* girl1.png in Resources */,
 				D85318A71D1BCFD500BBA6D3 /* South1.jpg in Resources */,
+				D80BFB3A1D1CAECC00830B55 /* wrong.mp3 in Resources */,
 				D85318991D1BCD7900BBA6D3 /* 宠物店bg.png in Resources */,
+				D80BFB381D1CAECC00830B55 /* question.wav in Resources */,
+				D80BFB2C1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.min.js in Resources */,
 				8C2299251D199BF9002C0F80 /* planeright@3x.png in Resources */,
 				8C22991D1D199BF9002C0F80 /* 登录@2x.png in Resources */,
 				8C2299061D199BF9002C0F80 /* 小区bg.png in Resources */,
 				D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */,
+				D80BFB3C1D1CAECC00830B55 /* main.js in Resources */,
+				D80BFB2D1D1CAECC00830B55 /* index.html in Resources */,
 				8C0EF30A1D0417A700194D16 /* Assets.xcassets in Resources */,
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
 				8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */,
 				8C2298FE1D199BF9002C0F80 /* 商场bg.png in Resources */,
+				D80BFB3D1D1CAECC00830B55 /* project.js in Resources */,
 				D85317CD1D1A6E1300BBA6D3 /* 设置@3x.png in Resources */,
 				D85318861D1BC56600BBA6D3 /* 主界面5.png in Resources */,
 				8C2299321D199BF9002C0F80 /* 矢量智能对象@3x.png in Resources */,
 				8C2299121D199BF9002C0F80 /* right@2x.png in Resources */,
+				D80BFB271D1CAECC00830B55 /* common.js in Resources */,
 				8C22991C1D199BF9002C0F80 /* 用户名密码@2x.png in Resources */,
 				D85318A31D1BCFD500BBA6D3 /* North1.jpg in Resources */,
 				8C2299391D199BF9002C0F80 /* 主界面4.png in Resources */,
 				8C2299341D199BF9002C0F80 /* 设置时间@3x.png in Resources */,
 				D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */,
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
+				D80BFB2F1D1CAECC00830B55 /* bgm.mp3 in Resources */,
+				D80BFB361D1CAECC00830B55 /* num3.png in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
+				D80BFB2E1D1CAECC00830B55 /* bg_mall.png in Resources */,
 				8C2298871D19969A002C0F80 /* home_map_bg.png in Resources */,
 				D85318571D1B7AAA00BBA6D3 /* boy.png in Resources */,
 				D85317D51D1A6E1E00BBA6D3 /* 返回@2x.png in Resources */,
@@ -1270,16 +1419,24 @@
 				8C2299031D199BF9002C0F80 /* 地球图标2bg.png in Resources */,
 				8C22990C1D199BF9002C0F80 /* 课堂bg.png in Resources */,
 				8C22992B1D199BF9002C0F80 /* 图层-5@3x.png in Resources */,
+				D80BFB261D1CAECC00830B55 /* baseConfig.js in Resources */,
+				D80BFB391D1CAECC00830B55 /* right.mp3 in Resources */,
+				D80BFB371D1CAECC00830B55 /* question.mp3 in Resources */,
 				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
+				D80BFB2B1D1CAECC00830B55 /* cocos2d-js-v3.1.custom.js in Resources */,
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
+				D80BFB301D1CAECC00830B55 /* Item_1_SDS.png in Resources */,
+				D80BFB2A1D1CAECC00830B55 /* config.js in Resources */,
 				8C22991B1D199BF9002C0F80 /* 注册@2x.png in Resources */,
 				D85318711D1BB26A00BBA6D3 /* boy1.png in Resources */,
 				D85317D71D1A6E1E00BBA6D3 /* 截图@2x.png in Resources */,
 				D85318791D1BB48200BBA6D3 /* 黄向右@2x.png in Resources */,
 				8C2299051D199BF9002C0F80 /* 家长反馈bg.png in Resources */,
+				D80BFB341D1CAECC00830B55 /* num1.png in Resources */,
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
 				8C2299011D199BF9002C0F80 /* 地图图标4bg.png in Resources */,
 				8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */,
+				D80BFB321D1CAECC00830B55 /* 2.wav in Resources */,
 				8C2299091D199BF9002C0F80 /* 电影院bg.png in Resources */,
 				8C2299191D199BF9002C0F80 /* 小红花@2x.png in Resources */,
 				8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */,
@@ -1297,12 +1454,15 @@
 				8C22990E1D199BF9002C0F80 /* left@2x.png in Resources */,
 				8C22988A1D19969A002C0F80 /* home_playground_bg@2x.png in Resources */,
 				8C2298FD1D199BF9002C0F80 /* 卧室bg.png in Resources */,
+				D80BFB3B1D1CAECC00830B55 /* app.js in Resources */,
+				D80BFB331D1CAECC00830B55 /* 3.wav in Resources */,
 				D853187A1D1BB48200BBA6D3 /* 黄向左@2x.png in Resources */,
 				8C2299071D199BF9002C0F80 /* 排版girl-bg.png in Resources */,
 				8C22992D1D199BF9002C0F80 /* 小红花@3x.png in Resources */,
 				8C22988C1D19969A002C0F80 /* home_school_bg@2x.png in Resources */,
 				8C22992F1D199BF9002C0F80 /* 注册@3x.png in Resources */,
 				8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */,
+				D80BFB281D1CAECC00830B55 /* component.js in Resources */,
 				D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */,
 				D85318A41D1BCFD500BBA6D3 /* North2.jpg in Resources */,
 				D85317CE1D1A6E1300BBA6D3 /* 主页@3x.png in Resources */,
@@ -1317,6 +1477,7 @@
 				8C2299171D199BF9002C0F80 /* 图层-5@2x.png in Resources */,
 				8C2298FF1D199BF9002C0F80 /* 图书馆bg.png in Resources */,
 				D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */,
+				D80BFB351D1CAECC00830B55 /* num2.png in Resources */,
 				D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */,
 				D853186A1D1B953100BBA6D3 /* 注册选择人物.png in Resources */,
 				8C2299241D199BF9002C0F80 /* planeleft@3x.png in Resources */,
@@ -1367,6 +1528,7 @@
 				8C1DDA301D1C1FE3005D1F24 /* AFImageDownloader.m in Sources */,
 				8C1DDA1F1D1C1FE3005D1F24 /* MKAnnotationView+WebCache.m in Sources */,
 				8C1DDA191D1C1FE3005D1F24 /* AFNetworkReachabilityManager.m in Sources */,
+				D80BFB051D1CAE1E00830B55 /* MathViewController.m in Sources */,
 				D85318631D1B88A000BBA6D3 /* RegisterViewController.m in Sources */,
 				8C1DDA2D1D1C1FE3005D1F24 /* UIImageView+WebCache.m in Sources */,
 				8C0EED1C1D18331A007ADAC4 /* UIView+Category.m in Sources */,
