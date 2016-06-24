@@ -338,34 +338,40 @@ function playAudio(url, callback, target) {
     if(!audio){
         startTime = new Date;
         cc.loader.load(url, function (err, data) {
-            audio = cc.loader.cache[url];
+            var id = playEffect(url);
+            // audio = cc.loader.cache[url];
+            audio = cc.audioEngine._effects[id];
             window.__currentAudio = audio;
+            target.runAction(cc.sequence(
+                cc.delayTime(1),
+                cc.callFunc(function () {
+                    if(audio._buffer) {
+                        deltaTime = new Date - startTime;
+                        duration = audio._buffer.duration;
+                        duration -= deltaTime/1000;
+                        timeAction = target.runAction(cc.sequence(cc.delayTime(duration), new cc.CallFunc(function () {
+                            target.stopAction(timeAction);
+                            callback.call(target, audio);
+                        }, target)));
+                        window.__currentAudioAction = timeAction;
+                    }else{
+                        audio.currentTime = 0.01;
+
+                        var endFoo = function () {
+                            window.__currentAudio = null;
+                            audio.removeEventListener('ended', endFoo);
+                            callback.call(target, audio);
+                        };
+                        audio.addEventListener('ended', endFoo);
+                    }
+                    
+                }, target)
+            ));
             
-            if(duration = audio._AUDIO_TYPE === "WEBAUDIO") {
-                audio.play();
-                deltaTime = new Date - startTime;
-                duration = audio._buffer.duration;
-                duration -= deltaTime/1000;
-                timeAction = target.runAction(cc.sequence(cc.delayTime(duration), new cc.CallFunc(function () {
-                    target.stopAction(timeAction);
-                    callback.call(target, audio);
-                }, target)));
-                window.__currentAudioAction = timeAction;
-            }else{
-                audio.currentTime = 0.01;
-                audio.play();
-                
-                var endFoo = function () {
-                    window.__currentAudio = null;
-                    audio.removeEventListener('ended', endFoo);
-                    callback.call(target, audio);
-                };
-                audio.addEventListener('ended', endFoo);
-            }
         })
     }else {
         window.__currentAudio = audio;
-        if(duration = audio._AUDIO_TYPE === "WEBAUDIO") {
+        if(audio._buffer) {
             audio.play();
             duration = audio._buffer.duration;
             timeAction = target.runAction(cc.sequence(cc.delayTime(duration), new cc.CallFunc(function () {
@@ -386,6 +392,65 @@ function playAudio(url, callback, target) {
         }
     }
 }
+
+/*function playAudio(url, callback, target) {
+    var audio,
+        startTime,
+        deltaTime,
+        timeAction,
+        duration = 0;
+    audio = cc.loader.cache[url];
+    if(!audio){
+        startTime = new Date;
+        cc.loader.load(url, function (err, data) {
+            audio = cc.loader.cache[url];
+            window.__currentAudio = audio;
+            
+            if(duration = audio._AUDIO_TYPE === "WEBAUDIO") {
+                audio.play();
+                deltaTime = new Date - startTime;
+                duration = audio._buffer.duration;
+                duration -= deltaTime/1000;
+                timeAction = target.runAction(cc.sequence(cc.delayTime(duration), new cc.CallFunc(function () {
+                    target.stopAction(timeAction);
+                    callback.call(target, audio);
+                }, target)));
+                window.__currentAudioAction = timeAction;
+            }else{
+                audio._element.currentTime = 0.01;
+                audio.play();
+                var endFoo = function () {
+                    window.__currentAudio = null;
+                    audio._element.removeEventListener('ended', endFoo);
+                    callback.call(target, audio);
+                };
+                audio._element.addEventListener('ended', endFoo);
+            }
+        })
+    }else {
+        window.__currentAudio = audio;
+        if(duration = audio._AUDIO_TYPE === "WEBAUDIO") {
+            audio.play();
+            duration = audio._buffer.duration;
+            timeAction = target.runAction(cc.sequence(cc.delayTime(duration), new cc.CallFunc(function () {
+                target.stopAction(timeAction);
+                callback.call(target, audio);
+            }, target)));
+            window.__currentAudioAction = timeAction;
+        }else {
+            audio._element.currentTime = 0.01;
+            audio.play();
+
+            var endFoo = function () {
+                window.__currentAudio = null;
+                audio._element.removeEventListener('ended', endFoo);
+                callback.call(target, audio);
+            };
+            audio._element.addEventListener('ended', endFoo);
+        }
+    }
+
+}*/
 
 function setMusicVolume (volume) {
     if(cc.sys.os == cc.sys.OS_ANDROID) {

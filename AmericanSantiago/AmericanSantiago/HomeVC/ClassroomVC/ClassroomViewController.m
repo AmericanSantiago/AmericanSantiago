@@ -88,7 +88,11 @@
 //        webView;
 //    });
     
-    [self loadDocument:@"index" fileTypeName:@"pine" inView:_webView];
+
+    [self loadDocument:@"index" fileTypeName:@"cat" inView:_webView];
+
+//    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
+
     
 }
 
@@ -114,7 +118,7 @@
 //    Htmls/3_1_City_petstore/cat/3_I.1_VDEO_CNT_SERIES
 //    /Users/lizujian/Desktop/小白的奇怪项目/AmericanSantiago/AmericanSantiago/AmericanSantiago/
     
-    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
+    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_City_petstore/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
 //    NSString *directoryString = [NSString stringWithFormat:@"/Htmls/3_1_City_petstore/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
 //    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
