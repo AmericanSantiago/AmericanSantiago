@@ -36,18 +36,20 @@
 
 
 #pragma mark -- 注册
-- (void)registerWithUsername:(NSString *)username Password:(NSString *)password nickname:(NSString *) nickname birthday:(NSString *)birthday gender:(NSString *)gender character:(NSString *)character
+- (void)registerWithUsername:(NSString *)username Password:(NSString *)password nickname:(NSString *) nickname birthday:(NSString *)birthday gender:(NSString *)gender character:(NSString *)character name:(NSString *) name
 {
 
         NSString * urlString = @"/Register";
 
         // JSON Body
-        NSDictionary* bodyObject = @{@"username":username,
+        NSDictionary* bodyObject = @{
+                                     @"username":username,
                                      @"password":password,
                                      @"nickname":nickname,
                                      @"birthday":birthday,
                                      @"gender":gender,
                                      @"character":character,
+                                     @"name":name,
                                      };
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
