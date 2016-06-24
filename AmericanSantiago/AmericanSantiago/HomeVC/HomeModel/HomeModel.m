@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) id                        gameLogData;
 
+@property (nonatomic, strong) id                        allUnlockedGamesData;
+
 @end
 
 @implementation HomeModel
@@ -216,19 +218,20 @@
 //    
 //    [manager.operationQueue addOperation:operation];
     
+    
 }
 
 #pragma mark -- 获取全部解锁游戏列表
 - (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId
 {
-    NSString * urlString = @"/Login";
+    NSString * urlString = @"/GetAllUnlockedGames";
     NSDictionary* bodyObject = @{
                                  @"username":username,
                                  @"subjectId":subjectId};
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
-            self.loginData = resultDic;
-            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
+            self.allUnlockedGamesData = resultDic;
+            NSLog(@"HTTP Response Body  allUnlockedGamesData == : %@", resultDic);
         }
     }];
     

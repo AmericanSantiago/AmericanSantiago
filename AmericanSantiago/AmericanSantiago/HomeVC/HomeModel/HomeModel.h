@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong, readonly) id                        gameLogData;
 
+@property (nonatomic, strong, readonly) id                        allUnlockedGamesData;
 
 - (void) getGetUnlockedGamesWithUsername:(NSString *) username SubjectId:(NSString *)subjectId SceneType:(NSString *)sceneType;
 - (void) getGetNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId;
@@ -22,5 +23,7 @@
 
 - (void) sendGameLogWithUsername:(NSString *) username conceptId:(NSString *)conceptId gameId:(NSString *)gameId learningType:(NSString * )learningType duration:(NSString *)duration clickCount:(NSString *)clickCount log:(NSString *)log;
 
+
+- (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId;       //加载全部解锁游戏
 
 @end

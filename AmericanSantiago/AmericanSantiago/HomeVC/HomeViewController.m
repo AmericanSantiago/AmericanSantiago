@@ -63,7 +63,7 @@
     
 //    [_homeModel sendGameLogWithUsername:@"mwk" conceptId:@"1" gameId:@"1" learningType:@"L" duration:@"10" clickCount:@"100" log:@"1"];
     
-    
+    [_homeModel getAllUnlockedGamesUsername:@"Mwk" subjectId:@"1"];
     
 }
 
