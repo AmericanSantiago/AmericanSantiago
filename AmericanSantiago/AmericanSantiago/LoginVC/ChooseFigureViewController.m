@@ -40,6 +40,18 @@
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    if ([keyPath isEqualToString:@"registerData"]) {
+        if ([[_loginModel.registerData valueForKey:@"errorCode"] integerValue]== 0) {
+
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            NSLog(@"注册失败");
+            
+        }
+        
+        
+    }
+    
     
     
 }
@@ -125,7 +137,7 @@
 
 - (void) ensureButtonClick:(UIButton *) sender
 {
-    [_loginModel registerWithUsername:_userName Password:_passwd nickname:_studentName birthday:_birthday gender:_gender character:_character];
+    [_loginModel registerWithUsername:_userName Password:_passwd nickname:_studentName birthday:_birthday gender:_gender character:_character name:_studentName];
 
 }
 

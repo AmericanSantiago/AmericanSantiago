@@ -100,8 +100,7 @@
 {
     
     //拖进去的文件夹，拖成蓝色。  用下面这种路径
-    //找路径  直接这么找Htmls/3_1_City_petstore/cat/3_I.1_VDEO_CNT_SERIES（index在哪就找它上一层）ok? ok
-    
+    //找路径  直接这么找Htmls/3_1_City_petstore/cat/3_I.1_VDEO_CNT_SERIES（index在哪就找它上一层）
     
     NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_School_Classroom/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];

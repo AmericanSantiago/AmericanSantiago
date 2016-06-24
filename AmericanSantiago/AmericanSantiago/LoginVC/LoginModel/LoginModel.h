@@ -16,6 +16,6 @@
 
 
 - (void) loginWithUsername: (NSString *) username Password:(NSString *) password;
-- (void)registerWithUsername:(NSString *)username Password:(NSString *)password nickname:(NSString *) nickname birthday:(NSString *)birthday gender:(NSString *)gender character:(NSString *)character;
+- (void)registerWithUsername:(NSString *)username Password:(NSString *)password nickname:(NSString *) nickname birthday:(NSString *)birthday gender:(NSString *)gender character:(NSString *)character name:(NSString *) name;
 
 @end
