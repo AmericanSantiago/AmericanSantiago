@@ -218,7 +218,21 @@
     
 }
 
-
+#pragma mark -- 获取全部解锁游戏列表
+- (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId
+{
+    NSString * urlString = @"/Login";
+    NSDictionary* bodyObject = @{
+                                 @"username":username,
+                                 @"subjectId":subjectId};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+            self.loginData = resultDic;
+            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
+        }
+    }];
+    
+}
 
 
 

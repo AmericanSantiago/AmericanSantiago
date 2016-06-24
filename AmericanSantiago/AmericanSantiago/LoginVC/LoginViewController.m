@@ -44,10 +44,13 @@
     if ([keyPath isEqualToString:@"loginData"]) {
         if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
             
+            NSLog(@"LOGIN!");
 //            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"loginInfo"];
 //            [self.navigationController removeFromParentViewController];
             
             
+        }else{
+            NSLog(@"登录失败");
         }
         
     }
@@ -56,7 +59,11 @@
             
             [self.navigationController popToRootViewControllerAnimated:YES];
             
+        }else{
+            NSLog(@"注册失败");
+            
         }
+        
     }
     
     
