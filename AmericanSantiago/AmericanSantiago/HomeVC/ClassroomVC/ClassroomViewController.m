@@ -78,7 +78,7 @@
         webView;
     });
     
-    [self loadDocument:@"index" fileTypeName:@"apple" inView:_webView];
+    [self loadDocument:@"index" fileTypeName:@"turtle" inView:_webView];
     
 }
 
