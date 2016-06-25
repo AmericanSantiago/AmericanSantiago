@@ -70,7 +70,7 @@
 //        label.textColor = [UIColor colorWithRed:208/255.0 green:168/255.0 blue:72/255.0 alpha:1];
         label.textColor = [UIColor orangeColor];
 //        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
-        label.font = [UIFont fontWithName:@"--unknown-1--" size:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(40)];
         [view1 addSubview:label];
     }
     
