@@ -2,13 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Yuppy-SC-Regular.otf</string>
-		<string>雅痞-简.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>张海山锐线体简.ttf</string>
+		<string>Yuppy-SC-Regular.otf</string>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -200,6 +200,8 @@
 		D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
 		D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
 		D8FE72FC1D1E96EF00025F32 /* Yuppy-SC-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */; };
+		D8FE72FF1D1E9FAE00025F32 /* 张海山锐线体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
+		D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -496,6 +498,7 @@
 		D8FE72E91D1E770400025F32 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅痞-简.otf"; sourceTree = "<group>"; };
 		D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yuppy-SC-Regular.otf"; sourceTree = "<group>"; };
+		D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "张海山锐线体简.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1221,6 +1224,7 @@
 		D8FE72F01D1E8A7F00025F32 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */,
 				D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */,
 				D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */,
 			);
@@ -1396,6 +1400,7 @@
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
 				D80BFB4C1D1CC60500830B55 /* 城市bg.png in Resources */,
 				8C2299011D199BF9002C0F80 /* 地图图标4bg.png in Resources */,
+				D8FE72FF1D1E9FAE00025F32 /* 张海山锐线体简.ttf in Resources */,
 				8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */,
 				8C2299091D199BF9002C0F80 /* 电影院bg.png in Resources */,
 				8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */,
@@ -1466,6 +1471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */,
 				D8FE72FC1D1E96EF00025F32 /* Yuppy-SC-Regular.otf in Sources */,
 				D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */,
 				D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */,
