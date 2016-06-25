@@ -7,7 +7,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>张海山锐线体简.ttf</string>
-		<string>Yuppy-SC-Regular.otf</string>
+		<string>雅痞-简.otf</string>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
