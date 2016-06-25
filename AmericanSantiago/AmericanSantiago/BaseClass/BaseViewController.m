@@ -54,22 +54,22 @@
 //}
 
 #warning -- 测试，。正式使用时删除该方法
-- (void)setTitle:(NSString *)title
-{
-    [super setTitle:title];
-    UILabel *titleLabel = [self.view viewWithTag:LABEL_TAG+99];
-    if (!titleLabel) {
-        titleLabel = [[UILabel alloc]initWithFrame:BASESCRREN_B];
-        titleLabel.backgroundColor = _B6B6B6;
-        titleLabel.textColor = [UIColor blackColor];
-        titleLabel.tag = LABEL_TAG+99;
-        titleLabel.text = title;
-        titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        
-        [self.view addSubview:titleLabel];
-    }
-}
+//- (void)setTitle:(NSString *)title
+//{
+//    [super setTitle:title];
+//    UILabel *titleLabel = [self.view viewWithTag:LABEL_TAG+99];
+//    if (!titleLabel) {
+//        titleLabel = [[UILabel alloc]initWithFrame:BASESCRREN_B];
+//        titleLabel.backgroundColor = _B6B6B6;
+//        titleLabel.textColor = [UIColor blackColor];
+//        titleLabel.tag = LABEL_TAG+99;
+//        titleLabel.text = title;
+//        titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+//        titleLabel.textAlignment = NSTextAlignmentCenter;
+//        
+//        [self.view addSubview:titleLabel];
+//    }
+//}
 
 
 

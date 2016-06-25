@@ -69,9 +69,19 @@
         label.text = titleArray[i];
 //        label.textColor = [UIColor colorWithRed:208/255.0 green:168/255.0 blue:72/255.0 alpha:1];
         label.textColor = [UIColor orangeColor];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
-        
+//        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"--unknown-1--" size:FLEXIBLE_NUM(30)];
         [view1 addSubview:label];
+    }
+    
+    for(NSString *fontfamilyname in [UIFont familyNames])
+    {
+        NSLog(@"family:'%@'",fontfamilyname);
+        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+        {
+            NSLog(@"\tfont:'%@'",fontName);
+        }
+        NSLog(@"-------------");
     }
     
     _nameTextField = ({

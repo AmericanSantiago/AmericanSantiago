@@ -197,6 +197,9 @@
 		D8FE72ED1D1E770400025F32 /* UUChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E51D1E770400025F32 /* UUChartConst.m */; };
 		D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E71D1E770400025F32 /* UUChartLabel.m */; };
 		D8FE72EF1D1E770400025F32 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E91D1E770400025F32 /* UULineChart.m */; };
+		D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
+		D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
+		D8FE72FC1D1E96EF00025F32 /* Yuppy-SC-Regular.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -491,6 +494,8 @@
 		D8FE72E71D1E770400025F32 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
 		D8FE72E81D1E770400025F32 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
 		D8FE72E91D1E770400025F32 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
+		D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅痞-简.otf"; sourceTree = "<group>"; };
+		D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yuppy-SC-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,6 +621,7 @@
 				8C0EF3001D0417A700194D16 /* AppDelegate.h */,
 				8C0EF3011D0417A700194D16 /* AppDelegate.m */,
 				8C1DDCB41D1CDC53005D1F24 /* Htmls */,
+				D8FE72F01D1E8A7F00025F32 /* Font */,
 				8C0EF3CC1D043F4900194D16 /* Images */,
 				8C0EED231D183B80007ADAC4 /* Tools */,
 				8C0EF3381D0418A400194D16 /* HighTech */,
@@ -1212,6 +1218,15 @@
 			path = UUChart;
 			sourceTree = "<group>";
 		};
+		D8FE72F01D1E8A7F00025F32 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE72F31D1E8D5800025F32 /* Yuppy-SC-Regular.otf */,
+				D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1339,6 +1354,7 @@
 				D80BFB501D1CC82D00830B55 /* 超市bg.png in Resources */,
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
+				D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
 				8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */,
 				8C2298FE1D199BF9002C0F80 /* 商场bg.png in Resources */,
@@ -1450,6 +1466,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FE72FC1D1E96EF00025F32 /* Yuppy-SC-Regular.otf in Sources */,
+				D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */,
 				D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */,
 				8C0EED0E1D183003007ADAC4 /* LoginViewController.m in Sources */,
 				8C1DDA2B1D1C1FE3005D1F24 /* UIImage+WebP.m in Sources */,
