@@ -44,7 +44,7 @@
 {
     if ([keyPath isEqualToString:@"loginData"]) {
         if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
-            
+
             RootViewController *rootViewController = [[RootViewController alloc] init];
             [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
                 WINDOW.rootViewController = rootViewController;
