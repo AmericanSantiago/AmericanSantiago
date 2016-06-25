@@ -56,7 +56,7 @@
                                                style:UUChartStyleLine];
         _UUChartView.backgroundColor = [UIColor clearColor];
         [_UUChartView showInView:_chartView];
-        NSLog(@"_YArray = %@",_YArray);
+//        NSLog(@"_YArray = %@",_YArray);
         
     }
     

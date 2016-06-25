@@ -9,12 +9,14 @@
 #import "GameViewController.h"
 #import <WebKit/WebKit.h>
 #import "HomeModel.h"
+#import "GameModel.h"
 
 @interface GameViewController ()<UIWebViewDelegate>
 
 @property (nonatomic ,strong) HomeModel                      * homeModel;
 
 @property (nonatomic, strong) WKWebView                     * webView;
+@property (nonatomic, strong) GameModel                     * gameModel;
 
 @end
 
@@ -29,6 +31,7 @@
 - (void)dealloc
 {
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+    
 }
 
 #pragma mark -- observe
@@ -44,8 +47,10 @@
 {
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    
     [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"classroom"];
+    
+    _gameModel = [[GameModel alloc] init];
+    [_gameModel getGameData];
     
 }
 
@@ -67,16 +72,12 @@
         [self.view addSubview:webView];
         webView;
     });
-    //    _webView = ({
-    //        UIWebView * webView = [[UIWebView alloc] initWithFrame:BASESCRREN_B];
-    //        //        webView.delegate = self;
-    //        webView.backgroundColor = [UIColor blackColor];
-    //        [self.view addSubview:webView];
-    //        webView;
-    //    });
     
+    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/AF_AS_0dot2/school_classroom_13_26_01/index.html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:request];
     
-    [self loadDocument:@"index" fileTypeName:@"cat" inView:_webView];
+//    [self loadDocument:@"index" fileTypeName:@"cat" inView:_webView];
     
     //    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
     

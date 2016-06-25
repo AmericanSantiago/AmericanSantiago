@@ -29,6 +29,9 @@
 #define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
 
 #define BASE_URL @"http://115.28.156.240:8080/Yes123Server"
+//#define GAME_URL @"http://115.28.156.240:8080/Yes123Server"
+
+
 
 //通用类**************************************
 #import "AppDelegate.h"

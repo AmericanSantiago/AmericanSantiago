@@ -32,7 +32,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.learningStatisticsData = resultDic;
-            NSLog(@"HTTP Response Body  learningStatisticsData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  learningStatisticsData == : %@", resultDic);
         }
     }];
 //    // Create manager

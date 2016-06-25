@@ -47,7 +47,6 @@
             
 //            [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
 //            WINDOW.rootViewController = rootViewController;
-            
                 
             [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
                 

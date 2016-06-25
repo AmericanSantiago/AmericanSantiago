@@ -190,7 +190,6 @@
 		D85318A91D1BCFD500BBA6D3 /* South3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A11D1BCFD500BBA6D3 /* South3.jpg */; };
 		D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A21D1BCFD500BBA6D3 /* South4.jpg */; };
 		D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318AB1D1C16E800BBA6D3 /* 主界面2.png */; };
-		D8FE72C41D1E4BB800025F32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72C31D1E4BB800025F32 /* GameViewController.m */; };
 		D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72DF1D1E770400025F32 /* UUBar.m */; };
 		D8FE72EB1D1E770400025F32 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E11D1E770400025F32 /* UUBarChart.m */; };
 		D8FE72EC1D1E770400025F32 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E31D1E770400025F32 /* UUChart.m */; };
@@ -201,6 +200,8 @@
 		D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
 		D8FE72FF1D1E9FAE00025F32 /* 张海山锐线体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
 		D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
+		D8FE73031D1ED7F100025F32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73021D1ED7F100025F32 /* GameViewController.m */; };
+		D8FE73071D1ED80F00025F32 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73061D1ED80F00025F32 /* GameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -481,8 +482,6 @@
 		D85318A11D1BCFD500BBA6D3 /* South3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South3.jpg; sourceTree = "<group>"; };
 		D85318A21D1BCFD500BBA6D3 /* South4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South4.jpg; sourceTree = "<group>"; };
 		D85318AB1D1C16E800BBA6D3 /* 主界面2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面2.png"; sourceTree = "<group>"; };
-		D8FE72C21D1E4BB800025F32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = ../GameViewController.h; sourceTree = "<group>"; };
-		D8FE72C31D1E4BB800025F32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = ../GameViewController.m; sourceTree = "<group>"; };
 		D8FE72DE1D1E770400025F32 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
 		D8FE72DF1D1E770400025F32 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
 		D8FE72E01D1E770400025F32 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
@@ -497,6 +496,10 @@
 		D8FE72E91D1E770400025F32 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 		D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅痞-简.otf"; sourceTree = "<group>"; };
 		D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "张海山锐线体简.ttf"; sourceTree = "<group>"; };
+		D8FE73011D1ED7F100025F32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D8FE73021D1ED7F100025F32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		D8FE73051D1ED80F00025F32 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		D8FE73061D1ED80F00025F32 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1194,8 +1197,9 @@
 		D8FE72C51D1E4D3B00025F32 /* GameVC */ = {
 			isa = PBXGroup;
 			children = (
-				D8FE72C21D1E4BB800025F32 /* GameViewController.h */,
-				D8FE72C31D1E4BB800025F32 /* GameViewController.m */,
+				D8FE73041D1ED7FF00025F32 /* GameModel */,
+				D8FE73011D1ED7F100025F32 /* GameViewController.h */,
+				D8FE73021D1ED7F100025F32 /* GameViewController.m */,
 			);
 			path = GameVC;
 			sourceTree = "<group>";
@@ -1226,6 +1230,15 @@
 				D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		D8FE73041D1ED7FF00025F32 /* GameModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE73051D1ED80F00025F32 /* GameModel.h */,
+				D8FE73061D1ED80F00025F32 /* GameModel.m */,
+			);
+			path = GameModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1488,6 +1501,7 @@
 				8C1DDA1A1D1C1FE3005D1F24 /* AFSecurityPolicy.m in Sources */,
 				8C1DDA321D1C1FE3005D1F24 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				8C2298B81D199B70002C0F80 /* SetViewController.m in Sources */,
+				D8FE73031D1ED7F100025F32 /* GameViewController.m in Sources */,
 				8C0EF3331D04180500194D16 /* BaseViewController.m in Sources */,
 				8C1DDA301D1C1FE3005D1F24 /* AFImageDownloader.m in Sources */,
 				8C1DDA1F1D1C1FE3005D1F24 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1508,6 +1522,7 @@
 				8C1DDA2C1D1C1FE3005D1F24 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8C1DDA351D1C1FE3005D1F24 /* UIProgressView+AFNetworking.m in Sources */,
 				8C0EF3371D04185500194D16 /* RootViewController.m in Sources */,
+				D8FE73071D1ED80F00025F32 /* GameModel.m in Sources */,
 				D80BFC781D1CE85C00830B55 /* RegisterViewController.m in Sources */,
 				8C1DDA2A1D1C1FE3005D1F24 /* UIImage+MultiFormat.m in Sources */,
 				8C2298B71D199B70002C0F80 /* ScreenshotViewController.m in Sources */,
@@ -1518,7 +1533,6 @@
 				D8FE72ED1D1E770400025F32 /* UUChartConst.m in Sources */,
 				8C1DDA231D1C1FE3005D1F24 /* SDWebImageDecoder.m in Sources */,
 				D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */,
-				D8FE72C41D1E4BB800025F32 /* GameViewController.m in Sources */,
 				D85317BE1D19E0FA00BBA6D3 /* SupermarketViewController.m in Sources */,
 				8C1DDA331D1C1FE3005D1F24 /* UIButton+AFNetworking.m in Sources */,
 				8C2298B21D199B70002C0F80 /* ClassroomViewController.m in Sources */,

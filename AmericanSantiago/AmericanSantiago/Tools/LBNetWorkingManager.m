@@ -20,7 +20,7 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",BASE_URL,urlString];
-    
+    NSLog(@"gameUrl = %@",urlStr);
     
     
     NSURLSessionDataTask *task = [manager POST:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
