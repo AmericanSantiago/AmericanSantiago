@@ -95,13 +95,13 @@
     MPVolumeView *volumeView = [[MPVolumeView alloc] init];
     [self.view addSubview:volumeView];
     [volumeView sizeToFit];
-    NSLog(@"%@",volumeView.subviews);
+//    NSLog(@"%@",volumeView.subviews);
     
     self.slider1 = [[UISlider alloc]init];
     self.slider1.backgroundColor = [UIColor blueColor];
     for (UIControl *view in volumeView.subviews) {
         if ([view.superclass isSubclassOfClass:[UISlider class]]) {
-            NSLog(@"1");
+//            NSLog(@"1");
             self.slider1 = (UISlider *)view;
         }
     }
@@ -109,7 +109,7 @@
     self.slider1.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.slider1];
     self.slider1.hidden = YES;
-    NSLog(@"%f",self.slider1.value);
+//    NSLog(@"%f",self.slider1.value);
 
     UIImage *stetchLeftTrack= [UIImage imageNamed:@"圆角矩形-2@2x"];
     UIImage *stetchRightTrack = [UIImage imageNamed:@"圆角矩形-2@2x"];
@@ -148,7 +148,7 @@
     self.slider2.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.slider2];
     self.slider2.hidden = YES;
-    NSLog(@"%f",self.slider1.value);
+//    NSLog(@"%f",self.slider1.value);
 
     UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(220), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider2.tag = 1000;

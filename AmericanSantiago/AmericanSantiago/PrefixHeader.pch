@@ -22,7 +22,7 @@
 #import "JSONKit.h"//json解析
 #import "LBNetWorkingManager.h"//网络请求管理类
 
-
+#import "GameViewController.h"                      //游戏
 
 
 #define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES

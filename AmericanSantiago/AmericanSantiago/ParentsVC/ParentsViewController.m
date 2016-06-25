@@ -8,9 +8,9 @@
 
 #import "ParentsViewController.h"
 #import "ParentsModel.h"
+#import "UUChart.h"
 
-
-@interface ParentsViewController ()
+@interface ParentsViewController ()<UUChartDataSource>
 
 @property (nonatomic, strong) UILabel                           * numLabel;             //小红花数量label
 @property (nonatomic, strong) UITextView                       * detailTextView;
@@ -19,6 +19,10 @@
 
 @property (nonatomic, strong) ParentsModel                      * parentsModel;
 
+@property (nonatomic, strong) UUChart                                   *UUChartView;
+
+@property (nonatomic, strong) NSMutableArray                                   * YArray;
+@property (nonatomic, strong) NSMutableArray                                   * XArray;
 
 @end
 
@@ -40,17 +44,34 @@
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    
+    if ([keyPath isEqualToString:@"learningStatisticsData"]) {
+        
+        for (int i = 0; i < [[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"] count]; i ++) {
+            [_YArray addObject:[[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"][i] valueForKey:@"dailyData"] valueForKey:@"average"]];
+            
+            
+        }
+        _UUChartView = [[UUChart alloc]initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))
+                                          dataSource:self
+                        //                                        style:indexPath.section==1?UUChartStyleBar:UUChartStyleLine];
+                                               style:UUChartStyleLine];
+        [_UUChartView showInView:_chartView];
+        NSLog(@"_YArray = %@",_YArray);
+        
+    }
     
     
 }
 
 - (void)initializeDataSource
 {
+    _XArray = [[NSMutableArray alloc] init];
+    _YArray = [[NSMutableArray alloc] init];
+    
     _parentsModel = [[ParentsModel alloc] init];
     [_parentsModel addObserver:self forKeyPath:@"learningStatisticsData" options:NSKeyValueObservingOptionNew context:nil];
     
-    [_parentsModel getLearningStatisticsWithUsername:@"mwk"];
+    [_parentsModel getLearningStatisticsWithUsername:@"Mwk"];
     
 }
 
@@ -80,6 +101,11 @@
     timeLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:FLEXIBLE_NUM(30)];
     [timeView addSubview:timeLabel];
     
+//    for (<#initialization#>; <#condition#>; <#increment#>) {
+//        <#statements#>
+//    }
+    
+    
     UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
     [flowerView setImage:[UIImage imageNamed:@"小红花@3x"]];
     [self.view addSubview:flowerView];
@@ -106,16 +132,83 @@
     
     _chartView = ({
         UIView * chartView = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))];
-        chartView.backgroundColor = [UIColor yellowColor];
+//        chartView.backgroundColor = [UIColor yellowColor];
         
         [self.view addSubview:chartView];
         chartView;
     });
     
+
     
     
+
     
     
 }
+
+//设置横坐标
+- (NSArray *)getXTitles:(int)num
+{
+    NSMutableArray *xTitles = [NSMutableArray array];
+    for (int i=0; i<num; i++) {
+        NSString * str = [NSString stringWithFormat:@"Day-%d",i];
+        [xTitles addObject:str];
+    }
+    return xTitles;
+}
+
+#pragma mark - @required
+//横坐标标题数组
+- (NSArray *)chartConfigAxisXLabel:(UUChart *)chart
+{
+    return [self getXTitles:4];
+
+}
+//数值多重数组    点的纵坐标
+- (NSArray *)chartConfigAxisYValue:(UUChart *)chart
+{
+    NSArray *ary = @[@"22",@"44",@"15",@"40",@"42"];
+    NSArray *ary1 = @[@"22",@"54",@"15",@"30",@"42",@"77",@"43"];
+    NSArray *ary2 = @[@"76",@"34",@"54",@"23",@"16",@"32",@"17"];
+    NSArray *ary3 = @[@"3",@"12",@"25",@"55",@"52"];
+    NSArray *ary4 = @[@"23",@"42",@"25",@"15",@"30",@"42",@"32",@"40",@"42",@"25",@"33"];
+    
+    return _YArray;
+
+}
+
+#pragma mark - @optional
+//颜色数组
+- (NSArray *)chartConfigColors:(UUChart *)chart
+{
+    return @[[UUColor red],[UUColor green],[UUColor brown]];
+}
+//显示数值范围   纵坐标范围
+- (CGRange)chartRange:(UUChart *)chart
+{
+    return CGRangeMake(10, 0);
+}
+
+#pragma mark 折线图专享功能
+
+//标记数值区域
+- (CGRange)chartHighlightRangeInLine:(UUChart *)chart
+{
+    return CGRangeZero;
+}
+
+//判断显示横线条
+- (BOOL)chart:(UUChart *)chart showHorizonLineAtIndex:(NSInteger)index
+{
+    return YES;
+}
+
+//判断显示最大最小值
+//- (BOOL)chart:(UUChart *)chart showMaxMinAtIndex:(NSInteger)index
+//{
+//    return path.row == 2;
+//}
+
+
 
 @end

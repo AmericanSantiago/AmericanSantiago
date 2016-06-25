@@ -30,8 +30,9 @@
     NSString * urlString = @"/GetLearningStatistics";
 
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-        if (errorString) {
+        if (!errorString) {
             self.learningStatisticsData = resultDic;
+            NSLog(@"HTTP Response Body  learningStatisticsData == : %@", resultDic);
         }
     }];
 //    // Create manager

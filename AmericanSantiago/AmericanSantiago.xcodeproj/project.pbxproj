@@ -125,7 +125,6 @@
 		8C2299341D199BF9002C0F80 /* 设置时间@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F51D199BF9002C0F80 /* 设置时间@3x.png */; };
 		8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F81D199BF9002C0F80 /* 主界面1.png */; };
 		8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */; };
-		D80BFB051D1CAE1E00830B55 /* MathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80BFB041D1CAE1E00830B55 /* MathViewController.m */; };
 		D80BFB421D1CC34000830B55 /* 主界面3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB411D1CC34000830B55 /* 主界面3.png */; };
 		D80BFB481D1CC47500830B55 /* 宠物店bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB471D1CC47500830B55 /* 宠物店bg.png */; };
 		D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB491D1CC55C00830B55 /* 主界面4.png */; };
@@ -191,6 +190,13 @@
 		D85318A91D1BCFD500BBA6D3 /* South3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A11D1BCFD500BBA6D3 /* South3.jpg */; };
 		D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A21D1BCFD500BBA6D3 /* South4.jpg */; };
 		D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318AB1D1C16E800BBA6D3 /* 主界面2.png */; };
+		D8FE72C41D1E4BB800025F32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72C31D1E4BB800025F32 /* GameViewController.m */; };
+		D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72DF1D1E770400025F32 /* UUBar.m */; };
+		D8FE72EB1D1E770400025F32 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E11D1E770400025F32 /* UUBarChart.m */; };
+		D8FE72EC1D1E770400025F32 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E31D1E770400025F32 /* UUChart.m */; };
+		D8FE72ED1D1E770400025F32 /* UUChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E51D1E770400025F32 /* UUChartConst.m */; };
+		D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E71D1E770400025F32 /* UUChartLabel.m */; };
+		D8FE72EF1D1E770400025F32 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E91D1E770400025F32 /* UULineChart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,8 +401,6 @@
 		8C2298F51D199BF9002C0F80 /* 设置时间@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置时间@3x.png"; sourceTree = "<group>"; };
 		8C2298F81D199BF9002C0F80 /* 主界面1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面1.png"; sourceTree = "<group>"; };
 		8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "地球图标1bg.png"; path = "../主界面背景/地球图标1bg.png"; sourceTree = "<group>"; };
-		D80BFB031D1CAE1E00830B55 /* MathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathViewController.h; sourceTree = "<group>"; };
-		D80BFB041D1CAE1E00830B55 /* MathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathViewController.m; sourceTree = "<group>"; };
 		D80BFB411D1CC34000830B55 /* 主界面3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面3.png"; sourceTree = "<group>"; };
 		D80BFB471D1CC47500830B55 /* 宠物店bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宠物店bg.png"; sourceTree = "<group>"; };
 		D80BFB491D1CC55C00830B55 /* 主界面4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面4.png"; sourceTree = "<group>"; };
@@ -473,6 +477,20 @@
 		D85318A11D1BCFD500BBA6D3 /* South3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South3.jpg; sourceTree = "<group>"; };
 		D85318A21D1BCFD500BBA6D3 /* South4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South4.jpg; sourceTree = "<group>"; };
 		D85318AB1D1C16E800BBA6D3 /* 主界面2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面2.png"; sourceTree = "<group>"; };
+		D8FE72C21D1E4BB800025F32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = ../GameViewController.h; sourceTree = "<group>"; };
+		D8FE72C31D1E4BB800025F32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = ../GameViewController.m; sourceTree = "<group>"; };
+		D8FE72DE1D1E770400025F32 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		D8FE72DF1D1E770400025F32 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		D8FE72E01D1E770400025F32 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		D8FE72E11D1E770400025F32 /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		D8FE72E21D1E770400025F32 /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		D8FE72E31D1E770400025F32 /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		D8FE72E41D1E770400025F32 /* UUChartConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartConst.h; sourceTree = "<group>"; };
+		D8FE72E51D1E770400025F32 /* UUChartConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartConst.m; sourceTree = "<group>"; };
+		D8FE72E61D1E770400025F32 /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		D8FE72E71D1E770400025F32 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		D8FE72E81D1E770400025F32 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		D8FE72E91D1E770400025F32 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -671,6 +689,7 @@
 		8C0EF3381D0418A400194D16 /* HighTech */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE72DD1D1E770400025F32 /* UUChart */,
 				8C1DD9CF1D1C1FE3005D1F24 /* NetWorking */,
 				8C0EF3AA1D041DA800194D16 /* FlexibleFrame */,
 			);
@@ -860,6 +879,7 @@
 				D85318591D1B7B0200BBA6D3 /* HomeModel */,
 				8C22989D1D199B70002C0F80 /* HomeViewController.h */,
 				8C22989E1D199B70002C0F80 /* HomeViewController.m */,
+				D8FE72C51D1E4D3B00025F32 /* GameVC */,
 				8C2298911D199B70002C0F80 /* BuildingVC */,
 				8C2298941D199B70002C0F80 /* CityVC */,
 				8C2298971D199B70002C0F80 /* ClassroomVC */,
@@ -898,8 +918,6 @@
 			children = (
 				8C22989B1D199B70002C0F80 /* ClassroomViewController.h */,
 				8C22989C1D199B70002C0F80 /* ClassroomViewController.m */,
-				D80BFB031D1CAE1E00830B55 /* MathViewController.h */,
-				D80BFB041D1CAE1E00830B55 /* MathViewController.m */,
 			);
 			path = ClassroomVC;
 			sourceTree = "<group>";
@@ -1166,6 +1184,34 @@
 			path = "地球";
 			sourceTree = "<group>";
 		};
+		D8FE72C51D1E4D3B00025F32 /* GameVC */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE72C21D1E4BB800025F32 /* GameViewController.h */,
+				D8FE72C31D1E4BB800025F32 /* GameViewController.m */,
+			);
+			path = GameVC;
+			sourceTree = "<group>";
+		};
+		D8FE72DD1D1E770400025F32 /* UUChart */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE72DE1D1E770400025F32 /* UUBar.h */,
+				D8FE72DF1D1E770400025F32 /* UUBar.m */,
+				D8FE72E01D1E770400025F32 /* UUBarChart.h */,
+				D8FE72E11D1E770400025F32 /* UUBarChart.m */,
+				D8FE72E21D1E770400025F32 /* UUChart.h */,
+				D8FE72E31D1E770400025F32 /* UUChart.m */,
+				D8FE72E41D1E770400025F32 /* UUChartConst.h */,
+				D8FE72E51D1E770400025F32 /* UUChartConst.m */,
+				D8FE72E61D1E770400025F32 /* UUChartLabel.h */,
+				D8FE72E71D1E770400025F32 /* UUChartLabel.m */,
+				D8FE72E81D1E770400025F32 /* UULineChart.h */,
+				D8FE72E91D1E770400025F32 /* UULineChart.m */,
+			);
+			path = UUChart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1404,6 +1450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */,
 				8C0EED0E1D183003007ADAC4 /* LoginViewController.m in Sources */,
 				8C1DDA2B1D1C1FE3005D1F24 /* UIImage+WebP.m in Sources */,
 				8C1DDA281D1C1FE3005D1F24 /* UIButton+WebCache.m in Sources */,
@@ -1411,6 +1458,7 @@
 				8C0EF3E01D04494200194D16 /* LBTranslationController.m in Sources */,
 				8C0EF3AD1D041DA800194D16 /* FlexibleFrame.m in Sources */,
 				D85318821D1BBF5200BBA6D3 /* TVViewController.m in Sources */,
+				D8FE72EB1D1E770400025F32 /* UUBarChart.m in Sources */,
 				8C1DDA361D1C1FE3005D1F24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				8C2298AE1D199B70002C0F80 /* FigureViewController.m in Sources */,
 				8C0EF3021D0417A700194D16 /* AppDelegate.m in Sources */,
@@ -1424,7 +1472,6 @@
 				8C1DDA301D1C1FE3005D1F24 /* AFImageDownloader.m in Sources */,
 				8C1DDA1F1D1C1FE3005D1F24 /* MKAnnotationView+WebCache.m in Sources */,
 				8C1DDA191D1C1FE3005D1F24 /* AFNetworkReachabilityManager.m in Sources */,
-				D80BFB051D1CAE1E00830B55 /* MathViewController.m in Sources */,
 				8C1DDA2D1D1C1FE3005D1F24 /* UIImageView+WebCache.m in Sources */,
 				8C0EED1C1D18331A007ADAC4 /* UIView+Category.m in Sources */,
 				8C1DDA1E1D1C1FE3005D1F24 /* JSONKit.m in Sources */,
@@ -1434,8 +1481,10 @@
 				8C1DDA3A1D1C1FFC005D1F24 /* LBNetWorkingManager.m in Sources */,
 				8C2298B41D199B70002C0F80 /* PlaygroundViewController.m in Sources */,
 				8C1DDA221D1C1FE3005D1F24 /* SDWebImageCompat.m in Sources */,
+				D8FE72EC1D1E770400025F32 /* UUChart.m in Sources */,
 				8C2298B61D199B70002C0F80 /* ParentsViewController.m in Sources */,
 				8C1DDA291D1C1FE3005D1F24 /* UIImage+GIF.m in Sources */,
+				D8FE72EF1D1E770400025F32 /* UULineChart.m in Sources */,
 				8C1DDA2C1D1C1FE3005D1F24 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8C1DDA351D1C1FE3005D1F24 /* UIProgressView+AFNetworking.m in Sources */,
 				8C0EF3371D04185500194D16 /* RootViewController.m in Sources */,
@@ -1446,7 +1495,10 @@
 				8C1DDA371D1C1FE3005D1F24 /* UIWebView+AFNetworking.m in Sources */,
 				8C0EED151D183274007ADAC4 /* UIButton+Category.m in Sources */,
 				8C1DDA261D1C1FE3005D1F24 /* SDWebImageManager.m in Sources */,
+				D8FE72ED1D1E770400025F32 /* UUChartConst.m in Sources */,
 				8C1DDA231D1C1FE3005D1F24 /* SDWebImageDecoder.m in Sources */,
+				D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */,
+				D8FE72C41D1E4BB800025F32 /* GameViewController.m in Sources */,
 				D85317BE1D19E0FA00BBA6D3 /* SupermarketViewController.m in Sources */,
 				8C1DDA331D1C1FE3005D1F24 /* UIButton+AFNetworking.m in Sources */,
 				8C2298B21D199B70002C0F80 /* ClassroomViewController.m in Sources */,
