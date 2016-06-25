@@ -22,6 +22,9 @@
 #import "JSONKit.h"//json解析
 #import "LBNetWorkingManager.h"//网络请求管理类
 
+//缓存工具类**************************************
+#import "LBUserDefaults.h"//缓存
+
 #import "GameViewController.h"                      //游戏
 
 

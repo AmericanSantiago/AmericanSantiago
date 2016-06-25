@@ -45,14 +45,22 @@
     if ([keyPath isEqualToString:@"loginData"]) {
         if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
             
+<<<<<<< HEAD
 //            [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
 //            WINDOW.rootViewController = rootViewController;
                 
             [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
                 
+=======
+            RootViewController *rootViewController = [[RootViewController alloc] init];
+            [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
+                WINDOW.rootViewController = rootViewController;
+>>>>>>> origin/master
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
-                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
+                //            [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
+                [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
                 
+                //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
             }];
         }else{
             [AppDelegate showHintLabelWithMessage:@"登录失败~"];
