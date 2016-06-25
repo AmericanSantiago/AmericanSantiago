@@ -81,14 +81,14 @@
     [backgroundView setImage:[UIImage imageNamed:@"设置音量bg"]];
     [self.view addSubview:backgroundView];
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    label.center = FLEXIBLE_CENTER(400, 50);
-    label.text = @"设置";
-    label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
-    [self.view addSubview:label];
+//    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+//    label.center = FLEXIBLE_CENTER(400, 50);
+//    label.text = @"设置";
+//    label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+//    [self.view addSubview:label];
     
     //框
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(210), FLEXIBLE_NUM(200), FLEXIBLE_NUM(600), FLEXIBLE_NUM(340))];
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(210), FLEXIBLE_NUM(180), FLEXIBLE_NUM(600), FLEXIBLE_NUM(340))];
     view1.backgroundColor = [UIColor colorWithRed:254/255.0 green:240/255.0 blue:202/255.0 alpha:1];
     view1.layer.cornerRadius = FLEXIBLE_NUM(15);
     view1.layer.borderWidth = FLEXIBLE_NUM(5);
@@ -111,14 +111,14 @@
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"矢量智能对象@3x",@"图层-5@3x", nil];
     for (int i = 0 ; i < 2; i ++ ) {
         
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(130) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(35))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(35))];
         [imageView setImage:[UIImage imageNamed:picArray[i]]];
         [view1 addSubview:imageView];
         
-        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(130) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
+        UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
         label.text = titleArray[i];
         label.textColor = [UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(28)];
+        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
 //        label.backgroundColor = [UIColor yellowColor];
         [view1 addSubview:label];
     }
@@ -147,7 +147,7 @@
     //滑块图片
     UIImage *thumbImage = [UIImage imageNamed:@"调节钮@3x"];
     
-    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(140), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
+    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider1.tag = 1000;
     slider1.minimumValue = self.slider1.minimumValue;
     slider1.maximumValue = self.slider1.maximumValue;

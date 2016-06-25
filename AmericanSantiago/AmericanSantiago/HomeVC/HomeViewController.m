@@ -23,6 +23,8 @@
 
 @property (nonatomic ,strong) HomeModel                         * homeModel;
 
+
+
 @end
 
 @implementation HomeViewController
@@ -58,12 +60,12 @@
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
-//    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"home"];
-//    [_homeModel getGetNextConceptWithUsername:@"mwk" SubjectId:@"1"];       
+//    [_homeModel getGetUnlockedGamesWithUsername:@"000" SubjectId:@"Math" SceneType:@"home"];
+    [_homeModel getGetNextConceptWithUsername:@"000" SubjectId:@"Math"];
     
 //    [_homeModel sendGameLogWithUsername:@"mwk" conceptId:@"1" gameId:@"1" learningType:@"L" duration:@"10" clickCount:@"100" log:@"1"];
     
-    [_homeModel getAllUnlockedGamesUsername:@"Mwk" subjectId:@"0"];
+    [_homeModel getAllUnlockedGamesUsername:@"000" subjectId:@"Math"];
     
 }
 
@@ -103,7 +105,7 @@
     for (int i = 0 ; i < 5; i ++) {
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
         button.backgroundColor = [UIColor yellowColor];
-        button.tag = 1 + i;
+        button.tag = 100 + i;
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]] forState:UIControlStateNormal];
         button.layer.cornerRadius = FLEXIBLE_NUM(8);
@@ -114,6 +116,14 @@
         maxX = CGRectGetMaxX(button.frame);
         [self.view addSubview:button];
     }
+    
+//    for (int i = 0; i < 5; i ++) {
+//        
+//        UIButton * button = (UIButton *)[self.view viewWithTag:100 + i];
+//        
+//        [self addNumWithButtonTag:1 Number:@"2"];
+//        
+//    }
     
 }
 
@@ -170,6 +180,24 @@
 //    [self.translationController pushViewController:baseVC];
 }
 
+- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number
+{
+    UIButton * button = (UIButton *)[self.view viewWithTag:100];
+    
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
+    view1.backgroundColor = [UIColor whiteColor];
+    view1.alpha = 0.5;
+    [button addSubview:view1];
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(50), FLEXIBLE_NUM(50))];
+    label.textColor = [UIColor redColor];
+    label.center = FLEXIBLE_CENTER(button.frame.origin.x/2, button.frame.origin.y/2);
+    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
+    [view1 addSubview:label];
+    
+    
+    return view1;
+}
 
 
 @end

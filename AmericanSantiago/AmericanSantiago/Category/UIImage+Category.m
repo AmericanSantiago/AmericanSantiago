@@ -408,7 +408,7 @@
     return image;
 }
 
-//拉伸中间一个点
+//拉伸中间一个点 相当于0.9图
 + (UIImage *)resizeImage:(NSString *)imageName
 {
     UIImage *image = [UIImage imageNamed:imageName];

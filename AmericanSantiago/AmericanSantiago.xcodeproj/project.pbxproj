@@ -204,6 +204,7 @@
 		D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
 		D8FE73031D1ED7F100025F32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73021D1ED7F100025F32 /* GameViewController.m */; };
 		D8FE73071D1ED80F00025F32 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73061D1ED80F00025F32 /* GameModel.m */; };
+		D8FE730B1D1F02F200025F32 /* FigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE730A1D1F02F200025F32 /* FigureModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -506,6 +507,8 @@
 		D8FE73021D1ED7F100025F32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D8FE73051D1ED80F00025F32 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		D8FE73061D1ED80F00025F32 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		D8FE73091D1F02F200025F32 /* FigureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FigureModel.h; sourceTree = "<group>"; };
+		D8FE730A1D1F02F200025F32 /* FigureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FigureModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -887,6 +890,7 @@
 		8C22988D1D199B70002C0F80 /* FigureVC */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE73081D1F02E200025F32 /* FigureModel */,
 				8C22988E1D199B70002C0F80 /* FigureViewController.h */,
 				8C22988F1D199B70002C0F80 /* FigureViewController.m */,
 			);
@@ -1251,6 +1255,15 @@
 			path = GameModel;
 			sourceTree = "<group>";
 		};
+		D8FE73081D1F02E200025F32 /* FigureModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE73091D1F02F200025F32 /* FigureModel.h */,
+				D8FE730A1D1F02F200025F32 /* FigureModel.m */,
+			);
+			path = FigureModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1507,6 +1520,7 @@
 				8C0EF3021D0417A700194D16 /* AppDelegate.m in Sources */,
 				8C1DDA211D1C1FE3005D1F24 /* SDImageCache.m in Sources */,
 				D853185C1D1B7B0F00BBA6D3 /* HomeModel.m in Sources */,
+				D8FE730B1D1F02F200025F32 /* FigureModel.m in Sources */,
 				8C1DDA201D1C1FE3005D1F24 /* NSData+ImageContentType.m in Sources */,
 				8C1DDA1A1D1C1FE3005D1F24 /* AFSecurityPolicy.m in Sources */,
 				8C1DDA321D1C1FE3005D1F24 /* UIActivityIndicatorView+AFNetworking.m in Sources */,

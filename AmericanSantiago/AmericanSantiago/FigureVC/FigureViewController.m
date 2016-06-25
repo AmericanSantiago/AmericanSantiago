@@ -7,6 +7,7 @@
 //
 
 #import "FigureViewController.h"
+#import "FigureModel.h"
 
 @interface FigureViewController ()<UITextFieldDelegate>
 
@@ -18,14 +19,15 @@
 @property (nonatomic ,strong) NSString                         * buttonIndex;
 
 @property (nonatomic, strong) UITextField                       * nameTextField;
-@property (nonatomic, strong) UITextField                       * nikeNameTextFidel;
+@property (nonatomic, strong) UITextField                       * nicknameTextField;
 @property (nonatomic, strong) UITextField                       * birthdayTextField;
 @property (nonatomic ,strong) UITextField                       * ageTextField;
 @property (nonatomic ,strong) UITextField                       * genderTextField;
 
 @property (nonatomic ,strong) UIDatePicker                   * datePicker;
 
-
+@property (nonatomic ,strong) UIButton                              * ensureButton;
+@property (nonatomic, strong) FigureModel                       * figureModel;
 
 @end
 
@@ -39,14 +41,38 @@
     [self initializeUserInterface];
 }
 
+- (void)dealloc
+{
+    [_figureModel removeObserver:self forKeyPath:@"updateInfoData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"updateInfoData"]) {
+        if ([[_figureModel.updateInfoData valueForKey:@"errorCode"] integerValue] == 0) {
+            [AppDelegate showHintLabelWithMessage:@"修改成功!"];
+        }else{
+            [AppDelegate showHintLabelWithMessage:@"修改失败!"];
+            
+        }
+        
+        
+    }
+    
+    
+}
+
 - (void)initializeDataSource
 {
-    
+    _figureModel = [[FigureModel alloc] init];
+    [_figureModel addObserver:self forKeyPath:@"updateInfoData" options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
 - (void)initializeUserInterface
 {
+    
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
 //    backgroundView.backgroundColor = [UIColor whiteColor];
     [backgroundView setImage:[UIImage imageNamed:@"排版girl-bg.png"]];
@@ -92,16 +118,18 @@
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
+        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"username"];
         [view1 addSubview:textField];
         textField;
     });
     
-    _nikeNameTextFidel = ({
+    _nicknameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(130), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
+        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"nickname"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
@@ -112,6 +140,7 @@
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.textAlignment = NSTextAlignmentCenter;
+        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"birthday"];
         textField.delegate = self;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
@@ -140,6 +169,11 @@
         [view1 addSubview:textField];
         textField;
     });
+    if ([[[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"gender"] integerValue] == 0) {
+        _genderTextField.text = @"男";
+    }else{
+        _genderTextField.text = @"女";
+    }
     
     
     //UIDatePicker
@@ -180,7 +214,15 @@
         button;
     });
     
-
+    _ensureButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(335), FLEXIBLE_NUM(650), FLEXIBLE_NUM(250), FLEXIBLE_NUM(70))];
+        [button setBackgroundImage:[UIImage imageNamed:@"用户名密码@3x"] forState:UIControlStateNormal];
+        [button setTitle:@"确  认  修  改" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
+        [button addTarget:self action:@selector(ensureButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
     
     
     
@@ -204,34 +246,17 @@
     
 }
 
-//- (void) boyButtonClick: (UIButton *)sender
-//{
-//    NSLog(@"boy!");
-//    for (int i = 0; i < 2; i ++) {
-//        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
-//        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
-//    }
-//    
-//    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG];
-//    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
-//    
-//    [_figerImageView setImage:[UIImage imageNamed:@"boy.jpg"]];
-//    
-//}
-//- (void) girlButtonClick: (UIButton *)sender
-//{
-//    NSLog(@"girl!");
-//    for (int i = 0; i < 2; i ++) {
-//        UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + i];
-//        [imageView setImage:[UIImage imageNamed:@"圆圈.png"]];
-//    }
-//    
-//    UIImageView * imageView = (UIImageView * )[self.view viewWithTag:IMGVIEW_TAG + 1];
-//    [imageView setImage:[UIImage imageNamed:@"圆圈选中.png"]];
-//    
-//    [_figerImageView setImage:[UIImage imageNamed:@"girl.jpg"]];
-//    
-//}
+- (void) ensureButtonClick: (UIButton *) sender
+{
+    
+    if ([_genderTextField.text isEqualToString:@"男"]) {
+            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"1"  Charactertype:@"boy"];
+    }else{
+            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"0" Charactertype:@"girl"];
+    }
+
+    
+}
 
 - (void) buttonClick:(UIButton *) sender
 {

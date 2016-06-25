@@ -49,7 +49,7 @@
             [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
                 WINDOW.rootViewController = rootViewController;
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
-                //            [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
+                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
                 [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
                 
                 //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
@@ -95,7 +95,7 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(390), FLEXIBLE_NUM(155) + FLEXIBLE_NUM(120) * i, FLEXIBLE_NUM(100), FLEXIBLE_NUM(50))];
         label.text = titleArray[i];
         label.textColor = [UIColor whiteColor];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
         [self.view addSubview:label];
         
     }
@@ -103,7 +103,7 @@
     _userNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(28)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
         textField;
@@ -111,7 +111,7 @@
     _passwdTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155 + 120), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(28)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
         textField;
@@ -121,7 +121,7 @@
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(370), FLEXIBLE_NUM(275 + 100), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
         [button setBackgroundImage:[UIImage imageNamed:@"注册@3x"] forState:UIControlStateNormal];
         [button setTitle:@"注册" forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+        button.titleLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(registerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
@@ -132,7 +132,7 @@
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(370 + 190), FLEXIBLE_NUM(275 + 100), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
         [button setBackgroundImage:[UIImage imageNamed:@"登录@3x"] forState:UIControlStateNormal];
         [button setTitle:@"登录" forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
+        button.titleLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(loginButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];

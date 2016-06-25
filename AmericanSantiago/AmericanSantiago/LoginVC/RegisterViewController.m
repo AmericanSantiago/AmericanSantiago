@@ -77,7 +77,7 @@
     _userNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(150), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
 //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -87,7 +87,7 @@
     _passwdTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(145 + 70), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
         //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -97,7 +97,7 @@
     _ensurePasswdTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(150 + 135), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
         //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -107,7 +107,7 @@
     _studentNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(370), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
         //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -117,7 +117,7 @@
     _birthdayTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(350 + 85), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
         //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -127,7 +127,7 @@
     _genderTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(450), FLEXIBLE_NUM(350 + 145), FLEXIBLE_NUM(270), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor clearColor];
-        textField.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(25)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
         //        textField.textColor = [UIColor whiteColor];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];

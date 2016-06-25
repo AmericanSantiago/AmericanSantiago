@@ -70,16 +70,14 @@
 - (void)initializeUserInterface
 {
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    //    [backgroundView setImage:[UIImage imageNamed:@"登录注册bg.png"]];
     [backgroundView setImage:[UIImage imageNamed:@"注册选择人物bg.png"]];
     [self.view addSubview:backgroundView];
     
     
     _character = @"girl";
     _figureImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(250), FLEXIBLE_NUM(0), FLEXIBLE_NUM(FLEXIBLE_NUM(400)), FLEXIBLE_NUM(700))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(320), FLEXIBLE_NUM(0), FLEXIBLE_NUM(FLEXIBLE_NUM(400)), FLEXIBLE_NUM(700))];
 //        imageView.backgroundColor = [UIColor yellowColor];
-        
         [imageView setImage:[UIImage imageNamed:@"girl"]];
         [self.view addSubview:imageView];
         imageView;

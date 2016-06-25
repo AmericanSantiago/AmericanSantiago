@@ -31,8 +31,9 @@
                                  @"sceneType":sceneType,
                                  };
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-        if (errorString) {
+        if (!errorString) {
             self.unlockedGamesData = resultDic;
+            NSLog(@"HTTP Response Body  unlockedGamesData == : %@", resultDic);
         }
     }];
     
@@ -98,8 +99,9 @@
     
     NSString * urlString = @"/GetNextConcept";
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-        if (errorString) {
+        if (!errorString) {
             self.GetNextConceptData = resultDic;
+            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
         }
     }];
     
