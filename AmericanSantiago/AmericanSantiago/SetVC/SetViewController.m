@@ -7,6 +7,8 @@
 //
 
 #import "SetViewController.h"
+#import "LoginViewController.h"
+#import "LoginModel.h"
 
 @interface SetViewController ()
 
@@ -23,6 +25,8 @@
 
 @property (nonatomic ,strong) UIButton * exitButton;
 
+@property (nonatomic, strong) LoginModel                    * loginModel;
+
 @end
 
 @implementation SetViewController
@@ -35,11 +39,38 @@
     [self initializeUserInterface];
 }
 
+- (void)dealloc
+{
+    [_loginModel removeObserver:self forKeyPath:@"logoutData"];
+}
+
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"logoutData"]) {
+        if ([[_loginModel.logoutData valueForKey:@"errorCode"] integerValue] == 0) {
+            
+            LoginViewController * loginVC = [[LoginViewController alloc] init];
+            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+            [self presentViewController:nav animated:YES completion:nil];
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+}
+
 #pragma mark -- initialize
 - (void)initializeDataSource
 {
+    _loginModel = [[LoginModel alloc] init];
+    [_loginModel addObserver:self forKeyPath:@"logoutData" options:NSKeyValueObservingOptionNew context:nil];
 
-
+    
 }
 
 - (void)initializeUserInterface
@@ -179,9 +210,6 @@
         button;
     });
     
-    
-    
-    
 }
 
 #pragma mark -- buttonClick
@@ -190,6 +218,20 @@
     NSLog(@"退出登录");
 //    UIAlertAction * alertAction = [[UIAlertAction alloc] init];
     
+    UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"是否确定退出？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [_loginModel logoutWithUsername:[[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"nickname"]];
+        
+    }];
+
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:sureAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+
     
 }
 

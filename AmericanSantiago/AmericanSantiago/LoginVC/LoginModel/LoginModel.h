@@ -12,10 +12,12 @@
 
 @property (nonatomic, strong, readonly) id                            loginData;
 @property (nonatomic, strong, readonly) id                            registerData;
-
+@property (nonatomic, strong, readonly) id                            logoutData;
 
 
 - (void) loginWithUsername: (NSString *) username Password:(NSString *) password;
 - (void)registerWithUsername:(NSString *)username Password:(NSString *)password nickname:(NSString *) nickname birthday:(NSString *)birthday gender:(NSString *)gender character:(NSString *)character name:(NSString *) name;
+
+- (void) logoutWithUsername: (NSString *) username;
 
 @end

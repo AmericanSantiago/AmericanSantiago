@@ -145,7 +145,7 @@
 
 - (void)selectedScreenshotBtn:(UIButton *)sender
 {
-    [AppDelegate showHintLabelWithMessage:@"截图"];
+    [AppDelegate showHintLabelWithMessage:@"截图成功!"];
 
     UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
     UIGraphicsBeginImageContext(screenWindow.frame.size);

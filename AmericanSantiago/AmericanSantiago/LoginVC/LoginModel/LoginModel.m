@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) id                            registerData;
 @property (nonatomic, strong) id                            loginData;
+@property (nonatomic, strong) id                            logoutData;
+
 
 @end
 
@@ -32,6 +34,19 @@
     
 }
 
+#pragma mark -- 登出
+- (void) logoutWithUsername: (NSString *) username
+{
+    NSString * urlString = @"/Logout";
+    NSDictionary* bodyObject = @{@"username":username};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+            self.logoutData = resultDic;
+            NSLog(@"HTTP Response Body  logoutData == : %@", resultDic);
+        }
+    }];
+    
+}
 
 
 

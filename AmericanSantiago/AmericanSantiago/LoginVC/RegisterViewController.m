@@ -60,6 +60,7 @@
 #pragma mark - 视图初始化
 - (void)initializeUserInterface
 {
+    
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
 //    [backgroundView setImage:[UIImage imageNamed:@"登录注册bg.png"]];
     [backgroundView setImage:[UIImage imageNamed:@"注册全.png"]];
