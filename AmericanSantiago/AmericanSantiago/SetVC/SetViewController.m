@@ -142,8 +142,8 @@
     self.slider1.hidden = YES;
 //    NSLog(@"%f",self.slider1.value);
 
-    UIImage *stetchLeftTrack= [UIImage imageNamed:@"圆角矩形-2@2x"];
-    UIImage *stetchRightTrack = [UIImage imageNamed:@"圆角矩形-2@2x"];
+    UIImage *stetchLeftTrack= [UIImage resizeImage:@"圆角矩形-2@2x"];
+    UIImage *stetchRightTrack = [UIImage resizeImage:@"圆角矩形-2@2x"];
     //滑块图片
     UIImage *thumbImage = [UIImage imageNamed:@"调节钮@3x"];
     

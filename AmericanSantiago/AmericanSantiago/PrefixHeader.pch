@@ -46,6 +46,7 @@
 #import "AppDelegate+Category.h"
 #import "UIButton+Category.h"
 #import "UIView+Category.h"
+#import "UIImage+Category.h"
 
 //音量控制
 #import<MediaPlayer/MediaPlayer.h>

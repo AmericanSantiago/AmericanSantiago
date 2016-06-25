@@ -130,6 +130,8 @@
 #pragma mark - RootLeftViewDelegate
 - (void)selectedActionBtn:(UIButton *)sender
 {
+    UIButton *homeBtn = (UIButton *)[self.leftView viewWithTag:BUTTON_TAG];
+    
     if (self.lastBtn != sender) {
         self.lastBtn.selected = NO;
         sender.selected = YES;
@@ -138,8 +140,18 @@
         NSInteger index = [titleArray indexOfObject:sender.titleLabel.text];
         if (index != NSNotFound) {
             self.currentViewController = self.viewControllers[index];
+            if (index == 0) {
+                LBTranslationController *homeTC = [self.viewControllers firstObject];
+                [homeTC popToRootViewController];
+            }
         }
     }
+    else if (self.lastBtn == homeBtn) {
+        [self.currentViewController.currentViewController.translationController popToRootViewController];
+//        LBTranslationController *homeTC = [self.viewControllers firstObject];
+//        [homeTC popToRootViewController];
+    }
+    
     
 }
 
