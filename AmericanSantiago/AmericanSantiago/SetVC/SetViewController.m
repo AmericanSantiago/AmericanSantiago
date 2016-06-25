@@ -52,10 +52,10 @@
             
             LoginViewController * loginVC = [[LoginViewController alloc] init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-            [self presentViewController:nav animated:YES completion:nil];
-            
-            
-            
+            [LBUserDefaults setUserDic:nil];
+            [WINDOW.rootViewController presentViewController:nav animated:YES completion:^{
+                WINDOW.rootViewController = nav;
+            }];
         }
         
         
@@ -230,6 +230,7 @@
     }];
     [alertController addAction:sureAction];
     [alertController addAction:cancelAction];
+    
     [self presentViewController:alertController animated:YES completion:nil];
 
     

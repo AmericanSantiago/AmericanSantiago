@@ -27,8 +27,7 @@ static NSString *loginInfoSaveKey = @"loginInfo";
 +(NSDictionary *)getUserDic
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-//    NSString *jsonStr = [userdefaults objectForKey:loginInfoSaveKey];
-//    NSDictionary *userDic = [jsonStr objectFromJSONString];
+
     NSDictionary *userDic = [userdefaults objectForKey:loginInfoSaveKey];
     if (!userDic) {
         return nil;
