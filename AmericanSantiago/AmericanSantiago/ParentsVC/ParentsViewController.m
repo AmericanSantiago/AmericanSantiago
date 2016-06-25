@@ -106,6 +106,7 @@
 //    }
     
     
+    
     UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
     [flowerView setImage:[UIImage imageNamed:@"小红花@3x"]];
     [self.view addSubview:flowerView];
@@ -133,7 +134,6 @@
     _chartView = ({
         UIView * chartView = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))];
 //        chartView.backgroundColor = [UIColor yellowColor];
-        
         [self.view addSubview:chartView];
         chartView;
     });
