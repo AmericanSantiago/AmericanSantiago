@@ -146,6 +146,22 @@
 - (void)selectedScreenshotBtn:(UIButton *)sender
 {
     [AppDelegate showHintLabelWithMessage:@"截图"];
+
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    UIGraphicsBeginImageContext(screenWindow.frame.size);
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);//保存到相册
+    
+    CGRect rect = self.view.frame;
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    
 }
 
 - (void)selectedBackBtn:(UIButton *)sender
