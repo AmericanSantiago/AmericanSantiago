@@ -51,8 +51,8 @@
 //        LBTranslationController *screenshotTC = [[LBTranslationController alloc]initWithRootViewController:screenshotVC];
         
         self.viewControllers = @[homeTC,figureTC,parentsTC,setTC];
-        UIButton *tempBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [tempBtn setTitle:@"主页" forState:UIControlStateNormal];
+        UIButton *tempBtn = (UIButton *)[self.leftView viewWithTag:BUTTON_TAG];
+//        [tempBtn setTitle:@"主页" forState:UIControlStateNormal];
         [self selectedActionBtn:tempBtn];
     }
     return self;
