@@ -53,8 +53,8 @@
         }
         _UUChartView = [[UUChart alloc]initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))
                                           dataSource:self
-                        //                                        style:indexPath.section==1?UUChartStyleBar:UUChartStyleLine];
                                                style:UUChartStyleLine];
+        _UUChartView.backgroundColor = [UIColor clearColor];
         [_UUChartView showInView:_chartView];
         NSLog(@"_YArray = %@",_YArray);
         
@@ -95,15 +95,16 @@
     [self.view addSubview:timeView];
     
     UILabel * timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(10), FLEXIBLE_NUM(300), FLEXIBLE_NUM(45))];
-    timeLabel.text = @"设置时间                  分";
+    timeLabel.text = @"设置时间                分";
 //    timeLabel.backgroundColor = [UIColor blueColor];
     timeLabel.textColor = [UIColor whiteColor];
-    timeLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:FLEXIBLE_NUM(30)];
+    timeLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
     [timeView addSubview:timeLabel];
     
 //    for (<#initialization#>; <#condition#>; <#increment#>) {
 //        <#statements#>
 //    }
+    
     
     
     UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
@@ -113,7 +114,7 @@
     _numLabel = ({
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(815), FLEXIBLE_NUM(60), FLEXIBLE_NUM(100), FLEXIBLE_NUM(60))];
         label.textColor = [UIColor colorWithRed:145/255.0 green:106/255.0 blue:46/255.0 alpha:1];
-        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(38)];
+        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(38)];
         label.text = @"28";
         [self.view addSubview:label];
         label;
@@ -133,7 +134,6 @@
     _chartView = ({
         UIView * chartView = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))];
 //        chartView.backgroundColor = [UIColor yellowColor];
-        
         [self.view addSubview:chartView];
         chartView;
     });

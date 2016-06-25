@@ -91,7 +91,7 @@
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.font = [UIFont fontWithName:@"ZHSRXT-GBK" size:FLEXIBLE_NUM(20)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
     });
@@ -102,7 +102,7 @@
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.font = [UIFont fontWithName:@"ZHSRXT-GBK" size:FLEXIBLE_NUM(20)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
     });
@@ -113,7 +113,7 @@
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.textAlignment = NSTextAlignmentCenter;
         textField.delegate = self;
-        textField.font = [UIFont fontWithName:@"ZHSRXT-GBK" size:FLEXIBLE_NUM(20)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
     });
@@ -122,7 +122,7 @@
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(310), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
-        textField.font = [UIFont fontWithName:@"ZHSRXT-GBK" size:FLEXIBLE_NUM(20)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         textField.textAlignment = NSTextAlignmentCenter;
         textField.userInteractionEnabled = NO;
         [view1 addSubview:textField];
@@ -133,7 +133,7 @@
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(400), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
-        textField.font = [UIFont fontWithName:@"ZHSRXT-GBK" size:FLEXIBLE_NUM(20)];
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         textField.textAlignment = NSTextAlignmentCenter;
         textField.userInteractionEnabled = NO;
         textField.text = @"男";
