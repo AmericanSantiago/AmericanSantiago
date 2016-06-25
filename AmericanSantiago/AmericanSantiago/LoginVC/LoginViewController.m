@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginModel.h"
 #import "RegisterViewController.h"
+#import "RootViewController.h"
 
 @interface LoginViewController ()
 
@@ -43,12 +44,17 @@
 {
     if ([keyPath isEqualToString:@"loginData"]) {
         if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
+//        if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 1) {
             
-//            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"loginInfo"];
-//            [self.navigationController removeFromParentViewController];
-
-            [self.navigationController removeFromParentViewController];
             
+            RootViewController *rootViewController = [[RootViewController alloc] init];
+            
+            [WINDOW.rootViewController presentViewController:rootViewController animated:NO completion:^{
+                WINDOW.rootViewController = rootViewController;
+                [AppDelegate showHintLabelWithMessage:@"登录成功~"];
+            }];
+        }else{
+            [AppDelegate showHintLabelWithMessage:@"登录失败~"];
         }
         
         

@@ -46,7 +46,7 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
         }else{
             NSLog(@"注册失败");
-            
+            [AppDelegate showHintLabelWithMessage:@"注册失败~"];
         }
         
         
