@@ -147,9 +147,9 @@
         }
     }
     else if (self.lastBtn == homeBtn) {
-        [self.currentViewController.currentViewController.translationController popToRootViewController];
-//        LBTranslationController *homeTC = [self.viewControllers firstObject];
-//        [homeTC popToRootViewController];
+//        [self.currentViewController.currentViewController.translationController popToRootViewController];
+        LBTranslationController *homeTC = [self.viewControllers firstObject];
+        [homeTC popToRootViewController];
     }
     
     

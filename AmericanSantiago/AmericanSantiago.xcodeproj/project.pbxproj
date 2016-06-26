@@ -24,6 +24,14 @@
 		8C0EF3AD1D041DA800194D16 /* FlexibleFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0EF3AC1D041DA800194D16 /* FlexibleFrame.m */; };
 		8C0EF3B01D041FB200194D16 /* RootLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0EF3AF1D041FB200194D16 /* RootLeftView.m */; };
 		8C0EF3E01D04494200194D16 /* LBTranslationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0EF3DF1D04494200194D16 /* LBTranslationController.m */; };
+		8C15F16D1D1FC55A0094350C /* world_planedown_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F1651D1FC55A0094350C /* world_planedown_btn.png */; };
+		8C15F16E1D1FC55A0094350C /* world_planedown_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F1661D1FC55A0094350C /* world_planedown_btn@2x.png */; };
+		8C15F16F1D1FC55A0094350C /* world_planeleft_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F1671D1FC55A0094350C /* world_planeleft_btn.png */; };
+		8C15F1701D1FC55A0094350C /* world_planeleft_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F1681D1FC55A0094350C /* world_planeleft_btn@2x.png */; };
+		8C15F1711D1FC55A0094350C /* world_planeright_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F1691D1FC55A0094350C /* world_planeright_btn.png */; };
+		8C15F1721D1FC55A0094350C /* world_planeright_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16A1D1FC55A0094350C /* world_planeright_btn@2x.png */; };
+		8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16B1D1FC55A0094350C /* world_planeup_btn.png */; };
+		8C15F1741D1FC55A0094350C /* world_planeup_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16C1D1FC55A0094350C /* world_planeup_btn@2x.png */; };
 		8C1CD8FC1D1EDD7200772806 /* LBUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CD8FB1D1EDD7200772806 /* LBUserDefaults.m */; };
 		8C1CD8FF1D1EE8B300772806 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CD8FE1D1EE8B300772806 /* UIImage+Category.m */; };
 		8C1DDA181D1C1FE3005D1F24 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DD9D21D1C1FE3005D1F24 /* AFHTTPSessionManager.m */; };
@@ -261,6 +269,14 @@
 		8C0EF3AF1D041FB200194D16 /* RootLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootLeftView.m; sourceTree = "<group>"; };
 		8C0EF3DE1D04494200194D16 /* LBTranslationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTranslationController.h; sourceTree = "<group>"; };
 		8C0EF3DF1D04494200194D16 /* LBTranslationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTranslationController.m; sourceTree = "<group>"; };
+		8C15F1651D1FC55A0094350C /* world_planedown_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_planedown_btn.png; sourceTree = "<group>"; };
+		8C15F1661D1FC55A0094350C /* world_planedown_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planedown_btn@2x.png"; sourceTree = "<group>"; };
+		8C15F1671D1FC55A0094350C /* world_planeleft_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_planeleft_btn.png; sourceTree = "<group>"; };
+		8C15F1681D1FC55A0094350C /* world_planeleft_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planeleft_btn@2x.png"; sourceTree = "<group>"; };
+		8C15F1691D1FC55A0094350C /* world_planeright_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_planeright_btn.png; sourceTree = "<group>"; };
+		8C15F16A1D1FC55A0094350C /* world_planeright_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planeright_btn@2x.png"; sourceTree = "<group>"; };
+		8C15F16B1D1FC55A0094350C /* world_planeup_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_planeup_btn.png; sourceTree = "<group>"; };
+		8C15F16C1D1FC55A0094350C /* world_planeup_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planeup_btn@2x.png"; sourceTree = "<group>"; };
 		8C1CD8FA1D1EDD7200772806 /* LBUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUserDefaults.h; sourceTree = "<group>"; };
 		8C1CD8FB1D1EDD7200772806 /* LBUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUserDefaults.m; sourceTree = "<group>"; };
 		8C1CD8FD1D1EE8B300772806 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
@@ -1204,6 +1220,14 @@
 				D85318A01D1BCFD500BBA6D3 /* South2.jpg */,
 				D85318A11D1BCFD500BBA6D3 /* South3.jpg */,
 				D85318A21D1BCFD500BBA6D3 /* South4.jpg */,
+				8C15F1651D1FC55A0094350C /* world_planedown_btn.png */,
+				8C15F1661D1FC55A0094350C /* world_planedown_btn@2x.png */,
+				8C15F1671D1FC55A0094350C /* world_planeleft_btn.png */,
+				8C15F1681D1FC55A0094350C /* world_planeleft_btn@2x.png */,
+				8C15F1691D1FC55A0094350C /* world_planeright_btn.png */,
+				8C15F16A1D1FC55A0094350C /* world_planeright_btn@2x.png */,
+				8C15F16B1D1FC55A0094350C /* world_planeup_btn.png */,
+				8C15F16C1D1FC55A0094350C /* world_planeup_btn@2x.png */,
 			);
 			path = "地球";
 			sourceTree = "<group>";
@@ -1392,6 +1416,7 @@
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
 				D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */,
+				8C15F1721D1FC55A0094350C /* world_planeright_btn@2x.png in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
 				8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */,
 				8C2298FE1D199BF9002C0F80 /* 商场bg.png in Resources */,
@@ -1399,6 +1424,7 @@
 				D85318861D1BC56600BBA6D3 /* 主界面5.png in Resources */,
 				8C2299321D199BF9002C0F80 /* 矢量智能对象@3x.png in Resources */,
 				8C2299121D199BF9002C0F80 /* right@2x.png in Resources */,
+				8C15F16E1D1FC55A0094350C /* world_planedown_btn@2x.png in Resources */,
 				8C22991C1D199BF9002C0F80 /* 用户名密码@2x.png in Resources */,
 				D85318A31D1BCFD500BBA6D3 /* North1.jpg in Resources */,
 				8C2299341D199BF9002C0F80 /* 设置时间@3x.png in Resources */,
@@ -1407,6 +1433,7 @@
 				D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */,
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
 				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
+				8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
 				D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */,
 				8C2298871D19969A002C0F80 /* home_map_bg.png in Resources */,
@@ -1417,12 +1444,14 @@
 				D85318841D1BC3A100BBA6D3 /* 厨房bg.jpg in Resources */,
 				D85318761D1BB47700BBA6D3 /* 黄向左@3x.png in Resources */,
 				8C2299031D199BF9002C0F80 /* 地球图标2bg.png in Resources */,
+				8C15F1741D1FC55A0094350C /* world_planeup_btn@2x.png in Resources */,
 				8C22990C1D199BF9002C0F80 /* 课堂bg.png in Resources */,
 				8C22992B1D199BF9002C0F80 /* 图层-5@3x.png in Resources */,
 				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
 				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
 				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
+				8C15F16F1D1FC55A0094350C /* world_planeleft_btn.png in Resources */,
 				D80BFB421D1CC34000830B55 /* 主界面3.png in Resources */,
 				8C22991B1D199BF9002C0F80 /* 注册@2x.png in Resources */,
 				D85318711D1BB26A00BBA6D3 /* boy1.png in Resources */,
@@ -1444,6 +1473,7 @@
 				D85317CA1D1A6E1300BBA6D3 /* 家长@3x.png in Resources */,
 				8C2299001D199BF9002C0F80 /* 地图图标3bg.png in Resources */,
 				D80BFC581D1CCC3000830B55 /* 退出登录@3x.png in Resources */,
+				8C15F16D1D1FC55A0094350C /* world_planedown_btn.png in Resources */,
 				8C2298861D19969A002C0F80 /* home_community_bg@2x.png in Resources */,
 				8C2299291D199BF9002C0F80 /* 向右@3x.png in Resources */,
 				8C2299311D199BF9002C0F80 /* 登录@3x.png in Resources */,
@@ -1461,6 +1491,8 @@
 				8C22992F1D199BF9002C0F80 /* 注册@3x.png in Resources */,
 				8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */,
 				D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */,
+				8C15F1701D1FC55A0094350C /* world_planeleft_btn@2x.png in Resources */,
+				8C15F1711D1FC55A0094350C /* world_planeright_btn.png in Resources */,
 				D85318A41D1BCFD500BBA6D3 /* North2.jpg in Resources */,
 				D80BFB481D1CC47500830B55 /* 宠物店bg.png in Resources */,
 				D85317CE1D1A6E1300BBA6D3 /* 主页@3x.png in Resources */,

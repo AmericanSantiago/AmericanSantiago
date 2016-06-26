@@ -84,6 +84,7 @@
 - (void) mathButtonClick: (UIButton *) sender
 {
     GameViewController * gameVC = [[GameViewController alloc] init];
+    
     [self.translationController pushViewController:gameVC];
     
 }
