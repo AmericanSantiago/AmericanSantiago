@@ -73,11 +73,11 @@
         webView;
     });
     
-    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/AF_AS_0dot2/school_classroom_13_26_01/index.html"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:request];
+//    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/AF_AS_0dot2/school_classroom_13_26_01/index.html"];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [_webView loadRequest:request];
     
-//    [self loadDocument:@"index" fileTypeName:@"cat" inView:_webView];
+    [self loadDocument:@"index" fileTypeName:@"city" inView:_webView];
     
     //    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
     
@@ -98,8 +98,11 @@
     //    Htmls/3_1_City_petstore/cat/3_I.1_VDEO_CNT_SERIES
     //    /Users/lizujian/Desktop/小白的奇怪项目/AmericanSantiago/AmericanSantiago/AmericanSantiago/
     
-    NSString *directoryString = [NSString stringWithFormat:@"Htmls/3_1_City_petstore/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
-    //    NSString *directoryString = [NSString stringWithFormat:@"/Htmls/3_1_City_petstore/%@/3_I.1_VDEO_CNT_SERIES",fileTypeName];
+   //  /Users/Mervin/Desktop/合源美智（github）/AmericanSantiago/AmericanSantiago/AmericanSantiago/Htmls/3_1_School_Classroom
+    // /Users/Mervin/Desktop/合源美智（github）/AmericanSantiago/AmericanSantiago/AmericanSantiago/Htmls/Math/AF_AS_0dot2/city_mall_13_26_01/13_I.1_COMPARE/index.html
+    
+    NSString *directoryString = [NSString stringWithFormat:@"Htmls/Math/AF_AS_0dot2/%@_mall_13_26_01/13_I.1_COMPARE",fileTypeName];
+//        NSString *directoryString = @"Htmls/Math/AF_AS_0dot2/city_mall_13_26_01/13_I.1_COMPARE/index.html";
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
     //    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     //    [webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];

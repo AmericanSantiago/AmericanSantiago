@@ -20,10 +20,17 @@
 
 @property (nonatomic, strong) UIImageView                    * backgroundView;
 @property (nonatomic, strong) UIImageView                    * bigImageView;
+@property (nonatomic, strong) UIImageView                    * smallImageView;
 
 @property (nonatomic ,strong) HomeModel                         * homeModel;
 
+@property (nonatomic, strong) UIButton                                 * button;
 
+@property (nonatomic, strong) NSArray                                   * schoolGameArray;
+@property (nonatomic, strong) NSArray                                   * worldGameArray;
+@property (nonatomic, strong) NSArray                                   * playgroundGameArray;
+@property (nonatomic, strong) NSArray                                   * cityGameArray;
+@property (nonatomic, strong) NSArray                                   * homeGameArray;
 
 @end
 
@@ -40,12 +47,46 @@
 - (void)dealloc
 {
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+    [_homeModel removeObserver:self forKeyPath:@"allUnlockedGamesData"];
 }
 
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    
+    if ([keyPath isEqualToString:@"allUnlockedGamesData"]) {
+        
+        
+        
+//        NSLog(@"games = %@",[_homeModel.allUnlockedGamesData valueForKey:@"data"]);
+        
+        for (int i = 0; i < [[[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"]count]; i ++) {
+//            for (int j = 0; j < [[[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"] valueForKey:@""]; <#increment#>) {
+//                <#statements#>
+//            }
+            
+            
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"home"]) {
+                
+                 _homeGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
+                _schoolGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"city"]) {
+                _cityGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+            
+        }
+//        NSLog(@"homeArray = %@",_homeGameArray);
+//        NSLog(@"_schoolGameArray = %@",_schoolGameArray);
+//        NSLog(@"_cityGameArray = %@",_cityGameArray);
+        
+        [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
+        [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
+        [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
+        
+        
+    }
     
     
 }
@@ -61,6 +102,7 @@
     
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
+    [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
 //    [_homeModel getGetUnlockedGamesWithUsername:@"000" SubjectId:@"Math" SceneType:@"home"];
     [_homeModel getGetNextConceptWithUsername:@"000" SubjectId:@"Math"];
@@ -106,27 +148,32 @@
     CGFloat maxY = BASESCRREN_H - (BASESCRREN_H-CGRectGetMaxY(_bigImageView.frame))/2 - height/2;
     
     for (int i = 0 ; i < 5; i ++) {
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
-        button.backgroundColor = [UIColor yellowColor];
-        button.tag = 101 + i;
-        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]] forState:UIControlStateNormal];
-        button.layer.cornerRadius = FLEXIBLE_NUM(8);
-        button.layer.masksToBounds = YES;
-        button.layer.borderColor = [UIColor whiteColor].CGColor;
-        button.layer.borderWidth = FLEXIBLE_NUM(3);
         
-        maxX = CGRectGetMaxX(button.frame);
-        [self.view addSubview:button];
+        _smallImageView = [[UIImageView alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
+        [_smallImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]]];
+        _smallImageView.layer.cornerRadius = FLEXIBLE_NUM(8);
+        _smallImageView.layer.masksToBounds = YES;
+        _smallImageView.tag = 1001 + i;
+        _smallImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _smallImageView.layer.borderWidth = FLEXIBLE_NUM(3);
+        [self.view addSubview:_smallImageView];
+        
+        _button = [[UIButton alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
+        _button.backgroundColor = [UIColor clearColor];
+        _button.tag = 101 + i;
+        [_button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [_button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]] forState:UIControlStateNormal];
+//        _button.layer.cornerRadius = FLEXIBLE_NUM(8);
+//        _button.layer.masksToBounds = YES;
+//        _button.layer.borderColor = [UIColor whiteColor].CGColor;
+//        _button.layer.borderWidth = FLEXIBLE_NUM(3);
+//        [self.view insertSubview:_button atIndex:999];
+        maxX = CGRectGetMaxX(_button.frame);
+        [self.view addSubview:_button];
     }
     
-//    for (int i = 0; i < 5; i ++) {
-//        
-//        UIButton * button = (UIButton *)[self.view viewWithTag:100 + i];
-//        
-//        [self addNumWithButtonTag:1 Number:@"2"];
-//        
-//    }
+    
+    
     
 }
 
@@ -184,24 +231,24 @@
 //    [self.translationController pushViewController:baseVC];
 }
 
-//- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number
-//{
-//    UIButton * button = (UIButton *)[self.view viewWithTag:100];
-//    
-//    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
-//    view1.backgroundColor = [UIColor whiteColor];
-//    view1.alpha = 0.5;
-//    [button addSubview:view1];
-//    
-//    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(50), FLEXIBLE_NUM(50))];
-//    label.textColor = [UIColor redColor];
-//    label.center = FLEXIBLE_CENTER(button.frame.origin.x/2, button.frame.origin.y/2);
-//    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
-//    [view1 addSubview:label];
-//    
-//    
-//    return view1;
-//}
+- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number subView:(UIView *)subView
+{
+    UIButton * button = (UIButton *)[self.view viewWithTag:tag];
+    subView = (UIView *)[self.view viewWithTag:tag];
+    
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
+    view1.backgroundColor = [UIColor whiteColor];
+    view1.alpha = 0.7;
+    [subView addSubview:view1];
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(75), FLEXIBLE_NUM(43), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    label.textColor = [UIColor redColor];
+    label.text = number;
+    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(32)];
+    [view1 addSubview:label];
+    
+    return view1;
+}
 
 
 @end

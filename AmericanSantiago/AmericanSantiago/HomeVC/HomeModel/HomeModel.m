@@ -36,53 +36,6 @@
             NSLog(@"HTTP Response Body  unlockedGamesData == : %@", resultDic);
         }
     }];
-    
-//    // Create manager
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    
-//    // JSON Body
-//    NSDictionary* bodyObject = @{
-//                                 
-//                                 @"username":username,
-//                                 @"subjectId":subjectId,
-//                                 @"sceneType":sceneType,
-//                                 
-//                                 };
-//    
-//    
-//    //    NSDictionary * dic1 = @{@"username":@"123456",@"password":@"123456",@"nickname":@"mwk",@"birthday":@"19930102",@"gender":@"0",@"character":@"boy"};
-//    
-//    NSString * urlString = @"/GetUnlockedGames";
-//    NSString * URL = [NSString stringWithFormat:@"%@%@",BASE_URL,urlString];
-//    
-//    NSMutableURLRequest* request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST"
-//                                                                                 URLString:URL
-//                                                                                parameters:bodyObject
-//                                                                                     error:NULL];
-//    
-//    //    NSLog(@"===============%@",bodyObject);
-//    //    NSLog(@"+++++++++++++++%@",request);
-//
-//    // Fetch Request
-//    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
-//                                                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//                                                                             
-//                                                                             
-//                                                                             NSString *string = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-//                                                                             //NSLog(@"fuck- ----- %@",string);
-//                                                                             id object = [string  objectFromJSONString];
-//                                                                             self.unlockedGamesData = object;
-//                                                                             
-//                                                                             NSLog(@"HTTP Response Status Code: %ld", [operation.response statusCode]);
-//                                                                             NSLog(@"HTTP Response Body  gameListData == : %@", object);
-//                                                                             
-//                                                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//                                                                             NSLog(@"HTTP Request failed: %@", error);
-//                                                                         }];
-//    
-//    [manager.operationQueue addOperation:operation];
-    
 }
 
 #pragma mark -- 获取下一个教学知识点游戏
@@ -101,7 +54,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.GetNextConceptData = resultDic;
-            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
         }
     }];
     
@@ -233,7 +186,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.allUnlockedGamesData = resultDic;
-            NSLog(@"HTTP Response Body  allUnlockedGamesData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  allUnlockedGamesData == : %@", resultDic);
         }
     }];
     

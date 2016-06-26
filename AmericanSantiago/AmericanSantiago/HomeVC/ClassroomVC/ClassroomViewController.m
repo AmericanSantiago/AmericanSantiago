@@ -48,7 +48,9 @@
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
-    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"classroom"];
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    
+    [_homeModel getGetUnlockedGamesWithUsername:[userDic valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
 }
 
@@ -64,7 +66,7 @@
 
     _mathButton = ({
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(340), FLEXIBLE_NUM(580), FLEXIBLE_NUM(80), FLEXIBLE_NUM(100))];
-        button.backgroundColor = [UIColor yellowColor];
+        button.backgroundColor = [UIColor clearColor];
         [button addTarget:self action:@selector(mathButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
