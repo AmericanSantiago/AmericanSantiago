@@ -57,6 +57,8 @@
 
 - (void)initializeDataSource
 {
+    //2:World    3:
+    
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
@@ -76,6 +78,7 @@
     _backgroundView = ({
         UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:BASESCRREN_B];
         backgroundView.backgroundColor = [UIColor whiteColor];
+        backgroundView.tag = 1;
         [backgroundView setImage:[UIImage imageNamed:@"root_bg"]];
         [self.view addSubview:backgroundView];
         backgroundView;
@@ -105,7 +108,7 @@
     for (int i = 0 ; i < 5; i ++) {
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
         button.backgroundColor = [UIColor yellowColor];
-        button.tag = 100 + i;
+        button.tag = 101 + i;
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]] forState:UIControlStateNormal];
         button.layer.cornerRadius = FLEXIBLE_NUM(8);
@@ -130,9 +133,9 @@
 #pragma mark -- button action
 - (void) buttonClick:(UIButton *) sender
 {
-//    NSLog(@"button.tag == %ld",(long)sender.tag);
-    [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag]]];
-    _backgroundView.tag = sender.tag;
+    NSLog(@"button.tag == %ld",(long)sender.tag);
+    [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag - 100]]];
+    _backgroundView.tag = sender.tag - 100;
 }
 
 
@@ -144,6 +147,7 @@
 //跳转
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
     switch (_backgroundView.tag) {
         case 1:{
             ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
@@ -180,24 +184,24 @@
 //    [self.translationController pushViewController:baseVC];
 }
 
-- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number
-{
-    UIButton * button = (UIButton *)[self.view viewWithTag:100];
-    
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
-    view1.backgroundColor = [UIColor whiteColor];
-    view1.alpha = 0.5;
-    [button addSubview:view1];
-    
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(50), FLEXIBLE_NUM(50))];
-    label.textColor = [UIColor redColor];
-    label.center = FLEXIBLE_CENTER(button.frame.origin.x/2, button.frame.origin.y/2);
-    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
-    [view1 addSubview:label];
-    
-    
-    return view1;
-}
+//- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number
+//{
+//    UIButton * button = (UIButton *)[self.view viewWithTag:100];
+//    
+//    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
+//    view1.backgroundColor = [UIColor whiteColor];
+//    view1.alpha = 0.5;
+//    [button addSubview:view1];
+//    
+//    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(50), FLEXIBLE_NUM(50))];
+//    label.textColor = [UIColor redColor];
+//    label.center = FLEXIBLE_CENTER(button.frame.origin.x/2, button.frame.origin.y/2);
+//    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
+//    [view1 addSubview:label];
+//    
+//    
+//    return view1;
+//}
 
 
 @end

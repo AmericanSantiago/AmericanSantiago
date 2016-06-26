@@ -79,6 +79,8 @@
 //    backgroundView.alpha = 0.6;
     [self.view addSubview:backgroundView];
     
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    
     //框
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(120), FLEXIBLE_NUM(100), FLEXIBLE_NUM(450), FLEXIBLE_NUM(500))];
     view1.backgroundColor = [UIColor whiteColor];
@@ -118,7 +120,7 @@
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
-        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"username"];
+        textField.text = [userDic valueForKey:@"username"];
         [view1 addSubview:textField];
         textField;
     });
@@ -129,7 +131,7 @@
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"nickname"];
+        textField.text = [userDic valueForKey:@"nickname"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
@@ -140,7 +142,7 @@
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"birthday"];
+        textField.text = [userDic valueForKey:@"birthday"];
         textField.delegate = self;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
@@ -169,7 +171,7 @@
         [view1 addSubview:textField];
         textField;
     });
-    if ([[[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"gender"] integerValue] == 0) {
+    if ([[userDic valueForKey:@"gender"] integerValue] == 0) {
         _genderTextField.text = @"男";
     }else{
         _genderTextField.text = @"女";

@@ -49,7 +49,7 @@
             [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
                 WINDOW.rootViewController = rootViewController;
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
-                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
+//                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
                 [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
                 
                 //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{

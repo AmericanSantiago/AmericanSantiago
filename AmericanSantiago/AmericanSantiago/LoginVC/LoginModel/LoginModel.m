@@ -28,7 +28,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.loginData = resultDic;
-            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
         }
     }];
     
@@ -42,7 +42,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.logoutData = resultDic;
-            NSLog(@"HTTP Response Body  logoutData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  logoutData == : %@", resultDic);
         }
     }];
     
@@ -69,7 +69,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.registerData = resultDic;
-            NSLog(@"HTTP Response Body  registerData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  registerData == : %@", resultDic);
         }
     }];
     
