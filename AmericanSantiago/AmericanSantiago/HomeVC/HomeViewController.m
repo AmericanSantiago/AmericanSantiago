@@ -31,6 +31,8 @@
 @property (nonatomic, strong) NSArray                                   * playgroundGameArray;
 @property (nonatomic, strong) NSArray                                   * cityGameArray;
 @property (nonatomic, strong) NSArray                                   * homeGameArray;
+@property (nonatomic, strong) NSArray                                   * locationArray;
+
 
 @end
 
@@ -54,7 +56,6 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"allUnlockedGamesData"]) {
-        
         
         
 //        NSLog(@"games = %@",[_homeModel.allUnlockedGamesData valueForKey:@"data"]);
@@ -105,11 +106,23 @@
     [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
 //    [_homeModel getGetUnlockedGamesWithUsername:@"000" SubjectId:@"Math" SceneType:@"home"];
-    [_homeModel getGetNextConceptWithUsername:@"000" SubjectId:@"Math"];
     
-//    [_homeModel sendGameLogWithUsername:@"mwk" conceptId:@"1" gameId:@"1" learningType:@"L" duration:@"10" clickCount:@"100" log:@"1"];
+    if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
+        [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+    }else{
+        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
+        
+    }
     
-    [_homeModel getAllUnlockedGamesUsername:@"000" subjectId:@"Math"];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
+    
+    
+}
+- (void) getNextConceptData:(NSNotification *) notifi
+{
+    [_homeModel getGetNextConceptWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math"];
     
 }
 
@@ -236,18 +249,21 @@
     UIButton * button = (UIButton *)[self.view viewWithTag:tag];
     subView = (UIView *)[self.view viewWithTag:tag];
     
-    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
-    view1.backgroundColor = [UIColor whiteColor];
-    view1.alpha = 0.7;
-    [subView addSubview:view1];
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
+    imageView.backgroundColor = [UIColor clearColor];
+    [imageView setImage:[UIImage imageNamed:@"气泡@3x"]];
+//    imageView.alpha = 0.7;
+//    [imageView sizeToFit];
+    imageView.contentMode = UIViewContentModeCenter;
+    [subView addSubview:imageView];
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(75), FLEXIBLE_NUM(43), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(73), FLEXIBLE_NUM(37), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
     label.textColor = [UIColor redColor];
     label.text = number;
-    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(32)];
-    [view1 addSubview:label];
+    label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(38)];
+    [imageView addSubview:label];
     
-    return view1;
+    return imageView;
 }
 
 

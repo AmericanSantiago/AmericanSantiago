@@ -10,7 +10,10 @@
 
 @interface GameModel ()
 
+@property (nonatomic, strong) id                                    gameNewData;
 @property (nonatomic, strong) id                                    gameData;
+
+
 
 @end
 
@@ -25,7 +28,6 @@
     NSDictionary* bodyObject = @{
                                  
                                  
-                                 
                                  };
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (errorString) {
@@ -37,6 +39,39 @@
     }];
     
 }
+
+#pragma mark -- 获取新解锁游戏列表
+- (void) getNewGamesWithUsername: (NSString *) username subjectId:(NSString *) subjectId
+{
+    NSString * urlString = @"/GetNewGames";
+    NSDictionary* bodyObject = @{
+                                 @"username":username,
+                                 @"subjectId":subjectId};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+            self.gameNewData = resultDic;
+            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
+        }
+    }];
+    
+}
+
+#pragma mark -- 获取新解锁游戏列表
+- (void) sendConceptFinishWithUsername: (NSString *) username subjectId:(NSString *) subjectId
+{
+    NSString * urlString = @"/GetNewGames";
+    NSDictionary* bodyObject = @{
+                                 @"username":username,
+                                 @"subjectId":subjectId};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+            self.gameNewData = resultDic;
+            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
+        }
+    }];
+    
+}
+
 
 
 @end

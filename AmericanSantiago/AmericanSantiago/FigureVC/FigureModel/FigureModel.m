@@ -17,20 +17,22 @@
 @implementation FigureModel
 
 #pragma mark -- 获取已解锁游戏列表
-- (void) updateInfoWithNickname: (NSString *) nickname Name:(NSString *) name Birthday:(NSString *)birthday Gender:(NSString *)gender Charactertype: (NSString *)charactertype
+- (void) updateInfoWithNickname: (NSString *) nickname Name:(NSString *) name Birthday:(NSString *)birthday Gender:(NSString *)gender Charactertype: (NSString *)charactertype username:(NSString *) username
 {
     NSString * urlString = @"/UpdateInfo";
     // JSON Body
-    NSDictionary* bodyObject = @{@"nickname":nickname,
+    NSDictionary* bodyObject = @{
+                                 @"nickname":nickname,
                                  @"name":name,
                                  @"birthday":birthday,
                                  @"gender":gender,
-                                 @"character type":charactertype,
+                                 @"character_type":charactertype,
+                                 @"username":username,
                                  };
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.updateInfoData = resultDic;
-            NSLog(@"HTTP Response Body  updateInfoData == : %@", resultDic);
+//            NSLog(@"HTTP Response Body  updateInfoData == : %@", resultDic);
         }
     }];
     

@@ -31,12 +31,27 @@
 - (void)dealloc
 {
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+    [_gameModel removeObserver:self forKeyPath:@"gameNewData"];
+    
+//    [_webView removeObserver:self forKeyPath:@"finishGame"];
     
 }
 
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    if ([keyPath isEqualToString:@"finishGame"]) {
+        if (!_webView) {
+            NSLog(@"游戏结束");
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
     
@@ -47,10 +62,16 @@
 {
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"classroom"];
+    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+    
     
     _gameModel = [[GameModel alloc] init];
-    [_gameModel getGameData];
+    [_gameModel addObserver:self forKeyPath:@"gameNewData" options:NSKeyValueObservingOptionNew context:nil];
+    
+//    [_gameModel getGameData];
+    [_gameModel getNewGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+    
+    [_webView addObserver:self forKeyPath:@"finishGame" options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
@@ -63,8 +84,6 @@
     [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
     [self.view addSubview:backgroundView];
     
-    
-    
     _webView = ({
         WKWebView * webView = [[WKWebView alloc] initWithFrame:BASESCRREN_B];
         //        webView.delegate = self;
@@ -73,11 +92,11 @@
         webView;
     });
     
-//    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/AF_AS_0dot2/school_classroom_13_26_01/index.html"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [_webView loadRequest:request];
+    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/GE_STSO_0dot2/home_kitchen_13_60_01/13_I.1_COMPARE/index.html"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:request];
     
-    [self loadDocument:@"index" fileTypeName:@"city" inView:_webView];
+//    [self loadDocument:@"index" fileTypeName:@"city" inView:_webView];
     
     //    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
     
@@ -129,6 +148,7 @@
             NSURL *fileURL = [self fileURLForBuggyWKWebView8:[NSURL fileURLWithPath:filePath]];
             NSURLRequest *request = [NSURLRequest requestWithURL:fileURL];
             [self.webView loadRequest:request];
+            
         }
     }
     //    [webView loadFileURL:[NSURL URLWithString:filePath] allowingReadAccessToURL:[NSURL URLWithString:filePath]];

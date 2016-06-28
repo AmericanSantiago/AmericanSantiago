@@ -21,8 +21,11 @@
 
 @property (nonatomic, strong) UUChart                                   *UUChartView;
 
-@property (nonatomic, strong) NSMutableArray                                   * YArray;
-@property (nonatomic, strong) NSMutableArray                                   * XArray;
+@property (nonatomic, strong) NSMutableArray                    * YArray;
+@property (nonatomic, strong) NSMutableArray                    * XArray;
+
+@property (nonatomic, strong) NSMutableArray                    * subjectNameArray;
+@property (nonatomic, strong) UILabel                                       * subjectLabel;
 
 @end
 
@@ -48,15 +51,20 @@
         
         for (int i = 0; i < [[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"] count]; i ++) {
             [_YArray addObject:[[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"][i] valueForKey:@"dailyData"] valueForKey:@"average"]];
-            
-            
         }
+        
+        //新建图表
         _UUChartView = [[UUChart alloc]initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(550), FLEXIBLE_NUM(300))
                                           dataSource:self
                                                style:UUChartStyleLine];
         _UUChartView.backgroundColor = [UIColor clearColor];
         [_UUChartView showInView:_chartView];
-//        NSLog(@"_YArray = %@",_YArray);
+        
+        [_subjectNameArray addObject:[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"]valueForKey:@"subjectName"]];
+        NSLog(@"subjectName = %@",_subjectNameArray);
+//        
+        _subjectLabel.text = [NSString stringWithFormat:@"%@",_subjectNameArray[0][0]];
+        _numLabel.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"totalReward"]];
         
     }
     
@@ -67,6 +75,7 @@
 {
     _XArray = [[NSMutableArray alloc] init];
     _YArray = [[NSMutableArray alloc] init];
+    _subjectNameArray = [[NSMutableArray alloc] init];
     
     _parentsModel = [[ParentsModel alloc] init];
     [_parentsModel addObserver:self forKeyPath:@"learningStatisticsData" options:NSKeyValueObservingOptionNew context:nil];
@@ -138,7 +147,15 @@
         chartView;
     });
     
-
+//    for (int i = 0; i < _subjectNameArray.count; i ++) {
+        _subjectLabel = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(780), FLEXIBLE_NUM(400), FLEXIBLE_NUM(200), FLEXIBLE_NUM(40))];
+//        label.text = _subjectNameArray[0];
+        _subjectLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
+//        _subjectLabel.backgroundColor = [UIColor blackColor];
+        _subjectLabel.textColor = [UUColor green];
+        [self.view addSubview:_subjectLabel];
+//    }
+    
     
     
 
@@ -150,7 +167,7 @@
 - (NSArray *)getXTitles:(int)num
 {
     NSMutableArray *xTitles = [NSMutableArray array];
-    for (int i=0; i<num; i++) {
+    for (int i=1; i<num; i++) {
         NSString * str = [NSString stringWithFormat:@"Day-%d",i];
         [xTitles addObject:str];
     }
