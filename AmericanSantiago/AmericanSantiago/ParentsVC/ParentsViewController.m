@@ -60,11 +60,13 @@
         _UUChartView.backgroundColor = [UIColor clearColor];
         [_UUChartView showInView:_chartView];
         
-        [_subjectNameArray addObject:[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"]valueForKey:@"subjectName"]];
-//        NSLog(@"subjectName = %@",_subjectNameArray);
-//
-        _subjectLabel.text = [NSString stringWithFormat:@"%@",_subjectNameArray[0][0]];
-        _numLabel.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"totalReward"]];
+        if ([_parentsModel.learningStatisticsData valueForKey:@"data"]) {
+            [_subjectNameArray addObject:[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"]valueForKey:@"subjectName"]];
+            
+            _subjectLabel.text = [NSString stringWithFormat:@"%@",_subjectNameArray[0][0]];
+            _numLabel.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"totalReward"]];
+            
+        }
         
     }
     
