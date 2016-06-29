@@ -52,9 +52,8 @@
 - (void)initializeUserInterface
 {
     [self.view addSubview:self.bgView];
-    
-    
 }
+
 #pragma mark - 各种Getter
 - (UIView *)bgView
 {
@@ -166,6 +165,7 @@
         self.currentIndex = [self processIndexWithIndex:self.currentIndex + 1];
         update = YES;
     }
+    
     else if (index == 0){
         [UIView animateWithDuration:0.2 animations:^{
             [self.bgView setOriginY:0];
@@ -188,6 +188,7 @@
 
     self.northBgView.image = [UIImage imageNamed:self.northImageArray[self.currentIndex]];
     self.southBgView.image = [UIImage imageNamed:self.southImageArray[self.currentIndex]];
+    
 }
 
 

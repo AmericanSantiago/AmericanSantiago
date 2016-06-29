@@ -196,9 +196,9 @@
     NSDateFormatter * formatter=   [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     
-    
+    //人物
     _figerImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(590), FLEXIBLE_NUM(200), FLEXIBLE_NUM(250), FLEXIBLE_NUM(300))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(350), FLEXIBLE_NUM(70), FLEXIBLE_NUM(750), FLEXIBLE_NUM(600))];
         imageView.backgroundColor = [UIColor clearColor];
         imageView.image = [UIImage imageNamed:@"boy.png"];
         [self.view addSubview:imageView];
@@ -226,6 +226,20 @@
         button;
     });
     
+    //计算年龄
+    NSString *birth = _birthdayTextField.text;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //生日
+    NSDate *birthDay = [dateFormatter dateFromString:birth];
+    //当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    NSDate *currentDate = [dateFormatter dateFromString:currentDateStr];
+    NSLog(@"currentDate %@ birthDay %@",currentDateStr,birth);
+    NSTimeInterval time=[currentDate timeIntervalSinceDate:birthDay];
+    int age = ((int)time)/(3600*24*365);
+    NSLog(@"year %d",age);
+    _ageTextField.text = [NSString stringWithFormat:@"%d岁",age];
     
     
 }
@@ -252,11 +266,11 @@
 {
     
     if ([_genderTextField.text isEqualToString:@"男"]) {
-            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"1"  Charactertype:@"boy"];
+            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"1"  Charactertype:@"boy" username:_nameTextField.text];
     }else{
-            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"0" Charactertype:@"girl"];
+            [_figureModel updateInfoWithNickname:_nicknameTextField.text Name:_nameTextField.text Birthday:_birthdayTextField.text Gender:@"0" Charactertype:@"girl" username:_nameTextField.text];
     }
-
+    
     
 }
 
@@ -294,7 +308,6 @@
     int age = ((int)time)/(3600*24*365);
     NSLog(@"year %d",age);
     _ageTextField.text = [NSString stringWithFormat:@"%d岁",age];
-    
 }
 
 

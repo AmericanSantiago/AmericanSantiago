@@ -76,7 +76,7 @@
     
     _character = @"girl";
     _figureImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(320), FLEXIBLE_NUM(0), FLEXIBLE_NUM(FLEXIBLE_NUM(400)), FLEXIBLE_NUM(700))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
 //        imageView.backgroundColor = [UIColor yellowColor];
         [imageView setImage:[UIImage imageNamed:@"girl"]];
         [self.view addSubview:imageView];

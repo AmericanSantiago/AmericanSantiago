@@ -37,7 +37,11 @@
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    
+    if ([keyPath isEqualToString:@"unlockedGamesData"]) {
+        
+        
+        
+    }
     
     
 }
@@ -47,8 +51,6 @@
 {
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    
-    [_homeModel getGetUnlockedGamesWithUsername:@"mwk" SubjectId:@"1" SceneType:@"classroom"];
     
 }
 
@@ -63,14 +65,18 @@
     
 
     _mathButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(340), FLEXIBLE_NUM(580), FLEXIBLE_NUM(80), FLEXIBLE_NUM(100))];
-        button.backgroundColor = [UIColor yellowColor];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(320), FLEXIBLE_NUM(530), FLEXIBLE_NUM(110), FLEXIBLE_NUM(90))];
+        button.backgroundColor = [UIColor clearColor];
         [button addTarget:self action:@selector(mathButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
     });
     
 
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(200), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
+    button.backgroundColor = [UIColor blueColor];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
 }
 
@@ -83,13 +89,40 @@
 #pragma mark -- buttonCLick
 - (void) mathButtonClick: (UIButton *) sender
 {
-    GameViewController * gameVC = [[GameViewController alloc] init];
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    [_homeModel getGetUnlockedGamesWithUsername:[userDic valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
+    GameViewController * gameVC = [[GameViewController alloc] init];
     [self.translationController pushViewController:gameVC];
     
 }
 
 
+- (void) buttonClick:(UIButton *) sender
+{
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    NSString * urlString = @"/ConceptFinish";
+    NSDictionary* bodyObject = @{
+                                 @"username":[userDic valueForKey:@"username"],
+                                 @"subjectId":@"Math"};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+//            self.gameNewData = resultDic;
+            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
+            if ([[resultDic valueForKey:@"errorCode"] integerValue] == 0) {
+                
+                NSLog(@"通知成功");
+                
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGamesData" object:nil];
+                
+            }
+            
+        }
+    }];
+
+    
+    
+}
 
 
 @end

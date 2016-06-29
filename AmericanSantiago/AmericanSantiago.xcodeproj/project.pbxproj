@@ -105,7 +105,6 @@
 		8C2299091D199BF9002C0F80 /* 电影院bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298C71D199BF9002C0F80 /* 电影院bg.png */; };
 		8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298C81D199BF9002C0F80 /* 登录注册bg.png */; };
 		8C22990B1D199BF9002C0F80 /* 设置音量bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298C91D199BF9002C0F80 /* 设置音量bg.png */; };
-		8C22990C1D199BF9002C0F80 /* 课堂bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298CA1D199BF9002C0F80 /* 课堂bg.png */; };
 		8C22990D1D199BF9002C0F80 /* 首页bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298CB1D199BF9002C0F80 /* 首页bg.png */; };
 		8C22990E1D199BF9002C0F80 /* left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298CE1D199BF9002C0F80 /* left@2x.png */; };
 		8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298CF1D199BF9002C0F80 /* planedown@2x.png */; };
@@ -135,9 +134,7 @@
 		8C2299341D199BF9002C0F80 /* 设置时间@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F51D199BF9002C0F80 /* 设置时间@3x.png */; };
 		8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F81D199BF9002C0F80 /* 主界面1.png */; };
 		8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */; };
-		D80BFB421D1CC34000830B55 /* 主界面3.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB411D1CC34000830B55 /* 主界面3.png */; };
 		D80BFB481D1CC47500830B55 /* 宠物店bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB471D1CC47500830B55 /* 宠物店bg.png */; };
-		D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB491D1CC55C00830B55 /* 主界面4.png */; };
 		D80BFB4C1D1CC60500830B55 /* 城市bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB4B1D1CC60500830B55 /* 城市bg.png */; };
 		D80BFB501D1CC82D00830B55 /* 超市bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFB4F1D1CC82D00830B55 /* 超市bg.png */; };
 		D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFC511D1CCA7100830B55 /* 小红花@3x.png */; };
@@ -174,15 +171,11 @@
 		D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85317D31D1A6E1E00BBA6D3 /* 设置@2x.png */; };
 		D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85317D41D1A6E1E00BBA6D3 /* 主页@2x.png */; };
 		D85318191D1B6D9700BBA6D3 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D85318181D1B6D9700BBA6D3 /* LoginModel.m */; };
-		D85318571D1B7AAA00BBA6D3 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318551D1B7AAA00BBA6D3 /* boy.png */; };
-		D85318581D1B7AAA00BBA6D3 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318561D1B7AAA00BBA6D3 /* girl.png */; };
 		D853185C1D1B7B0F00BBA6D3 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D853185B1D1B7B0F00BBA6D3 /* HomeModel.m */; };
 		D85318601D1B819400BBA6D3 /* ParentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D853185F1D1B819400BBA6D3 /* ParentsModel.m */; };
 		D853186A1D1B953100BBA6D3 /* 注册选择人物.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318691D1B953100BBA6D3 /* 注册选择人物.png */; };
 		D853186C1D1BAE5100BBA6D3 /* 注册全.png in Resources */ = {isa = PBXBuildFile; fileRef = D853186B1D1BAE5100BBA6D3 /* 注册全.png */; };
 		D853186E1D1BAF7D00BBA6D3 /* 注册选择人物bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D853186D1D1BAF7D00BBA6D3 /* 注册选择人物bg.png */; };
-		D85318711D1BB26A00BBA6D3 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D853186F1D1BB26A00BBA6D3 /* boy1.png */; };
-		D85318721D1BB26A00BBA6D3 /* girl1.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318701D1BB26A00BBA6D3 /* girl1.png */; };
 		D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318731D1BB47700BBA6D3 /* 黄向右@3x.png */; };
 		D85318761D1BB47700BBA6D3 /* 黄向左@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318741D1BB47700BBA6D3 /* 黄向左@3x.png */; };
 		D85318791D1BB48200BBA6D3 /* 黄向右@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318771D1BB48200BBA6D3 /* 黄向右@2x.png */; };
@@ -200,6 +193,15 @@
 		D85318A91D1BCFD500BBA6D3 /* South3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A11D1BCFD500BBA6D3 /* South3.jpg */; };
 		D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D85318A21D1BCFD500BBA6D3 /* South4.jpg */; };
 		D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318AB1D1C16E800BBA6D3 /* 主界面2.png */; };
+		D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41A1D20BF1A006CE629 /* boy1.png */; };
+		D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41B1D20BF1A006CE629 /* girl1.png */; };
+		D8D8A4201D218C61006CE629 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41E1D218C61006CE629 /* boy.png */; };
+		D8D8A4211D218C61006CE629 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41F1D218C61006CE629 /* girl.png */; };
+		D8D8A4231D218E1C006CE629 /* 气泡@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4221D218E1C006CE629 /* 气泡@3x.png */; };
+		D8D8A4251D218E26006CE629 /* 气泡@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4241D218E26006CE629 /* 气泡@2x.png */; };
+		D8D8A4281D220DA1006CE629 /* 主界面3.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4261D220DA1006CE629 /* 主界面3.png */; };
+		D8D8A4291D220DA1006CE629 /* 主界面4.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4271D220DA1006CE629 /* 主界面4.png */; };
+		D8D8A42B1D220E0D006CE629 /* 课堂bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A42A1D220E0D006CE629 /* 课堂bg.png */; };
 		D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72DF1D1E770400025F32 /* UUBar.m */; };
 		D8FE72EB1D1E770400025F32 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E11D1E770400025F32 /* UUBarChart.m */; };
 		D8FE72EC1D1E770400025F32 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E31D1E770400025F32 /* UUChart.m */; };
@@ -399,7 +401,6 @@
 		8C2298C71D199BF9002C0F80 /* 电影院bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电影院bg.png"; sourceTree = "<group>"; };
 		8C2298C81D199BF9002C0F80 /* 登录注册bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登录注册bg.png"; sourceTree = "<group>"; };
 		8C2298C91D199BF9002C0F80 /* 设置音量bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置音量bg.png"; sourceTree = "<group>"; };
-		8C2298CA1D199BF9002C0F80 /* 课堂bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课堂bg.png"; sourceTree = "<group>"; };
 		8C2298CB1D199BF9002C0F80 /* 首页bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页bg.png"; sourceTree = "<group>"; };
 		8C2298CE1D199BF9002C0F80 /* left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left@2x.png"; sourceTree = "<group>"; };
 		8C2298CF1D199BF9002C0F80 /* planedown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planedown@2x.png"; sourceTree = "<group>"; };
@@ -429,9 +430,7 @@
 		8C2298F51D199BF9002C0F80 /* 设置时间@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置时间@3x.png"; sourceTree = "<group>"; };
 		8C2298F81D199BF9002C0F80 /* 主界面1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面1.png"; sourceTree = "<group>"; };
 		8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "地球图标1bg.png"; path = "../主界面背景/地球图标1bg.png"; sourceTree = "<group>"; };
-		D80BFB411D1CC34000830B55 /* 主界面3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面3.png"; sourceTree = "<group>"; };
 		D80BFB471D1CC47500830B55 /* 宠物店bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "宠物店bg.png"; sourceTree = "<group>"; };
-		D80BFB491D1CC55C00830B55 /* 主界面4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面4.png"; sourceTree = "<group>"; };
 		D80BFB4B1D1CC60500830B55 /* 城市bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "城市bg.png"; sourceTree = "<group>"; };
 		D80BFB4F1D1CC82D00830B55 /* 超市bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "超市bg.png"; sourceTree = "<group>"; };
 		D80BFC511D1CCA7100830B55 /* 小红花@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小红花@3x.png"; sourceTree = "<group>"; };
@@ -476,8 +475,6 @@
 		D85317D41D1A6E1E00BBA6D3 /* 主页@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主页@2x.png"; sourceTree = "<group>"; };
 		D85318171D1B6D9700BBA6D3 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		D85318181D1B6D9700BBA6D3 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
-		D85318551D1B7AAA00BBA6D3 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
-		D85318561D1B7AAA00BBA6D3 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
 		D853185A1D1B7B0F00BBA6D3 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D853185B1D1B7B0F00BBA6D3 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D853185E1D1B819400BBA6D3 /* ParentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentsModel.h; sourceTree = "<group>"; };
@@ -485,8 +482,6 @@
 		D85318691D1B953100BBA6D3 /* 注册选择人物.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "注册选择人物.png"; sourceTree = "<group>"; };
 		D853186B1D1BAE5100BBA6D3 /* 注册全.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "注册全.png"; sourceTree = "<group>"; };
 		D853186D1D1BAF7D00BBA6D3 /* 注册选择人物bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "注册选择人物bg.png"; sourceTree = "<group>"; };
-		D853186F1D1BB26A00BBA6D3 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
-		D85318701D1BB26A00BBA6D3 /* girl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl1.png; sourceTree = "<group>"; };
 		D85318731D1BB47700BBA6D3 /* 黄向右@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄向右@3x.png"; sourceTree = "<group>"; };
 		D85318741D1BB47700BBA6D3 /* 黄向左@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄向左@3x.png"; sourceTree = "<group>"; };
 		D85318771D1BB48200BBA6D3 /* 黄向右@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄向右@2x.png"; sourceTree = "<group>"; };
@@ -505,6 +500,15 @@
 		D85318A11D1BCFD500BBA6D3 /* South3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South3.jpg; sourceTree = "<group>"; };
 		D85318A21D1BCFD500BBA6D3 /* South4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = South4.jpg; sourceTree = "<group>"; };
 		D85318AB1D1C16E800BBA6D3 /* 主界面2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面2.png"; sourceTree = "<group>"; };
+		D8D8A41A1D20BF1A006CE629 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
+		D8D8A41B1D20BF1A006CE629 /* girl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl1.png; sourceTree = "<group>"; };
+		D8D8A41E1D218C61006CE629 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
+		D8D8A41F1D218C61006CE629 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
+		D8D8A4221D218E1C006CE629 /* 气泡@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@3x.png"; sourceTree = "<group>"; };
+		D8D8A4241D218E26006CE629 /* 气泡@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@2x.png"; sourceTree = "<group>"; };
+		D8D8A4261D220DA1006CE629 /* 主界面3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面3.png"; sourceTree = "<group>"; };
+		D8D8A4271D220DA1006CE629 /* 主界面4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面4.png"; sourceTree = "<group>"; };
+		D8D8A42A1D220E0D006CE629 /* 课堂bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课堂bg.png"; sourceTree = "<group>"; };
 		D8FE72DE1D1E770400025F32 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
 		D8FE72DF1D1E770400025F32 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
 		D8FE72E01D1E770400025F32 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
@@ -1011,13 +1015,13 @@
 		8C2298B91D199BF9002C0F80 /* 1 */ = {
 			isa = PBXGroup;
 			children = (
-				D853186F1D1BB26A00BBA6D3 /* boy1.png */,
-				D85318701D1BB26A00BBA6D3 /* girl1.png */,
+				D8D8A41A1D20BF1A006CE629 /* boy1.png */,
+				D8D8A41E1D218C61006CE629 /* boy.png */,
+				D8D8A41F1D218C61006CE629 /* girl.png */,
+				D8D8A41B1D20BF1A006CE629 /* girl1.png */,
 				D853186D1D1BAF7D00BBA6D3 /* 注册选择人物bg.png */,
 				D853186B1D1BAE5100BBA6D3 /* 注册全.png */,
 				D85318691D1B953100BBA6D3 /* 注册选择人物.png */,
-				D85318551D1B7AAA00BBA6D3 /* boy.png */,
-				D85318561D1B7AAA00BBA6D3 /* girl.png */,
 			);
 			path = 1;
 			sourceTree = "<group>";
@@ -1041,10 +1045,10 @@
 				8C2298C41D199BF9002C0F80 /* 小区bg.png */,
 				8C2298C51D199BF9002C0F80 /* 排版girl-bg.png */,
 				8C2298C61D199BF9002C0F80 /* 电影院2bg.png */,
+				D8D8A42A1D220E0D006CE629 /* 课堂bg.png */,
 				8C2298C71D199BF9002C0F80 /* 电影院bg.png */,
 				8C2298C81D199BF9002C0F80 /* 登录注册bg.png */,
 				8C2298C91D199BF9002C0F80 /* 设置音量bg.png */,
-				8C2298CA1D199BF9002C0F80 /* 课堂bg.png */,
 				8C2298CB1D199BF9002C0F80 /* 首页bg.png */,
 				8C2298F91D199BF9002C0F80 /* 地球图标1bg.png */,
 			);
@@ -1063,6 +1067,7 @@
 		8C2298CD1D199BF9002C0F80 /* @2x */ = {
 			isa = PBXGroup;
 			children = (
+				D8D8A4241D218E26006CE629 /* 气泡@2x.png */,
 				D80BFC5D1D1CCF9500830B55 /* 调节钮@2x.png */,
 				D80BFC551D1CCC2600830B55 /* 退出登录@2x.png */,
 				D85318771D1BB48200BBA6D3 /* 黄向右@2x.png */,
@@ -1089,6 +1094,7 @@
 		8C2298E21D199BF9002C0F80 /* @3x */ = {
 			isa = PBXGroup;
 			children = (
+				D8D8A4221D218E1C006CE629 /* 气泡@3x.png */,
 				D85318731D1BB47700BBA6D3 /* 黄向右@3x.png */,
 				D85318741D1BB47700BBA6D3 /* 黄向左@3x.png */,
 				8C2298E31D199BF9002C0F80 /* left@3x.png */,
@@ -1118,9 +1124,9 @@
 				D80BFC651D1CD0EA00830B55 /* brightness_bar.png */,
 				D80BFC631D1CD0E000830B55 /* 屏幕快照 2016-06-24 上午10.21.39.png */,
 				D80BFC591D1CCE7600830B55 /* 退出.png */,
+				D8D8A4261D220DA1006CE629 /* 主界面3.png */,
+				D8D8A4271D220DA1006CE629 /* 主界面4.png */,
 				D85318AB1D1C16E800BBA6D3 /* 主界面2.png */,
-				D80BFB491D1CC55C00830B55 /* 主界面4.png */,
-				D80BFB411D1CC34000830B55 /* 主界面3.png */,
 				8C2298F81D199BF9002C0F80 /* 主界面1.png */,
 				D85318851D1BC56600BBA6D3 /* 主界面5.png */,
 			);
@@ -1405,7 +1411,6 @@
 				8C2299081D199BF9002C0F80 /* 电影院2bg.png in Resources */,
 				8C1DDCB51D1CDC53005D1F24 /* Htmls in Resources */,
 				8C2299221D199BF9002C0F80 /* left@3x.png in Resources */,
-				D85318721D1BB26A00BBA6D3 /* girl1.png in Resources */,
 				D85318A71D1BCFD500BBA6D3 /* South1.jpg in Resources */,
 				8C2299251D199BF9002C0F80 /* planeright@3x.png in Resources */,
 				8C22991D1D199BF9002C0F80 /* 登录@2x.png in Resources */,
@@ -1413,11 +1418,13 @@
 				D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */,
 				8C0EF30A1D0417A700194D16 /* Assets.xcassets in Resources */,
 				D80BFB501D1CC82D00830B55 /* 超市bg.png in Resources */,
+				D8D8A42B1D220E0D006CE629 /* 课堂bg.png in Resources */,
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
 				D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */,
 				8C15F1721D1FC55A0094350C /* world_planeright_btn@2x.png in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
+				D8D8A4251D218E26006CE629 /* 气泡@2x.png in Resources */,
 				8C22990A1D199BF9002C0F80 /* 登录注册bg.png in Resources */,
 				8C2298FE1D199BF9002C0F80 /* 商场bg.png in Resources */,
 				D85317CD1D1A6E1300BBA6D3 /* 设置@3x.png in Resources */,
@@ -1434,30 +1441,29 @@
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
 				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
 				8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */,
+				D8D8A4211D218C61006CE629 /* girl.png in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
-				D80BFB4A1D1CC55C00830B55 /* 主界面4.png in Resources */,
 				8C2298871D19969A002C0F80 /* home_map_bg.png in Resources */,
 				D80BFC661D1CD0EA00830B55 /* brightness_bar.png in Resources */,
-				D85318571D1B7AAA00BBA6D3 /* boy.png in Resources */,
 				D85317D51D1A6E1E00BBA6D3 /* 返回@2x.png in Resources */,
+				D8D8A4281D220DA1006CE629 /* 主界面3.png in Resources */,
 				8C22986A1D198C80002C0F80 /* root_bg.png in Resources */,
 				D85318841D1BC3A100BBA6D3 /* 厨房bg.jpg in Resources */,
 				D85318761D1BB47700BBA6D3 /* 黄向左@3x.png in Resources */,
 				8C2299031D199BF9002C0F80 /* 地球图标2bg.png in Resources */,
 				8C15F1741D1FC55A0094350C /* world_planeup_btn@2x.png in Resources */,
-				8C22990C1D199BF9002C0F80 /* 课堂bg.png in Resources */,
 				8C22992B1D199BF9002C0F80 /* 图层-5@3x.png in Resources */,
 				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
 				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
 				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
+				D8D8A4291D220DA1006CE629 /* 主界面4.png in Resources */,
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
 				8C15F16F1D1FC55A0094350C /* world_planeleft_btn.png in Resources */,
-				D80BFB421D1CC34000830B55 /* 主界面3.png in Resources */,
 				8C22991B1D199BF9002C0F80 /* 注册@2x.png in Resources */,
-				D85318711D1BB26A00BBA6D3 /* boy1.png in Resources */,
 				D85317D71D1A6E1E00BBA6D3 /* 截图@2x.png in Resources */,
 				D85318791D1BB48200BBA6D3 /* 黄向右@2x.png in Resources */,
 				D80BFC641D1CD0E000830B55 /* 屏幕快照 2016-06-24 上午10.21.39.png in Resources */,
+				D8D8A4231D218E1C006CE629 /* 气泡@3x.png in Resources */,
 				8C2299051D199BF9002C0F80 /* 家长反馈bg.png in Resources */,
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
 				D80BFB4C1D1CC60500830B55 /* 城市bg.png in Resources */,
@@ -1466,8 +1472,8 @@
 				8C2299361D199BF9002C0F80 /* 主界面1.png in Resources */,
 				8C2299091D199BF9002C0F80 /* 电影院bg.png in Resources */,
 				8C2299371D199BF9002C0F80 /* 地球图标1bg.png in Resources */,
+				D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */,
 				D80BFC6C1D1CD1EF00830B55 /* 圆角矩形-2@3x.png in Resources */,
-				D85318581D1B7AAA00BBA6D3 /* girl.png in Resources */,
 				D85317C91D1A6E1300BBA6D3 /* 返回@3x.png in Resources */,
 				8C2298841D19969A002C0F80 /* home_city_bg@2x.png in Resources */,
 				D85317CA1D1A6E1300BBA6D3 /* 家长@3x.png in Resources */,
@@ -1476,6 +1482,7 @@
 				8C15F16D1D1FC55A0094350C /* world_planedown_btn.png in Resources */,
 				8C2298861D19969A002C0F80 /* home_community_bg@2x.png in Resources */,
 				8C2299291D199BF9002C0F80 /* 向右@3x.png in Resources */,
+				D8D8A4201D218C61006CE629 /* boy.png in Resources */,
 				8C2299311D199BF9002C0F80 /* 登录@3x.png in Resources */,
 				D85317D81D1A6E1E00BBA6D3 /* 人物@2x.png in Resources */,
 				8C2299231D199BF9002C0F80 /* planedown@3x.png in Resources */,
@@ -1508,6 +1515,7 @@
 				D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */,
 				D85318AA1D1BCFD500BBA6D3 /* South4.jpg in Resources */,
 				D853186A1D1B953100BBA6D3 /* 注册选择人物.png in Resources */,
+				D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */,
 				8C2299241D199BF9002C0F80 /* planeleft@3x.png in Resources */,
 				D85318A81D1BCFD500BBA6D3 /* South2.jpg in Resources */,
 				8C22988B1D19969A002C0F80 /* home_school_bg.png in Resources */,
@@ -1754,7 +1762,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1771,7 +1779,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mwk;
 				PRODUCT_NAME = "$(TARGET_NAME)";

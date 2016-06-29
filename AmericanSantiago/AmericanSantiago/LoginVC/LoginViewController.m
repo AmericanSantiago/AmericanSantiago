@@ -51,6 +51,7 @@
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
 //                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
                 [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
+                [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
                 
                 //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
             }];
@@ -103,6 +104,7 @@
     _userNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
+        textField.text = [[LBUserDefaults getUserDic] valueForKey:@"username"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
@@ -111,6 +113,7 @@
     _passwdTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155 + 120), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
+        textField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];

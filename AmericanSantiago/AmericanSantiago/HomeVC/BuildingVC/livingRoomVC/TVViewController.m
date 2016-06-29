@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIButton                              * rightButton;
 
 @property (nonatomic, strong) NSString                               * mark;
+@property (assign,nonatomic) NSInteger currentIndex;//当前显示页面
+
 
 @end
 
@@ -116,58 +118,78 @@
 #pragma mark -- buttonCLick
 - (void) leftButtonClick: (UIButton *) sender
 {
-    
-    [UIView animateWithDuration:1 animations:^{
-         _mark = @"1";
-        
-        _view2.alpha = 0;
-        _view2.hidden = YES;
-        
-        _view1.hidden = NO;
-        _view1.alpha = 1;
-        
-    }];
-    
+    NSLog(@"view.mark === %@",_mark);
     if ([_mark isEqualToString:@"1"]) {
-        _leftButton.hidden = YES;
+//        _leftButton.hidden = YES;
+        
+        
     }
+    
+    if ([_mark isEqualToString:@"2"]) {
+        [UIView animateWithDuration:0 animations:^{
+            _mark = @"1";
+            _view2.alpha = 0;
+            _view2.hidden = YES;
+            
+            _view1.hidden = NO;
+            _view1.alpha = 1;
+//            _leftButton.hidden = NO;
+//            NSLog(@"view.mark === %@",_mark);
+        }];
+    }
+    
+    if ([_mark isEqualToString:@"3"]) {
+        _mark = @"2";
+        _view3.hidden = YES;
+        _view2.hidden = NO;
+//        _rightButton.hidden = YES;
+//        NSLog(@"view.mark === %@",_mark);
+    }
+
     
     
 }
 
 - (void) rightButtonClick: (UIButton *) sender
 {
-//    [UIView animateWithDuration:1 animations:^{
-//        _mark = @"3";
-//        
-//        _view2.alpha = 0;
-//        _view2.hidden = YES;
-//        
-//        _view3.hidden = NO;
-//        _view3.alpha = 1;
-//        
-//    }];
+    NSLog(@"view.mark === %@",_mark);
+    
     if ([_mark isEqualToString:@"3"]) {
-        _rightButton.hidden = YES;
+//        _rightButton.hidden = YES;
     }
     
     if ([_mark isEqualToString:@"1"]) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0 animations:^{
             _mark = @"2";
             
             _view2.alpha = 1;
             _view2.hidden = NO;
-            
-            _view3.hidden = YES;
-            _view3.alpha = 0;
         
         _view1.hidden = YES;
-        _view1.alpha = 0;
+//        _view1.alpha = 0;
+//            _leftButton.hidden = YES;
+//            NSLog(@"view.mark === %@",_mark);
         }];
+        return;
+    }
+    
+    if ([_mark isEqualToString:@"2"]) {
+        _mark = @"3";
+        
+        _view3.hidden = NO;
+//        _view3.alpha = 1;
+        
+        _view1.hidden = YES;
+        _view2.hidden = YES;
+//        _leftButton.hidden = NO;
+//        _rightButton.hidden = NO;
+//        NSLog(@"view.mark === %@",_mark);
     }
     
     
+    
 }
+
 
 
 @end

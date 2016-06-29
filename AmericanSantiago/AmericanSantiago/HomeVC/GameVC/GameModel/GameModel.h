@@ -11,7 +11,10 @@
 @interface GameModel : NSObject
 
 @property (nonatomic, strong,readonly) id                                    gameData;
+@property (nonatomic, strong, readonly) id                                    gameNewData;
+
 
 - (void) getGameData;
+- (void) getNewGamesWithUsername: (NSString *) username subjectId:(NSString *) subjectId;
 
 @end

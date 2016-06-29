@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong, readonly) id                        updateInfoData;
 
-- (void) updateInfoWithNickname: (NSString *) nickname Name:(NSString *) name Birthday:(NSString *)birthday Gender:(NSString *)gender Charactertype: (NSString *)charactertype;
+- (void) updateInfoWithNickname: (NSString *) nickname Name:(NSString *) name Birthday:(NSString *)birthday Gender:(NSString *)gender Charactertype: (NSString *)charactertype username:(NSString *) username;
 
 
 @end
