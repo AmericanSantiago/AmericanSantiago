@@ -167,14 +167,14 @@
         update = YES;
     }
     else if (index == 0){
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             [self.bgView setOriginY:0];
         } completion:^(BOOL finished) {
             
         }];
     }
     else if (index == 1){
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             [self.bgView setOriginY:-MAINSCRREN_H];
         } completion:^(BOOL finished) {
             
