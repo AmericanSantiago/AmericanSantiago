@@ -79,7 +79,7 @@
             
         }
 //        NSLog(@"homeArray = %@",_homeGameArray);
-//        NSLog(@"_schoolGameArray = %@",_schoolGameArray);
+        NSLog(@"_schoolGameArray = %@",_schoolGameArray);
 //        NSLog(@"_cityGameArray = %@",_cityGameArray);
         
         [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
@@ -105,7 +105,7 @@
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
-//    [_homeModel getGetUnlockedGamesWithUsername:@"000" SubjectId:@"Math" SceneType:@"home"];
+//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"home"];
     
     if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
         [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
@@ -116,8 +116,9 @@
     
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAllUnlockGames:) name:@"updateAllUnlockGames" object:nil];
     
 }
 - (void) getNextConceptData:(NSNotification *) notifi
@@ -211,6 +212,7 @@
     switch (_backgroundView.tag) {
         case 1:{
             ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
+            classroomVC.classroomGamesArray = _schoolGameArray;
             [self.translationController pushViewController:classroomVC];
         }
             break;
@@ -264,6 +266,14 @@
     [imageView addSubview:label];
     
     return imageView;
+}
+
+- (void) updateAllUnlockGames:(NSNotification *) notifi
+{
+    
+//        [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"home"];
+ 
+    [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
 }
 
 

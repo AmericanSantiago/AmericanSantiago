@@ -10,4 +10,6 @@
 
 @interface GameViewController : BaseViewController
 
+@property (nonatomic, strong) NSString                      * urlString;
+
 @end

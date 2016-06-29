@@ -51,6 +51,8 @@
 //音量控制
 #import<MediaPlayer/MediaPlayer.h>
 
+#import "GameModel.h"
+
 //屏幕适配相关**************************************
 #import "FlexibleFrame.h"//适配
 #define WINDOW ((AppDelegate *)[UIApplication sharedApplication].delegate).window//window

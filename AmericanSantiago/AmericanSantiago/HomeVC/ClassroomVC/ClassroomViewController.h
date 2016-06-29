@@ -10,4 +10,6 @@
 
 @interface ClassroomViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * classroomGamesArray;
+
 @end

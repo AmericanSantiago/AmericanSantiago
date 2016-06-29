@@ -11,7 +11,7 @@
 #import "HomeModel.h"
 #import "GameModel.h"
 
-@interface GameViewController ()<UIWebViewDelegate>
+@interface GameViewController ()<WKNavigationDelegate, WKUIDelegate>
 
 @property (nonatomic ,strong) HomeModel                      * homeModel;
 
@@ -31,11 +31,44 @@
 - (void)dealloc
 {
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
-    [_gameModel removeObserver:self forKeyPath:@"gameNewData"];
+//    [_gameModel removeObserver:self forKeyPath:@"gameNewData"];
     
 //    [_webView removeObserver:self forKeyPath:@"finishGame"];
     
 }
+
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"页面将面消失（测试）");
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
+    
+    //通知后台游戏完成
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    NSString * urlString = @"/ConceptFinish";
+    NSDictionary* bodyObject = @{
+                                 @"username":[userDic valueForKey:@"username"],
+                                 @"subjectId":@"Math"};
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (!errorString) {
+            //            self.gameNewData = resultDic;
+            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
+            if ([[resultDic valueForKey:@"errorCode"] integerValue] == 0) {
+                
+                NSLog(@"通知成功");
+                
+                //                [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGamesData" object:nil];
+                
+            }
+            
+        }
+    }];
+    
+}
+
 
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -43,6 +76,8 @@
     if ([keyPath isEqualToString:@"finishGame"]) {
         if (!_webView) {
             NSLog(@"游戏结束");
+            
+            
         }
         
         
@@ -65,11 +100,11 @@
     [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
     
-    _gameModel = [[GameModel alloc] init];
-    [_gameModel addObserver:self forKeyPath:@"gameNewData" options:NSKeyValueObservingOptionNew context:nil];
-    
-//    [_gameModel getGameData];
-    [_gameModel getNewGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+//    _gameModel = [[GameModel alloc] init];
+//    [_gameModel addObserver:self forKeyPath:@"gameNewData" options:NSKeyValueObservingOptionNew context:nil];
+//    
+////    [_gameModel getGameData];
+//    [_gameModel getNewGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];//获取新解锁游戏
     
     [_webView addObserver:self forKeyPath:@"finishGame" options:NSKeyValueObservingOptionNew context:nil];
     
@@ -86,20 +121,24 @@
     
     _webView = ({
         WKWebView * webView = [[WKWebView alloc] initWithFrame:BASESCRREN_B];
-        //        webView.delegate = self;
+        webView.navigationDelegate = self;
+        webView.UIDelegate = self;
         webView.backgroundColor = [UIColor blackColor];
         [self.view addSubview:webView];
         webView;
     });
     
-    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/GE_STSO_0dot2/home_kitchen_13_60_01/13_I.1_COMPARE/index.html"];
+    NSURL *url = [[NSURL alloc]initWithString:@"http://115.28.156.240:8080/Yes123Server/Math/AF_AS_0dot2/city_petstore_13_26_01/13_I.1_COMPARE/index.html"];
+//    NSLog(@"----------%@",_urlString);
+//    NSURL * urlStr = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",_urlString]];
+//    NSLog(@"+++++++++++++%@",urlStr);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:request];
     
 //    [self loadDocument:@"index" fileTypeName:@"city" inView:_webView];
     
     //    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
-    
+
     
 }
 
@@ -154,6 +193,23 @@
     //    [webView loadFileURL:[NSURL URLWithString:filePath] allowingReadAccessToURL:[NSURL URLWithString:filePath]];
 }
 
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
+    NSLog(@"webViewWebContentProcessDidTerminate:  当Web视图的网页内容被终止时调用。");
+}
+
+// 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
+    NSLog(@"页面加载完成！");
+}
+
+//当webView载入时调用此方法
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+//    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"载入webView!");
+}
+
+
 
 //将文件copy到tmp目录
 - (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
@@ -173,5 +229,10 @@
     // Files in "/temp/www" load flawlesly :)
     return dstURL;
 }
+
+
+
+
+
 
 @end
