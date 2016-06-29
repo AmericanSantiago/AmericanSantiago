@@ -8,8 +8,9 @@
 
 #import "FigureViewController.h"
 #import "FigureModel.h"
+#import "SRMonthPicker.h"
 
-@interface FigureViewController ()<UITextFieldDelegate>
+@interface FigureViewController ()<UITextFieldDelegate, SRMonthPickerDelegate>
 
 @property (nonatomic, strong) UIButton                            * boyButton;
 @property (nonatomic, strong) UIButton                            * girlButton;
@@ -24,10 +25,12 @@
 @property (nonatomic ,strong) UITextField                       * ageTextField;
 @property (nonatomic ,strong) UITextField                       * genderTextField;
 
-@property (nonatomic ,strong) UIDatePicker                   * datePicker;
-
 @property (nonatomic ,strong) UIButton                              * ensureButton;
 @property (nonatomic, strong) FigureModel                       * figureModel;
+
+//@property (nonatomic, strong) NewDatePickerView             * datePicker;
+@property (strong, nonatomic)SRMonthPicker                  *monthPicker;
+
 
 @end
 
@@ -176,22 +179,22 @@
     }else{
         _genderTextField.text = @"女";
     }
-    
-    
-    //UIDatePicker
+
+    //SRMonthPicker
     //添加一个时间选择器
-    _datePicker=[[UIDatePicker alloc]init];
-    _datePicker.tag = 123321;
-    [_datePicker addTarget:self action:@selector(dataPickerValueChange:) forControlEvents:UIControlEventValueChanged];
-    [_datePicker setLocale:[NSLocale localeWithLocaleIdentifier:@"zh-CN"]];
-    _datePicker.datePickerMode=UIDatePickerModeDate;
-
-    NSDate * localData = [NSDate date];
-    _datePicker.maximumDate = localData;
-
+    self.monthPicker = [[SRMonthPicker alloc] init];
+    self.monthPicker.monthPickerDelegate = self;
     
+    // Set the label to show the date
+    self.birthdayTextField.text = [NSString stringWithFormat:@"%@", [self formatDate:self.monthPicker.date]];
+    
+    // Some options to play around with
+    self.monthPicker.maximumYear = @2020;
+    self.monthPicker.minimumYear = @1900;
+    self.monthPicker.yearFirst = YES;
+
     //当光标移动到文本框的时候，召唤时间选择器
-    self.birthdayTextField.inputView=_datePicker;
+    self.birthdayTextField.inputView=_monthPicker;
     
     NSDateFormatter * formatter=   [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -217,10 +220,10 @@
     });
     
     _ensureButton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(335), FLEXIBLE_NUM(650), FLEXIBLE_NUM(250), FLEXIBLE_NUM(70))];
-        [button setBackgroundImage:[UIImage imageNamed:@"用户名密码@3x"] forState:UIControlStateNormal];
-        [button setTitle:@"确  认  修  改" forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(355), FLEXIBLE_NUM(650), FLEXIBLE_NUM(310), FLEXIBLE_NUM(60))];
+        [button setBackgroundImage:[UIImage imageNamed:@"确认修改@3x"] forState:UIControlStateNormal];
+//        [button setTitle:@"确  认  修  改" forState:UIControlStateNormal];
+//        button.titleLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [button addTarget:self action:@selector(ensureButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
@@ -229,7 +232,7 @@
     //计算年龄
     NSString *birth = _birthdayTextField.text;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM"];
     //生日
     NSDate *birthDay = [dateFormatter dateFromString:birth];
     //当前时间
@@ -282,34 +285,53 @@
 
 
 
-#pragma mark - UITextFieldDelegate
-- (void) dataPickerValueChange: (id) sender
+#pragma mark - SRMonthPickerDelegate
+- (NSString*)formatDate:(NSDate *)date
 {
-    UIDatePicker * control = (UIDatePicker*)sender;
-    NSDate* _date = control.date;
+    // A convenience method that formats the date in Month-Year format
     
-    NSDateFormatter * formatter=   [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *loctime = [formatter stringFromDate:_date];
-    _birthdayTextField.text = loctime;
-    NSDate *now = [NSDate date];
-    
-    //计算年龄
-    NSString *birth = _birthdayTextField.text;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    //生日
-    NSDate *birthDay = [dateFormatter dateFromString:birth];
-    //当前时间
-    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
-    NSDate *currentDate = [dateFormatter dateFromString:currentDateStr];
-    NSLog(@"currentDate %@ birthDay %@",currentDateStr,birth);
-    NSTimeInterval time=[currentDate timeIntervalSinceDate:birthDay];
-    int age = ((int)time)/(3600*24*365);
-    NSLog(@"year %d",age);
-    _ageTextField.text = [NSString stringWithFormat:@"%d岁",age];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM";
+    return [formatter stringFromDate:date];
 }
 
+- (void)monthPickerWillChangeDate:(SRMonthPicker *)monthPicker
+{
+    // Show the date is changing (with a 1 second wait mimicked)
+    self.birthdayTextField.text = [NSString stringWithFormat:@"%@", [self formatDate:monthPicker.date]];
+}
+
+- (void)monthPickerDidChangeDate:(SRMonthPicker *)monthPicker
+{
+    // All this GCD stuff is here so that the label change on -[self monthPickerWillChangeDate] will be visible
+    dispatch_queue_t delayQueue = dispatch_queue_create("com.simonrice.SRMonthPickerExample.DelayQueue", 0);
+    
+    dispatch_async(delayQueue, ^{
+        // Wait 1 second
+//        sleep(1);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.birthdayTextField.text = [NSString stringWithFormat:@"%@", [self formatDate:self.monthPicker.date]];
+            
+            
+            //计算年龄
+            NSString *birth = _birthdayTextField.text;
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+            [dateFormatter setDateFormat:@"yyyy-MM"];
+            //生日
+            NSDate *birthDay = [dateFormatter dateFromString:birth];
+            //当前时间
+            NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+            NSDate *currentDate = [dateFormatter dateFromString:currentDateStr];
+            NSLog(@"currentDate %@ birthDay %@",currentDateStr,birth);
+            NSTimeInterval time=[currentDate timeIntervalSinceDate:birthDay];
+            int age = ((int)time)/(3600*24*365);
+            NSLog(@"year %d",age);
+            _ageTextField.text = [NSString stringWithFormat:@"%d岁",age];
+            
+        });
+    });
+}
 
 #pragma mark -- 点击背景回收键盘
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

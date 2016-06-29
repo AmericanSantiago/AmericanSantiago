@@ -10,7 +10,7 @@
 #import "ParentsModel.h"
 #import "UUChart.h"
 
-@interface ParentsViewController ()<UUChartDataSource>
+@interface ParentsViewController ()<UUChartDataSource, UITextFieldDelegate>
 
 @property (nonatomic, strong) UILabel                           * numLabel;             //小红花数量label
 @property (nonatomic, strong) UITextView                       * detailTextView;
@@ -112,10 +112,29 @@
     timeLabel.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
     [timeView addSubview:timeLabel];
     
-//    for (<#initialization#>; <#condition#>; <#increment#>) {
-//        <#statements#>
-//    }
+    for (int i = 0; i < 2; i ++) {
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(280) + FLEXIBLE_NUM(60) * i, FLEXIBLE_NUM(60), FLEXIBLE_NUM(50), FLEXIBLE_NUM(45))];
+        textField.layer.cornerRadius = FLEXIBLE_NUM(8);
+        textField.backgroundColor = [UIColor whiteColor];
+        textField.textColor = [UIColor blackColor];
+        textField.delegate = self;
+        textField.tag = 1000;
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+        textField.textAlignment = NSTextAlignmentCenter;
+        textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(25)];
+        [self.view addSubview:textField];
+        
+        
+    }
     
+    
+//    UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(160) + FLEXIBLE_NUM(60), FLEXIBLE_NUM(310), FLEXIBLE_NUM(50), FLEXIBLE_NUM(45))];
+//    textField.layer.cornerRadius = FLEXIBLE_NUM(8);
+//    textField.backgroundColor = [UIColor whiteColor];
+//    textField.textColor = [UIColor blackColor];
+//    textField.textAlignment = NSTextAlignmentCenter;
+//    textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
+//    [self.view addSubview:textField];
     
     
     UIImageView * flowerView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(730), FLEXIBLE_NUM(50), FLEXIBLE_NUM(150), FLEXIBLE_NUM(75))];
@@ -164,6 +183,48 @@
     
     
 }
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // 只允许输入数字
+    NSUInteger lengthOfString = string.length;
+    for (NSInteger loopIndex = 0; loopIndex < lengthOfString; loopIndex++) {//只允许数字输入
+        unichar character = [string characterAtIndex:loopIndex];
+        if (character < 48) return NO; // 48 unichar for 0
+        if (character > 57) return NO; // 57 unichar for 9
+    }
+    
+    //限制的位数
+        if (string.length == 0) return YES;
+        
+        NSInteger existedLength = textField.text.length;
+        NSInteger selectedLength = range.length;
+        NSInteger replaceLength = string.length;
+        if (existedLength - selectedLength + replaceLength > 1) {
+            return NO;
+        }
+    
+    return YES;
+}
+- (BOOL)validateNumber:(NSString*)number {
+    BOOL res = YES;
+    NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    int i = 0;
+    while (i < number.length) {
+        NSString * string = [number substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        if (range.length > 0) {
+            res = NO;
+            break;
+        }
+        i++;
+    }
+    return res;
+}
+
+
+
+
 
 //设置横坐标
 - (NSArray *)getXTitles:(int)num
@@ -228,6 +289,10 @@
 //    return path.row == 2;
 //}
 
-
+#pragma mark -- 点击背景回收键盘
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 @end

@@ -39,8 +39,8 @@
     NSMutableArray *northImageArray = [NSMutableArray array];
     NSMutableArray *sourthImageArray = [NSMutableArray array];
     for (NSInteger i = 1; i < 5; i++) {
-        [northImageArray addObject:[NSString stringWithFormat:@"North%@.jpg",@(i)]];
-        [sourthImageArray addObject:[NSString stringWithFormat:@"South%@.jpg",@(i)]];
+        [northImageArray addObject:[NSString stringWithFormat:@"North%@",@(i)]];
+        [sourthImageArray addObject:[NSString stringWithFormat:@"South%@",@(i)]];
     }
     self.northImageArray = [NSArray arrayWithArray:northImageArray];
     self.southImageArray = [NSArray arrayWithArray:sourthImageArray];

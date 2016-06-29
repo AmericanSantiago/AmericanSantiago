@@ -11,13 +11,15 @@
 #import "HomeModel.h"
 #import "GameModel.h"
 
-@interface GameViewController ()<WKNavigationDelegate, WKUIDelegate>
+@interface GameViewController ()<WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler>
 
 @property (nonatomic ,strong) HomeModel                      * homeModel;
 
 @property (nonatomic, strong) WKWebView                     * webView;
 @property (nonatomic, strong) GameModel                     * gameModel;
 
+//@property (nonatomic, strong)          * bridge;
+//WebViewJavascriptBridge
 @end
 
 @implementation GameViewController
@@ -140,6 +142,24 @@
     //    [self loadDocument:@"index" fileTypeName:@"straw" inView:_webView];
 
     
+    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+    // 通过JS与webview内容交互
+    config.userContentController = [[WKUserContentController alloc] init];
+    
+    // 注入JS对象名称AppModel，当JS通过AppModel来调用时，
+    // 我们可以在WKScriptMessageHandler代理中接收到
+    [config.userContentController addScriptMessageHandler:self name:@"sendIOSCommand"];
+
+    
+    // js配置
+    WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+    [userContentController addScriptMessageHandler:self name:@"sendIOSCommand"];
+    
+    // WKWebView的配置
+    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+    configuration.userContentController = userContentController;
+    
+    
 }
 
 #pragma mark - UIWebViewDelegate
@@ -231,6 +251,29 @@
 }
 
 
+#pragma mark - WKScriptMessageHandler
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+//    if ([message.name isEqualToString:@"sendIOSCommand"]) {
+//        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
+//        // NSDictionary, and NSNull类型
+//        NSLog(@"%@", message.body);
+//    }
+    NSLog(@"方法名:%@", message.name);
+    NSLog(@"参数:%@", message.body);
+    // 方法名
+    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
+    SEL selector = NSSelectorFromString(methods);
+    // 调用方法
+    if ([self respondsToSelector:selector]) {
+        [self performSelector:selector withObject:message.body];
+    } else {
+        NSLog(@"未实行方法：%@", methods);
+    }
+    
+    
+    
+    
+}
 
 
 
