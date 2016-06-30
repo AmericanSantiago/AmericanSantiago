@@ -248,6 +248,13 @@
 //跳转
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    
+//    UITouch *touch = [touches anyObject];
+//    CGPoint touchPoint = [touch locationInView:self.bigImageView];
+//    
+//    if (touchPoint.x >= 0 && touchPoint.y >= 0) {
+//        
+//    }    
     NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
     switch (_backgroundView.tag) {
         case 1:{
@@ -286,7 +293,7 @@
 //    [self.translationController pushViewController:baseVC];
 }
 
-- (UIView *) addNumWithButtonTag:(int ) tag Number:(NSString *)number subView:(UIView *)subView
+- (UIView *) addNumWithButtonTag:(int )tag Number:(NSString *)number subView:(UIView *)subView
 {
     UIButton * button = (UIButton *)[self.view viewWithTag:tag];
     subView = (UIView *)[self.view viewWithTag:tag];

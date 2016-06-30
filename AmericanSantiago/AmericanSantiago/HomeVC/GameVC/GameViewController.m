@@ -88,8 +88,9 @@
     [self.view addSubview:backgroundView];
 
     [self.view addSubview:self.webView];
-//
-    [self loadRequestWithUrlFilePath:@"/Math/AF_AS_0dot2/city_petstore_13_26_01"];
+
+//    [self loadRequestWithUrlFilePath:@"/Math/AF_AS_0dot2/city_petstore_13_26_01"];
+    [self loadTestMathRequest];
 }
 #pragma mark - 各种Getter
 - (WKWebView *)webView {
@@ -205,6 +206,15 @@
 {
     NSString *urlStr = [NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server%@/13_I.1_COMPARE/index.html",urlFilePath];
     NSURL *url = [[NSURL alloc]initWithString:urlStr];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
+- (void)loadTestMathRequest
+{
+    NSString *directoryString = [NSString stringWithFormat:@"/Htmls/TestMath/AF_AS_0dot2/city_market_13_26_04/13_I.1_COMPARE"];
+    //        NSString *directoryString = @"Htmls/Math/AF_AS_0dot2/city_mall_13_26_01/13_I.1_COMPARE/index.html";
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
+    NSURL *url = [[NSURL alloc]initFileURLWithPath:filePath];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
