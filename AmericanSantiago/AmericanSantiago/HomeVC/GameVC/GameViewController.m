@@ -89,7 +89,6 @@
 
     [self.view addSubview:self.webView];
 
-//    [self loadRequestWithUrlFilePath:@"/Math/AF_AS_0dot2/city_petstore_13_26_01"];
     [self loadTestMathRequest];
 }
 #pragma mark - 各种Getter
@@ -204,7 +203,7 @@
 #pragma mark - 自定义方法
 - (void)loadRequestWithUrlFilePath:(NSString *)urlFilePath
 {
-    NSString *urlStr = [NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server%@/13_I.1_COMPARE/index.html",urlFilePath];
+    NSString *urlStr = [NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",urlFilePath];
     NSURL *url = [[NSURL alloc]initWithString:urlStr];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
@@ -225,6 +224,10 @@
 }
 
 
+//<<<<<<< HEAD
+//#pragma mark - WKScriptMessageHandler
+//- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+//=======
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    [self initializeDataSource];
@@ -397,11 +400,27 @@
 
 //#pragma mark - WKScriptMessageHandler
 //- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-//    if ([message.name isEqualToString:@"sendIOSCommand"]) {
-//        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
-//        // NSDictionary, and NSNull类型
-//        NSLog(@"%@", message.body);
+//>>>>>>> origin/master
+////    if ([message.name isEqualToString:@"sendIOSCommand"]) {
+////        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
+////        // NSDictionary, and NSNull类型
+////        NSLog(@"%@", message.body);
+////    }
+//<<<<<<< HEAD
+//    NSLog(@"方法名:%@", message.name);
+//    NSLog(@"参数:%@", message.body);
+//    // 方法名
+//    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
+//    SEL selector = NSSelectorFromString(methods);
+//    // 调用方法
+//    if ([self respondsToSelector:selector]) {
+//        [self performSelector:selector withObject:message.body];
+//    } else {
+//        NSLog(@"未实行方法：%@", methods);
 //    }
+//    
+//}
+//=======
 //    NSLog(@"方法名:%@", message.name);
 //    NSLog(@"参数:%@", message.body);
 //    // 方法名
@@ -414,8 +433,28 @@
 //        NSLog(@"未实行方法：%@", methods);
 //    }
 //}
+//>>>>>>> origin/master
 
 
+
+//将文件copy到tmp目录
+- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
+    NSError *error = nil;
+    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
+        return nil;
+    }
+    // Create "/temp/www" directory
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
+    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
+    // Now copy given file to the temp directory
+    [fileManager removeItemAtURL:dstURL error:&error];
+    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
+    // Files in "/temp/www" load flawlesly :)
+    return dstURL;
+}
 
 
 @end

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmericanSantiago/HomeVC/GameVC/GameViewController.m"
-            timestampString = "488929428.010656"
+            timestampString = "488960586.984255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,27 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AmericanSantiago/HomeVC/GameVC/GameViewController.m"
-            timestampString = "488929430.450906"
+            timestampString = "488960588.714477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "-userContentController:didReceiveScriptMessage:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AmericanSantiago/HomeVC/GameVC/GameViewController.m"
-            timestampString = "488929607.485499"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "5">
          </BreakpointContent>

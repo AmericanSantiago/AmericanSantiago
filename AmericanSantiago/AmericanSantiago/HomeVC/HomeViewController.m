@@ -92,31 +92,31 @@
         if (_schoolGameArray) {
             [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
         }else{
-            [self addLockWithButtonTag:1001 subView:_button];
+            [self addLockWithButtonTag:1001 subView:_smallImageView];
         }
         
         if (_worldGameArray) {
             [self addNumWithButtonTag:1002 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_worldGameArray.count] subView:_smallImageView];
         }else{
-            [self addLockWithButtonTag:1002 subView:_button];
+            [self addLockWithButtonTag:1002 subView:_smallImageView];
         }
         
         if (_playgroundGameArray) {
             [self addNumWithButtonTag:1003 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_playgroundGameArray.count] subView:_smallImageView];
         }else{
-            [self addLockWithButtonTag:1003 subView:_button];
+            [self addLockWithButtonTag:1003 subView:_smallImageView];
         }
         
         if (_cityGameArray) {
             [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
         }else{
-            [self addLockWithButtonTag:1004 subView:_button];
+            [self addLockWithButtonTag:1004 subView:_smallImageView];
         }
         
         if (_homeGameArray) {
             [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
         }else{
-            [self addLockWithButtonTag:1005 subView:_button];
+            [self addLockWithButtonTag:1005 subView:_smallImageView];
         }
         
         
@@ -239,12 +239,6 @@
     _backgroundView.tag = sender.tag - 100;
 }
 
-
-
-
-
-
-
 //跳转
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -256,6 +250,11 @@
 //        
 //    }    
     NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
+    
+//    if () {
+//        <#statements#>
+//    }
+    
     switch (_backgroundView.tag) {
         case 1:{
             ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
@@ -295,7 +294,7 @@
 
 - (UIView *) addNumWithButtonTag:(int )tag Number:(NSString *)number subView:(UIView *)subView
 {
-    UIButton * button = (UIButton *)[self.view viewWithTag:tag];
+    UIButton * button = (UIButton *)[self.view viewWithTag:tag - 900];
     subView = (UIView *)[self.view viewWithTag:tag];
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
@@ -317,14 +316,15 @@
 
 - (UIView *) addLockWithButtonTag:(int ) tag subView:(UIView *)subView
 {
-    UIButton * button = (UIButton *)[self.view viewWithTag:tag];
+    UIButton * button = (UIButton *)[self.view viewWithTag:tag - 900];
+    NSLog(@"_+_+_+_+_+_+button.tag = %ld",(long)button.tag);
     subView = (UIView *)[self.view viewWithTag:tag];
     button.userInteractionEnabled = NO;
-    subView.userInteractionEnabled = YES;
+    subView.userInteractionEnabled = NO;
     
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
     view1.backgroundColor = [UIColor blackColor];
-    view1.alpha = 0.5;
+    view1.alpha = 0.3;
     [subView addSubview:view1];
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(27), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
