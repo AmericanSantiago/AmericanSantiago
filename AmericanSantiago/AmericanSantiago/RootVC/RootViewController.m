@@ -78,6 +78,7 @@
     [self.view addSubview:self.contentView];
     [self.view addSubview:self.leftView];
     [self.view addSubview:self.rightView];
+    
 }
 #pragma mark - 各种Getter
 - (RootLeftView *)leftView

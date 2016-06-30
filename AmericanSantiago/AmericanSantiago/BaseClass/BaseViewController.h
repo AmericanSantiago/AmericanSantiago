@@ -12,10 +12,7 @@
 
 @interface BaseViewController : UIViewController
 
-//@property (strong, nonatomic) NSMutableArray *viewControllers;
-//@property (strong, nonatomic) BaseViewController *currentViewController;
 @property (strong, nonatomic) LBTranslationController *translationController;
-//@property (strong, nonatomic) LBTranslationViewController *tran;
 
 
 @end

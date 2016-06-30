@@ -62,10 +62,10 @@
         
         if ([_parentsModel.learningStatisticsData valueForKey:@"data"]) {
             [_subjectNameArray addObject:[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"]valueForKey:@"subjectName"]];
-            
             _subjectLabel.text = [NSString stringWithFormat:@"%@",_subjectNameArray[0][0]];
             _numLabel.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"totalReward"]];
-            
+        }else{
+            [AppDelegate showHintLabelWithMessage:@"learningStatisticsData获取失败"];
         }
         
     }
@@ -82,7 +82,8 @@
     _parentsModel = [[ParentsModel alloc] init];
     [_parentsModel addObserver:self forKeyPath:@"learningStatisticsData" options:NSKeyValueObservingOptionNew context:nil];
     
-    [_parentsModel getLearningStatisticsWithUsername:@"Mwk"];
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    [_parentsModel getLearningStatisticsWithUsername:userDic[@"nickname"]];
     
 }
 
