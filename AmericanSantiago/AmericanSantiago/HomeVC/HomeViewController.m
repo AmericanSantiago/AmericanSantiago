@@ -190,6 +190,13 @@
         bigView.layer.borderColor = [UIColor whiteColor].CGColor;
         bigView.layer.borderWidth = FLEXIBLE_NUM(4);
         bigView.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(whenClickImage:)];
+//        singleTap.numberOfTouchesRequired = 1; //手指数
+//        singleTap.numberOfTapsRequired = 1; //tap次数
+//        singleTap.delegate= self;
+        [bigView addGestureRecognizer:singleTap];
+        
         [self.view addSubview:bigView];
         bigView;
     });
