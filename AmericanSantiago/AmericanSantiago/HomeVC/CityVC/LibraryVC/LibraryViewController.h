@@ -10,4 +10,6 @@
 
 @interface LibraryViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * gamesArray;
+
 @end

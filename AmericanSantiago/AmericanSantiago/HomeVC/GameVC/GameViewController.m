@@ -46,9 +46,9 @@
     //移除messageHandler代理，否则内存无法释放
     [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"sendEndGame"];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
     
     //通知后台游戏完成
     NSDictionary *userDic = [LBUserDefaults getUserDic];
@@ -178,7 +178,22 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
     
-    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
+//    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
+    
+//    NSString * resultBody = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+    NSDictionary * resultDic = [[NSDictionary alloc] init];
+    resultDic = [self dictionaryWithJsonString:message.body];
+    
+    if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+        //
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
+    }
+    
+    
+    NSLog(@"参数 = %@",resultDic);
+    
+    
     
 //    if ([message.name isEqualToString:@"sendIOSCommand"]) {
 //        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
@@ -198,6 +213,25 @@
 //    }
 }
 
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
+
+
 #pragma mark - 按钮方法
 
 #pragma mark - 自定义方法
@@ -210,11 +244,20 @@
 
 - (void)loadTestMathRequest
 {
-    NSString *directoryString = [NSString stringWithFormat:@"/Htmls/TestMath/AF_AS_0dot2/city_market_13_26_04/13_I.1_COMPARE"];
-    //        NSString *directoryString = @"Htmls/Math/AF_AS_0dot2/city_mall_13_26_01/13_I.1_COMPARE/index.html";
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
-    NSURL *url = [[NSURL alloc]initFileURLWithPath:filePath];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+//    NSString *directoryString = [NSString stringWithFormat:@"/Htmls/TestMath/AF_AS_0dot2/city_market_13_26_04/13_I.1_COMPARE"];
+//    //        NSString *directoryString = @"Htmls/Math/AF_AS_0dot2/city_mall_13_26_01/13_I.1_COMPARE/index.html";
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:directoryString];
+//    NSURL *url = [[NSURL alloc]initFileURLWithPath:filePath];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    
+//        NSURL * urlStr = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",_urlString]];
+    NSURL * urlStr = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",self.urlString]];
+//    NSURL * urlStr = [[NSURL alloc] initWithString:self.urlString];
+    NSLog(@"+++++++++++++%@",urlStr);
+    NSURLRequest *request = [NSURLRequest requestWithURL:urlStr];
+    [_webView loadRequest:request];
+    
+    
 }
 
 #pragma mark - 数据处理

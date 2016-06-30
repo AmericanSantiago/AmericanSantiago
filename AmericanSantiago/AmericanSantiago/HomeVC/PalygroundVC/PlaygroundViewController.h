@@ -10,4 +10,7 @@
 
 @interface PlaygroundViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * playgroundGamesArray;
+
+
 @end

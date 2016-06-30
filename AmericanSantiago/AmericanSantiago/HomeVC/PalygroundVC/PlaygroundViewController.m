@@ -59,4 +59,18 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_playgroundGamesArray.count > 0) {
+        gameVC.urlString = [_playgroundGamesArray[0] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+
+    
+}
+
+
 @end

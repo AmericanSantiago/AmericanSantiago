@@ -10,4 +10,7 @@
 
 @interface WorldViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * worldGamesArray;
+
+
 @end

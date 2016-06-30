@@ -10,4 +10,6 @@
 
 @interface CityViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * cityGameArray;;
+
 @end

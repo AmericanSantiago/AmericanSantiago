@@ -50,13 +50,16 @@
     
     if ([keyPath isEqualToString:@"gameNewData"]) {
         if ([[_gameModel.gameNewData valueForKey:@"errorCode"] integerValue] == 0) {
-            UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"已解锁新游戏" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                
-                
-            }];
-            [alertController addAction:sureAction];
-            [self presentViewController:alertController animated:YES completion:nil];
+//            UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"已解锁新游戏" preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                
+//                
+//            }];
+//            [alertController addAction:sureAction];
+//            [self presentViewController:alertController animated:YES completion:nil];
+            
+            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
+            
         }
         
 
@@ -136,10 +139,16 @@
     [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
     GameViewController * gameVC = [[GameViewController alloc] init];
-//    gameVC.urlString = [_classroomGamesArray[0] valueForKey:@"location"];
-    NSLog(@"location = %@",gameVC.urlString);
-    NSURL * urlStr = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",[_classroomGamesArray[0] valueForKey:@"location"]]];
-    gameVC.urlString = urlStr;
+    if (_classroomGamesArray) {
+        gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray[0] valueForKey:@"location"]];
+    }else{
+        gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+    }
+    
+    
+//    gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray[0] valueForKey:@"location"]];
+//    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+//    NSLog(@"location = %@",gameVC.urlString);
     [self.translationController pushViewController:gameVC];
     
 }

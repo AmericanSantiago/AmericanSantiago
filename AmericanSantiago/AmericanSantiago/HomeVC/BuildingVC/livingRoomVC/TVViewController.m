@@ -92,7 +92,7 @@
         view;
     });
     UIImageView * backgroundView3 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
-    [backgroundView3 setImage:[UIImage imageNamed:@"厨房bg.jpg"]];
+    [backgroundView3 setImage:[UIImage imageNamed:@"厨房bg.png"]];
     [_view3 addSubview:backgroundView3];
     
     
@@ -187,8 +187,50 @@
     }
     
     
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    for (int i = 0; i < 3; i ++) {
+        UIView * view1 = (UIView *)[self.view viewWithTag:i];
+        GameViewController * gameVC = [[GameViewController alloc] init];
+
+        
+        switch (view1.tag) {
+            case 1:{
+                if (_gamesArray.count > 0) {
+                    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
+                    [self.translationController pushViewController:gameVC];
+                }
+            }
+                break;
+            case 2:{
+                if (_gamesArray.count > 1) {
+                    gameVC.urlString = [_gamesArray[1] valueForKey:@"location"];
+                    [self.translationController pushViewController:gameVC];
+                }
+            }
+                break;
+            case 3:{
+                if (_gamesArray.count > 2) {
+                    gameVC.urlString = [_gamesArray[2] valueForKey:@"location"];
+                    [self.translationController pushViewController:gameVC];
+                }
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+//    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
+//    [self.translationController pushViewController:gameVC];
     
 }
+
+
+
 
 
 

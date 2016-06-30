@@ -72,6 +72,7 @@
     if (!_northBgView) {
         _northBgView = [[UIImageView alloc]initWithFrame:BASESCRREN_B];
         _northBgView.contentMode = UIViewContentModeScaleAspectFit;
+        _northBgView.tag = 100 + _currentIndex;
         _northBgView.userInteractionEnabled = YES;
         
         UIButton *leftBtn = [self directionBtnWithImageName:@"world_planeleft_btn"];
@@ -97,6 +98,7 @@
         _southBgView = [[UIImageView alloc]initWithFrame:BASESCRREN_B];
         [_southBgView setOriginY:BASESCRREN_H];
         _southBgView.contentMode = UIViewContentModeScaleAspectFit;
+        _southBgView.tag = 200 + _currentIndex;
         _southBgView.userInteractionEnabled = YES;
         
         UIButton *leftBtn = [self directionBtnWithImageName:@"world_planeleft_btn"];
@@ -191,6 +193,23 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"_southBgView.tag = %ld",(long)_southBgView.tag);
+    NSLog(@"_northBgView.tag = %ld",(long)_northBgView.tag);
+    
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+//    if (_worldGamesArray.count > 0) {
+//        gameVC.urlString = [_worldGamesArray[0] valueForKey:@"location"];
+//        [self.translationController pushViewController:gameVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
+    
+    
+}
+
+
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
@@ -230,5 +249,8 @@
 //{
 //    [self.translationController popViewController];
 //}
+
+
+
 
 @end

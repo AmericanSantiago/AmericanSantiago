@@ -10,4 +10,6 @@
 
 @interface StoreViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * gamesArray;
+
 @end

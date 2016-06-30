@@ -43,4 +43,12 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    gameVC.urlString = [_gamesArray valueForKey:@"location"];
+    [self.translationController pushViewController:gameVC];
+    
+}
+
 @end

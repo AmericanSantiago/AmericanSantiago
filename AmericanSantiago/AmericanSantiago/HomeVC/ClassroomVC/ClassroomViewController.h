@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray                   * classroomGamesArray;
 
+//@property (nonatomic, strong) NSString                  * urlString;
+
 @end

@@ -48,7 +48,7 @@
 - (void)setRootViewController
 {
 //    NSString *loginInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginInfo"];
-    NSDictionary *userDic = [LBUserDefaults getUserDic];
+//    NSDictionary *userDic = [LBUserDefaults getUserDic];
 //    if (userDic || !userDic) {
 //    if (!userDic) {
 //    NSLog(@"++++++++++%@",userDic);

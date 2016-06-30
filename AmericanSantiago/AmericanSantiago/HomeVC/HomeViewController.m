@@ -33,6 +33,8 @@
 @property (nonatomic, strong) NSArray                                   * homeGameArray;
 @property (nonatomic, strong) NSArray                                   * locationArray;
 
+@property (nonatomic, strong) NSString                                      * numMark;
+@property (nonatomic, strong) NSString                                      * lockMark;                     //是否添加了锁
 
 @end
 
@@ -57,14 +59,9 @@
 {
     if ([keyPath isEqualToString:@"allUnlockedGamesData"]) {
         
-        
 //        NSLog(@"games = %@",[_homeModel.allUnlockedGamesData valueForKey:@"data"]);
         
         for (int i = 0; i < [[[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"]count]; i ++) {
-//            for (int j = 0; j < [[[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"] valueForKey:@""]; <#increment#>) {
-//                <#statements#>
-//            }
-            
             
             if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
                 _schoolGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
@@ -75,7 +72,7 @@
             if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"playground"]) {
                 _playgroundGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
             }
-
+            
             if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"city"]) {
                 _cityGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
             }
@@ -84,40 +81,46 @@
             }
             
         }
-//        NSLog(@"homeArray = %@",_homeGameArray);
-        NSLog(@"_schoolGameArray = %@",_schoolGameArray);
-//        NSLog(@"_cityGameArray = %@",_cityGameArray);
+        //        NSLog(@"homeArray = %@",_homeGameArray);
+        //        NSLog(@"_schoolGameArray = %@",_schoolGameArray);
+        //        NSLog(@"_cityGameArray = %@",_cityGameArray);
         
-        //添加锁或者数字
-        if (_schoolGameArray) {
-            [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
-        }else{
-            [self addLockWithButtonTag:1001 subView:_smallImageView];
-        }
-        
-        if (_worldGameArray) {
-            [self addNumWithButtonTag:1002 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_worldGameArray.count] subView:_smallImageView];
-        }else{
+        if ([_lockMark isEqualToString:@"1"]) {   //完成教学游戏
+            //添加锁或者数字
+            if (_schoolGameArray) {
+                [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
+            }else{
+                [self addLockWithButtonTag:1001 subView:_smallImageView];
+            }
+            
+            //        if (_worldGameArray) {
+            //            [self addNumWithButtonTag:1002 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_worldGameArray.count] subView:_smallImageView];
+            //        }else{
             [self addLockWithButtonTag:1002 subView:_smallImageView];
+            //        }
+            
+            if (_playgroundGameArray) {
+                [self addNumWithButtonTag:1003 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_playgroundGameArray.count] subView:_smallImageView];
+            }else{
+                [self addLockWithButtonTag:1003 subView:_smallImageView];
+            }
+            
+            if (_cityGameArray) {
+                [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
+            }else{
+                [self addLockWithButtonTag:1004 subView:_smallImageView];
+            }
+            
+            if (_homeGameArray) {
+                [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
+            }else{
+                [self addLockWithButtonTag:1005 subView:_smallImageView];
+            }
+
+//            _lockMark = @"2";
+            
         }
-        
-        if (_playgroundGameArray) {
-            [self addNumWithButtonTag:1003 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_playgroundGameArray.count] subView:_smallImageView];
-        }else{
-            [self addLockWithButtonTag:1003 subView:_smallImageView];
-        }
-        
-        if (_cityGameArray) {
-            [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
-        }else{
-            [self addLockWithButtonTag:1004 subView:_smallImageView];
-        }
-        
-        if (_homeGameArray) {
-            [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
-        }else{
-            [self addLockWithButtonTag:1005 subView:_smallImageView];
-        }
+    
         
         
         
@@ -141,24 +144,31 @@
 {
     //2:World    3:
     
+    _lockMark = @"1";                      
+//    _numMark = @"1";
+    
+    
     _homeModel = [[HomeModel alloc] init];
     [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     
-//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"home"];
+//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
-    if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
+//    if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
         [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
-    }else{
+//    }else{
 //        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
         
-    }
+//    }
     
     
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAllUnlockGames:) name:@"updateAllUnlockGames" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstGetAllUnlockedGames:) name:@"firstGetAllUnlockedGames" object:nil];
+    
+    
     
 }
 - (void) getNextConceptData:(NSNotification *) notifi
@@ -184,7 +194,7 @@
         UIImageView * bigView = [[UIImageView alloc] initWithFrame:CGRectMake(0,FLEXIBLE_NUM(77),FLEXIBLE_NUM(720), FLEXIBLE_NUM(484))];
         bigView.center = CGPointMake(BASESCRREN_W/2,bigView.center.y);
         //        bigView.backgroundColor = [UIColor yellowColor];
-        [bigView setImage:[UIImage imageNamed:@"home_school_bg"]];
+        [bigView setImage:[UIImage imageNamed:@"主界面1"]];
         bigView.layer.cornerRadius = FLEXIBLE_NUM(10);
         bigView.layer.masksToBounds = YES;
         bigView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -248,27 +258,31 @@
     switch (_backgroundView.tag) {
         case 1:{
             ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
-            classroomVC.classroomGamesArray = _schoolGameArray;
-            [self.translationController pushViewController:classroomVC];
+                classroomVC.classroomGamesArray = _schoolGameArray;
+                [self.translationController pushViewController:classroomVC];
         }
             break;
         case 2:{
             WorldViewController * worldVC = [[WorldViewController alloc] init];
+            worldVC.worldGamesArray = _worldGameArray;
             [self.translationController pushViewController:worldVC];
         }
             break;
         case 3:{
             PlaygroundViewController * playgroundVC = [[PlaygroundViewController alloc] init];
+            playgroundVC.playgroundGamesArray = _playgroundGameArray;
             [self.translationController pushViewController:playgroundVC];
         }
             break;
         case 4:{
             CityViewController * cityVC = [[CityViewController alloc] init];
+            cityVC.cityGameArray = _cityGameArray;
             [self.translationController pushViewController:cityVC];
         }
             break;
         case 5:{
             BuildingViewController * bulidingVC = [[BuildingViewController alloc] init];
+            bulidingVC.bulidingGamesArray = _homeGameArray;
             [self.translationController pushViewController:bulidingVC];
         }
             
@@ -285,55 +299,9 @@
 #pragma mark -- button action
 - (void) buttonClick:(UIButton *) sender
 {
-    NSLog(@"button.tag == %ld",(long)sender.tag);
+//    NSLog(@"button.tag == %ld",(long)sender.tag);
     [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag - 100]]];
     _backgroundView.tag = sender.tag - 100;
-}
-
-//跳转
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
-    
-//    if () {
-//        <#statements#>
-//    }
-//    
-//    switch (_backgroundView.tag) {
-//        case 1:{
-//            ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
-//            classroomVC.classroomGamesArray = _schoolGameArray;
-//            [self.translationController pushViewController:classroomVC];
-//        }
-//            break;
-//        case 2:{
-//            WorldViewController * worldVC = [[WorldViewController alloc] init];
-//            [self.translationController pushViewController:worldVC];
-//        }
-//            break;
-//        case 3:{
-//            PlaygroundViewController * playgroundVC = [[PlaygroundViewController alloc] init];
-//            [self.translationController pushViewController:playgroundVC];
-//        }
-//            break;
-//        case 4:{
-//            CityViewController * cityVC = [[CityViewController alloc] init];
-//            [self.translationController pushViewController:cityVC];
-//        }
-//            break;
-//        case 5:{
-//            BuildingViewController * bulidingVC = [[BuildingViewController alloc] init];
-//            [self.translationController pushViewController:bulidingVC];
-//        }
-//            
-//            break;
-//        default:
-//            break;
-//    }    
-    
-//    BaseViewController *baseVC = [[BaseViewController alloc]init];
-//    baseVC.title = [NSString stringWithFormat:@"%@主页",@([self.title integerValue])];
-//    [self.translationController pushViewController:baseVC];
 }
 
 - (UIView *) addNumWithButtonTag:(int )tag Number:(NSString *)number subView:(UIView *)subView
@@ -354,6 +322,8 @@
     label.text = number;
     label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(38)];
     [imageView addSubview:label];
+    
+    _numMark = @"2";
     
     return imageView;
 }
@@ -379,6 +349,8 @@
 //    imageView.contentMode = UIViewContentModeCenter;
     [view1 addSubview:imageView];
     
+    _lockMark = @"2";
+    
     return imageView;
 }
 
@@ -386,11 +358,18 @@
 
 - (void) updateAllUnlockGames:(NSNotification *) notifi
 {
-    
 //        [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"home"];
  
     [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+//    _numMark = @"2";       //完成教学游戏后
 }
+
+- (void) firstGetAllUnlockedGames:(NSNotification *) notifi
+{
+    [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+    
+}
+
 
 
 @end
