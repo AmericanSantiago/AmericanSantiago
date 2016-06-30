@@ -311,14 +311,14 @@
 - (UIView *) addLockWithButtonTag:(int ) tag subView:(UIView *)subView
 {
     UIButton * button = (UIButton *)[self.view viewWithTag:tag];
-    subView = (UIView *)[self.view viewWithTag:tag];
+//    subView = (UIView *)[self.view viewWithTag:tag];
     button.userInteractionEnabled = NO;
-    subView.userInteractionEnabled = YES;
+    subView.userInteractionEnabled = NO;
     
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
     view1.backgroundColor = [UIColor blackColor];
-    view1.alpha = 0.5;
-    [subView addSubview:view1];
+    view1.alpha = 0.3;
+    [button addSubview:view1];
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(27), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
     imageView.backgroundColor = [UIColor clearColor];

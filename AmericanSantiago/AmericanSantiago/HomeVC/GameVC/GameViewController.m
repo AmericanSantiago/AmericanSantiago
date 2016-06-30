@@ -230,27 +230,6 @@
 }
 
 
-
-//将文件copy到tmp目录
-- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
-    NSError *error = nil;
-    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
-        return nil;
-    }
-    // Create "/temp/www" directory
-    NSFileManager *fileManager= [NSFileManager defaultManager];
-    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
-    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
-    
-    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
-    // Now copy given file to the temp directory
-    [fileManager removeItemAtURL:dstURL error:&error];
-    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
-    // Files in "/temp/www" load flawlesly :)
-    return dstURL;
-}
-
-
 #pragma mark - WKScriptMessageHandler
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
 //    if ([message.name isEqualToString:@"sendIOSCommand"]) {
@@ -270,12 +249,28 @@
         NSLog(@"未实行方法：%@", methods);
     }
     
-    
-    
-    
 }
 
 
+
+//将文件copy到tmp目录
+- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
+    NSError *error = nil;
+    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
+        return nil;
+    }
+    // Create "/temp/www" directory
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
+    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
+    // Now copy given file to the temp directory
+    [fileManager removeItemAtURL:dstURL error:&error];
+    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
+    // Files in "/temp/www" load flawlesly :)
+    return dstURL;
+}
 
 
 @end
