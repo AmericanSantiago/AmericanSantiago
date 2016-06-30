@@ -8,11 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
-
-
-
-@end
 
 @interface BaseViewController ()
 
@@ -20,20 +15,21 @@
 
 @implementation BaseViewController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.view.frame = MAINSCRREN_B;
-    }
-    return self;
-}
-
-//- (void)viewDidLoad
+//- (instancetype)init
 //{
-//    [super viewDidLoad];
-//    
+//    self = [super init];
+//    if (self) {
+//        self.view.frame = MAINSCRREN_B;
+//    }
+//    return self;
 //}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.frame = MAINSCRREN_B;
+}
 
 #pragma mark - getter
 
@@ -53,7 +49,7 @@
 //    _currentViewController = currentViewController;
 //}
 
-#warning -- 测试，。正式使用时删除该方法
+//#warning -- 测试，。正式使用时删除该方法
 //- (void)setTitle:(NSString *)title
 //{
 //    [super setTitle:title];

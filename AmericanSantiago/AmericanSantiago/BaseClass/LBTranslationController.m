@@ -10,6 +10,8 @@
 
 @interface LBTranslationController ()
 
+//@property (strong, nonatomic) BaseViewController *tempVC;
+
 @end
 
 @implementation LBTranslationController
@@ -18,10 +20,10 @@
 {
     self = [super init];
     if (self) {
-        self.view.frame = BASESCRREN_B;
+        
         self.viewControllers = [NSMutableArray array];
         self.rootViewController = rootViewController;
-        self.currentViewController = rootViewController;
+//        self.tempVC = rootViewController;
     }
     return self;
 }
@@ -30,6 +32,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.view.frame = BASESCRREN_B;
+    self.currentViewController = self.rootViewController;
+    
     [self initializeDataSource];
     [self initializeUserInterface];
 }
@@ -88,9 +93,9 @@
     if (self.viewControllers.count) {
         BaseViewController *lastVC = [self.viewControllers firstObject];
         self.currentViewController = lastVC;
-        [self.viewControllers removeObject:self.currentViewController];
+//        [self.viewControllers removeObject:self.currentViewController];
+        [self.viewControllers removeAllObjects];
     }
-    
 }
 
 - (void)popToViewController:(BaseViewController *)aViewController

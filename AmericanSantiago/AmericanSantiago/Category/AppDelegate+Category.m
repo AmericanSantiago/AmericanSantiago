@@ -50,8 +50,8 @@
 //    NSString *loginInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginInfo"];
     NSDictionary *userDic = [LBUserDefaults getUserDic];
 //    if (userDic || !userDic) {
-//    if (!userDic) {
-    if (userDic) {
+    if (!userDic) {
+//    if (userDic) {
         LoginViewController *lrVC = [[LoginViewController alloc]init];
         UINavigationController *lrNC = [[UINavigationController alloc]initWithRootViewController:lrVC];
         self.window.rootViewController = lrNC;
