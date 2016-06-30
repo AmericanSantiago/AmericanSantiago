@@ -189,9 +189,13 @@
         bigView.layer.masksToBounds = YES;
         bigView.layer.borderColor = [UIColor whiteColor].CGColor;
         bigView.layer.borderWidth = FLEXIBLE_NUM(4);
+        bigView.userInteractionEnabled = YES;
         [self.view addSubview:bigView];
         bigView;
     });
+
+
+    
     
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"主界面1",@"主界面2",@"主界面3",@"主界面4",@"主界面5", nil];
     
@@ -222,6 +226,7 @@
 //        _button.layer.borderColor = [UIColor whiteColor].CGColor;
 //        _button.layer.borderWidth = FLEXIBLE_NUM(3);
 //        [self.view insertSubview:_button atIndex:999];
+//        _button.userInteractionEnabled = NO;
         maxX = CGRectGetMaxX(_button.frame);
         [self.view addSubview:_button];
     }
@@ -231,30 +236,8 @@
     
 }
 
-#pragma mark -- button action
-- (void) buttonClick:(UIButton *) sender
+- (void)whenClickImage: (UITapGestureRecognizer *)gesture
 {
-    NSLog(@"button.tag == %ld",(long)sender.tag);
-    [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag - 100]]];
-    _backgroundView.tag = sender.tag - 100;
-}
-
-//跳转
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    
-//    UITouch *touch = [touches anyObject];
-//    CGPoint touchPoint = [touch locationInView:self.bigImageView];
-//    
-//    if (touchPoint.x >= 0 && touchPoint.y >= 0) {
-//        
-//    }    
-    NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
-    
-//    if () {
-//        <#statements#>
-//    }
-    
     switch (_backgroundView.tag) {
         case 1:{
             ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
@@ -285,7 +268,61 @@
             break;
         default:
             break;
-    }    
+    }
+
+    
+    
+}
+
+
+#pragma mark -- button action
+- (void) buttonClick:(UIButton *) sender
+{
+    NSLog(@"button.tag == %ld",(long)sender.tag);
+    [_bigImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"主界面%ld",(long)sender.tag - 100]]];
+    _backgroundView.tag = sender.tag - 100;
+}
+
+//跳转
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"background.tag = %ld",(long)_backgroundView.tag);
+    
+//    if () {
+//        <#statements#>
+//    }
+//    
+//    switch (_backgroundView.tag) {
+//        case 1:{
+//            ClassroomViewController * classroomVC = [[ClassroomViewController alloc] init];
+//            classroomVC.classroomGamesArray = _schoolGameArray;
+//            [self.translationController pushViewController:classroomVC];
+//        }
+//            break;
+//        case 2:{
+//            WorldViewController * worldVC = [[WorldViewController alloc] init];
+//            [self.translationController pushViewController:worldVC];
+//        }
+//            break;
+//        case 3:{
+//            PlaygroundViewController * playgroundVC = [[PlaygroundViewController alloc] init];
+//            [self.translationController pushViewController:playgroundVC];
+//        }
+//            break;
+//        case 4:{
+//            CityViewController * cityVC = [[CityViewController alloc] init];
+//            [self.translationController pushViewController:cityVC];
+//        }
+//            break;
+//        case 5:{
+//            BuildingViewController * bulidingVC = [[BuildingViewController alloc] init];
+//            [self.translationController pushViewController:bulidingVC];
+//        }
+//            
+//            break;
+//        default:
+//            break;
+//    }    
     
 //    BaseViewController *baseVC = [[BaseViewController alloc]init];
 //    baseVC.title = [NSString stringWithFormat:@"%@主页",@([self.title integerValue])];
