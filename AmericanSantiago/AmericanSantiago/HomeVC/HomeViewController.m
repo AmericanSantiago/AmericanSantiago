@@ -66,15 +66,21 @@
 //            }
             
             
-            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"home"]) {
-                
-                 _homeGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
-            }
             if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
                 _schoolGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
             }
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"world"]) {
+                _worldGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"playground"]) {
+                _playgroundGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+
             if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"city"]) {
                 _cityGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
+            }
+            if ([[[_homeModel.allUnlockedGamesData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"home"]) {
+                _homeGameArray = [[_homeModel.allUnlockedGamesData valueForKey:@"data"] valueForKey:@"games"][i];
             }
             
         }
@@ -82,9 +88,43 @@
         NSLog(@"_schoolGameArray = %@",_schoolGameArray);
 //        NSLog(@"_cityGameArray = %@",_cityGameArray);
         
-        [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
-        [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
-        [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
+        //添加锁或者数字
+        if (_schoolGameArray) {
+            [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
+        }else{
+            [self addLockWithButtonTag:1001 subView:_button];
+        }
+        
+        if (_worldGameArray) {
+            [self addNumWithButtonTag:1002 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_worldGameArray.count] subView:_smallImageView];
+        }else{
+            [self addLockWithButtonTag:1002 subView:_button];
+        }
+        
+        if (_playgroundGameArray) {
+            [self addNumWithButtonTag:1003 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_playgroundGameArray.count] subView:_smallImageView];
+        }else{
+            [self addLockWithButtonTag:1003 subView:_button];
+        }
+        
+        if (_cityGameArray) {
+            [self addNumWithButtonTag:1004 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_cityGameArray.count] subView:_smallImageView];
+        }else{
+            [self addLockWithButtonTag:1004 subView:_button];
+        }
+        
+        if (_homeGameArray) {
+            [self addNumWithButtonTag:1005 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_homeGameArray.count] subView:_smallImageView];
+        }else{
+            [self addLockWithButtonTag:1005 subView:_button];
+        }
+        
+        
+        
+
+
+        
+        
         
         
     }
@@ -110,7 +150,7 @@
     if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
         [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
     }else{
-        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
+//        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
         
     }
     
@@ -267,6 +307,31 @@
     
     return imageView;
 }
+
+- (UIView *) addLockWithButtonTag:(int ) tag subView:(UIView *)subView
+{
+    UIButton * button = (UIButton *)[self.view viewWithTag:tag];
+    subView = (UIView *)[self.view viewWithTag:tag];
+    button.userInteractionEnabled = NO;
+    subView.userInteractionEnabled = YES;
+    
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
+    view1.backgroundColor = [UIColor blackColor];
+    view1.alpha = 0.5;
+    [subView addSubview:view1];
+    
+    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(27), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
+    imageView.backgroundColor = [UIColor clearColor];
+    [imageView setImage:[UIImage imageNamed:@"锁"]];
+    //    imageView.alpha = 0.7;
+//        [imageView sizeToFit];
+//    imageView.contentMode = UIViewContentModeCenter;
+    [view1 addSubview:imageView];
+    
+    return imageView;
+}
+
+
 
 - (void) updateAllUnlockGames:(NSNotification *) notifi
 {

@@ -103,10 +103,24 @@
     });
     
 
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(200), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
-    button.backgroundColor = [UIColor blueColor];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(200), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
+//    button.backgroundColor = [UIColor blueColor];
+//    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+
+    
+    NSArray * picArray = [[NSArray alloc] initWithObjects:@"数学记录@3x",@"语文记录@3x",@"英语记录@3x",@"社会知识记录@3x",@"科学知识记录@3x",@"安全知识记录@3x", nil];
+    for (int i = 0; i < 5; i ++) {
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(370) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(30), FLEXIBLE_NUM(200))];
+        button.backgroundColor = [UIColor clearColor];
+        [button setImage:[UIImage imageNamed:picArray[i]] forState:UIControlStateNormal];
+        button.tag = 200;
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
+    }
+    
+    
     
 }
 
@@ -133,25 +147,7 @@
 
 - (void) buttonClick:(UIButton *) sender
 {
-//    NSDictionary *userDic = [LBUserDefaults getUserDic];
-//    NSString * urlString = @"/ConceptFinish";
-//    NSDictionary* bodyObject = @{
-//                                 @"username":[userDic valueForKey:@"username"],
-//                                 @"subjectId":@"Math"};
-//    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-//        if (!errorString) {
-////            self.gameNewData = resultDic;
-//            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
-//            if ([[resultDic valueForKey:@"errorCode"] integerValue] == 0) {
-//                
-//                NSLog(@"通知成功");
-//                
-////                [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGamesData" object:nil];
-//                
-//            }
-//            
-//        }
-//    }];
+    NSLog(@"button.tag = %ld",(long)sender.tag);
 
     
     
