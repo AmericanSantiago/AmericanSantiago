@@ -13,6 +13,12 @@
 @interface ClassroomViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIButton                              * mathButton;
+@property (nonatomic, strong) UIButton                              * englishButton;
+@property (nonatomic, strong) UIButton                              * earthButton;
+@property (nonatomic, strong) UIButton                              * microscopeButton;
+@property (nonatomic, strong) UIButton                              * chineseButton;
+@property (nonatomic, strong) UIButton                              * drawingButton;            //画板
+
 
 @property (nonatomic ,strong) HomeModel                      * homeModel;
 
@@ -20,6 +26,7 @@
 //@property (nonatomic, strong) UIWebView                     * webView;
 
 @property (nonatomic, strong) GameModel                       * gameModel;
+
 
 @end
 
@@ -58,7 +65,7 @@
 //            [alertController addAction:sureAction];
 //            [self presentViewController:alertController animated:YES completion:nil];
             
-            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
+//            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
             
         }
         
@@ -96,11 +103,51 @@
     [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
     [self.view addSubview:backgroundView];
     
-
+    
+    _englishButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(530), FLEXIBLE_NUM(110), FLEXIBLE_NUM(80))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(englishButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
     _mathButton = ({
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(320), FLEXIBLE_NUM(530), FLEXIBLE_NUM(110), FLEXIBLE_NUM(90))];
         button.backgroundColor = [UIColor clearColor];
         [button addTarget:self action:@selector(mathButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _earthButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(430), FLEXIBLE_NUM(430), FLEXIBLE_NUM(100), FLEXIBLE_NUM(130))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(earthButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _microscopeButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(580), FLEXIBLE_NUM(480), FLEXIBLE_NUM(90), FLEXIBLE_NUM(120))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(microscopeButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _chineseButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(800), FLEXIBLE_NUM(510), FLEXIBLE_NUM(110), FLEXIBLE_NUM(80))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(chineseButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _drawingButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(920), FLEXIBLE_NUM(480), FLEXIBLE_NUM(110), FLEXIBLE_NUM(80))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(drawingButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
     });
@@ -152,14 +199,65 @@
     [self.translationController pushViewController:gameVC];
     
 }
+- (void) englishButtonClick: (UIButton *) sender
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_classroomGamesArray.count > 0) {
+        gameVC.urlString = [_classroomGamesArray[0] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+}
+- (void) earthButtonClick: (UIButton *) sender
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_classroomGamesArray.count > 2) {
+        gameVC.urlString = [_classroomGamesArray[2] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+    
+}
+- (void) microscopeButtonClick: (UIButton *) sender
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_classroomGamesArray.count > 3) {
+        gameVC.urlString = [_classroomGamesArray[3] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+    
+}
+- (void) chineseButtonClick: (UIButton *) sender
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_classroomGamesArray.count > 4) {
+        gameVC.urlString = [_classroomGamesArray[4] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+}
+- (void) drawingButtonClick: (UIButton *) sender
+{
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    if (_classroomGamesArray.count > 5) {
+        gameVC.urlString = [_classroomGamesArray[5] valueForKey:@"location"];
+        [self.translationController pushViewController:gameVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+}
+
+
 
 
 - (void) buttonClick:(UIButton *) sender
 {
     NSLog(@"button.tag = %ld",(long)sender.tag);
-
-    
-    
 }
 
 #pragma mark -- notifi

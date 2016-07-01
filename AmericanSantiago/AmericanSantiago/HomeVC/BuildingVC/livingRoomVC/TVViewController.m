@@ -120,9 +120,9 @@
 {
     NSLog(@"view.mark === %@",_mark);
     if ([_mark isEqualToString:@"1"]) {
-//        _leftButton.hidden = YES;
+        _leftButton.hidden = YES;
         
-        
+        return;
     }
     
     if ([_mark isEqualToString:@"2"]) {
@@ -133,17 +133,21 @@
             
             _view1.hidden = NO;
             _view1.alpha = 1;
-//            _leftButton.hidden = NO;
+            _leftButton.hidden = YES;
+            _rightButton.hidden = NO;
 //            NSLog(@"view.mark === %@",_mark);
+            
         }];
+        return;
     }
     
     if ([_mark isEqualToString:@"3"]) {
         _mark = @"2";
         _view3.hidden = YES;
         _view2.hidden = NO;
-//        _rightButton.hidden = YES;
+        _rightButton.hidden = NO;
 //        NSLog(@"view.mark === %@",_mark);
+        return;
     }
 
     
@@ -155,7 +159,8 @@
     NSLog(@"view.mark === %@",_mark);
     
     if ([_mark isEqualToString:@"3"]) {
-//        _rightButton.hidden = YES;
+        _rightButton.hidden = YES;
+        return;
     }
     
     if ([_mark isEqualToString:@"1"]) {
@@ -167,7 +172,7 @@
         
         _view1.hidden = YES;
 //        _view1.alpha = 0;
-//            _leftButton.hidden = YES;
+            _leftButton.hidden = NO;
 //            NSLog(@"view.mark === %@",_mark);
         }];
         return;
@@ -181,39 +186,38 @@
         
         _view1.hidden = YES;
         _view2.hidden = YES;
-//        _leftButton.hidden = NO;
-//        _rightButton.hidden = NO;
+        _leftButton.hidden = NO;
+        _rightButton.hidden = YES;
 //        NSLog(@"view.mark === %@",_mark);
+        return;
     }
     
     
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    GameViewController * gameVC = [[GameViewController alloc] init];
     for (int i = 0; i < 3; i ++) {
         UIView * view1 = (UIView *)[self.view viewWithTag:i];
-        GameViewController * gameVC = [[GameViewController alloc] init];
-
-        
         switch (view1.tag) {
             case 1:{
                 if (_gamesArray.count > 0) {
                     gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
-                    [self.translationController pushViewController:gameVC];
+//                    [self.translationController pushViewController:gameVC];
                 }
             }
                 break;
             case 2:{
                 if (_gamesArray.count > 1) {
                     gameVC.urlString = [_gamesArray[1] valueForKey:@"location"];
-                    [self.translationController pushViewController:gameVC];
+                    
                 }
             }
                 break;
             case 3:{
                 if (_gamesArray.count > 2) {
                     gameVC.urlString = [_gamesArray[2] valueForKey:@"location"];
-                    [self.translationController pushViewController:gameVC];
+//                    [self.translationController pushViewController:gameVC];
                 }
             }
                 break;
@@ -223,6 +227,7 @@
         }
         
     }
+    [self.translationController pushViewController:gameVC];
 //    GameViewController * gameVC = [[GameViewController alloc] init];
 //    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
 //    [self.translationController pushViewController:gameVC];

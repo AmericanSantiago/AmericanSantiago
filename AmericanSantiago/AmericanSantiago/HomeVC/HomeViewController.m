@@ -60,13 +60,15 @@
 {
     if ([keyPath isEqualToString:@"GetNextConceptData"]) {
         if ([[_homeModel.GetNextConceptData valueForKey:@"errorCode"] integerValue] == 0) {
+            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
             
             //        NSLog(@"games = %@",[_homeModel.allUnlockedGamesData valueForKey:@"data"]);
-            
             for (int i = 0; i < [[_homeModel.GetNextConceptData valueForKey:@"data"]count]; i ++) {
                 for (int j = 0; j < [[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"] count]; j ++) {
                     
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"schoolClassroom"]) {
+                    NSLog(@"+++++++++========%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"]);
+                    
+                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
                         //                _schoolGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
                         [_schoolGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
                         NSLog(@"111111111111homeArray%@",_homeGameArray);
@@ -97,7 +99,7 @@
             NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
             NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
             
-            if ([_lockMark isEqualToString:@"1"]) {   //完成教学游戏
+//            if ([_lockMark isEqualToString:@"1"]) {   //完成教学游戏
                 //添加锁或者数字
                 if (_schoolGameArray.count > 0) {
                     [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
@@ -131,12 +133,14 @@
                 
                 //            _lockMark = @"2";
                 
-            }
+//            }
 
             NSLog(@"homeArray = %@",_homeGameArray);
             NSLog(@"_schoolGameArray = %@",_schoolGameArray);
             NSLog(@"_cityGameArray = %@",_cityGameArray);
             NSLog(@"_playgroundGameArray = %@",_playgroundGameArray);
+        }else{
+            [AppDelegate showHintLabelWithMessage:@"服务器出错"];
         }
         
         
@@ -326,8 +330,15 @@
 
 - (UIView *) addNumWithButtonTag:(int )tag Number:(NSString *)number subView:(UIView *)subView
 {
-    UIButton * button = (UIButton *)[self.view viewWithTag:tag - 900];
     subView = (UIView *)[self.view viewWithTag:tag];
+    for(UIView *view in [subView subviews])
+    {
+        [view removeFromSuperview];
+    }
+
+    UIButton * button = (UIButton *)[self.view viewWithTag:tag - 900];
+    button.userInteractionEnabled = YES;
+    subView.userInteractionEnabled = NO;
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(0), FLEXIBLE_NUM(0), button.frame.size.width, button.frame.size.height)];
     imageView.backgroundColor = [UIColor clearColor];
@@ -337,22 +348,31 @@
     imageView.contentMode = UIViewContentModeCenter;
     [subView addSubview:imageView];
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(73), FLEXIBLE_NUM(37), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(35), FLEXIBLE_NUM(37), FLEXIBLE_NUM(100), FLEXIBLE_NUM(40))];
     label.textColor = [UIColor redColor];
     label.text = number;
+//    label.backgroundColor = [UIColor redColor];
+    label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(38)];
     [imageView addSubview:label];
     
-    _numMark = @"2";
+//    _numMark = @"2";
     
     return imageView;
 }
 
 - (UIView *) addLockWithButtonTag:(int ) tag subView:(UIView *)subView
 {
+//    [subView makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    subView = (UIView *)[self.view viewWithTag:tag];
+    for(UIView *view in [subView subviews])
+    {
+        [view removeFromSuperview];
+    }
+    
     UIButton * button = (UIButton *)[self.view viewWithTag:tag - 900];
     NSLog(@"_+_+_+_+_+_+button.tag = %ld",(long)button.tag);
-    subView = (UIView *)[self.view viewWithTag:tag];
+    
     button.userInteractionEnabled = NO;
     subView.userInteractionEnabled = NO;
     
@@ -369,7 +389,7 @@
 //    imageView.contentMode = UIViewContentModeCenter;
     [view1 addSubview:imageView];
     
-    _lockMark = @"2";
+//    _lockMark = @"2";
     
     return imageView;
 }

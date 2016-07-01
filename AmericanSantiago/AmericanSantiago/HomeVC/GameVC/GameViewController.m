@@ -317,7 +317,7 @@
 //        WKWebView * webView = [[WKWebView alloc] initWithFrame:BASESCRREN_B];
 //        webView.navigationDelegate = self;
 //        webView.UIDelegate = self;
-//        webView.backgroundColor = [UIColor blackColor];
+//        webView.backgroundColor = [UIColor blac   wakColor];
 //        [self.view addSubview:webView];
 //        webView;
 //    });
