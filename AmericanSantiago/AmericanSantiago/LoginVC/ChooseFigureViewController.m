@@ -136,7 +136,9 @@
 - (void) ensureButtonClick:(UIButton *) sender
 {
     [_loginModel registerWithUsername:_userName Password:_passwd nickname:_studentName birthday:_birthday gender:_gender character:_character name:_studentName];
-
+    
+    
+    
 }
 
 

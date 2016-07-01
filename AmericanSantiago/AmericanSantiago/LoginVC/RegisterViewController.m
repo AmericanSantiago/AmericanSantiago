@@ -212,7 +212,13 @@
         chooseVC.passwd = _passwdTextField.text;
         chooseVC.studentName = _studentNameTextField.text;
         chooseVC.birthday = _birthdayTextField.text;
-        chooseVC.gender = _genderTextField.text;
+        
+        if ([_genderTextField.text isEqualToString:@"男"]) {
+            chooseVC.gender = @"1";
+        }else{
+            chooseVC.gender = @"0";
+        }
+//        chooseVC.gender = _genderTextField.text;
         [self.navigationController pushViewController:chooseVC animated:YES];
         
     }

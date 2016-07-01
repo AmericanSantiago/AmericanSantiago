@@ -187,7 +187,7 @@
     if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
         //
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"GetNextConcept" object:nil];
     }
     
     
