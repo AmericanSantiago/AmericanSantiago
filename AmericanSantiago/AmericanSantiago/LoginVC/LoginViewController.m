@@ -53,6 +53,9 @@
                 [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
                 [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
                 
+                //发通知请求数据
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"firstGetAllUnlockedGames" object:nil];
+                
                 //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
             }];
         }else{

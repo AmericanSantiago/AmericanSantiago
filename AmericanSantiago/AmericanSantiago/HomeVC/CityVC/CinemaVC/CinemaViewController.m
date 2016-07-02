@@ -62,6 +62,7 @@
 {
     
     TheatreShowViewController * theatreShowVC = [[TheatreShowViewController alloc] init];
+    theatreShowVC.gamesArray = _gamesArray;
     [self.translationController pushViewController:theatreShowVC];
     
     

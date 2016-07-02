@@ -10,4 +10,7 @@
 
 @interface BuildingViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * bulidingGamesArray;
+
+
 @end

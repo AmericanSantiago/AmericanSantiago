@@ -21,6 +21,6 @@
 - (void) getGetNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId;
 
 
-- (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId;       //加载全部解锁游戏
+//- (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId;       //加载全部解锁游戏
 
 @end

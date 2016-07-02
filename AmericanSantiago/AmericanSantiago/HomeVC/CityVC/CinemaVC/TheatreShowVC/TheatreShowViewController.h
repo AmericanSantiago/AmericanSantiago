@@ -10,4 +10,6 @@
 
 @interface TheatreShowViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * gamesArray;
+
 @end

@@ -52,7 +52,7 @@
 
 - (void)initializeUserInterface
 {
-    
+    NSLog(@"+++++++bulidingGameArray = %@",_bulidingGamesArray);
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
@@ -62,6 +62,7 @@
     _enterButton = ({
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(470), FLEXIBLE_NUM(342), FLEXIBLE_NUM(80), FLEXIBLE_NUM(80))];
         button.backgroundColor = [UIColor clearColor];
+        [button setImage:[UIImage imageNamed:@"进入@3x"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(enterButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
@@ -74,6 +75,7 @@
 - (void) enterButtonClick: (UIButton *) sender
 {
     TVViewController * TVVC = [[TVViewController alloc] init];
+    TVVC.gamesArray = _bulidingGamesArray;
     [self.translationController pushViewController:TVVC];
     
 }

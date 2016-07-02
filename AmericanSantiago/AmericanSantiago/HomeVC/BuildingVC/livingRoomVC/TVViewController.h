@@ -10,4 +10,6 @@
 
 @interface TVViewController : BaseViewController
 
+@property (nonatomic, strong) NSArray                   * gamesArray;
+
 @end

@@ -43,7 +43,7 @@
 
 - (void)initializeUserInterface
 {
-    
+    NSLog(@"++++++++_cityGamesArray = %@",_cityGameArray);
     self.view.backgroundColor = [UIColor redColor];
     
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
@@ -109,36 +109,61 @@
 - (void) libraryButtonClick: (UIButton *) sender
 {
     LibraryViewController * libraryVC = [[LibraryViewController alloc] init];
-    [self.translationController pushViewController:libraryVC];
-    
+
+    if (_cityGameArray.count > 0) {
+        libraryVC.gamesArray = _cityGameArray[0];
+        [self.translationController pushViewController:libraryVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
 }
 
 - (void) cinemaButtonClick: (UIButton *) sender
 {
     CinemaViewController * cinemaVC = [[CinemaViewController alloc] init];
-    [self.translationController pushViewController:cinemaVC];
+    if (_cityGameArray.count > 1) {
+        cinemaVC.gamesArray = _cityGameArray[1];
+        [self.translationController pushViewController:cinemaVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
     
 }
 
 - (void) petsButtonClick: (UIButton *) sender
 {
-    PetsViewController * cinemaVC = [[PetsViewController alloc] init];
-    [self.translationController pushViewController:cinemaVC];
+    PetsViewController * petsVC = [[PetsViewController alloc] init];
+    if (_cityGameArray.count > 2) {
+        petsVC.gamesArray = _cityGameArray[2];
+        [self.translationController pushViewController:petsVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
+    
+    
     
 }
 
 - (void) supermarketButtonClick: (UIButton *) sender
 {
     SupermarketViewController * supermarketVC = [[SupermarketViewController alloc] init];
-    [self.translationController pushViewController:supermarketVC];
-    
+    if (_cityGameArray.count > 3) {
+        supermarketVC.gamesArray = _cityGameArray[3];
+        [self.translationController pushViewController:supermarketVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
 }
 
 - (void) storeButtonClick: (UIButton *) sender
 {
     StoreViewController * storeVC = [[StoreViewController alloc] init];
-    [self.translationController pushViewController:storeVC];
-    
+    if (_cityGameArray.count > 4) {
+        storeVC.gamesArray = _cityGameArray[4];
+        [self.translationController pushViewController:storeVC];
+    }else{
+        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+    }
 }
 
 
