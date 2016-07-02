@@ -190,6 +190,8 @@
         bigView.layer.borderColor = [UIColor whiteColor].CGColor;
         bigView.layer.borderWidth = FLEXIBLE_NUM(4);
         bigView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(whenClickImage:)];
+        [bigView addGestureRecognizer:tapGesture];
         [self.view addSubview:bigView];
         bigView;
     });
