@@ -66,7 +66,7 @@
             for (int i = 0; i < [[_homeModel.GetNextConceptData valueForKey:@"data"]count]; i ++) {
                 for (int j = 0; j < [[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"] count]; j ++) {
                     
-                    NSLog(@"+++++++++========%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"]);
+//                    NSLog(@"+++++++++========%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"]);
                     
                     if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
                         //                _schoolGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
@@ -95,16 +95,16 @@
                     
                 }
             }
-            NSLog(@"+++++++++%@",[_homeModel.GetNextConceptData valueForKey:@"data"]);
-            NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
-            NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
+//            NSLog(@"+++++++++%@",[_homeModel.GetNextConceptData valueForKey:@"data"]);
+//            NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
+//            NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
             
 //            if ([_lockMark isEqualToString:@"1"]) {   //完成教学游戏
                 //添加锁或者数字
                 if (_schoolGameArray.count > 0) {
                     [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
                 }else{
-                    [self addLockWithButtonTag:1001 subView:_smallImageView];
+//                    [self addLockWithButtonTag:1001 subView:_smallImageView];
                 }
                 
                 //        if (_worldGameArray) {
@@ -135,10 +135,10 @@
                 
 //            }
 
-            NSLog(@"homeArray = %@",_homeGameArray);
-            NSLog(@"_schoolGameArray = %@",_schoolGameArray);
-            NSLog(@"_cityGameArray = %@",_cityGameArray);
-            NSLog(@"_playgroundGameArray = %@",_playgroundGameArray);
+//            NSLog(@"homeArray = %@",_homeGameArray);
+//            NSLog(@"_schoolGameArray = %@",_schoolGameArray);
+//            NSLog(@"_cityGameArray = %@",_cityGameArray);
+//            NSLog(@"_playgroundGameArray = %@",_playgroundGameArray);
         }else{
             [AppDelegate showHintLabelWithMessage:@"服务器出错"];
         }
