@@ -123,8 +123,6 @@
 //                    
 //                }
 //            }
-            
-            
 //            NSLog(@"+++++++++%@",[_homeModel.GetNextConceptData valueForKey:@"data"]);
 //            NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
 //            NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
@@ -165,10 +163,10 @@
                 
 //            }
 
-            NSLog(@"homeArray = %@",_homeGameArray);
-            NSLog(@"_schoolGameArray = %@",_schoolGameArray);
-            NSLog(@"_cityGameArray = %@",_cityGameArray);
-            NSLog(@"_playgroundGameArray = %@",_playgroundGameArray);
+//            NSLog(@"homeArray = %@",_homeGameArray);
+//            NSLog(@"_schoolGameArray = %@",_schoolGameArray);
+//            NSLog(@"_cityGameArray = %@",_cityGameArray);
+//            NSLog(@"_playgroundGameArray = %@",_playgroundGameArray);
         }else{
             [AppDelegate showHintLabelWithMessage:@"服务器出错"];
         }

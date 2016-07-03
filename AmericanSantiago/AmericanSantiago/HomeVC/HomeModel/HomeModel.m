@@ -46,7 +46,7 @@
                                  @"username":username,
                                  @"subjectId":subjectId,
                                  };
-    NSLog(@"bodey_+_+_+_+%@",bodyObject);
+//    NSLog(@"bodey_+_+_+_+%@",bodyObject);
     NSString * urlString = @"/GetNextConcept";
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
