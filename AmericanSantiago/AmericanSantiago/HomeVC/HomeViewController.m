@@ -63,48 +63,78 @@
             [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
             
             //        NSLog(@"games = %@",[_homeModel.allUnlockedGamesData valueForKey:@"data"]);
-            for (int i = 0; i < [[_homeModel.GetNextConceptData valueForKey:@"data"]count]; i ++) {
-                for (int j = 0; j < [[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"] count]; j ++) {
-                    
-                    NSLog(@"+++++++++========%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"]);
-                    
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
-                        //                _schoolGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
-                        [_schoolGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
-                        NSLog(@"111111111111homeArray%@",_homeGameArray);
-                    }
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"world"]) {
-                        //                _worldGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
-                        [_worldGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
-                    }
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"playground"]) {
-                        //                _playgroundGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
-                        [_playgroundGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
-                    }
-                    
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"city"]) {
-                        //                _cityGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
-                        [_cityGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
-                    }
-                    
-                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"home"]) {
-                        //                _homeGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
-                        [_homeGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
-//                        [_homeGameArray arrayByAddingObject:<#(nonnull id)#>]
-                    }
-                    
+//            NSArray *sceneArray = @[@"school",@"world",@"playground",@"city",@"home"];
+            NSArray *gamesArray = _homeModel.GetNextConceptData[@"data"];
+            for (int i = 0; i < gamesArray.count; i ++) {//所有游戏
+                NSDictionary *sceneGameDic = gamesArray[i];//新解锁的游戏
+                NSString *sceneName = sceneGameDic[@"scene"];
+                NSArray *sceneGameArray = gamesArray[i][@"games"];//新解锁的游戏的列表
+                if ([sceneName isEqualToString:@"school"]) {
+                    _schoolGameArray = [NSMutableArray arrayWithArray:sceneGameArray];
                 }
+                if ([sceneName isEqualToString:@"world"]) {
+                    _worldGameArray = [NSMutableArray arrayWithArray:sceneGameArray];
+                }
+                if ([sceneName isEqualToString:@"playground"]) {
+                    _playgroundGameArray = [NSMutableArray arrayWithArray:sceneGameArray];
+                }
+                if ([sceneName isEqualToString:@"city"]) {
+                    _cityGameArray = [NSMutableArray arrayWithArray:sceneGameArray];
+                }
+                if ([sceneName isEqualToString:@"home"]) {
+                    _homeGameArray = [NSMutableArray arrayWithArray:sceneGameArray];
+                }
+                [LBUserDefaults saveNewGameNumber:@(sceneGameArray.count) sceneName:sceneName];
             }
-            NSLog(@"+++++++++%@",[_homeModel.GetNextConceptData valueForKey:@"data"]);
-            NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
-            NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
+//            for (int i = 0; i < gamesArray.count; i ++) {//所有游戏
+//                NSDictionary *sceneGameDic = gamesArray[i];//新解锁的游戏
+//                NSString *sceneName = sceneGameDic[@"scene"];
+//                NSArray *sceneGameArray = gamesArray[i][@"games"];//新解锁的游戏的列表
+            
+                
+//                for (int j = 0; j < sceneGameArray.count ; j ++) {
+//                    
+//                    NSLog(@"+++++++++========%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"]);
+//                    
+//                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"school"]) {
+//                        //                _schoolGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
+//                        [_schoolGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
+//                        NSLog(@"111111111111homeArray%@",_homeGameArray);
+//                    }
+//                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"world"]) {
+//                        //                _worldGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
+//                        [_worldGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
+//                    }
+//                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"playground"]) {
+//                        //                _playgroundGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
+//                        [_playgroundGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
+//                    }
+//                    
+//                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"city"]) {
+//                        //                _cityGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
+//                        [_cityGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
+//                    }
+//                    
+//                    if ([[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"scene"] isEqualToString:@"home"]) {
+//                        //                _homeGameArray = [[_homeModel.GetNextConceptData valueForKey:@"data"] valueForKey:@"games"][i];
+//                        [_homeGameArray addObject:[[_homeModel.GetNextConceptData valueForKey:@"data"][i] valueForKey:@"games"][j]];
+////                        [_homeGameArray arrayByAddingObject:<#(nonnull id)#>]
+//                    }
+//                    
+//                }
+//            }
+            
+            
+//            NSLog(@"+++++++++%@",[_homeModel.GetNextConceptData valueForKey:@"data"]);
+//            NSLog(@"()()()()()()()%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"scene"]);
+//            NSLog(@"----------------%@",[[_homeModel.GetNextConceptData valueForKey:@"data"][0] valueForKey:@"games"][0]);
             
 //            if ([_lockMark isEqualToString:@"1"]) {   //完成教学游戏
                 //添加锁或者数字
                 if (_schoolGameArray.count > 0) {
                     [self addNumWithButtonTag:1001 Number:[NSString stringWithFormat:@"%lu",(unsigned long)_schoolGameArray.count] subView:_smallImageView];
                 }else{
-                    [self addLockWithButtonTag:1001 subView:_smallImageView];
+//                    [self addLockWithButtonTag:1001 subView:_smallImageView];
                 }
                 
                 //        if (_worldGameArray) {
@@ -142,10 +172,6 @@
         }else{
             [AppDelegate showHintLabelWithMessage:@"服务器出错"];
         }
-        
-        
-        
-        
     }
     
     
@@ -192,7 +218,8 @@
     
     
 //    [_homeModel getGetNextConceptWithUsername:@"0" SubjectId:@"Math"];
-    
+//    [self GetNextConcept:nil];
+//    [self firstGetAllUnlockedGames:nil];
     
 }
 - (void) getNextConceptData:(NSNotification *) notifi
@@ -271,10 +298,6 @@
         maxX = CGRectGetMaxX(_button.frame);
         [self.view addSubview:_button];
     }
-    
-    
-    
-    
 }
 
 - (void)whenClickImage: (UITapGestureRecognizer *)gesture

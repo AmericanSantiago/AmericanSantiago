@@ -165,6 +165,11 @@
         button.backgroundColor = [UIColor clearColor];
         [button setImage:[UIImage imageNamed:picArray[i]] forState:UIControlStateNormal];
         button.tag = 200;
+        if (i>_classroomGamesArray.count) {
+            button.alpha = 0.1;
+        }else{
+            button.alpha = 0;
+        }
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         

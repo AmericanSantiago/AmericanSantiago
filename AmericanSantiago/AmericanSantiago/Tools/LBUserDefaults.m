@@ -35,4 +35,23 @@ static NSString *loginInfoSaveKey = @"loginInfo";
     return userDic;
 }
 
+#pragma mark - 游戏数字缓存
++ (void)saveNewGameNumber:(NSNumber *)number sceneName:(NSString *)sceneName
+{
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    if (sceneName) {
+        [userdefaults setObject:number forKey:sceneName];
+    }else{
+        [userdefaults removeObjectForKey:sceneName];
+    }
+    [userdefaults synchronize];
+}
+
++ (NSNumber *)getNewGanmeNumberWithSceneName:(NSString *)sceneName
+{
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *number = [userdefaults objectForKey:sceneName];
+    return number;
+}
+
 @end

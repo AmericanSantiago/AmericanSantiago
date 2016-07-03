@@ -13,4 +13,7 @@
 + (void)setUserDic:(NSValue *)userDic;
 +(NSDictionary *)getUserDic;
 
+#pragma mark - 游戏数字缓存
++ (void)saveNewGameNumber:(NSNumber *)number sceneName:(NSString *)sceneName;
++ (NSNumber *)getNewGanmeNumberWithSceneName:(NSString *)sceneName;
 @end
