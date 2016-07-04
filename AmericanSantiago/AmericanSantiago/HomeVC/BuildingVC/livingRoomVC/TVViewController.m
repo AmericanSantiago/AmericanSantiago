@@ -62,7 +62,9 @@
     _view1 = ({
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
         view.hidden = YES;
-        view.tag = 1;
+        view.tag = 4;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognizer:)];
+        [view addGestureRecognizer:tapGesture];
         [self.view addSubview:view];
         view;
     });
@@ -75,6 +77,8 @@
     _view2 = ({
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
         view.tag = 2;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognizer:)];
+        [view addGestureRecognizer:tapGesture];
         [self.view addSubview:view];
         view;
     });
@@ -88,6 +92,8 @@
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
         view.hidden = YES;
         view.tag = 3;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognizer:)];
+        [view addGestureRecognizer:tapGesture];
         [self.view addSubview:view];
         view;
     });
@@ -194,49 +200,91 @@
     
     
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)tapGestureRecognizer:(UITapGestureRecognizer *)sender
 {
-    GameViewController * gameVC = [[GameViewController alloc] init];
-    for (int i = 0; i < 3; i ++) {
-        UIView * view1 = (UIView *)[self.view viewWithTag:i];
-        switch (view1.tag) {
-            case 1:{
-                if (_gamesArray.count > 0) {
-                    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
-//                    [self.translationController pushViewController:gameVC];
-                }
-            }
-                break;
-            case 2:{
-                if (_gamesArray.count > 1) {
-                    gameVC.urlString = [_gamesArray[1] valueForKey:@"location"];
-                    
-                }
-            }
-                break;
-            case 3:{
-                if (_gamesArray.count > 2) {
-                    gameVC.urlString = [_gamesArray[2] valueForKey:@"location"];
-//                    [self.translationController pushViewController:gameVC];
-                }
-            }
-                break;
-                
-            default:
-                break;
-        }
-        
-    }
-    [self.translationController pushViewController:gameVC];
-//    GameViewController * gameVC = [[GameViewController alloc] init];
-//    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
-//    [self.translationController pushViewController:gameVC];
-    
+    UIView *subSceneView = sender.view;
+    [self pushGameVCWithSubSceneCode:subSceneView.tag];
 }
 
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+////    GameViewController * gameVC = [[GameViewController alloc] init];
+////    UIView * view1 = (UIView *)[self.view viewWithTag:1];
+//    
+//    
+//    for (int i = 0; i < 3; i ++) {
+//        
+////        switch (view1.tag) {
+////            case 1:{
+//////                if (_gamesArray.count > 0) {
+//////                    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
+////////                    [self.translationController pushViewController:gameVC];
+//////                }
+////                
+////            }
+////                break;
+////            case 2:{
+////                if (_gamesArray.count > 1) {
+////                    gameVC.urlString = [_gamesArray[1] valueForKey:@"location"];
+////                    
+////                }
+////            }
+////                break;
+////            case 3:{
+////                if (_gamesArray.count > 2) {
+////                    gameVC.urlString = [_gamesArray[2] valueForKey:@"location"];
+//////                    [self.translationController pushViewController:gameVC];
+////                }
+////            }
+////                break;
+////                
+////            default:
+////                break;
+////        }
+//        
+//    }
+//    [self.translationController pushViewController:gameVC];
+////    GameViewController * gameVC = [[GameViewController alloc] init];
+////    gameVC.urlString = [_gamesArray[0] valueForKey:@"location"];
+////    [self.translationController pushViewController:gameVC];
+//    
+//}
 
 
+#pragma mark - 自定义
+- (void)pushGameVCWithSubSceneCode:(NSInteger)subSceneCode
+{
+    NSArray *subSceneGamesArray1 = [self getSubSceneGamesArrayWithSceneGamesArray:_gamesArray SubSceneCode:subSceneCode];
+    if (!subSceneGamesArray1.count) {
+        [AppDelegate showHintLabelWithMessage:@"该场景未解锁~"];
+        return;
+    }
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    gameVC.subjectId = [LBUserDefaults getCurrentCalss];
+    //先检测新解锁的是否有没玩儿过的。
+    NSArray *newGameArray = [LBUserDefaults getNewSceneGanmesArrayWithSceneName:@"home"];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSceneGamesArray:newGameArray SubSceneCode:subSceneCode];
+    if (subSceneGamesArray.count > 0) {//还有新的没玩儿
+        gameVC.gameDic = [subSceneGamesArray firstObject];
+    }else{
+        gameVC.gameDic = [subSceneGamesArray1 firstObject];
+    }
+    
+    [self.translationController pushViewController:gameVC];
+}
 
+//获取子场景游戏，根据index
+- (NSArray *)getSubSceneGamesArrayWithSceneGamesArray:(NSArray *)sceneGamesArray SubSceneCode:(NSInteger)subSceneCode
+{
+    NSString *sceneCode = [NSString stringWithFormat:@"5.%@",@(subSceneCode)];
+    NSMutableArray *subSceneGamesArray = [NSMutableArray array];
+    for (NSDictionary *subSceneGameDic in sceneGamesArray) {
+        if ([subSceneGameDic[@"sceneCode"] isEqualToString:sceneCode]) {
+            [subSceneGamesArray addObject:subSceneGameDic];
+        }
+    }
+    return subSceneGamesArray;
+}
 
 
 @end

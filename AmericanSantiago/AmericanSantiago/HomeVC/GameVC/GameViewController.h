@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) NSString                      * urlString;
 
+@property (strong, nonatomic) NSDictionary *gameDic;
+@property (strong, nonatomic) NSString *subjectId;//课程id,如果存在则是选择课程。
+
 @end

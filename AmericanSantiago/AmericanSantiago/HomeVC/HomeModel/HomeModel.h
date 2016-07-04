@@ -11,14 +11,15 @@
 @interface HomeModel : NSObject
 
 @property (nonatomic ,strong, readonly) id                        unlockedGamesData;
-@property (nonatomic, strong, readonly) id                        GetNextConceptData;
+@property (nonatomic, strong, readonly) id                        nextConceptData;
 
 @property (nonatomic, strong, readonly) id                        gameLogData;
 
 @property (nonatomic, strong, readonly) id                        allUnlockedGamesData;
 
 - (void) getGetUnlockedGamesWithUsername:(NSString *) username SubjectId:(NSString *)subjectId SceneType:(NSString *)sceneType;
-- (void) getGetNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId;
+#pragma mark -- 获取下一个教学知识点游戏
+- (void) getNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId;
 
 
 //- (void) getAllUnlockedGamesUsername: (NSString *) username subjectId:(NSString *) subjectId;       //加载全部解锁游戏

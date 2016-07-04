@@ -12,9 +12,13 @@
 
 @property (nonatomic, strong,readonly) id                                    gameData;
 @property (nonatomic, strong, readonly) id                                    gameNewData;
+@property (nonatomic, strong, readonly) id                                    conceptFinishData;
 
 
 - (void) getGameData;
 - (void) getNewGamesWithUsername: (NSString *) username subjectId:(NSString *) subjectId;
 
+
+#pragma mark - 完成当前场景
+- (void)getConceptFinishDataWithSubjectId:(NSString *)subjectId complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
 @end
