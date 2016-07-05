@@ -45,12 +45,15 @@
     if ([keyPath isEqualToString:@"loginData"]) {
         if ([[_loginModel.loginData valueForKey:@"errorCode"] integerValue] == 0) {
 
+            //先保存用户信息，再跳转
+            [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
+            
             RootViewController *rootViewController = [[RootViewController alloc] init];
             [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
                 WINDOW.rootViewController = rootViewController;
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
 //                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
-                [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
+                
                 [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
                 
                 //发通知请求数据

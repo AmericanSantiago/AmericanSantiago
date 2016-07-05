@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) WKWebView                     * webView;
 @property (nonatomic, strong) GameModel                     * gameModel;
+@property (nonatomic, strong) UIProgressView                * progressView;
 
 //@property (nonatomic, strong)          * bridge;
 //WebViewJavascriptBridge
@@ -26,7 +27,7 @@
 
 - (void)dealloc
 {
-    
+    [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
 }
 
@@ -42,7 +43,7 @@
 {
     [super viewDidDisappear:animated];
 
-    NSLog(@"页面将面消失（测试）");
+//    NSLog(@"页面将面消失（测试）");
     //移除messageHandler代理，否则内存无法释放
     [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"sendEndGame"];
     
@@ -89,7 +90,9 @@
     [self.view addSubview:backgroundView];
 
     [self.view addSubview:self.webView];
-
+    
+    [self.view addSubview:self.progressView];
+    
     if (self.gameDic) {
         [self loadRequestWithUrlFilePath:self.gameDic[@"location"]];
     }else{
@@ -100,6 +103,17 @@
     
 }
 #pragma mark - 各种Getter
+- (UIProgressView *)progressView
+{
+    if (!_progressView) {
+        _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
+        [_progressView setOriginX:0];
+        [_progressView setWidth:BASESCRREN_W];
+        _progressView.progress = 0;
+    }
+    return _progressView;
+}
+
 - (WKWebView *)webView {
     if (!_webView) {
         // js配置
@@ -120,6 +134,7 @@
         _webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self; // 设置WKUIDelegate代理
+        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [self.view addSubview:_webView];
     }
     return _webView;
@@ -147,6 +162,15 @@
 {
     if ([keyPath isEqualToString:@"unlockedGamesData"]) {
         [self unlockedGamesDataParse];
+    }
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
+//        self.progressView.progress = self.webView.estimatedProgress;
+        if (self.progressView.progress == 1) {
+            self.progressView.hidden = YES;
+        }else{
+            self.progressView.hidden = NO;
+        }
     }
 }
 
@@ -512,24 +536,24 @@
 
 
 
-//将文件copy到tmp目录
-- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
-    NSError *error = nil;
-    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
-        return nil;
-    }
-    // Create "/temp/www" directory
-    NSFileManager *fileManager= [NSFileManager defaultManager];
-    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
-    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
-    
-    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
-    // Now copy given file to the temp directory
-    [fileManager removeItemAtURL:dstURL error:&error];
-    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
-    // Files in "/temp/www" load flawlesly :)
-    return dstURL;
-}
+////将文件copy到tmp目录
+//- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
+//    NSError *error = nil;
+//    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
+//        return nil;
+//    }
+//    // Create "/temp/www" directory
+//    NSFileManager *fileManager= [NSFileManager defaultManager];
+//    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
+//    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+//    
+//    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
+//    // Now copy given file to the temp directory
+//    [fileManager removeItemAtURL:dstURL error:&error];
+//    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
+//    // Files in "/temp/www" load flawlesly :)
+//    return dstURL;
+//}
 
 /** 清理缓存的方法，这个方法会清除缓存类型为HTML类型的文件*/
 - (void)clearCache
