@@ -185,9 +185,19 @@
     resultDic = [self dictionaryWithJsonString:message.body];
     
     if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
         //
+        
+        if ([self.gameMark isEqualToString:@"1"]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"GetNextConcept" object:nil];
+        }else{
+            NSLog(@"不解锁，只进行数字递减");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeButtonNum" object:nil];
+        }
+        
+        
+        
+        
     }
     
     

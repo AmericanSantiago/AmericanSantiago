@@ -195,6 +195,7 @@
 //        gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray valueForKey:@"location"]];
 //    }else{
         gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+    gameVC.gameMark = @"1";
 //    }
     
     
@@ -209,6 +210,7 @@
     GameViewController * gameVC = [[GameViewController alloc] init];
     if (_classroomGamesArray.count > 0) {
         gameVC.urlString = [_classroomGamesArray[0] valueForKey:@"location"];
+        gameVC.gameMark = @"1";
         [self.translationController pushViewController:gameVC];
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
@@ -219,6 +221,7 @@
     GameViewController * gameVC = [[GameViewController alloc] init];
     if (_classroomGamesArray.count > 2) {
         gameVC.urlString = [_classroomGamesArray[2] valueForKey:@"location"];
+        gameVC.gameMark = @"1";
         [self.translationController pushViewController:gameVC];
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
@@ -230,6 +233,7 @@
     GameViewController * gameVC = [[GameViewController alloc] init];
     if (_classroomGamesArray.count > 3) {
         gameVC.urlString = [_classroomGamesArray[3] valueForKey:@"location"];
+        gameVC.gameMark = @"1";
         [self.translationController pushViewController:gameVC];
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
@@ -241,6 +245,7 @@
     GameViewController * gameVC = [[GameViewController alloc] init];
     if (_classroomGamesArray.count > 4) {
         gameVC.urlString = [_classroomGamesArray[4] valueForKey:@"location"];
+        gameVC.gameMark = @"1";
         [self.translationController pushViewController:gameVC];
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
@@ -251,6 +256,7 @@
     GameViewController * gameVC = [[GameViewController alloc] init];
     if (_classroomGamesArray.count > 5) {
         gameVC.urlString = [_classroomGamesArray[5] valueForKey:@"location"];
+        gameVC.gameMark = @"1";
         [self.translationController pushViewController:gameVC];
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];

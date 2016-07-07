@@ -213,7 +213,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConcept:) name:@"GetNextConcept" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstGetAllUnlockedGames:) name:@"firstGetAllUnlockedGames" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeButtonNum:) name:@"changeButtonNum" object:nil];
     
 //    [_homeModel getGetNextConceptWithUsername:@"0" SubjectId:@"Math"];
 //    [self GetNextConcept:nil];
@@ -433,6 +433,12 @@
         [_homeModel getGetNextConceptWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math"];
     }
     
+    
+}
+
+- (void) changeButtonNum:(NSNotification *)notifi
+{
+    NSLog(@"减一");
     
 }
 
