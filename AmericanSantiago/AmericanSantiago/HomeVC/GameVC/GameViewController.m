@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) WKWebView                     * webView;
 @property (nonatomic, strong) GameModel                     * gameModel;
+@property (nonatomic, strong) UIProgressView                * progressView;
 
 //@property (nonatomic, strong)          * bridge;
 //WebViewJavascriptBridge
@@ -26,7 +27,7 @@
 
 - (void)dealloc
 {
-    
+    [_webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
 }
 
@@ -42,7 +43,7 @@
 {
     [super viewDidDisappear:animated];
 
-    NSLog(@"页面将面消失（测试）");
+//    NSLog(@"页面将面消失（测试）");
     //移除messageHandler代理，否则内存无法释放
     [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"sendEndGame"];
     
@@ -50,32 +51,33 @@
 //    
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateAllUnlockGames" object:nil];
     
-    //通知后台游戏完成
-    NSDictionary *userDic = [LBUserDefaults getUserDic];
-    NSString * urlString = @"/ConceptFinish";
-    NSDictionary* bodyObject = @{
-                                 @"username":[userDic valueForKey:@"username"],
-                                 @"subjectId":@"Math"};
-    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-        if (!errorString) {
-            //            self.gameNewData = resultDic;
-            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
-            if ([[resultDic valueForKey:@"errorCode"] integerValue] == 0) {
-                
-                NSLog(@"通知成功");
-                
-                //                [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGamesData" object:nil];
-                
-            }
-            
-        }
-    }];
+//    //通知后台游戏完成
+//    NSDictionary *userDic = [LBUserDefaults getUserDic];
+//    NSString * urlString = @"/ConceptFinish";
+//    NSDictionary* bodyObject = @{
+//                                 @"username":[userDic valueForKey:@"username"],
+//                                 @"subjectId":@"Math"};
+//    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+//        if (!errorString) {
+//            //            self.gameNewData = resultDic;
+//            NSLog(@"HTTP Response Body  gameNewData == : %@", resultDic);
+//            if ([[resultDic valueForKey:@"errorCode"] integerValue] == 0) {
+//                
+//                NSLog(@"通知成功");
+//                
+//                //                [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGamesData" object:nil];
+//                
+//            }
+//            
+//        }
+//    }];
 }
 
 #pragma mark - 数据初始化
 - (void)initializeDataSource
 {
-    [self.homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+//    [self.homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+    [self clearCache];
 }
 
 #pragma mark - 视图初始化
@@ -88,10 +90,30 @@
     [self.view addSubview:backgroundView];
 
     [self.view addSubview:self.webView];
-
-    [self loadTestMathRequest];
+    
+    [self.view addSubview:self.progressView];
+    
+    if (self.gameDic) {
+        [self loadRequestWithUrlFilePath:self.gameDic[@"location"]];
+    }else{
+        [self loadTestMathRequest];
+        [AppDelegate showHintLabelWithMessage:@"这是一个本地测试游戏~"];
+    }
+    
+    
 }
 #pragma mark - 各种Getter
+- (UIProgressView *)progressView
+{
+    if (!_progressView) {
+        _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleBar];
+        [_progressView setOriginX:0];
+        [_progressView setWidth:BASESCRREN_W];
+        _progressView.progress = 0;
+    }
+    return _progressView;
+}
+
 - (WKWebView *)webView {
     if (!_webView) {
         // js配置
@@ -112,6 +134,7 @@
         _webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self; // 设置WKUIDelegate代理
+        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [self.view addSubview:_webView];
     }
     return _webView;
@@ -126,11 +149,28 @@
     return _homeModel;
 }
 
+- (GameModel *)gameModel
+{
+    if (!_gameModel) {
+        _gameModel = [[GameModel alloc]init];
+    }
+    return _gameModel;
+}
+
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"unlockedGamesData"]) {
         [self unlockedGamesDataParse];
+    }
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        [self.progressView setProgress:self.webView.estimatedProgress animated:YES];
+//        self.progressView.progress = self.webView.estimatedProgress;
+        if (self.progressView.progress == 1) {
+            self.progressView.hidden = YES;
+        }else{
+            self.progressView.hidden = NO;
+        }
     }
 }
 
@@ -177,7 +217,12 @@
 //OC在JS调用方法做的处理
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
+    //完成游戏后，先删除新游戏的列表
+    [LBUserDefaults removeNewGameDic:self.gameDic sceneName:self.gameDic[@"scene"]];
+    //刷新首页的数字
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
     
+<<<<<<< HEAD
 //    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
     
 //    NSString * resultBody = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
@@ -198,29 +243,53 @@
         
         
         
+=======
+    //检查该知识点是否还有游戏
+    NSArray *conceptGamesArray = [LBUserDefaults getCurrentConceptGamesArray];
+    //如果说为0，则证明已经完成该教学
+    if (conceptGamesArray.count == 0) {
+        [self.gameModel getConceptFinishDataWithSubjectId:self.subjectId complete:^(NSDictionary *resultDic, NSString *errorString) {
+            if (!errorString) {
+                [AppDelegate showHintLabelWithMessage:@"当前场景已完成~"];
+            }
+        }];
+>>>>>>> origin/master
     }
     
     
-    NSLog(@"参数 = %@",resultDic);
-    
-    
-    
-//    if ([message.name isEqualToString:@"sendIOSCommand"]) {
-//        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
-//        // NSDictionary, and NSNull类型
-//        NSLog(@"%@", message.body);
+////    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
+//    
+////    NSString * resultBody = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+//    NSDictionary * resultDic = [[NSDictionary alloc] init];
+//    resultDic = [self dictionaryWithJsonString:message.body];
+//    
+//    if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+//        //
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"GetNextConcept" object:nil];
 //    }
-//    NSLog(@"方法名:%@", message.name);
-//    NSLog(@"参数:%@", message.body);
-//    // 方法名
-//    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
-//    SEL selector = NSSelectorFromString(methods);
-//    // 调用方法
-//    if ([self respondsToSelector:selector]) {
-////        [self performSelector:selector withObject:message.body];
-//    } else {
-//        NSLog(@"未实行方法：%@", methods);
-//    }
+//    
+//    
+//    NSLog(@"参数 = %@",resultDic);
+//    
+//    
+//    
+////    if ([message.name isEqualToString:@"sendIOSCommand"]) {
+////        // 打印所传过来的参数，只支持NSNumber, NSString, NSDate, NSArray,
+////        // NSDictionary, and NSNull类型
+////        NSLog(@"%@", message.body);
+////    }
+////    NSLog(@"方法名:%@", message.name);
+////    NSLog(@"参数:%@", message.body);
+////    // 方法名
+////    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
+////    SEL selector = NSSelectorFromString(methods);
+////    // 调用方法
+////    if ([self respondsToSelector:selector]) {
+//////        [self performSelector:selector withObject:message.body];
+////    } else {
+////        NSLog(@"未实行方法：%@", methods);
+////    }
 }
 
 - (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
@@ -248,7 +317,7 @@
 - (void)loadRequestWithUrlFilePath:(NSString *)urlFilePath
 {
     NSString *urlStr = [NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",urlFilePath];
-    NSURL *url = [[NSURL alloc]initWithString:urlStr];
+    NSURL *url = [NSURL URLWithString:urlStr];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
@@ -490,23 +559,70 @@
 
 
 
-//将文件copy到tmp目录
-- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
-    NSError *error = nil;
-    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
-        return nil;
-    }
-    // Create "/temp/www" directory
-    NSFileManager *fileManager= [NSFileManager defaultManager];
-    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
-    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+////将文件copy到tmp目录
+//- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL {
+//    NSError *error = nil;
+//    if (!fileURL.fileURL || ![fileURL checkResourceIsReachableAndReturnError:&error]) {
+//        return nil;
+//    }
+//    // Create "/temp/www" directory
+//    NSFileManager *fileManager= [NSFileManager defaultManager];
+//    NSURL *temDirURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"www"];
+//    [fileManager createDirectoryAtURL:temDirURL withIntermediateDirectories:YES attributes:nil error:&error];
+//    
+//    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
+//    // Now copy given file to the temp directory
+//    [fileManager removeItemAtURL:dstURL error:&error];
+//    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
+//    // Files in "/temp/www" load flawlesly :)
+//    return dstURL;
+//}
+
+/** 清理缓存的方法，这个方法会清除缓存类型为HTML类型的文件*/
+- (void)clearCache
+{
+    /* 取得Library文件夹的位置*/
+    NSString *libraryDir =NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask, YES)[0];
+    /* 取得bundle id，用作文件拼接用*/
+    NSString *bundleId  =  [[[NSBundle mainBundle] infoDictionary]objectForKey:@"CFBundleIdentifier"];
+    /*
+     * 拼接缓存地址，具体目录为App/Library/Caches/你的APPBundleID/fsCachedData
+     */
+    NSString *webKitFolderInCachesfs = [NSString stringWithFormat:@"%@/Caches/%@/fsCachedData",libraryDir,bundleId];
     
-    NSURL *dstURL = [temDirURL URLByAppendingPathComponent:fileURL.lastPathComponent];
-    // Now copy given file to the temp directory
-    [fileManager removeItemAtURL:dstURL error:&error];
-    [fileManager copyItemAtURL:fileURL toURL:dstURL error:&error];
-    // Files in "/temp/www" load flawlesly :)
-    return dstURL;
+    NSError *error;
+    /* 取得目录下所有的文件，取得文件数组*/
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *fileList = [[NSArray alloc] init];
+    //fileList便是包含有该文件夹下所有文件的文件名及文件夹名的数组
+    fileList = [fileManager contentsOfDirectoryAtPath:webKitFolderInCachesfs error:&error];
+    
+    NSLog(@"路径==%@,fileList%@",webKitFolderInCachesfs,fileList);
+    /* 遍历文件组成的数组*/
+    for(NSString * fileName in fileList){
+        /* 定位每个文件的位置*/
+        
+        NSString * path = [[NSBundle bundleWithPath:webKitFolderInCachesfs] pathForResource:fileName ofType:@""];
+        /* 将文件转换为NSData类型的数据*/
+        NSData * fileData = [NSData dataWithContentsOfFile:path];
+        /* 如果FileData的长度大于2，说明FileData不为空*/
+        if(fileData.length >2){
+            /* 创建两个用于显示文件类型的变量*/
+            int char1 =0;
+            int char2 =0;
+            
+            [fileData getBytes:&char1 range:NSMakeRange(0,1)];
+            [fileData getBytes:&char2 range:NSMakeRange(1,1)];
+            /* 拼接两个变量*/
+            NSString *numStr = [NSString stringWithFormat:@"%i%i",char1,char2];
+            /* 如果该文件前四个字符是6033，说明是Html文件，删除掉本地的缓存*/
+            if([numStr isEqualToString:@"6033"]){
+                [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@",webKitFolderInCachesfs,fileName]error:&error];
+                continue;
+            }
+            
+        }
+    }
 }
 
 

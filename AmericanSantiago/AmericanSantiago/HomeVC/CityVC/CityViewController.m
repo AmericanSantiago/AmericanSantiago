@@ -108,62 +108,90 @@
 #pragma mark -- buttonClick
 - (void) libraryButtonClick: (UIButton *) sender
 {
-    LibraryViewController * libraryVC = [[LibraryViewController alloc] init];
-
-    if (_cityGameArray.count > 0) {
-        libraryVC.gamesArray = _cityGameArray[0];
-        [self.translationController pushViewController:libraryVC];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:1];
+    if (!subSceneGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前场景未解锁~"];
     }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+        LibraryViewController * libraryVC = [[LibraryViewController alloc] init];
+        libraryVC.gamesArray = subSceneGamesArray;
+        [self.translationController pushViewController:libraryVC];
     }
+//    if (_cityGameArray.count > 0) {
+//        
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
 }
 
 - (void) cinemaButtonClick: (UIButton *) sender
 {
-    CinemaViewController * cinemaVC = [[CinemaViewController alloc] init];
-    if (_cityGameArray.count > 1) {
-        cinemaVC.gamesArray = _cityGameArray[1];
-        [self.translationController pushViewController:cinemaVC];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:2];
+    if (!subSceneGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前场景未解锁~"];
     }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+        CinemaViewController * cinemaVC = [[CinemaViewController alloc] init];
+        cinemaVC.gamesArray = subSceneGamesArray;
+        [self.translationController pushViewController:cinemaVC];
     }
-    
 }
 
 - (void) petsButtonClick: (UIButton *) sender
 {
-    PetsViewController * petsVC = [[PetsViewController alloc] init];
-    if (_cityGameArray.count > 2) {
-        petsVC.gamesArray = _cityGameArray[2];
-        [self.translationController pushViewController:petsVC];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:3];
+    if (!subSceneGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前场景未解锁~"];
     }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+        PetsViewController * petsVC = [[PetsViewController alloc] init];
+        petsVC.gamesArray = subSceneGamesArray;
+        [self.translationController pushViewController:petsVC];
     }
     
-    
-    
+//    PetsViewController * petsVC = [[PetsViewController alloc] init];
+//    if (_cityGameArray.count > 2) {
+//        petsVC.gamesArray = _cityGameArray[2];
+//        [self.translationController pushViewController:petsVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
 }
 
 - (void) supermarketButtonClick: (UIButton *) sender
 {
-    SupermarketViewController * supermarketVC = [[SupermarketViewController alloc] init];
-    if (_cityGameArray.count > 3) {
-        supermarketVC.gamesArray = _cityGameArray[3];
-        [self.translationController pushViewController:supermarketVC];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:4];
+    if (!subSceneGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前场景未解锁~"];
     }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+        SupermarketViewController * supermarketVC = [[SupermarketViewController alloc] init];
+        supermarketVC.gamesArray = subSceneGamesArray;
+        [self.translationController pushViewController:supermarketVC];
     }
+//    SupermarketViewController * supermarketVC = [[SupermarketViewController alloc] init];
+//    if (_cityGameArray.count > 3) {
+//        supermarketVC.gamesArray = _cityGameArray[3];
+//        [self.translationController pushViewController:supermarketVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
 }
 
 - (void) storeButtonClick: (UIButton *) sender
 {
-    StoreViewController * storeVC = [[StoreViewController alloc] init];
-    if (_cityGameArray.count > 4) {
-        storeVC.gamesArray = _cityGameArray[4];
-        [self.translationController pushViewController:storeVC];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:5];
+    if (!subSceneGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前场景未解锁~"];
     }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+        StoreViewController * storeVC = [[StoreViewController alloc] init];
+        storeVC.gamesArray = subSceneGamesArray;
+        [self.translationController pushViewController:storeVC];
     }
+    
+//    StoreViewController * storeVC = [[StoreViewController alloc] init];
+//    if (_cityGameArray.count > 4) {
+//        storeVC.gamesArray = _cityGameArray[4];
+//        [self.translationController pushViewController:storeVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
 }
 
 
@@ -172,7 +200,20 @@
 {
     [self.translationController popViewController];
     
-    
+}
+
+#pragma mark - 自定义
+//获取子场景游戏，根据index
+- (NSArray *)getSubSceneGamesArrayWithSubSceneCode:(NSInteger)subSceneCode
+{
+    NSString *sceneCode = [NSString stringWithFormat:@"4.%@",@(subSceneCode)];
+    NSMutableArray *subSceneGamesArray = [NSMutableArray array];
+    for (NSDictionary *subSceneGameDic in _cityGameArray) {
+        if ([subSceneGameDic[@"sceneCode"] isEqualToString:sceneCode]) {
+            [subSceneGamesArray addObject:subSceneGameDic];
+        }
+    }
+    return subSceneGamesArray;
 }
 
 @end

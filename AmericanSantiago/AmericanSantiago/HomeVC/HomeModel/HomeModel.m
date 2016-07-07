@@ -11,7 +11,7 @@
 @interface HomeModel()
 
 @property (nonatomic, strong) id                        unlockedGamesData;
-@property (nonatomic, strong) id                        GetNextConceptData;
+@property (nonatomic, strong) id                        nextConceptData;
 
 @property (nonatomic, strong) id                        gameLogData;
 
@@ -39,7 +39,7 @@
 }
 
 #pragma mark -- 获取下一个教学知识点游戏
-- (void) getGetNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId
+- (void) getNextConceptWithUsername:(NSString *) username SubjectId:(NSString *)subjectId
 {
     // JSON Body
     NSDictionary* bodyObject = @{
@@ -50,8 +50,8 @@
     NSString * urlString = @"/GetNextConcept";
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
-            self.GetNextConceptData = resultDic;
-            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
+            self.nextConceptData = resultDic;
+//            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
         }
     }];
     

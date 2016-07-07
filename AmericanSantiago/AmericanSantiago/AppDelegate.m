@@ -41,6 +41,7 @@
     
     //在移除通知时候加上这句[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     
+//    [LBUserDefaults clearUserDefaults];
     
     [self setRootViewController];
     

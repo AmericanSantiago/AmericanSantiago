@@ -26,6 +26,7 @@
 //@property (nonatomic, strong) UIWebView                     * webView;
 
 @property (nonatomic, strong) GameModel                       * gameModel;
+@property (strong, nonatomic) NSString *currentSubjectId;//当前选择的课程id;
 
 
 @end
@@ -40,57 +41,54 @@
 
 - (void)dealloc
 {
-    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
-    
-    [_gameModel removeObserver:self forKeyPath:@"gameNewData"];
+    [_homeModel removeObserver:self forKeyPath:@"nextConceptData"];
+//    [_homeModel removeObserver:self forKeyPath:@"unlockedGamesData"];
+//    
+//    [_gameModel removeObserver:self forKeyPath:@"gameNewData"];
     
 }
 
 #pragma mark -- observe
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"unlockedGamesData"]) {
-        
-        
-        
+    if ([keyPath isEqualToString:@"nextConceptData"]) {
+        [self nextConceptDataParse];
     }
-    
-    if ([keyPath isEqualToString:@"gameNewData"]) {
-        if ([[_gameModel.gameNewData valueForKey:@"errorCode"] integerValue] == 0) {
-//            UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"已解锁新游戏" preferredStyle:UIAlertControllerStyleAlert];
-//            UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                
-//                
-//            }];
-//            [alertController addAction:sureAction];
-//            [self presentViewController:alertController animated:YES completion:nil];
-            
-//            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
-            
-        }
-        
-
-        
-    }
-    
-    
-    
+//    if ([keyPath isEqualToString:@"unlockedGamesData"]) {
+//        
+//        
+//        
+//    }
+//    
+//    if ([keyPath isEqualToString:@"gameNewData"]) {
+//        if ([[_gameModel.gameNewData valueForKey:@"errorCode"] integerValue] == 0) {
+////            UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"已解锁新游戏" preferredStyle:UIAlertControllerStyleAlert];
+////            UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+////                
+////                
+////            }];
+////            [alertController addAction:sureAction];
+////            [self presentViewController:alertController animated:YES completion:nil];
+//            
+////            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
+//            
+//        }
+//    }
 }
 
 #pragma mark -- initialize
 - (void)initializeDataSource
 {
     _homeModel = [[HomeModel alloc] init];
-    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+    [_homeModel addObserver:self forKeyPath:@"nextConceptData" options:NSKeyValueObservingOptionNew context:nil];
+//    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
+//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
-    _gameModel = [[GameModel alloc] init];
-    [_gameModel addObserver:self forKeyPath:@"gameNewData" options:NSKeyValueObservingOptionNew context:nil];
+//    _gameModel = [[GameModel alloc] init];
+//    [_gameModel addObserver:self forKeyPath:@"gameNewData" options:NSKeyValueObservingOptionNew context:nil];
     
     //    [_gameModel getGameData];
-    
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNewGamesNotifi:) name:@"getNewGames" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getNewGamesNotifi:) name:@"getNewGames" object:nil];
     
 }
 
@@ -188,6 +186,7 @@
 #pragma mark -- buttonCLick
 - (void) mathButtonClick: (UIButton *) sender
 {
+<<<<<<< HEAD
     [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
     
     GameViewController * gameVC = [[GameViewController alloc] init];
@@ -203,6 +202,24 @@
 //    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
 //    NSLog(@"location = %@",gameVC.urlString);
     [self.translationController pushViewController:gameVC];
+=======
+    self.currentSubjectId = @"Math";
+    [self getNextConceptDataWithSubjectId:@"Math"];
+//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+//    
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+////    if (_classroomGamesArray) {
+////        gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray valueForKey:@"location"]];
+////    }else{
+//        gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+////    }
+//    
+//    
+////    gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray[0] valueForKey:@"location"]];
+////    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+////    NSLog(@"location = %@",gameVC.urlString);
+//    [self.translationController pushViewController:gameVC];
+>>>>>>> origin/master
     
 }
 - (void) englishButtonClick: (UIButton *) sender
@@ -271,6 +288,13 @@
     NSLog(@"button.tag = %ld",(long)sender.tag);
 }
 
+#pragma mark - 获取一个教学点游戏
+- (void)getNextConceptDataWithSubjectId:(NSString *)subjectId
+{
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    [_homeModel getNextConceptWithUsername:userDic[@"username"] SubjectId:subjectId];
+}
+
 #pragma mark -- notifi
 - (void) getNewGamesNotifi:(NSNotification *)notifi
 {
@@ -278,5 +302,39 @@
     
 }
 
+
+#pragma mark - 数据处理
+- (void)nextConceptDataParse
+{
+    
+    if ([_homeModel.nextConceptData[@"errorCode"] integerValue]) {
+        [AppDelegate showHintLabelWithMessage:@"获取教学知识点游戏失败~"];
+        return;
+    }
+    NSArray *conceptGamesArray = _homeModel.nextConceptData[@"data"];
+    if (!conceptGamesArray.count) {
+        [AppDelegate showHintLabelWithMessage:@"当前教学点已完成~"];
+        [LBUserDefaults saveCurrentClass:nil];//重置当前课程
+    }else{
+        //保存当前选择课程
+        [LBUserDefaults saveCurrentClass:self.currentSubjectId];
+        //保存当前教学知识点游戏列表
+        [LBUserDefaults saveCurrentConceptGamesArray:conceptGamesArray];
+        //进入当前知识点的教学游戏
+        for (NSDictionary *conceptGameDic in conceptGamesArray) {
+            NSString *sceneName = conceptGameDic[@"scene"];
+            NSArray *sceneGamesArray = conceptGameDic[@"games"];
+            [LBUserDefaults addSaveNewSceneGamesArray:sceneGamesArray sceneName:sceneName];
+            if ([sceneName isEqualToString:@"school"]) {
+                GameViewController *gameVC = [[GameViewController alloc]init];
+                gameVC.gameDic = [sceneGamesArray firstObject];
+                gameVC.subjectId = self.currentSubjectId;
+                [self.translationController pushViewController:gameVC];
+            }
+        }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:nil];
+    
+}
 
 @end

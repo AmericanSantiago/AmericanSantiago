@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) id                                    gameNewData;
 @property (nonatomic, strong) id                                    gameData;
-
+@property (nonatomic, strong) id                                    conceptFinishData;
 
 
 @end
@@ -72,6 +72,24 @@
     
 }
 
+#pragma mark - 完成当前场景
+- (void)getConceptFinishDataWithSubjectId:(NSString *)subjectId complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete
+{
+    //通知后台游戏完成
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    NSString * urlString = @"/ConceptFinish";
+    NSDictionary* bodyObject = @{@"username":userDic[@"username"],
+                                 @"subjectId":subjectId};
+    
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (complete) {
+            complete(resultDic,errorString);
+        }
+        if (!errorString) {
+            self.conceptFinishData = resultDic;
+        }
+    }];
+}
 
 
 @end

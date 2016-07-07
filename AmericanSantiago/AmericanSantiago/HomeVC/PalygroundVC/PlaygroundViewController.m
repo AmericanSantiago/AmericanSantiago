@@ -61,15 +61,73 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    GameViewController * gameVC = [[GameViewController alloc] init];
-    if (_playgroundGamesArray.count > 0) {
-        gameVC.urlString = [_playgroundGamesArray[0] valueForKey:@"location"];
-        [self.translationController pushViewController:gameVC];
-    }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
-    }
-
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+//    if (_playgroundGamesArray.count > 0) {
+//        gameVC.urlString = [_playgroundGamesArray[0] valueForKey:@"location"];
+//        [self.translationController pushViewController:gameVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
     
+    for (NSInteger i = 0; i < 4; i++) {
+        NSArray *newGameArray = [LBUserDefaults getNewSceneGanmesArrayWithSceneName:@"home"];
+        NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSceneGamesArray:newGameArray SubSceneCode:i+1];
+        if (subSceneGamesArray.count) {
+            GameViewController * gameVC = [[GameViewController alloc] init];
+            gameVC.subjectId = [LBUserDefaults getCurrentCalss];
+            gameVC.gameDic = [subSceneGamesArray firstObject];
+            [self.translationController pushViewController:gameVC];
+            return;
+        }
+    }
+    for (NSInteger i = 0; i < 4; i++) {
+        NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSceneGamesArray:_playgroundGamesArray SubSceneCode:i+1];
+        if (subSceneGamesArray.count) {
+            GameViewController * gameVC = [[GameViewController alloc] init];
+            gameVC.subjectId = [LBUserDefaults getCurrentCalss];
+            gameVC.gameDic = [subSceneGamesArray firstObject];
+            [self.translationController pushViewController:gameVC];
+            return;
+        }
+    }
+    [AppDelegate showHintLabelWithMessage:@"没有游戏哦，你怎么进来的，我怀疑我出了bug~"];
+    
+}
+
+
+#pragma mark - 自定义
+//- (void)pushGameVCWithSubSceneCode:(NSInteger)subSceneCode
+//{
+//    NSArray *subSceneGamesArray1 = [self getSubSceneGamesArrayWithSceneGamesArray:_playgroundGamesArray SubSceneCode:subSceneCode];
+//    if (!subSceneGamesArray1.count) {
+//        [AppDelegate showHintLabelWithMessage:@"该场景未解锁~"];
+//        return;
+//    }
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+//    gameVC.subjectId = [LBUserDefaults getCurrentCalss];
+//    //先检测新解锁的是否有没玩儿过的。
+//    NSArray *newGameArray = [LBUserDefaults getNewSceneGanmesArrayWithSceneName:@"home"];
+//    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSceneGamesArray:newGameArray SubSceneCode:subSceneCode];
+//    if (subSceneGamesArray.count > 0) {//还有新的没玩儿
+//        gameVC.gameDic = [subSceneGamesArray firstObject];
+//    }else{
+//        gameVC.gameDic = [subSceneGamesArray1 firstObject];
+//    }
+//    
+//    [self.translationController pushViewController:gameVC];
+//}
+
+//获取子场景游戏，根据index
+- (NSArray *)getSubSceneGamesArrayWithSceneGamesArray:(NSArray *)sceneGamesArray SubSceneCode:(NSInteger)subSceneCode
+{
+    NSString *sceneCode = [NSString stringWithFormat:@"3.%@",@(subSceneCode)];
+    NSMutableArray *subSceneGamesArray = [NSMutableArray array];
+    for (NSDictionary *subSceneGameDic in sceneGamesArray) {
+        if ([subSceneGameDic[@"sceneCode"] isEqualToString:sceneCode]) {
+            [subSceneGamesArray addObject:subSceneGameDic];
+        }
+    }
+    return subSceneGamesArray;
 }
 
 
