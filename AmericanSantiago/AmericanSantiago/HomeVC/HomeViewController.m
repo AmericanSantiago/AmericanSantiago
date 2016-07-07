@@ -80,42 +80,42 @@
     //    _homeGameArray = [[NSMutableArray alloc] init];
     
     _homeModel = [[HomeModel alloc] init];
-<<<<<<< HEAD
-    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
-    [_homeModel addObserver:self forKeyPath:@"GetNextConceptData" options:NSKeyValueObservingOptionNew context:nil];
-    
-//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
-    
-//    if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
-//        [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
-//    }else{
-//        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
-//        
-//    }
-
-    
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConcept:) name:@"GetNextConcept" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstGetAllUnlockedGames:) name:@"firstGetAllUnlockedGames" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeButtonNum:) name:@"changeButtonNum" object:nil];
-    
-//    [_homeModel getGetNextConceptWithUsername:@"0" SubjectId:@"Math"];
-//    [self GetNextConcept:nil];
-//    [self firstGetAllUnlockedGames:nil];
-    
-}
-- (void) getNextConceptData:(NSNotification *) notifi
-{
-    [_homeModel getGetNextConceptWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math"];
-    
-=======
+//<<<<<<< HEAD
+//    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
+//    [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
+//    [_homeModel addObserver:self forKeyPath:@"GetNextConceptData" options:NSKeyValueObservingOptionNew context:nil];
+//    
+////    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+//    
+////    if ([[LBUserDefaults getUserDic] valueForKey:@"username"]) {
+////        [_homeModel getAllUnlockedGamesUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];
+////    }else{
+////        [_homeModel getAllUnlockedGamesUsername:@"0" subjectId:@"Math"];
+////        
+////    }
+//
+//    
+//    
+////    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConceptData) name:@"getNewGamesData" object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(GetNextConcept:) name:@"GetNextConcept" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(firstGetAllUnlockedGames:) name:@"firstGetAllUnlockedGames" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeButtonNum:) name:@"changeButtonNum" object:nil];
+//    
+////    [_homeModel getGetNextConceptWithUsername:@"0" SubjectId:@"Math"];
+////    [self GetNextConcept:nil];
+////    [self firstGetAllUnlockedGames:nil];
+//    
+//}
+//- (void) getNextConceptData:(NSNotification *) notifi
+//{
+//    [_homeModel getGetNextConceptWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math"];
+//    
+//=======
 //    [_homeModel addObserver:self forKeyPath:@"unlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
 //    [_homeModel addObserver:self forKeyPath:@"allUnlockedGamesData" options:NSKeyValueObservingOptionNew context:nil];
     [_homeModel addObserver:self forKeyPath:@"nextConceptData" options:NSKeyValueObservingOptionNew context:nil];
->>>>>>> origin/master
+//>>>>>>> origin/master
 }
 
 #pragma mark - 视图初始化
@@ -348,13 +348,13 @@
     [self refreshLockList];
 }
 
-<<<<<<< HEAD
-- (void) changeButtonNum:(NSNotification *)notifi
-{
-    NSLog(@"减一");
-    
-}
-=======
+//<<<<<<< HEAD
+//- (void) changeButtonNum:(NSNotification *)notifi
+//{
+//    NSLog(@"减一");
+//    
+//}
+//=======
 //- (void)allUnlockedGamesDataParse
 //{
 //    NSArray *gamesArray = _homeModel.allUnlockedGamesData[@"data"];//所有已解锁游戏
@@ -775,7 +775,7 @@
 //    
 //    
 //}
->>>>>>> origin/master
+//>>>>>>> origin/master
 
 
 

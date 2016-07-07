@@ -222,28 +222,28 @@
     //刷新首页的数字
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
     
-<<<<<<< HEAD
-//    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
-    
-//    NSString * resultBody = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
-    NSDictionary * resultDic = [[NSDictionary alloc] init];
-    resultDic = [self dictionaryWithJsonString:message.body];
-    
-    if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
-        //
-        
-        if ([self.gameMark isEqualToString:@"1"]) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"GetNextConcept" object:nil];
-        }else{
-            NSLog(@"不解锁，只进行数字递减");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeButtonNum" object:nil];
-        }
-        
-        
-        
-        
-=======
+//<<<<<<< HEAD
+////    NSLog(@"JS 调用了 %@ 方法，传回参数 %@",message.name,message.body);
+//    
+////    NSString * resultBody = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+//    NSDictionary * resultDic = [[NSDictionary alloc] init];
+//    resultDic = [self dictionaryWithJsonString:message.body];
+//    
+//    if ([[resultDic valueForKey:@"command"] isEqualToString:@"gameover"]) {
+////            [[NSNotificationCenter defaultCenter] postNotificationName:@"getNewGames" object:nil];
+//        //
+//        
+//        if ([self.gameMark isEqualToString:@"1"]) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"GetNextConcept" object:nil];
+//        }else{
+//            NSLog(@"不解锁，只进行数字递减");
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"changeButtonNum" object:nil];
+//        }
+//        
+//        
+//        
+//        
+//=======
     //检查该知识点是否还有游戏
     NSArray *conceptGamesArray = [LBUserDefaults getCurrentConceptGamesArray];
     //如果说为0，则证明已经完成该教学
@@ -253,7 +253,7 @@
                 [AppDelegate showHintLabelWithMessage:@"当前场景已完成~"];
             }
         }];
->>>>>>> origin/master
+//>>>>>>> origin/master
     }
     
     
