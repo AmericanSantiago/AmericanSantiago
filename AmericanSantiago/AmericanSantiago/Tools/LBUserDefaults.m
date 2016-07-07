@@ -36,10 +36,15 @@ static NSString *loginInfoSaveKey = @"loginInfo";
 }
 
 #pragma mark - 当前选择课程
-static NSString *currentClassNameKey = @"currentCalss";
++ (NSString *)currentClassNameKey
+{
+    NSDictionary *userDic = [self getUserDic];
+    return [NSString stringWithFormat:@"%@_currentCalss",userDic[@"username"]];
+}
+
 + (void)saveCurrentClass:(NSString *)currentClassName
 {
-    
+    NSString *currentClassNameKey = [self currentClassNameKey];
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     if (currentClassName) {
         [userdefaults setObject:currentClassName forKey:currentClassNameKey];
@@ -51,6 +56,7 @@ static NSString *currentClassNameKey = @"currentCalss";
 
 + (NSString *)getCurrentCalss
 {
+    NSString *currentClassNameKey = [self currentClassNameKey];
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     NSString *currentCalss = [userdefaults objectForKey:currentClassNameKey];
     return currentCalss;

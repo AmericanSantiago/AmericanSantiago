@@ -90,7 +90,7 @@
             return;
         }
     }
-    [AppDelegate showHintLabelWithMessage:@"没有游戏哦，你怎么进来的，我怀疑我出了bug~"];
+    [AppDelegate showHintLabelWithMessage:@"该场景游戏未解锁~"];
     
 }
 

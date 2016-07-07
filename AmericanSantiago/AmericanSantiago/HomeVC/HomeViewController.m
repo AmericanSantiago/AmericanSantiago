@@ -300,6 +300,9 @@
         if (i==0) {
             isLock = NO;
         }
+        if (![LBUserDefaults getCurrentCalss]) {
+            isLock = NO;
+        }
         [self addNumWithButtonTag:BUTTON_TAG+10+i Number:newSceneGamesArray.count isLock:isLock];
     }
 }
