@@ -12,6 +12,11 @@
 
 @property (nonatomic, strong) UIButton                              * backBuutton;
 
+@property (nonatomic, strong) UIButton                              * puzzleButton;//拼图
+@property (nonatomic, strong) UIButton                              * differentButton;  //找不同
+@property (nonatomic, strong) UIButton                              * cardButton;//卡片
+@property (nonatomic, strong) UIButton                              * bubbleButton;//气泡
+
 @end
 
 @implementation PlaygroundViewController
@@ -39,22 +44,75 @@
     [self.view addSubview:backgroundView];
     
     
-    _backBuutton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
-        //        button.backgroundColor = [UIColor yellowColor];
-        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+//    _backBuutton = ({
+//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+//        //        button.backgroundColor = [UIColor yellowColor];
+//        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:button];
+//        button;
+//    });
+    
+    _puzzleButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(540), FLEXIBLE_NUM(160), FLEXIBLE_NUM(110))];
+        button.backgroundColor = [UIColor clearColor];
+        [button addTarget:self action:@selector(puzzleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _differentButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(490), FLEXIBLE_NUM(200), FLEXIBLE_NUM(90))];
+        button.backgroundColor = [UIColor clearColor];
+//        button.alpha = 0.5;
+        [button addTarget:self action:@selector(differentButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _cardButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(550), FLEXIBLE_NUM(500), FLEXIBLE_NUM(160), FLEXIBLE_NUM(160))];
+        button.backgroundColor = [UIColor clearColor];
+//        button.alpha = 0.5;
+        [button addTarget:self action:@selector(cardButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        button;
+    });
+    
+    _bubbleButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(780), FLEXIBLE_NUM(470), FLEXIBLE_NUM(180), FLEXIBLE_NUM(210))];
+        button.backgroundColor = [UIColor clearColor];
+//        button.alpha = 0.5;
+        [button addTarget:self action:@selector(bubbleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         button;
     });
     
     
     
+    
 }
 
-- (void) backButtonCLick: (UIButton *)sender
+#pragma  mark -- buttonClick
+- (void) puzzleButtonClick: (UIButton *) sender
 {
-    [self.translationController popViewController];
+    
+    
+}
+
+- (void) differentButtonClick: (UIButton *) sender
+{
+    
+    
+}
+- (void) cardButtonClick: (UIButton *) sender
+{
+    
+    
+}
+- (void) bubbleButtonClick: (UIButton *) sender
+{
     
     
 }
