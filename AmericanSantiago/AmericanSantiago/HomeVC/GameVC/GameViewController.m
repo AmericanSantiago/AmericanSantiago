@@ -191,6 +191,7 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation
 {
     NSLog(@"加载完成");
+//    _webView.hidden = NO;
 }
 
 //加载失败
@@ -223,13 +224,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
     //检查该知识点是否还有游戏
     NSArray *conceptGamesArray = [LBUserDefaults getCurrentConceptGamesArray];
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    [_homeModel getNextConceptWithUsername:userDic[@"username"] SubjectId:@"Math"];
+    
     //如果说为0，则证明已经完成该教学
     if (conceptGamesArray.count == 0) {
-        [self.gameModel getConceptFinishDataWithSubjectId:self.subjectId complete:^(NSDictionary *resultDic, NSString *errorString) {
+        [self.gameModel getConceptFinishDataWithSubjectId:self.subjectId Username:userDic[@"username"] complete:^(NSDictionary *resultDic, NSString *errorString) {
             if (!errorString) {
                 [AppDelegate showHintLabelWithMessage:@"当前场景已完成~"];
             }
         }];
+        
+        
+        
     }
     
     
@@ -293,7 +300,13 @@
 - (void)loadRequestWithUrlFilePath:(NSString *)urlFilePath
 {
     NSString *urlStr = [NSString stringWithFormat:@"http://115.28.156.240:8080/Yes123Server/%@/index.html",urlFilePath];
+//    NSString * urlString1 = [urlStr stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSURL *url = [NSURL URLWithString:urlStr];
+    
+    //url中有空格不识别，转换一下就OK
+//   NSString* str1 = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSURL *url = [NSURL URLWithString:str1];
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 

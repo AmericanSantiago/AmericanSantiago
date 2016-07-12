@@ -279,6 +279,7 @@
 //    
 //}
 
+
 - (void)reloadConceptGamesData:(NSNotification  *)notif
 {
     if (!notif.object) {//如果没有，则直接请求
@@ -287,7 +288,8 @@
             NSDictionary *userDic = [LBUserDefaults getUserDic];
             [_homeModel getNextConceptWithUsername:userDic[@"username"] SubjectId:subjectId];
         }else{
-            [AppDelegate showHintLabelWithMessage:@"您还未选择科目"];
+//            [AppDelegate showHintLabelWithMessage:@"您还未选择科目"];
+            [AppDelegate showHintLabelWithMessage:@"返回数据为空"];
             [self refreshLockList];
         }
     }else{//如果有参数，则直接刷新。

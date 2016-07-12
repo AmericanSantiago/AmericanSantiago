@@ -42,7 +42,11 @@
 {
     if ([keyPath isEqualToString:@"registerData"]) {
         if ([[_loginModel.registerData valueForKey:@"errorCode"] integerValue]== 0) {
-
+            
+            //先保存用户信息，再跳转
+//            [LBUserDefaults setUserDic:[_loginModel.registerData valueForKey:@"data"]];
+            [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.registerData valueForKey:@"data"] forKey:@"userInfo"];
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
         }else{
             NSLog(@"注册失败");
@@ -76,7 +80,7 @@
     
     _character = @"girl";
     _figureImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
 //        imageView.backgroundColor = [UIColor yellowColor];
         [imageView setImage:[UIImage imageNamed:@"girl"]];
         [self.view addSubview:imageView];

@@ -52,8 +52,8 @@
             
             LoginViewController * loginVC = [[LoginViewController alloc] init];
             UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-            [LBUserDefaults setUserDic:nil];
-            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
+//            [LBUserDefaults setUserDic:nil];
+//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
             [WINDOW.rootViewController presentViewController:nav animated:YES completion:^{
                 WINDOW.rootViewController = nav;
             }];

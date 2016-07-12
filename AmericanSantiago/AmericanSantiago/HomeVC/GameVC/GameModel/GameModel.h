@@ -20,5 +20,8 @@
 
 
 #pragma mark - 完成当前场景
-- (void)getConceptFinishDataWithSubjectId:(NSString *)subjectId complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
+- (void)getConceptFinishDataWithSubjectId:(NSString *)subjectId Username: (NSString *) username complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
+
+
+
 @end

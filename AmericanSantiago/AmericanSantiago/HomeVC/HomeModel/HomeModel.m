@@ -51,7 +51,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.nextConceptData = resultDic;
-//            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
+            NSLog(@"HTTP Response Body  GetNextConceptData == : %@", resultDic);
         }
     }];
     

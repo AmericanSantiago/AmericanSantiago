@@ -149,12 +149,6 @@
         [self.view addSubview:button];
         button;
     });
-    
-
-//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(200), FLEXIBLE_NUM(100), FLEXIBLE_NUM(100))];
-//    button.backgroundColor = [UIColor blueColor];
-//    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
 
     
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"数学记录@3x",@"语文记录@3x",@"英语记录@3x",@"社会知识记录@3x",@"科学知识记录@3x",@"安全知识记录@3x", nil];
@@ -172,6 +166,47 @@
         [self.view addSubview:button];
         
     }
+    
+    
+    //测试按钮
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
+    button.backgroundColor = [UIColor blackColor];
+    [button setTitle:@"test" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(textButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+    
+    
+    
+    
+}
+
+- (void) textButtonClick: (UIButton *)sender
+{
+    NSLog(@"textButton!");
+    
+//    NSDictionary *userDic = [LBUserDefaults getUserDic];
+//    [_homeModel getNextConceptWithUsername:userDic[@"username"] SubjectId:@"Math"];
+
+//    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    NSString * urlString = @"/ConceptFinish";
+    NSDictionary* bodyObject = @{@"username":@"123",
+                                 @"subjectId":@"Math"};
+    
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+//        if (complete) {
+//            complete(resultDic,errorString);
+//        }
+        if (!errorString) {
+//            self.conceptFinishData = resultDic;
+            NSLog(@"++++++++++resultDic = %@",resultDic);
+            //刷新首页的数字
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
+        }
+    }];
+
+    
+    
     
     
     
@@ -205,23 +240,22 @@
 }
 - (void) englishButtonClick: (UIButton *) sender
 {
-    GameViewController * gameVC = [[GameViewController alloc] init];
-    if (_classroomGamesArray.count > 0) {
-        gameVC.urlString = [_classroomGamesArray[0] valueForKey:@"location"];
-        [self.translationController pushViewController:gameVC];
-    }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
-    }
+    
+        self.currentSubjectId = @"English";
+        [self getNextConceptDataWithSubjectId:@"English"];
 }
 - (void) earthButtonClick: (UIButton *) sender
 {
-    GameViewController * gameVC = [[GameViewController alloc] init];
-    if (_classroomGamesArray.count > 2) {
-        gameVC.urlString = [_classroomGamesArray[2] valueForKey:@"location"];
-        [self.translationController pushViewController:gameVC];
-    }else{
-        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
-    }
+//    GameViewController * gameVC = [[GameViewController alloc] init];
+//    if (_classroomGamesArray.count > 2) {
+//        gameVC.urlString = [_classroomGamesArray[2] valueForKey:@"location"];
+//        [self.translationController pushViewController:gameVC];
+//    }else{
+//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
+//    }
+
+    self.currentSubjectId = @"Earth";
+    [self getNextConceptDataWithSubjectId:@"Earth"];
     
 }
 - (void) microscopeButtonClick: (UIButton *) sender

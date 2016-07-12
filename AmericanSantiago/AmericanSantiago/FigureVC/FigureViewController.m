@@ -10,7 +10,7 @@
 #import "FigureModel.h"
 #import "SRMonthPicker.h"
 
-@interface FigureViewController ()<UITextFieldDelegate, SRMonthPickerDelegate>
+@interface FigureViewController ()<UITextFieldDelegate, SRMonthPickerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (nonatomic, strong) UIButton                            * boyButton;
 @property (nonatomic, strong) UIButton                            * girlButton;
@@ -31,6 +31,8 @@
 //@property (nonatomic, strong) NewDatePickerView             * datePicker;
 @property (strong, nonatomic)SRMonthPicker                  *monthPicker;
 
+@property (nonatomic, strong) UIPickerView                      * pickerView;
+@property (nonatomic, strong) NSArray                               * genderArray;
 
 @end
 
@@ -169,16 +171,27 @@
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.userInteractionEnabled = NO;
+//        textField.userInteractionEnabled = NO;
         textField.text = @"男";
         [view1 addSubview:textField];
         textField;
     });
+    
     if ([[userDic valueForKey:@"gender"] integerValue] == 0) {
         _genderTextField.text = @"男";
     }else{
         _genderTextField.text = @"女";
     }
+    
+    _pickerView = ({
+        UIPickerView * pickerView = [[UIPickerView alloc] init];
+        pickerView.delegate = self;
+        pickerView.dataSource = self;
+        [pickerView reloadAllComponents];               //刷新pickerView
+        pickerView;
+    });
+    _genderArray = [[NSArray alloc] initWithObjects:@"男",@"女", nil];
+    _genderTextField.inputView = _pickerView;
 
     //SRMonthPicker
     //添加一个时间选择器
@@ -254,12 +267,12 @@
     if ([_buttonIndex isEqualToString:@"1"]) {
         [_figerImageView setImage:[UIImage imageNamed:@"girl.png"]];
         _buttonIndex = @"0";
-        _genderTextField.text = @"女";
+//        _genderTextField.text = @"女";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
     }else{
         [_figerImageView setImage:[UIImage imageNamed:@"boy.png"]];
         _buttonIndex = @"1";
-        _genderTextField.text = @"男";
+//        _genderTextField.text = @"男";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
     }
     
@@ -332,6 +345,28 @@
         });
     });
 }
+
+//返回列数
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return _genderArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [_genderArray objectAtIndex:row];
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    _genderTextField.text = [_genderArray objectAtIndex:row];
+}
+
+
 
 #pragma mark -- 点击背景回收键盘
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

@@ -47,14 +47,19 @@
 
             //先保存用户信息，再跳转
             [LBUserDefaults setUserDic:[_loginModel.loginData valueForKey:@"data"]];
+//            [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
+            [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
+//            [[NSUserDefaults standardUserDefaults] setObject:_userNameTextField.text forKey:@"username"];
+//            NSLog(@"_+_+_+_+_+loginInfo = %@",[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"]);
             
             RootViewController *rootViewController = [[RootViewController alloc] init];
             [WINDOW.rootViewController presentViewController:rootViewController animated:YES completion:^{
                 WINDOW.rootViewController = rootViewController;
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
-//                [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.loginData valueForKey:@"data"] forKey:@"loginInfo"];
                 
-                [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
+                
+                
+//                [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
                 
                 //发通知请求数据
 //                [[NSNotificationCenter defaultCenter] postNotificationName:@"firstGetAllUnlockedGames" object:nil];
@@ -107,11 +112,16 @@
         
     }
     
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    
     _userNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
-        textField.text = [[LBUserDefaults getUserDic] valueForKey:@"username"];
+        textField.text = [NSString stringWithFormat:@"%@",userDic[@"username"] ];
+//        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"username"];
+//        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"userInfo"] valueForKey:@"username"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
         textField;
@@ -119,7 +129,9 @@
     _passwdTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155 + 120), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
-        textField.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+//        textField.text = [NSString stringWithFormat:@"%@",userDic[@"password"] ];
+        textField.text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"password"]];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:textField];
