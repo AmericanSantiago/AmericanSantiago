@@ -268,6 +268,8 @@
         if (![LBUserDefaults getCurrentCalss]) {
             isLock = NO;
         }
+#warning -- test word 暂时设置为no
+        isLock = NO;
         [self addNumWithButtonTag:BUTTON_TAG+10+i Number:newSceneGamesArray.count isLock:isLock];
     }
 }

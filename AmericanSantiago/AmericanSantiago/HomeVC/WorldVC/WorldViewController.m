@@ -198,6 +198,11 @@
     NSLog(@"_southBgView.tag = %ld",(long)_southBgView.tag);
     NSLog(@"_northBgView.tag = %ld",(long)_northBgView.tag);
     
+    if (_bgView.frame.origin.y == 0) {
+        [self pushGameVCWithSubSceneCode:self.currentIndex];
+    }else{
+        [self pushGameVCWithSubSceneCode:self.currentIndex+4];
+    }
 //    GameViewController * gameVC = [[GameViewController alloc] init];
 //    if (_worldGamesArray.count > 0) {
 //        gameVC.urlString = [_worldGamesArray[0] valueForKey:@"location"];
@@ -205,8 +210,41 @@
 //    }else{
 //        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
 //    }
+}
+
+#pragma mark - 自定义
+- (void)pushGameVCWithSubSceneCode:(NSInteger)subSceneCode
+{
+    NSArray *subSceneGamesArray1 = [self getSubSceneGamesArrayWithSceneGamesArray:_worldGamesArray SubSceneCode:subSceneCode];
+    if (!subSceneGamesArray1.count) {
+        [AppDelegate showHintLabelWithMessage:@"该场景未解锁~"];
+        return;
+    }
+    GameViewController * gameVC = [[GameViewController alloc] init];
+    gameVC.subjectId = [LBUserDefaults getCurrentCalss];
+    //先检测新解锁的是否有没玩儿过的。
+    NSArray *newGameArray = [LBUserDefaults getNewSceneGanmesArrayWithSceneName:@"home"];
+    NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSceneGamesArray:newGameArray SubSceneCode:subSceneCode];
+    if (subSceneGamesArray.count > 0) {//还有新的没玩儿
+        gameVC.gameDic = [subSceneGamesArray firstObject];
+    }else{
+        gameVC.gameDic = [subSceneGamesArray1 firstObject];
+    }
     
-    
+    [self.translationController pushViewController:gameVC];
+}
+
+//获取子场景游戏，根据index
+- (NSArray *)getSubSceneGamesArrayWithSceneGamesArray:(NSArray *)sceneGamesArray SubSceneCode:(NSInteger)subSceneCode
+{
+    NSString *sceneCode = [NSString stringWithFormat:@"2.%@",@(subSceneCode)];
+    NSMutableArray *subSceneGamesArray = [NSMutableArray array];
+    for (NSDictionary *subSceneGameDic in sceneGamesArray) {
+        if ([subSceneGameDic[@"sceneCode"] isEqualToString:sceneCode]) {
+            [subSceneGamesArray addObject:subSceneGameDic];
+        }
+    }
+    return subSceneGamesArray;
 }
 
 
