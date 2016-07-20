@@ -248,7 +248,7 @@
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.volumeSlider.value];
     
 }
-#pragma mark -- 音量增加收拾
+#pragma mark -- 音量增加手势
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     for(UITouch *touch in event.allTouches) {
         

@@ -223,16 +223,17 @@
 {
     self.currentSubjectId = @"Math";
     [self getNextConceptDataWithSubjectId:@"Math"];
-//    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
-//    
+    
+////    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
+////    
 //    GameViewController * gameVC = [[GameViewController alloc] init];
 ////    if (_classroomGamesArray) {
 ////        gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray valueForKey:@"location"]];
 ////    }else{
 //        gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+//    gameVC.subjectId = @"Math";
 ////    }
-//    
-//    
+//
 ////    gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray[0] valueForKey:@"location"]];
 ////    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
 ////    NSLog(@"location = %@",gameVC.urlString);
@@ -240,9 +241,8 @@
 }
 - (void) englishButtonClick: (UIButton *) sender
 {
-    
-        self.currentSubjectId = @"English";
-        [self getNextConceptDataWithSubjectId:@"English"];
+    self.currentSubjectId = @"English";
+    [self getNextConceptDataWithSubjectId:@"English"];
 }
 - (void) earthButtonClick: (UIButton *) sender
 {
@@ -340,7 +340,14 @@
                 gameVC.gameDic = [sceneGamesArray firstObject];
                 gameVC.subjectId = self.currentSubjectId;
                 [self.translationController pushViewController:gameVC];
+                break;
+            }else{
+                    GameViewController * gameVC = [[GameViewController alloc] init];
+                    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+                    gameVC.subjectId = @"Math";
+                    [self.translationController pushViewController:gameVC];
             }
+            
         }
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:nil];

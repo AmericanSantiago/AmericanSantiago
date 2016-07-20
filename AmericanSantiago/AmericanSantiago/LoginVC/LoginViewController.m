@@ -198,6 +198,11 @@
 
 #pragma mark - 自定义方法
 
+#pragma mark -- 点击背景回收键盘
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 
 
 @end

@@ -97,7 +97,7 @@
         [self loadRequestWithUrlFilePath:self.gameDic[@"location"]];
     }else{
         [self loadTestMathRequest];
-        [AppDelegate showHintLabelWithMessage:@"这是一个本地测试游戏~"];
+//        [AppDelegate showHintLabelWithMessage:@"这是一个本地测试游戏~"];
     }
     
     
@@ -229,6 +229,8 @@
     
     //如果说为0，则证明已经完成该教学
     if (conceptGamesArray.count == 0) {
+//        NSLog(@"self.subjectId = %@",self.subjectId);
+//        NSLog(@"username = %@",userDic[@"username"]);
         [self.gameModel getConceptFinishDataWithSubjectId:self.subjectId Username:userDic[@"username"] complete:^(NSDictionary *resultDic, NSString *errorString) {
             if (!errorString) {
                 [AppDelegate showHintLabelWithMessage:@"当前场景已完成~"];

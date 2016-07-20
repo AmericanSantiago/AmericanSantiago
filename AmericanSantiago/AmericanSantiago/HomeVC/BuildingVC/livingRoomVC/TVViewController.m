@@ -62,7 +62,7 @@
     _view1 = ({
         UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCRREN_W, MAINSCRREN_H)];
         view.hidden = YES;
-        view.tag = 4;
+        view.tag = 1;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGestureRecognizer:)];
         [view addGestureRecognizer:tapGesture];
         [self.view addSubview:view];

@@ -78,7 +78,9 @@
     //通知后台游戏完成
     NSDictionary *userDic = [LBUserDefaults getUserDic];
     NSString * urlString = @"/ConceptFinish";
-    NSDictionary* bodyObject = @{@"username":userDic[@"username"],
+    NSDictionary* bodyObject = @{
+//                                 @"username":userDic[@"username"],
+                                 @"username":username,
                                  @"subjectId":subjectId};
 //    NSLog(@"123321   ===   %@",bodyObject);
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {

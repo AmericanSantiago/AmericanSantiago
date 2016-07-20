@@ -412,8 +412,8 @@
 + (UIImage *)resizeImage:(NSString *)imageName
 {
     UIImage *image = [UIImage imageNamed:imageName];
-    CGFloat imageW = image.size.width * 0.5;
-    CGFloat imageH = image.size.height * 0.5;
+    CGFloat imageW = image.size.width * 0.1;
+    CGFloat imageH = image.size.height * 0.1;
     return [image resizableImageWithCapInsets:UIEdgeInsetsMake(imageH,imageW, imageH, imageW) resizingMode:UIImageResizingModeTile];
 }
 
