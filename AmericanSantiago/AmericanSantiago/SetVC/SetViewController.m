@@ -82,12 +82,6 @@
     [backgroundView setImage:[UIImage imageNamed:@"设置音量bg"]];
     [self.view addSubview:backgroundView];
     
-//    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-//    label.center = FLEXIBLE_CENTER(400, 50);
-//    label.text = @"设置";
-//    label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
-//    [self.view addSubview:label];
-    
     //框
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(210), FLEXIBLE_NUM(180), FLEXIBLE_NUM(600), FLEXIBLE_NUM(340))];
     view1.backgroundColor = [UIColor colorWithRed:254/255.0 green:240/255.0 blue:202/255.0 alpha:1];
@@ -131,12 +125,12 @@
     
     self.slider1 = [[UISlider alloc]init];
     self.slider1.backgroundColor = [UIColor blueColor];
-    for (UIControl *view in volumeView.subviews) {
-        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
-//            NSLog(@"1");
-            self.slider1 = (UISlider *)view;
-        }
-    }
+//    for (UIControl *view in volumeView.subviews) {
+//        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
+////            NSLog(@"1");
+//            self.slider1 = (UISlider *)view;
+//        }
+//    }
     self.slider1.autoresizesSubviews = NO;
     self.slider1.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.slider1];
@@ -146,7 +140,7 @@
     UIImage *stetchLeftTrack= [UIImage resizeImage:@"浅色音量条@2x"];
     UIImage *stetchRightTrack = [UIImage resizeImage:@"圆角矩形-2@2x"];
     //滑块图片
-    UIImage *thumbImage = [UIImage imageNamed:@"调节钮@3x"];
+    UIImage *thumbImage = [UIImage imageNamed:@"调节钮"];
     
     UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(110), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
     slider1.tag = 1000;
@@ -183,7 +177,7 @@
 //    NSLog(@"%f",self.slider1.value);
 
     UISlider *slider2 = [[UISlider alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(180), FLEXIBLE_NUM(220), FLEXIBLE_NUM(400), FLEXIBLE_NUM(20))];
-    slider2.tag = 1000;
+    slider2.tag = 2000;
     slider2.minimumValue = self.slider2.minimumValue;
     slider2.maximumValue = self.slider2.maximumValue;
     [slider2 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
@@ -248,40 +242,40 @@
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.volumeSlider.value];
     
 }
-#pragma mark -- 音量增加手势
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    for(UITouch *touch in event.allTouches) {
-        
-        self.firstPoint = [touch locationInView:self.view];
-        
-    }
-    
-    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
-    slider.value = self.slider1.value;
-    NSLog(@"touchesBegan");
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    for(UITouch *touch in event.allTouches) {
-        
-        self.secondPoint = [touch locationInView:self.view];
-        
-    }
-    NSLog(@"firstPoint==%f || secondPoint===%f",self.firstPoint.y,self.secondPoint.y);
-    NSLog(@"first-second==%f",self.firstPoint.y - self.secondPoint.y);
-    
-    self.slider1.value += (self.firstPoint.y - self.secondPoint.y)/500.0;
-    
-    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
-    slider.value = self.slider1.value;
-    NSLog(@"value == %f",self.slider1.value);
-    self.firstPoint = self.secondPoint;
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touchesEnded");
-    self.firstPoint = self.secondPoint = CGPointZero;
-}
+//#pragma mark -- 音量增加手势
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+//    for(UITouch *touch in event.allTouches) {
+//        
+//        self.firstPoint = [touch locationInView:self.view];
+//        
+//    }
+//    
+//    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
+//    slider.value = self.slider1.value;
+//    NSLog(@"touchesBegan");
+//}
+//
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//    for(UITouch *touch in event.allTouches) {
+//        
+//        self.secondPoint = [touch locationInView:self.view];
+//        
+//    }
+//    NSLog(@"firstPoint==%f || secondPoint===%f",self.firstPoint.y,self.secondPoint.y);
+//    NSLog(@"first-second==%f",self.firstPoint.y - self.secondPoint.y);
+//    
+//    self.slider1.value += (self.firstPoint.y - self.secondPoint.y)/500.0;
+//    
+//    UISlider *slider = (UISlider *)[self.view viewWithTag:1000];
+//    slider.value = self.slider1.value;
+//    NSLog(@"value == %f",self.slider1.value);
+//    self.firstPoint = self.secondPoint;
+//}
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"touchesEnded");
+//    self.firstPoint = self.secondPoint = CGPointZero;
+//}
 
 #pragma mark -- 亮度控制
 - (void)updateBrightnessValue:(UISlider *)slider{
