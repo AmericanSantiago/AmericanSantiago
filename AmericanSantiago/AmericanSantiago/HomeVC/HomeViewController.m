@@ -55,7 +55,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getAllUnlockedGamesData:) name:@"getAllUnlockedGamesData" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadConceptGamesData:) name:@"reloadConceptGamesData" object:nil];
     self.title = @"主页";
@@ -317,6 +316,8 @@
     }
     [self refreshLockList];
 }
+
+
 //- (void)allUnlockedGamesDataParse
 //{
 //    NSArray *gamesArray = _homeModel.allUnlockedGamesData[@"data"];//所有已解锁游戏
