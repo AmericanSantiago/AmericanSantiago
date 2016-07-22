@@ -29,7 +29,6 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>张海山锐线体简.ttf</string>
 		<string>雅痞-简.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

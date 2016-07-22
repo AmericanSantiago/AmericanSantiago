@@ -32,7 +32,6 @@
 		8C15F1721D1FC55A0094350C /* world_planeright_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16A1D1FC55A0094350C /* world_planeright_btn@2x.png */; };
 		8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16B1D1FC55A0094350C /* world_planeup_btn.png */; };
 		8C15F1741D1FC55A0094350C /* world_planeup_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C15F16C1D1FC55A0094350C /* world_planeup_btn@2x.png */; };
-		8C1CD8FC1D1EDD7200772806 /* LBUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CD8FB1D1EDD7200772806 /* LBUserDefaults.m */; };
 		8C1CD8FF1D1EE8B300772806 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1CD8FE1D1EE8B300772806 /* UIImage+Category.m */; };
 		8C1DDA181D1C1FE3005D1F24 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DD9D21D1C1FE3005D1F24 /* AFHTTPSessionManager.m */; };
 		8C1DDA191D1C1FE3005D1F24 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1DD9D51D1C1FE3005D1F24 /* AFNetworkReachabilityManager.m */; };
@@ -85,7 +84,6 @@
 		8C2298AF1D199B70002C0F80 /* BuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2298931D199B70002C0F80 /* BuildingViewController.m */; };
 		8C2298B01D199B70002C0F80 /* CityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2298961D199B70002C0F80 /* CityViewController.m */; };
 		8C2298B21D199B70002C0F80 /* ClassroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22989C1D199B70002C0F80 /* ClassroomViewController.m */; };
-		8C2298B31D199B70002C0F80 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C22989E1D199B70002C0F80 /* HomeViewController.m */; };
 		8C2298B41D199B70002C0F80 /* PlaygroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2298A11D199B70002C0F80 /* PlaygroundViewController.m */; };
 		8C2298B51D199B70002C0F80 /* WorldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2298A41D199B70002C0F80 /* WorldViewController.m */; };
 		8C2298B61D199B70002C0F80 /* ParentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2298A71D199B70002C0F80 /* ParentsViewController.m */; };
@@ -140,6 +138,12 @@
 		D80BFC6C1D1CD1EF00830B55 /* 圆角矩形-2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D80BFC6B1D1CD1EF00830B55 /* 圆角矩形-2@3x.png */; };
 		D80BFC771D1CE85C00830B55 /* ChooseFigureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC741D1CE85C00830B55 /* ChooseFigureViewController.m */; };
 		D80BFC781D1CE85C00830B55 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80BFC761D1CE85C00830B55 /* RegisterViewController.m */; };
+		D80D51891D413B4F00922203 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80D51881D413B4F00922203 /* HomeViewController.m */; };
+		D80D51971D41C85B00922203 /* 创艺简中圆.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D80D51961D41C35F00922203 /* 创艺简中圆.TTF */; };
+		D80D51981D41C9CD00922203 /* 创艺简中圆.TTF in Sources */ = {isa = PBXBuildFile; fileRef = D80D51961D41C35F00922203 /* 创艺简中圆.TTF */; };
+		D80D519A1D41CAC500922203 /* 雅痞-简.otf in Resources */ = {isa = PBXBuildFile; fileRef = D80D51991D41CAC500922203 /* 雅痞-简.otf */; };
+		D80D519B1D41CAE900922203 /* 雅痞-简.otf in Sources */ = {isa = PBXBuildFile; fileRef = D80D51991D41CAC500922203 /* 雅痞-简.otf */; };
+		D80D51A11D41D47400922203 /* LBUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = D80D51A01D41D47400922203 /* LBUserDefaults.m */; };
 		D853157E1D0B57A400BBA6D3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D853157D1D0B57A400BBA6D3 /* MediaPlayer.framework */; };
 		D85315801D0B57AE00BBA6D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D853157F1D0B57AE00BBA6D3 /* AVFoundation.framework */; };
 		D85315821D0B590500BBA6D3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85315811D0B590500BBA6D3 /* AudioToolbox.framework */; };
@@ -233,10 +237,6 @@
 		D8FE72ED1D1E770400025F32 /* UUChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E51D1E770400025F32 /* UUChartConst.m */; };
 		D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E71D1E770400025F32 /* UUChartLabel.m */; };
 		D8FE72EF1D1E770400025F32 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E91D1E770400025F32 /* UULineChart.m */; };
-		D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
-		D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */; };
-		D8FE72FF1D1E9FAE00025F32 /* 张海山锐线体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
-		D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */; };
 		D8FE73031D1ED7F100025F32 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73021D1ED7F100025F32 /* GameViewController.m */; };
 		D8FE73071D1ED80F00025F32 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE73061D1ED80F00025F32 /* GameModel.m */; };
 		D8FE730B1D1F02F200025F32 /* FigureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE730A1D1F02F200025F32 /* FigureModel.m */; };
@@ -318,8 +318,6 @@
 		8C15F16A1D1FC55A0094350C /* world_planeright_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planeright_btn@2x.png"; sourceTree = "<group>"; };
 		8C15F16B1D1FC55A0094350C /* world_planeup_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_planeup_btn.png; sourceTree = "<group>"; };
 		8C15F16C1D1FC55A0094350C /* world_planeup_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_planeup_btn@2x.png"; sourceTree = "<group>"; };
-		8C1CD8FA1D1EDD7200772806 /* LBUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUserDefaults.h; sourceTree = "<group>"; };
-		8C1CD8FB1D1EDD7200772806 /* LBUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUserDefaults.m; sourceTree = "<group>"; };
 		8C1CD8FD1D1EE8B300772806 /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
 		8C1CD8FE1D1EE8B300772806 /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		8C1DD9D11D1C1FE3005D1F24 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -414,8 +412,6 @@
 		8C2298961D199B70002C0F80 /* CityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityViewController.m; sourceTree = "<group>"; };
 		8C22989B1D199B70002C0F80 /* ClassroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassroomViewController.h; sourceTree = "<group>"; };
 		8C22989C1D199B70002C0F80 /* ClassroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassroomViewController.m; sourceTree = "<group>"; };
-		8C22989D1D199B70002C0F80 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		8C22989E1D199B70002C0F80 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		8C2298A01D199B70002C0F80 /* PlaygroundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaygroundViewController.h; sourceTree = "<group>"; };
 		8C2298A11D199B70002C0F80 /* PlaygroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaygroundViewController.m; sourceTree = "<group>"; };
 		8C2298A31D199B70002C0F80 /* WorldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldViewController.h; sourceTree = "<group>"; };
@@ -477,6 +473,12 @@
 		D80BFC741D1CE85C00830B55 /* ChooseFigureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseFigureViewController.m; path = AmericanSantiago/LoginVC/ChooseFigureViewController.m; sourceTree = SOURCE_ROOT; };
 		D80BFC751D1CE85C00830B55 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = AmericanSantiago/LoginVC/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		D80BFC761D1CE85C00830B55 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = AmericanSantiago/LoginVC/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		D80D51871D413B4F00922203 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D80D51881D413B4F00922203 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D80D51961D41C35F00922203 /* 创艺简中圆.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "创艺简中圆.TTF"; sourceTree = "<group>"; };
+		D80D51991D41CAC500922203 /* 雅痞-简.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅痞-简.otf"; sourceTree = "<group>"; };
+		D80D519F1D41D47400922203 /* LBUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUserDefaults.h; sourceTree = "<group>"; };
+		D80D51A01D41D47400922203 /* LBUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUserDefaults.m; sourceTree = "<group>"; };
 		D853157D1D0B57A400BBA6D3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D853157F1D0B57AE00BBA6D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D85315811D0B590500BBA6D3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -587,8 +589,6 @@
 		D8FE72E71D1E770400025F32 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
 		D8FE72E81D1E770400025F32 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
 		D8FE72E91D1E770400025F32 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
-		D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅痞-简.otf"; sourceTree = "<group>"; };
-		D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "张海山锐线体简.ttf"; sourceTree = "<group>"; };
 		D8FE73011D1ED7F100025F32 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		D8FE73021D1ED7F100025F32 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D8FE73051D1ED80F00025F32 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
@@ -718,8 +718,8 @@
 			children = (
 				8C1DDA381D1C1FFC005D1F24 /* LBNetWorkingManager.h */,
 				8C1DDA391D1C1FFC005D1F24 /* LBNetWorkingManager.m */,
-				8C1CD8FA1D1EDD7200772806 /* LBUserDefaults.h */,
-				8C1CD8FB1D1EDD7200772806 /* LBUserDefaults.m */,
+				D80D519F1D41D47400922203 /* LBUserDefaults.h */,
+				D80D51A01D41D47400922203 /* LBUserDefaults.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1022,8 +1022,8 @@
 			isa = PBXGroup;
 			children = (
 				D85318591D1B7B0200BBA6D3 /* HomeModel */,
-				8C22989D1D199B70002C0F80 /* HomeViewController.h */,
-				8C22989E1D199B70002C0F80 /* HomeViewController.m */,
+				D80D51871D413B4F00922203 /* HomeViewController.h */,
+				D80D51881D413B4F00922203 /* HomeViewController.m */,
 				8C2298971D199B70002C0F80 /* ClassroomVC */,
 				D8FE72C51D1E4D3B00025F32 /* GameVC */,
 				8C2298911D199B70002C0F80 /* BuildingVC */,
@@ -1418,8 +1418,8 @@
 		D8FE72F01D1E8A7F00025F32 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				D8FE72FE1D1E9FAE00025F32 /* 张海山锐线体简.ttf */,
-				D8FE72F11D1E8A8B00025F32 /* 雅痞-简.otf */,
+				D80D51991D41CAC500922203 /* 雅痞-简.otf */,
+				D80D51961D41C35F00922203 /* 创艺简中圆.TTF */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -1631,6 +1631,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80D51971D41C85B00922203 /* 创艺简中圆.TTF in Resources */,
 				8C22990D1D199BF9002C0F80 /* 首页bg.png in Resources */,
 				8C22992A1D199BF9002C0F80 /* 向左@3x.png in Resources */,
 				8C0EF30D1D0417A700194D16 /* LaunchScreen.storyboard in Resources */,
@@ -1653,7 +1654,6 @@
 				8C2299101D199BF9002C0F80 /* planeleft@2x.png in Resources */,
 				D85317CC1D1A6E1300BBA6D3 /* 人物@3x.png in Resources */,
 				D8A93A321D23FF27007EDEC3 /* North1.png in Resources */,
-				D8FE72F21D1E8A8B00025F32 /* 雅痞-简.otf in Resources */,
 				8C15F1721D1FC55A0094350C /* world_planeright_btn@2x.png in Resources */,
 				8C2299111D199BF9002C0F80 /* planeright@2x.png in Resources */,
 				D895925A1D2555E60050096D /* 厨房bg.png in Resources */,
@@ -1696,6 +1696,7 @@
 				D80BFC521D1CCA7100830B55 /* 小红花@3x.png in Resources */,
 				8C2298851D19969A002C0F80 /* home_community_bg.png in Resources */,
 				D80BFC621D1CD06C00830B55 /* 调节钮@3x.png in Resources */,
+				D80D519A1D41CAC500922203 /* 雅痞-简.otf in Resources */,
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
 				D8A93A6E1D246BC7007EDEC3 /* 锁.png in Resources */,
 				8C15F16F1D1FC55A0094350C /* world_planeleft_btn.png in Resources */,
@@ -1715,7 +1716,6 @@
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
 				D8A93A851D246D42007EDEC3 /* 数学记录@2x.png in Resources */,
 				8C2299011D199BF9002C0F80 /* 地图图标4bg.png in Resources */,
-				D8FE72FF1D1E9FAE00025F32 /* 张海山锐线体简.ttf in Resources */,
 				D8A93A791D246D37007EDEC3 /* 数学记录@3x.png in Resources */,
 				D8A93A641D2441DA007EDEC3 /* 浅色音量条@2x.png in Resources */,
 				D895925C1D255A0D0050096D /* 主界面1.png in Resources */,
@@ -1801,8 +1801,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8FE73001D1E9FE100025F32 /* 张海山锐线体简.ttf in Sources */,
-				D8FE72FB1D1E96E300025F32 /* 雅痞-简.otf in Sources */,
+				D80D519B1D41CAE900922203 /* 雅痞-简.otf in Sources */,
+				D80D51981D41C9CD00922203 /* 创艺简中圆.TTF in Sources */,
 				D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */,
 				D8FE906A1D3F0FDD00C29CAF /* IQUIWindow+Hierarchy.m in Sources */,
 				D8FE906B1D3F0FDD00C29CAF /* IQKeyboardManager.m in Sources */,
@@ -1869,6 +1869,7 @@
 				D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */,
 				D85317BE1D19E0FA00BBA6D3 /* SupermarketViewController.m in Sources */,
 				D8FE90661D3F0FDD00C29CAF /* IQNSArray+Sort.m in Sources */,
+				D80D51A11D41D47400922203 /* LBUserDefaults.m in Sources */,
 				8C1DDA331D1C1FE3005D1F24 /* UIButton+AFNetworking.m in Sources */,
 				8C2298B21D199B70002C0F80 /* ClassroomViewController.m in Sources */,
 				8C1DDA1D1D1C1FE3005D1F24 /* AFURLSessionManager.m in Sources */,
@@ -1891,10 +1892,9 @@
 				D8FE90701D3F0FDD00C29CAF /* IQTitleBarButtonItem.m in Sources */,
 				8C2298B01D199B70002C0F80 /* CityViewController.m in Sources */,
 				D85318601D1B819400BBA6D3 /* ParentsModel.m in Sources */,
-				8C1CD8FC1D1EDD7200772806 /* LBUserDefaults.m in Sources */,
 				D85317B21D19E0C000BBA6D3 /* CinemaViewController.m in Sources */,
 				8C1DDA341D1C1FE3005D1F24 /* UIImageView+AFNetworking.m in Sources */,
-				8C2298B31D199B70002C0F80 /* HomeViewController.m in Sources */,
+				D80D51891D413B4F00922203 /* HomeViewController.m in Sources */,
 				8C1CD8FF1D1EE8B300772806 /* UIImage+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

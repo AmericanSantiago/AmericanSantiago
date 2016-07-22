@@ -225,7 +225,7 @@
     _genderButton = ({
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(870), FLEXIBLE_NUM(320), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
         button.tag = 321;
-        [button setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
 //        button.backgroundColor = [UIColor yellowColor];
         [button addTarget:self action:@selector(genderButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
@@ -268,12 +268,12 @@
         [_figerImageView setImage:[UIImage imageNamed:@"girl.png"]];
         _buttonIndex = @"0";
 //        _genderTextField.text = @"女";
-        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
+        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
     }else{
         [_figerImageView setImage:[UIImage imageNamed:@"boy.png"]];
         _buttonIndex = @"1";
 //        _genderTextField.text = @"男";
-        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
+        [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
     }
     
 }

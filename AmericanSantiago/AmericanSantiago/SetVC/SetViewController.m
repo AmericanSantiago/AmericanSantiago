@@ -125,12 +125,12 @@
     
     self.slider1 = [[UISlider alloc]init];
     self.slider1.backgroundColor = [UIColor blueColor];
-//    for (UIControl *view in volumeView.subviews) {
-//        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
-////            NSLog(@"1");
-//            self.slider1 = (UISlider *)view;
-//        }
-//    }
+    for (UIControl *view in volumeView.subviews) {
+        if ([view.superclass isSubclassOfClass:[UISlider class]]) {
+//            NSLog(@"1");
+            self.slider1 = (UISlider *)view;
+        }
+    }
     self.slider1.autoresizesSubviews = NO;
     self.slider1.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.slider1];
