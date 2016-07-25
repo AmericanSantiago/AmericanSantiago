@@ -106,7 +106,7 @@
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"矢量智能对象@3x",@"图层-5@3x", nil];
     for (int i = 0 ; i < 2; i ++ ) {
         
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(35))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(30))];
         [imageView setImage:[UIImage imageNamed:picArray[i]]];
         [view1 addSubview:imageView];
         

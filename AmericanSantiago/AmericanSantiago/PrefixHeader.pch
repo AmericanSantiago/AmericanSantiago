@@ -26,7 +26,7 @@
 #import "LBUserDefaults.h"//缓存
 
 #import "GameViewController.h"                      //游戏
-
+#import "ReviewViewController.h"                    //复习界面
 
 #define ShowNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
 #define HideNetworkActivityIndicator() [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
@@ -114,6 +114,7 @@
 //#define MJHEADER_TAG 1000
 //#define MJFOOTER_TAG 2000
 #define INDICATORVIEW_TAG 3000
+
 
 
 

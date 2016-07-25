@@ -102,10 +102,22 @@
     });
     
     
+    UIButton * reviewButton = [[UIButton alloc] initWithFrame:CGRectMake(BASESCRREN_W - FLEXIBLE_NUM(70), FLEXIBLE_NUM(600), FLEXIBLE_NUM(70), FLEXIBLE_NUM(44))];
+    [reviewButton setBackgroundImage:[UIImage imageNamed:@"复习@3x"] forState:UIControlStateNormal];
+    [reviewButton addTarget:self action:@selector(reviewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:reviewButton];
+    
+    
+    
     
 }
 
 #pragma mark -- buttonClick
+- (void) reviewButtonClick: (UIButton *) sender{
+    ReviewViewController * reviewVC = [[ReviewViewController alloc] init];
+    [self.translationController pushViewController:reviewVC];
+}
+
 - (void) libraryButtonClick: (UIButton *) sender
 {
     NSArray *subSceneGamesArray = [self getSubSceneGamesArrayWithSubSceneCode:1];

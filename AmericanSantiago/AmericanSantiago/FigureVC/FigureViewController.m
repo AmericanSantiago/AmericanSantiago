@@ -104,7 +104,7 @@
         label.textColor = [UIColor orangeColor];
 //        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
 
-        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"CTZhongYuanSJ" size:FLEXIBLE_NUM(30)];
         [view1 addSubview:label];
     }
     
