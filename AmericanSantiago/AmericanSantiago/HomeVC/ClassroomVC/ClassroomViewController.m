@@ -331,16 +331,15 @@
         //保存当前教学知识点游戏列表
         [LBUserDefaults saveCurrentConceptGamesArray:conceptGamesArray];
         //进入当前知识点的教学游戏
+        NSDictionary *teachGameDic = nil;
         for (NSDictionary *conceptGameDic in conceptGamesArray) {
             NSString *sceneName = conceptGameDic[@"scene"];
             NSArray *sceneGamesArray = conceptGameDic[@"games"];
             [LBUserDefaults addSaveNewSceneGamesArray:sceneGamesArray sceneName:sceneName];
             if ([sceneName isEqualToString:@"school"]) {
-                GameViewController *gameVC = [[GameViewController alloc]init];
-                gameVC.gameDic = [sceneGamesArray firstObject];
-                gameVC.subjectId = self.currentSubjectId;
-                [self.translationController pushViewController:gameVC];
+                teachGameDic = [sceneGamesArray firstObject];
             }
+
 //                break;
 //            }else{
 //                    GameViewController * gameVC = [[GameViewController alloc] init];
@@ -349,8 +348,23 @@
 //                    [self.translationController pushViewController:gameVC];
 //            }
         
+
+        }
+        //不能再for里面加break,会中断缓存，。导致缓存不全- -
+        if (teachGameDic) {
+            GameViewController *gameVC = [[GameViewController alloc]init];
+            gameVC.gameDic = teachGameDic;
+            gameVC.subjectId = self.currentSubjectId;
+            [self.translationController pushViewController:gameVC];
+        }else{
+            GameViewController * gameVC = [[GameViewController alloc] init];
+            gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+            gameVC.subjectId = @"Math";
+            [self.translationController pushViewController:gameVC];
+
         }
     }
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:nil];
     
 }
