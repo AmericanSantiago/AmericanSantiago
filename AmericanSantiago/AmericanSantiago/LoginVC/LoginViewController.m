@@ -33,6 +33,12 @@
     [self initializeUserInterface];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setHidden:YES];
+    
+}
+
 - (void)dealloc
 {
     [_loginModel removeObserver:self forKeyPath:@"registerData"];

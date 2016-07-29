@@ -9,6 +9,7 @@
 #import "SetViewController.h"
 #import "LoginViewController.h"
 #import "LoginModel.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface SetViewController ()
 
@@ -42,6 +43,10 @@
 - (void)dealloc
 {
     [_loginModel removeObserver:self forKeyPath:@"logoutData"];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    
 }
 
 #pragma mark -- observe
@@ -71,6 +76,11 @@
     _loginModel = [[LoginModel alloc] init];
     [_loginModel addObserver:self forKeyPath:@"logoutData" options:NSKeyValueObservingOptionNew context:nil];
 
+    //给音量键增加监听方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeClicked:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    //    但是仅仅监听是不起作用的，因为@"AVSystemController_SystemVolumeDidChangeNotification"需要对它进行响应，所以要在监听后加
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
     
 }
 
@@ -106,7 +116,7 @@
     NSArray * picArray = [[NSArray alloc] initWithObjects:@"矢量智能对象@3x",@"图层-5@3x", nil];
     for (int i = 0 ; i < 2; i ++ ) {
         
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(35), FLEXIBLE_NUM(30))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(50), FLEXIBLE_NUM(105) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(30), FLEXIBLE_NUM(30))];
         [imageView setImage:[UIImage imageNamed:picArray[i]]];
         [view1 addSubview:imageView];
         
@@ -114,6 +124,7 @@
         label.text = titleArray[i];
         label.textColor = [UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1];
         label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
+//        label.font = [UIFont fontWithName:@"CTZhongYuanSJ" size:FLEXIBLE_NUM(28)];
 //        label.backgroundColor = [UIColor yellowColor];
         [view1 addSubview:label];
     }
@@ -131,6 +142,18 @@
             self.slider1 = (UISlider *)view;
         }
     }
+    
+    UISlider *volumeViewSlider= nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeViewSlider = (UISlider*)view;
+            break;
+        }
+    }
+    
+    //获取当前系统的音量值
+    float systemVolume1 = [AVAudioSession sharedInstance].outputVolume;
+    
     self.slider1.autoresizesSubviews = NO;
     self.slider1.autoresizingMask = UIViewAutoresizingNone;
     [self.view addSubview:self.slider1];
@@ -147,7 +170,7 @@
     slider1.minimumValue = self.slider1.minimumValue;
     slider1.maximumValue = self.slider1.maximumValue;
     [slider1 setMinimumTrackTintColor:[UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1]];
-    slider1.value = self.slider1.value;
+    slider1.value = systemVolume1;
     
     [slider1 setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
     [slider1 setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal];
@@ -284,7 +307,16 @@
     [[UIScreen mainScreen] setBrightness:slider.value];
 }
 
-
+#pragma mark -- 音量键增加监听方法
+-(void)volumeClicked:(NSNotification *)noti{
+    //在这里我们就可以实现对音量键进行监听，完成响应的操作。noti中也有一些相关的信息可以看看
+//    NSLog(@"!!!!!!!");
+    
+    UISlider * silder = (UISlider *)[self.view viewWithTag:1000];
+    float volume = [[[noti userInfo] objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] floatValue];
+    silder.value = volume;
+//    NSLog(@"current volume = %f", volume);
+}
 
 
 @end

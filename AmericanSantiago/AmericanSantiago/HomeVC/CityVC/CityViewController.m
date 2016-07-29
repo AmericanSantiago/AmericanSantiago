@@ -92,14 +92,14 @@
     });
     
     
-    _backBuutton = ({
-        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
-        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-//        button.backgroundColor = [UIColor yellowColor];
-        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        button;
-    });
+//    _backBuutton = ({
+//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+//        [button setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+////        button.backgroundColor = [UIColor yellowColor];
+//        [button addTarget:self action:@selector(backButtonCLick:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:button];
+//        button;
+//    });
     
     
     UIButton * reviewButton = [[UIButton alloc] initWithFrame:CGRectMake(BASESCRREN_W - FLEXIBLE_NUM(70), FLEXIBLE_NUM(600), FLEXIBLE_NUM(70), FLEXIBLE_NUM(44))];

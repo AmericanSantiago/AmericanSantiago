@@ -80,8 +80,11 @@
     
     _character = @"girl";
     _figureImageView = ({
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
+//        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(FLEXIBLE_NUM(600)), FLEXIBLE_NUM(500))];
+        imageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2);
 //        imageView.backgroundColor = [UIColor yellowColor];
+        [imageView clipsToBounds];
         [imageView setImage:[UIImage imageNamed:@"girl"]];
         [self.view addSubview:imageView];
         imageView;
@@ -113,12 +116,22 @@
         button;
     });
     
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(34), FLEXIBLE_NUM(34), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+    
     
     
 }
 
 
 #pragma mark -- buttonClick
+- (void) backButtonClicked:(UIButton *) sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void) leftButtonClick:(UIButton *) sender
 {
     [_figureImageView setImage:[UIImage imageNamed:@"girl"]];

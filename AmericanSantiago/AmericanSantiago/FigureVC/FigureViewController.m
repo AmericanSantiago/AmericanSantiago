@@ -96,6 +96,17 @@
     view1.layer.borderColor = [[UIColor orangeColor] CGColor];
     [self.view addSubview:view1];
     
+    //遍历字体名称
+    for(NSString *fontfamilyname in [UIFont familyNames])
+    {
+        NSLog(@"family:'%@'",fontfamilyname);
+        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+        {
+            NSLog(@"\tfont:'%@'",fontName);
+        }
+        NSLog(@"-------------");
+    }
+    
     NSArray * titleArray = [[NSArray alloc] initWithObjects:@"全名",@"昵称",@"生日",@"年龄",@"性别" ,nil];
     for (int i = 0; i < 5; i ++) {
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(40), FLEXIBLE_NUM(40) + FLEXIBLE_NUM(90) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
@@ -104,19 +115,11 @@
         label.textColor = [UIColor orangeColor];
 //        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
 
-        label.font = [UIFont fontWithName:@"CTZhongYuanSJ" size:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
+//        label.font = [UIFont fontWithName:@"CTZhongYuanSJ" size:FLEXIBLE_NUM(30)];
         [view1 addSubview:label];
     }
     
-//    for(NSString *fontfamilyname in [UIFont familyNames])
-//    {
-//        NSLog(@"family:'%@'",fontfamilyname);
-//        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
-//        {
-//            NSLog(@"\tfont:'%@'",fontName);
-//        }
-//        NSLog(@"-------------");
-//    }
     
     _nameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(40), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];

@@ -175,11 +175,20 @@
         button;
     });
     
-    
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(34), FLEXIBLE_NUM(34), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
     
     
     
 }
+
+- (void) backButtonClicked:(UIButton *) sender{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 //返回列数
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

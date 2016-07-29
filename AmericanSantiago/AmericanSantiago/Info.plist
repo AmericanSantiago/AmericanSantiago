@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,6 +30,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>雅痞-简.otf</string>
+		<string>创艺简中圆.TTF</string>
+		<string>ZYUANSJ.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

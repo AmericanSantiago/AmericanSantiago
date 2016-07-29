@@ -156,24 +156,24 @@
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(370) + FLEXIBLE_NUM(80) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(30), FLEXIBLE_NUM(200))];
         button.backgroundColor = [UIColor clearColor];
         [button setImage:[UIImage imageNamed:picArray[i]] forState:UIControlStateNormal];
-        button.tag = 200;
-        if (i>_classroomGamesArray.count) {
-            button.alpha = 0.1;
-        }else{
-            button.alpha = 0;
-        }
+        button.tag = 200 + i;
+//        if (i>_classroomGamesArray.count) {
+//            button.alpha = 0.1;
+//        }else{
+//            button.alpha = 0;
+//        }
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
     }
     
     
-    //测试按钮
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
-    button.backgroundColor = [UIColor blackColor];
-    [button setTitle:@"test" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(textButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+//    //测试按钮
+//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
+//    button.backgroundColor = [UIColor blackColor];
+//    [button setTitle:@"test" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(textButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
     
     
     
@@ -296,6 +296,9 @@
 - (void) buttonClick:(UIButton *) sender
 {
     NSLog(@"button.tag = %ld",(long)sender.tag);
+    
+    [self creatView];
+    
 }
 
 #pragma mark - 获取一个教学点游戏
@@ -368,5 +371,55 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:nil];
     
 }
+
+- (void) creatView
+{
+
+    UIButton * dissmissButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
+//    UIButton * dissmissButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(145), FLEXIBLE_NUM(115), FLEXIBLE_NUM(30), FLEXIBLE_NUM(30))];
+    dissmissButton.alpha = 0;
+//    [dissmissButton setBackgroundImage:[UIImage imageNamed:@"叉"] forState:UIControlStateNormal];
+    [dissmissButton addTarget:self action:@selector(dissmissButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    dissmissButton.backgroundColor = [UIColor blackColor];
+    dissmissButton.tag = 10001;
+    dissmissButton.userInteractionEnabled = YES;
+    [self.view addSubview:dissmissButton];
+    
+    
+    UIImageView * reviewImageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(130), FLEXIBLE_NUM(100), FLEXIBLE_NUM(760), FLEXIBLE_NUM(550))];
+    //        reviewImageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2);
+    [reviewImageView setImage:[UIImage imageNamed:@"复习界面选择数学"]];
+    reviewImageView.alpha = 0;
+    reviewImageView.tag = 10000;
+    [self.view addSubview:reviewImageView];
+    
+    
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+
+        reviewImageView.alpha = 1;
+        dissmissButton.alpha = 0.5;
+        
+    }];
+    
+}
+
+- (void)dissmissButtonClick: (UIButton *) sender{
+    UIImageView * imageView = (UIImageView *)[self.view viewWithTag:10000];
+    UIButton * button = (UIButton *)[self.view viewWithTag:10001];
+        
+    [imageView removeFromSuperview];
+    [button removeFromSuperview];
+    
+    
+    
+    
+}
+
+
+
+
+
 
 @end

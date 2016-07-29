@@ -237,6 +237,9 @@
 		D8A93A851D246D42007EDEC3 /* 数学记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A7F1D246D42007EDEC3 /* 数学记录@2x.png */; };
 		D8A93A861D246D42007EDEC3 /* 英语记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */; };
 		D8A93A871D246D42007EDEC3 /* 语文记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */; };
+		D8CD9CA31D47DD8000625231 /* 创艺简中圆.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */; };
+		D8CD9CA91D47E3F800625231 /* ZYUANSJ.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */; };
+		D8CD9CAB1D483B7600625231 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CAA1D483B7600625231 /* back.png */; };
 		D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41A1D20BF1A006CE629 /* boy1.png */; };
 		D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41B1D20BF1A006CE629 /* girl1.png */; };
 		D8D8A4201D218C61006CE629 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41E1D218C61006CE629 /* boy.png */; };
@@ -244,6 +247,7 @@
 		D8D8A4231D218E1C006CE629 /* 气泡@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4221D218E1C006CE629 /* 气泡@3x.png */; };
 		D8D8A4251D218E26006CE629 /* 气泡@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A4241D218E26006CE629 /* 气泡@2x.png */; };
 		D8D8A42B1D220E0D006CE629 /* 课堂bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A42A1D220E0D006CE629 /* 课堂bg.png */; };
+		D8FAFFDE1D4A5D98009B6F71 /* 叉.png in Resources */ = {isa = PBXBuildFile; fileRef = D8FAFFDD1D4A5D98009B6F71 /* 叉.png */; };
 		D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72DF1D1E770400025F32 /* UUBar.m */; };
 		D8FE72EB1D1E770400025F32 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E11D1E770400025F32 /* UUBarChart.m */; };
 		D8FE72EC1D1E770400025F32 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE72E31D1E770400025F32 /* UUChart.m */; };
@@ -598,6 +602,9 @@
 		D8A93A7F1D246D42007EDEC3 /* 数学记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "数学记录@2x.png"; sourceTree = "<group>"; };
 		D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "英语记录@2x.png"; sourceTree = "<group>"; };
 		D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "语文记录@2x.png"; sourceTree = "<group>"; };
+		D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "创艺简中圆.TTF"; sourceTree = "<group>"; };
+		D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZYUANSJ.TTF; sourceTree = "<group>"; };
+		D8CD9CAA1D483B7600625231 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D8D8A41A1D20BF1A006CE629 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
 		D8D8A41B1D20BF1A006CE629 /* girl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl1.png; sourceTree = "<group>"; };
 		D8D8A41E1D218C61006CE629 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
@@ -605,6 +612,7 @@
 		D8D8A4221D218E1C006CE629 /* 气泡@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@3x.png"; sourceTree = "<group>"; };
 		D8D8A4241D218E26006CE629 /* 气泡@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@2x.png"; sourceTree = "<group>"; };
 		D8D8A42A1D220E0D006CE629 /* 课堂bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "课堂bg.png"; sourceTree = "<group>"; };
+		D8FAFFDD1D4A5D98009B6F71 /* 叉.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "叉.png"; sourceTree = "<group>"; };
 		D8FE72DE1D1E770400025F32 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
 		D8FE72DF1D1E770400025F32 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
 		D8FE72E01D1E770400025F32 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
@@ -877,9 +885,10 @@
 		8C0EF3CC1D043F4900194D16 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D8A93A6F1D246D2A007EDEC3 /* 黑板科目图 */,
+				D8CD9CAA1D483B7600625231 /* back.png */,
 				D8A93A6D1D246BC7007EDEC3 /* 锁.png */,
 				D80D51A21D46BDD100922203 /* icon.png */,
+				D8A93A6F1D246D2A007EDEC3 /* 黑板科目图 */,
 				D853189A1D1BCFD500BBA6D3 /* 地球 */,
 				8C2298B91D199BF9002C0F80 /* 1 */,
 				8C2298BA1D199BF9002C0F80 /* 背景 */,
@@ -1285,6 +1294,7 @@
 		D80D51AA1D46BFCF00922203 /* 复习图 */ = {
 			isa = PBXGroup;
 			children = (
+				D8FAFFDD1D4A5D98009B6F71 /* 叉.png */,
 				D80D51AB1D46BFCF00922203 /* 场景@2x.png */,
 				D80D51AC1D46BFCF00922203 /* 场景@3x.png */,
 				D80D51AD1D46BFCF00922203 /* 复习@2x.png */,
@@ -1478,6 +1488,8 @@
 		D8FE72F01D1E8A7F00025F32 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */,
+				D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */,
 				D80D51991D41CAC500922203 /* 雅痞-简.otf */,
 			);
 			path = Font;
@@ -1653,7 +1665,7 @@
 				TargetAttributes = {
 					8C0EF2F91D0417A700194D16 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = V457683A83;
+						DevelopmentTeam = NN7B8X2LU6;
 					};
 					8C0EF3121D0417A800194D16 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1703,6 +1715,7 @@
 				8C2299221D199BF9002C0F80 /* left@3x.png in Resources */,
 				8C2299251D199BF9002C0F80 /* planeright@3x.png in Resources */,
 				8C22991D1D199BF9002C0F80 /* 登录@2x.png in Resources */,
+				D8CD9CA31D47DD8000625231 /* 创艺简中圆.TTF in Resources */,
 				D8A93A771D246D37007EDEC3 /* 科学知识记录@3x.png in Resources */,
 				8C2299061D199BF9002C0F80 /* 小区bg.png in Resources */,
 				D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */,
@@ -1745,6 +1758,7 @@
 				D8D8A4211D218C61006CE629 /* girl.png in Resources */,
 				D8FE90731D3F0FDD00C29CAF /* IQKeyboardManager.bundle in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
+				D8CD9CAB1D483B7600625231 /* back.png in Resources */,
 				8C2298871D19969A002C0F80 /* home_map_bg.png in Resources */,
 				D80D51C31D46BFCF00922203 /* 深色中间@2x.png in Resources */,
 				D80BFC661D1CD0EA00830B55 /* brightness_bar.png in Resources */,
@@ -1831,6 +1845,7 @@
 				8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */,
 				D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */,
 				8C15F1701D1FC55A0094350C /* world_planeleft_btn@2x.png in Resources */,
+				D8CD9CA91D47E3F800625231 /* ZYUANSJ.TTF in Resources */,
 				8C15F1711D1FC55A0094350C /* world_planeright_btn.png in Resources */,
 				D85317CE1D1A6E1300BBA6D3 /* 主页@3x.png in Resources */,
 				8C22986B1D198C80002C0F80 /* root_bg@2x.png in Resources */,
@@ -1846,6 +1861,7 @@
 				D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */,
 				D853186A1D1B953100BBA6D3 /* 注册选择人物.png in Resources */,
 				D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */,
+				D8FAFFDE1D4A5D98009B6F71 /* 叉.png in Resources */,
 				8C2299241D199BF9002C0F80 /* planeleft@3x.png in Resources */,
 				8C22988B1D19969A002C0F80 /* home_school_bg.png in Resources */,
 				D8A93A821D246D42007EDEC3 /* 安全知识记录@2x.png in Resources */,
@@ -2032,8 +2048,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2078,8 +2094,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2104,13 +2120,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiagomwk1x;
+				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -2121,13 +2137,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiagomwk1x;
+				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
