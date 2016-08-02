@@ -44,13 +44,17 @@
         if ([[_loginModel.registerData valueForKey:@"errorCode"] integerValue]== 0) {
             
             //先保存用户信息，再跳转
-//            [LBUserDefaults setUserDic:[_loginModel.registerData valueForKey:@"data"]];
+            [LBUserDefaults setUserDic:[_loginModel.registerData valueForKey:@"data"]];
             [[NSUserDefaults standardUserDefaults] setObject:[_loginModel.registerData valueForKey:@"data"] forKey:@"userInfo"];
             
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updataUserName" object:_userName];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"updataPassword" object:_passwd];
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
+            
         }else{
             NSLog(@"注册失败");
-            [AppDelegate showHintLabelWithMessage:@"注册失败~"];
+            [AppDelegate showHintLabelWithMessage:@"注册失败！"];
         }
         
         
@@ -81,8 +85,8 @@
     _character = @"girl";
     _figureImageView = ({
 //        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(FLEXIBLE_NUM(750)), FLEXIBLE_NUM(600))];
-        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(FLEXIBLE_NUM(600)), FLEXIBLE_NUM(500))];
-        imageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2);
+        UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(FLEXIBLE_NUM(780)), FLEXIBLE_NUM(650))];
+        imageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2 - FLEXIBLE_NUM(20));
 //        imageView.backgroundColor = [UIColor yellowColor];
         [imageView clipsToBounds];
         [imageView setImage:[UIImage imageNamed:@"girl"]];
@@ -116,8 +120,10 @@
         button;
     });
     
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(34), FLEXIBLE_NUM(34), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(146), FLEXIBLE_NUM(115), FLEXIBLE_NUM(70), FLEXIBLE_NUM(70))];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateHighlighted];
+    //    backButton.backgroundColor = [UIColor grayColor];
     [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
     
@@ -152,10 +158,18 @@
 
 - (void) ensureButtonClick:(UIButton *) sender
 {
+    if ([_userName length] == 0 || [_passwd length] == 0 || _studentName.length == 0 || _birthday.length == 0 || _gender.length == 0 || _character.length == 0) {
+        [AppDelegate showHintLabelWithMessage:@"请完善用户信息！"];
+        return;
+    }
+    //进行网络判断
+    FGGNetWorkStatus status=[FGGReachability networkStatus];
+    if (status == FGGNetWorkStatusNotReachable) {
+        [AppDelegate showHintLabelWithMessage:@"网络连接错误，请检查网络！"];
+        return;
+    }
+    
     [_loginModel registerWithUsername:_userName Password:_passwd nickname:_studentName birthday:_birthday gender:_gender character:_character name:_studentName];
-    
-    
-    
 }
 
 

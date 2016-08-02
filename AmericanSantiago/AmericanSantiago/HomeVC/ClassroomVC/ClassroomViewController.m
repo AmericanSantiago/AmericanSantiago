@@ -342,18 +342,8 @@
             if ([sceneName isEqualToString:@"school"]) {
                 teachGameDic = [sceneGamesArray firstObject];
             }
-
-//                break;
-//            }else{
-//                    GameViewController * gameVC = [[GameViewController alloc] init];
-//                    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
-//                    gameVC.subjectId = @"Math";
-//                    [self.translationController pushViewController:gameVC];
-//            }
-        
-
         }
-        //不能再for里面加break,会中断缓存，。导致缓存不全- -
+        
         if (teachGameDic) {
             GameViewController *gameVC = [[GameViewController alloc]init];
             gameVC.gameDic = teachGameDic;
@@ -374,52 +364,72 @@
 
 - (void) creatView
 {
+    UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
+    view1.backgroundColor = [UIColor clearColor];
+    view1.tag = 10003;
+    [self.view addSubview:view1];
+    
 
+    //  创建需要的毛玻璃特效类型
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    //  毛玻璃view 视图
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    effectView.userInteractionEnabled = NO;
+    effectView.tag = 10002;
+    //添加到要有毛玻璃特效的控件中
+    effectView.frame = self.view.bounds;
+        effectView.alpha = 0;
+    [view1 addSubview:effectView];
+    
+    
     UIButton * dissmissButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
-//    UIButton * dissmissButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(145), FLEXIBLE_NUM(115), FLEXIBLE_NUM(30), FLEXIBLE_NUM(30))];
-    dissmissButton.alpha = 0;
-//    [dissmissButton setBackgroundImage:[UIImage imageNamed:@"叉"] forState:UIControlStateNormal];
+//    dissmissButton.alpha = 0;
     [dissmissButton addTarget:self action:@selector(dissmissButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    dissmissButton.backgroundColor = [UIColor blackColor];
+    dissmissButton.backgroundColor = [UIColor clearColor];
     dissmissButton.tag = 10001;
-    dissmissButton.userInteractionEnabled = YES;
-    [self.view addSubview:dissmissButton];
+    [view1 addSubview:dissmissButton];
     
     
-    UIImageView * reviewImageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(130), FLEXIBLE_NUM(100), FLEXIBLE_NUM(760), FLEXIBLE_NUM(550))];
+    UIView * view2 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(130), FLEXIBLE_NUM(100), FLEXIBLE_NUM(760), FLEXIBLE_NUM(550))];
+    view2.backgroundColor = [UIColor clearColor];
+    view2.tag = 10004;
+    [self.view addSubview:view2];
+    
+    UIImageView * reviewImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, FLEXIBLE_NUM(760), FLEXIBLE_NUM(550))];
     //        reviewImageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2);
     [reviewImageView setImage:[UIImage imageNamed:@"复习界面选择数学"]];
-    reviewImageView.alpha = 0;
+//    reviewImageView.alpha = 0;
     reviewImageView.tag = 10000;
-    [self.view addSubview:reviewImageView];
-    
-    
-    
-    
-    [UIView animateWithDuration:0.5 animations:^{
+    reviewImageView.userInteractionEnabled = NO;
+    [view2 addSubview:reviewImageView];
 
+    
+    dissmissButton.alpha = 0.5;
+    effectView.alpha = 0.9;
+    [UIView animateWithDuration:0.3 animations:^{
         reviewImageView.alpha = 1;
-        dissmissButton.alpha = 0.5;
-        
     }];
+    
+    
+
+    
+    
     
 }
 
 - (void)dissmissButtonClick: (UIButton *) sender{
     UIImageView * imageView = (UIImageView *)[self.view viewWithTag:10000];
     UIButton * button = (UIButton *)[self.view viewWithTag:10001];
-        
+    UIVisualEffectView * effectView = (UIVisualEffectView *)[self.view viewWithTag:10002];
+    UIView * view1 = (UIView *)[self.view viewWithTag:10003];
+    UIView * view2 = (UIView *)[self.view viewWithTag:10004];
+    
     [imageView removeFromSuperview];
     [button removeFromSuperview];
-    
-    
-    
-    
+    [effectView removeFromSuperview];
+    [view1 removeFromSuperview];
+    [view2 removeFromSuperview];
 }
-
-
-
-
 
 
 @end

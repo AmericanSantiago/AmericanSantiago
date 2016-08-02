@@ -32,6 +32,9 @@
 		<string>雅痞-简.otf</string>
 		<string>创艺简中圆.TTF</string>
 		<string>ZYUANSJ.TTF</string>
+		<string>经典细圆简.ttf</string>
+		<string>经典中圆简.ttf</string>
+		<string>JD中圆简.TTF</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

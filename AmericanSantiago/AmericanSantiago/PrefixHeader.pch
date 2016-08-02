@@ -21,6 +21,7 @@
 #import "UIButton+WebCache.h"
 #import "JSONKit.h"//json解析
 #import "LBNetWorkingManager.h"//网络请求管理类
+#import "FGGReachability.h"     //网络判断
 
 //缓存工具类**************************************
 #import "LBUserDefaults.h"//缓存

@@ -7,6 +7,8 @@
 //
 
 #import "ReviewViewController.h"
+#import "ReviewModel.h"
+
 
 @interface ReviewViewController ()
 
@@ -51,9 +53,72 @@
     [backgroundView setImage:[UIImage imageNamed:@"复习界面选择2bg.png"]];
     [self.view addSubview:backgroundView];
     
+    //返回按钮
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, FLEXIBLE_NUM(605), FLEXIBLE_NUM(70), FLEXIBLE_NUM(44))];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"场景"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
     
+    [self createButtonWithNumber:4 SubjrctTag:1];
+    [self createButtonWithNumber:6 SubjrctTag:4];
     
     
 }
+
+
+#pragma mark -- buttonClick
+- (void) backButtonClick: (UIButton *) sender{
+
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void) buttonClick:(UIButton *)sender
+{
+    NSLog(@"button.tag == %ld",sender.tag);
+    
+}
+
+#pragma mark -- 自定义方法
+- (void) createButtonWithNumber:(NSInteger)number SubjrctTag:(NSInteger )subjectTag
+{
+    for (int i = 0; i < number; i ++) {
+//        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110) + FLEXIBLE_NUM(145) * i, FLEXIBLE_NUM(27), FLEXIBLE_NUM(145), FLEXIBLE_NUM(100))];
+        UIButton * button = [[UIButton alloc] init];
+        
+        button.frame = CGRectMake(FLEXIBLE_NUM(110) + FLEXIBLE_NUM(145) * i, FLEXIBLE_NUM(27 + 122 * subjectTag), FLEXIBLE_NUM(145), FLEXIBLE_NUM(100));
+        
+//        NSArray * numArray = [[NSArray alloc] initWithObjects:@"1",@"3", nil];
+//        for (int j = 0; j < numArray.count; j ++) {
+//            NSLog(@"numArray == %@",numArray[i]);
+//            button.frame = CGRectMake(FLEXIBLE_NUM(110) + FLEXIBLE_NUM(145) * i, FLEXIBLE_NUM(27 + 122 * [numArray[j] integerValue]), FLEXIBLE_NUM(145), FLEXIBLE_NUM(100));
+//            
+//        }
+        
+        
+        button.tag = BUTTON_TAG + i + subjectTag * 10;
+        if (i == 2 || i == 4) {
+            [button setBackgroundImage:[UIImage imageNamed:@"深色中间"] forState:UIControlStateNormal];
+        }else{
+            [button setBackgroundImage:[UIImage imageNamed:@"浅色中间"] forState:UIControlStateNormal];
+        }
+        if (i == 0) {
+            [button setBackgroundImage:[UIImage imageNamed:@"最左边"] forState:UIControlStateNormal];
+        }
+        if (i == 5) {
+            [button setBackgroundImage:[UIImage imageNamed:@"最右边"] forState:UIControlStateNormal];
+        }
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
+    }
+    
+}
+
+
+
+
+
+
 
 @end

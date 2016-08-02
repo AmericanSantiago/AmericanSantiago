@@ -190,6 +190,10 @@
 		D853187A1D1BB48200BBA6D3 /* 黄向左@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318781D1BB48200BBA6D3 /* 黄向左@2x.png */; };
 		D85318821D1BBF5200BBA6D3 /* TVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D85318811D1BBF5200BBA6D3 /* TVViewController.m */; };
 		D85318AC1D1C16E800BBA6D3 /* 主界面2.png in Resources */ = {isa = PBXBuildFile; fileRef = D85318AB1D1C16E800BBA6D3 /* 主界面2.png */; };
+		D893887B1D4EF4210055AB1A /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D893887A1D4EF4210055AB1A /* back@2x.png */; };
+		D893887D1D4EF42B0055AB1A /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D893887C1D4EF42B0055AB1A /* back@3x.png */; };
+		D89388851D4EF83D0055AB1A /* FGGReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D89388811D4EF83D0055AB1A /* FGGReachability.m */; };
+		D89388861D4EF83D0055AB1A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D89388841D4EF83D0055AB1A /* Reachability.m */; };
 		D895924E1D25544D0050096D /* 小区bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = D895924D1D25544D0050096D /* 小区bg2.png */; };
 		D89592581D2555E60050096D /* 卧室bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D89592551D2555E60050096D /* 卧室bg.png */; };
 		D89592591D2555E60050096D /* 家bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D89592561D2555E60050096D /* 家bg.png */; };
@@ -237,8 +241,10 @@
 		D8A93A851D246D42007EDEC3 /* 数学记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A7F1D246D42007EDEC3 /* 数学记录@2x.png */; };
 		D8A93A861D246D42007EDEC3 /* 英语记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */; };
 		D8A93A871D246D42007EDEC3 /* 语文记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */; };
-		D8CD9CA31D47DD8000625231 /* 创艺简中圆.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */; };
-		D8CD9CA91D47E3F800625231 /* ZYUANSJ.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */; };
+		D8BA930C1D5042AF003A2592 /* 经典中圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */; };
+		D8BA930E1D504C73003A2592 /* JD中圆简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930D1D504C73003A2592 /* JD中圆简.TTF */; };
+		D8BA93141D506766003A2592 /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BA93131D506766003A2592 /* ReviewModel.m */; };
+		D8C6FED41D4B2715001CC494 /* 经典细圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */; };
 		D8CD9CAB1D483B7600625231 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CAA1D483B7600625231 /* back.png */; };
 		D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41A1D20BF1A006CE629 /* boy1.png */; };
 		D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41B1D20BF1A006CE629 /* girl1.png */; };
@@ -553,6 +559,12 @@
 		D85318801D1BBF5200BBA6D3 /* TVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVViewController.h; sourceTree = "<group>"; };
 		D85318811D1BBF5200BBA6D3 /* TVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVViewController.m; sourceTree = "<group>"; };
 		D85318AB1D1C16E800BBA6D3 /* 主界面2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "主界面2.png"; sourceTree = "<group>"; };
+		D893887A1D4EF4210055AB1A /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		D893887C1D4EF42B0055AB1A /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		D89388801D4EF83D0055AB1A /* FGGReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGGReachability.h; sourceTree = "<group>"; };
+		D89388811D4EF83D0055AB1A /* FGGReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGGReachability.m; sourceTree = "<group>"; };
+		D89388831D4EF83D0055AB1A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D89388841D4EF83D0055AB1A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D895924D1D25544D0050096D /* 小区bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小区bg2.png"; sourceTree = "<group>"; };
 		D89592551D2555E60050096D /* 卧室bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "卧室bg.png"; sourceTree = "<group>"; };
 		D89592561D2555E60050096D /* 家bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "家bg.png"; sourceTree = "<group>"; };
@@ -602,8 +614,11 @@
 		D8A93A7F1D246D42007EDEC3 /* 数学记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "数学记录@2x.png"; sourceTree = "<group>"; };
 		D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "英语记录@2x.png"; sourceTree = "<group>"; };
 		D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "语文记录@2x.png"; sourceTree = "<group>"; };
-		D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "创艺简中圆.TTF"; sourceTree = "<group>"; };
-		D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZYUANSJ.TTF; sourceTree = "<group>"; };
+		D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "经典中圆简.ttf"; sourceTree = "<group>"; };
+		D8BA930D1D504C73003A2592 /* JD中圆简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JD中圆简.TTF"; sourceTree = "<group>"; };
+		D8BA93121D506766003A2592 /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
+		D8BA93131D506766003A2592 /* ReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewModel.m; sourceTree = "<group>"; };
+		D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "经典细圆简.ttf"; sourceTree = "<group>"; };
 		D8CD9CAA1D483B7600625231 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D8D8A41A1D20BF1A006CE629 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
 		D8D8A41B1D20BF1A006CE629 /* girl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl1.png; sourceTree = "<group>"; };
@@ -864,6 +879,7 @@
 		8C0EF3381D0418A400194D16 /* HighTech */ = {
 			isa = PBXGroup;
 			children = (
+				D893887E1D4EF83D0055AB1A /* 网络判断 */,
 				D8FE90411D3F0FDD00C29CAF /* IQKeyBoardManager */,
 				D8A93A581D2411D0007EDEC3 /* NewDatePicker */,
 				D8FE72DD1D1E770400025F32 /* UUChart */,
@@ -1210,6 +1226,7 @@
 		8C2298CD1D199BF9002C0F80 /* @2x */ = {
 			isa = PBXGroup;
 			children = (
+				D893887A1D4EF4210055AB1A /* back@2x.png */,
 				D8A93A671D24421F007EDEC3 /* 浅色音量条@2x.png */,
 				D8A93A611D2433B3007EDEC3 /* 确认修改@2x.png */,
 				D8A93A501D2404A7007EDEC3 /* 进入@2x.png */,
@@ -1240,6 +1257,7 @@
 		8C2298E21D199BF9002C0F80 /* @3x */ = {
 			isa = PBXGroup;
 			children = (
+				D893887C1D4EF42B0055AB1A /* back@3x.png */,
 				D8A93A651D24420D007EDEC3 /* 浅色音量条@3x.png */,
 				D8A93A5F1D2433A7007EDEC3 /* 确认修改@3x.png */,
 				D8A93A521D2404BC007EDEC3 /* 进入@3x.png */,
@@ -1285,6 +1303,7 @@
 		D80D51A41D46BE3600922203 /* ReviewVC */ = {
 			isa = PBXGroup;
 			children = (
+				D8BA93111D506748003A2592 /* ReviewModel */,
 				D80D51A51D46BE5F00922203 /* ReviewViewController.h */,
 				D80D51A61D46BE5F00922203 /* ReviewViewController.m */,
 			);
@@ -1419,6 +1438,33 @@
 			path = "地球";
 			sourceTree = "<group>";
 		};
+		D893887E1D4EF83D0055AB1A /* 网络判断 */ = {
+			isa = PBXGroup;
+			children = (
+				D893887F1D4EF83D0055AB1A /* FGGReachability */,
+			);
+			path = "网络判断";
+			sourceTree = "<group>";
+		};
+		D893887F1D4EF83D0055AB1A /* FGGReachability */ = {
+			isa = PBXGroup;
+			children = (
+				D89388801D4EF83D0055AB1A /* FGGReachability.h */,
+				D89388811D4EF83D0055AB1A /* FGGReachability.m */,
+				D89388821D4EF83D0055AB1A /* Reachability */,
+			);
+			path = FGGReachability;
+			sourceTree = "<group>";
+		};
+		D89388821D4EF83D0055AB1A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				D89388831D4EF83D0055AB1A /* Reachability.h */,
+				D89388841D4EF83D0055AB1A /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		D8A93A4C1D240379007EDEC3 /* TheatreShowVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1456,6 +1502,15 @@
 			path = "黑板科目图";
 			sourceTree = "<group>";
 		};
+		D8BA93111D506748003A2592 /* ReviewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8BA93121D506766003A2592 /* ReviewModel.h */,
+				D8BA93131D506766003A2592 /* ReviewModel.m */,
+			);
+			path = ReviewModel;
+			sourceTree = "<group>";
+		};
 		D8FE72C51D1E4D3B00025F32 /* GameVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1488,8 +1543,9 @@
 		D8FE72F01D1E8A7F00025F32 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				D8CD9CA81D47E3F800625231 /* ZYUANSJ.TTF */,
-				D8CD9CA21D47DD8000625231 /* 创艺简中圆.TTF */,
+				D8BA930D1D504C73003A2592 /* JD中圆简.TTF */,
+				D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */,
+				D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */,
 				D80D51991D41CAC500922203 /* 雅痞-简.otf */,
 			);
 			path = Font;
@@ -1702,6 +1758,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C6FED41D4B2715001CC494 /* 经典细圆简.ttf in Resources */,
 				8C22990D1D199BF9002C0F80 /* 首页bg.png in Resources */,
 				8C22992A1D199BF9002C0F80 /* 向左@3x.png in Resources */,
 				8C0EF30D1D0417A700194D16 /* LaunchScreen.storyboard in Resources */,
@@ -1715,7 +1772,6 @@
 				8C2299221D199BF9002C0F80 /* left@3x.png in Resources */,
 				8C2299251D199BF9002C0F80 /* planeright@3x.png in Resources */,
 				8C22991D1D199BF9002C0F80 /* 登录@2x.png in Resources */,
-				D8CD9CA31D47DD8000625231 /* 创艺简中圆.TTF in Resources */,
 				D8A93A771D246D37007EDEC3 /* 科学知识记录@3x.png in Resources */,
 				8C2299061D199BF9002C0F80 /* 小区bg.png in Resources */,
 				D85318751D1BB47700BBA6D3 /* 黄向右@3x.png in Resources */,
@@ -1750,6 +1806,7 @@
 				D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */,
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
 				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
+				D8BA930E1D504C73003A2592 /* JD中圆简.TTF in Resources */,
 				D80D51C11D46BFCF00922203 /* 浅色中间@2x.png in Resources */,
 				D80D51A91D46BEE700922203 /* 复习界面选择2bg.png in Resources */,
 				8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */,
@@ -1778,6 +1835,7 @@
 				8C2299161D199BF9002C0F80 /* 向左@2x.png in Resources */,
 				D8A93A6E1D246BC7007EDEC3 /* 锁.png in Resources */,
 				8C15F16F1D1FC55A0094350C /* world_planeleft_btn.png in Resources */,
+				D893887B1D4EF4210055AB1A /* back@2x.png in Resources */,
 				D8A93A621D2433B3007EDEC3 /* 确认修改@2x.png in Resources */,
 				8C22991B1D199BF9002C0F80 /* 注册@2x.png in Resources */,
 				D80D51C41D46BFCF00922203 /* 深色中间@3x.png in Resources */,
@@ -1796,6 +1854,7 @@
 				8C2298881D19969A002C0F80 /* home_map_bg@2x.png in Resources */,
 				D8A93A851D246D42007EDEC3 /* 数学记录@2x.png in Resources */,
 				D80D51BE1D46BFCF00922203 /* 最右边@3x.png in Resources */,
+				D893887D1D4EF42B0055AB1A /* back@3x.png in Resources */,
 				8C2299011D199BF9002C0F80 /* 地图图标4bg.png in Resources */,
 				D8A93A791D246D37007EDEC3 /* 数学记录@3x.png in Resources */,
 				D8A93A641D2441DA007EDEC3 /* 浅色音量条@2x.png in Resources */,
@@ -1845,7 +1904,7 @@
 				8C22990F1D199BF9002C0F80 /* planedown@2x.png in Resources */,
 				D85317D91D1A6E1E00BBA6D3 /* 设置@2x.png in Resources */,
 				8C15F1701D1FC55A0094350C /* world_planeleft_btn@2x.png in Resources */,
-				D8CD9CA91D47E3F800625231 /* ZYUANSJ.TTF in Resources */,
+				D8BA930C1D5042AF003A2592 /* 经典中圆简.ttf in Resources */,
 				8C15F1711D1FC55A0094350C /* world_planeright_btn.png in Resources */,
 				D85317CE1D1A6E1300BBA6D3 /* 主页@3x.png in Resources */,
 				8C22986B1D198C80002C0F80 /* root_bg@2x.png in Resources */,
@@ -1906,6 +1965,7 @@
 				D8FE906E1D3F0FDD00C29CAF /* IQTextView.m in Sources */,
 				D8FE906C1D3F0FDD00C29CAF /* IQKeyboardReturnKeyHandler.m in Sources */,
 				8C1DDA361D1C1FE3005D1F24 /* UIRefreshControl+AFNetworking.m in Sources */,
+				D89388851D4EF83D0055AB1A /* FGGReachability.m in Sources */,
 				D8FE90691D3F0FDD00C29CAF /* IQUIViewController+Additions.m in Sources */,
 				8C2298AE1D199B70002C0F80 /* FigureViewController.m in Sources */,
 				8C0EF3021D0417A700194D16 /* AppDelegate.m in Sources */,
@@ -1947,6 +2007,7 @@
 				D8FE73071D1ED80F00025F32 /* GameModel.m in Sources */,
 				D80BFC781D1CE85C00830B55 /* RegisterViewController.m in Sources */,
 				8C1DDA2A1D1C1FE3005D1F24 /* UIImage+MultiFormat.m in Sources */,
+				D89388861D4EF83D0055AB1A /* Reachability.m in Sources */,
 				8C2298B71D199B70002C0F80 /* ScreenshotViewController.m in Sources */,
 				8C0EF3B01D041FB200194D16 /* RootLeftView.m in Sources */,
 				8C1DDA371D1C1FE3005D1F24 /* UIWebView+AFNetworking.m in Sources */,
@@ -1956,6 +2017,7 @@
 				8C1DDA231D1C1FE3005D1F24 /* SDWebImageDecoder.m in Sources */,
 				D8FE72EE1D1E770400025F32 /* UUChartLabel.m in Sources */,
 				D85317BE1D19E0FA00BBA6D3 /* SupermarketViewController.m in Sources */,
+				D8BA93141D506766003A2592 /* ReviewModel.m in Sources */,
 				D8FE90661D3F0FDD00C29CAF /* IQNSArray+Sort.m in Sources */,
 				D80D51A11D41D47400922203 /* LBUserDefaults.m in Sources */,
 				8C1DDA331D1C1FE3005D1F24 /* UIButton+AFNetworking.m in Sources */,
@@ -2048,8 +2110,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2094,8 +2156,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2120,8 +2182,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2137,8 +2199,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Jiapeng Yinglian Technology Co., Ltd. (NN7B8X2LU6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AmericanSantiago/PrefixHeader.pch";
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

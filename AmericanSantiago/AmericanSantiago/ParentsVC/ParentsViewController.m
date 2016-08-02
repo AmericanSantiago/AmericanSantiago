@@ -82,6 +82,13 @@
     _parentsModel = [[ParentsModel alloc] init];
     [_parentsModel addObserver:self forKeyPath:@"learningStatisticsData" options:NSKeyValueObservingOptionNew context:nil];
     
+    
+    FGGNetWorkStatus status=[FGGReachability networkStatus];
+    if (status == FGGNetWorkStatusNotReachable) {
+        [AppDelegate showHintLabelWithMessage:@"网络连接错误，请检查网络！"];
+        return;
+    }
+    
     NSDictionary *userDic = [LBUserDefaults getUserDic];
     [_parentsModel getLearningStatisticsWithUsername:userDic[@"nickname"]];
     
@@ -157,6 +164,7 @@
 //        [label sizeToFit];
         label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(27)];
         label.backgroundColor = [UIColor clearColor];
+//        label.font = [UIFont fontWithName:@"PingFang HK" size:FLEXIBLE_NUM(27)];
         label.textColor = [UIColor colorWithRed:208/255.0 green:168/255.0 blue:72/255.0 alpha:1];
         [self.view addSubview:label];
         label;

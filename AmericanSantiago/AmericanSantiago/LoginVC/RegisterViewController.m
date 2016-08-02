@@ -175,8 +175,9 @@
         button;
     });
     
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(34), FLEXIBLE_NUM(34), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(146), FLEXIBLE_NUM(115), FLEXIBLE_NUM(70), FLEXIBLE_NUM(70))];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateHighlighted];
     [backButton addTarget:self action:@selector(backButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
     

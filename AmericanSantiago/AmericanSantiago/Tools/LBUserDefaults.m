@@ -9,8 +9,11 @@
 #import "LBUserDefaults.h"
 
 @implementation LBUserDefaults
+
 #pragma mark - 用户信息缓存
+
 static NSString *loginInfoSaveKey = @"loginInfo";
+
 + (void)setUserDic:(NSValue *)userDic
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
@@ -24,6 +27,7 @@ static NSString *loginInfoSaveKey = @"loginInfo";
     [userdefaults synchronize];
 }
 
+#pragma mark -- 取出用户信息
 +(NSDictionary *)getUserDic
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];

@@ -115,7 +115,7 @@
 #pragma mark -- buttonClick
 - (void) reviewButtonClick: (UIButton *) sender{
     ReviewViewController * reviewVC = [[ReviewViewController alloc] init];
-    [self.translationController pushViewController:reviewVC];
+    [self.translationController presentViewController:reviewVC animated:YES completion:nil];
 }
 
 - (void) libraryButtonClick: (UIButton *) sender

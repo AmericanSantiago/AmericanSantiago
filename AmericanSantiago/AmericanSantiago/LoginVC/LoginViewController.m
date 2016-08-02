@@ -91,6 +91,9 @@
     [_loginModel addObserver:self forKeyPath:@"registerData" options:NSKeyValueObservingOptionNew context:nil];
     [_loginModel addObserver:self forKeyPath:@"loginData" options:NSKeyValueObservingOptionNew context:nil];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updataUserName:) name:@"updataUserName" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updataPassword:) name:@"updataPassword" object:nil];
 }
 
 #pragma mark - 视图初始化
@@ -123,7 +126,11 @@
     _userNameTextField = ({
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
-        textField.text = [NSString stringWithFormat:@"%@",userDic[@"username"] ];
+        
+        if (userDic) {
+            textField.text = [NSString stringWithFormat:@"%@",userDic[@"username"] ];
+        }
+        
 //        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"loginInfo"] valueForKey:@"username"];
 //        textField.text = [[[NSUserDefaults standardUserDefaults] valueForKey:@"userInfo"] valueForKey:@"username"];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
@@ -136,7 +143,9 @@
         UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(480), FLEXIBLE_NUM(155 + 120), FLEXIBLE_NUM(220), FLEXIBLE_NUM(50))];
 //        textField.backgroundColor = [UIColor yellowColor];
 //        textField.text = [NSString stringWithFormat:@"%@",userDic[@"password"] ];
-        textField.text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"password"]];
+        if (userDic) {
+            textField.text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"password"]];
+        }
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
         textField.textAlignment = NSTextAlignmentCenter;
@@ -176,8 +185,18 @@
 - (void) loginButtonClick: (UIButton *) sender
 {
     
+    if ([_userNameTextField.text length] == 0 || [_passwdTextField.text length] == 0) {
+        [AppDelegate showHintLabelWithMessage:@"用户名或密码不能为空！"];
+        return;
+    }
+    
+    //进行网络判断
+    FGGNetWorkStatus status=[FGGReachability networkStatus];
+    if (status == FGGNetWorkStatusNotReachable) {
+        [AppDelegate showHintLabelWithMessage:@"网络连接错误，请检查网络！"];
+        return;
+    }
     [_loginModel loginWithUsername:_userNameTextField.text Password:_passwdTextField.text];
-
     
 }
 
@@ -201,6 +220,19 @@
     
     
 }
+
+#pragma mark -- NSNotification
+- (void) updataUserName:(NSNotification *)notifi
+{
+    _userNameTextField.text = notifi.object;
+    
+}
+
+- (void) updataPassword:(NSNotification *)notifi
+{
+    _passwdTextField.text = notifi.object;
+}
+
 
 #pragma mark - 自定义方法
 
