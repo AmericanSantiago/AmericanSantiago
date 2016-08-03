@@ -100,7 +100,18 @@
 #pragma  mark -- buttonClick
 - (void) reviewButtonClick: (UIButton *) sender{
     ReviewViewController * reviewVC = [[ReviewViewController alloc] init];
+//    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:reviewVC];
+//    [WINDOW.rootViewController presentViewController:nav animated:YES completion:^{
+//        WINDOW.rootViewController = nav;
+//    }];
     [self.translationController presentViewController:reviewVC animated:YES completion:nil];
+//    [self.navigationController pushViewController:reviewVC animated:YES];
+    
+//    LoginViewController * loginVC = [[LoginViewController alloc] init];
+//    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//    [WINDOW.rootViewController presentViewController:nav animated:YES completion:^{
+//        WINDOW.rootViewController = nav;
+    
 }
 
 - (void) puzzleButtonClick: (UIButton *) sender

@@ -244,6 +244,8 @@
 		D8BA930C1D5042AF003A2592 /* 经典中圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */; };
 		D8BA930E1D504C73003A2592 /* JD中圆简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930D1D504C73003A2592 /* JD中圆简.TTF */; };
 		D8BA93141D506766003A2592 /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BA93131D506766003A2592 /* ReviewModel.m */; };
+		D8BA93171D509A71003A2592 /* 六边形@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8BA93151D509A71003A2592 /* 六边形@2x.png */; };
+		D8BA93181D509A71003A2592 /* 六边形@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8BA93161D509A71003A2592 /* 六边形@3x.png */; };
 		D8C6FED41D4B2715001CC494 /* 经典细圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */; };
 		D8CD9CAB1D483B7600625231 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CAA1D483B7600625231 /* back.png */; };
 		D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41A1D20BF1A006CE629 /* boy1.png */; };
@@ -618,6 +620,8 @@
 		D8BA930D1D504C73003A2592 /* JD中圆简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JD中圆简.TTF"; sourceTree = "<group>"; };
 		D8BA93121D506766003A2592 /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
 		D8BA93131D506766003A2592 /* ReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewModel.m; sourceTree = "<group>"; };
+		D8BA93151D509A71003A2592 /* 六边形@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "六边形@2x.png"; sourceTree = "<group>"; };
+		D8BA93161D509A71003A2592 /* 六边形@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "六边形@3x.png"; sourceTree = "<group>"; };
 		D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "经典细圆简.ttf"; sourceTree = "<group>"; };
 		D8CD9CAA1D483B7600625231 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		D8D8A41A1D20BF1A006CE629 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
@@ -1313,6 +1317,8 @@
 		D80D51AA1D46BFCF00922203 /* 复习图 */ = {
 			isa = PBXGroup;
 			children = (
+				D8BA93151D509A71003A2592 /* 六边形@2x.png */,
+				D8BA93161D509A71003A2592 /* 六边形@3x.png */,
 				D8FAFFDD1D4A5D98009B6F71 /* 叉.png */,
 				D80D51AB1D46BFCF00922203 /* 场景@2x.png */,
 				D80D51AC1D46BFCF00922203 /* 场景@3x.png */,
@@ -1812,6 +1818,7 @@
 				8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */,
 				D8A93A3D1D24006A007EDEC3 /* 游乐场bg.png in Resources */,
 				D8A93A551D240535007EDEC3 /* 电影院屏幕bg.png in Resources */,
+				D8BA93171D509A71003A2592 /* 六边形@2x.png in Resources */,
 				D8D8A4211D218C61006CE629 /* girl.png in Resources */,
 				D8FE90731D3F0FDD00C29CAF /* IQKeyboardManager.bundle in Resources */,
 				8C2299261D199BF9002C0F80 /* right@3x.png in Resources */,
@@ -1885,6 +1892,7 @@
 				D8D8A4201D218C61006CE629 /* boy.png in Resources */,
 				D80D51BD1D46BFCF00922203 /* 最右边@2x.png in Resources */,
 				D8A93A761D246D37007EDEC3 /* 安全知识记录@3x.png in Resources */,
+				D8BA93181D509A71003A2592 /* 六边形@3x.png in Resources */,
 				D80D51C01D46BFCF00922203 /* 最左边@3x.png in Resources */,
 				D8A93A861D246D42007EDEC3 /* 英语记录@2x.png in Resources */,
 				D8A93A841D246D42007EDEC3 /* 社会知识记录@2x.png in Resources */,

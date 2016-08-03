@@ -75,8 +75,14 @@
 #pragma mark - 自定义
 - (void)pushViewController:(BaseViewController *)viewController
 {
+    
     [self.viewControllers addObject:self.currentViewController];
     self.currentViewController = viewController;
+    
+//    [UIView animateWithDuration:0.3 animations:^{
+//
+//    }];
+    
 }
 
 - (void)popViewController

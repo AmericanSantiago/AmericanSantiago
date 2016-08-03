@@ -62,6 +62,17 @@
     [self initializeUserInterface];
 }
 
+#pragma mark -- observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    //    if ([keyPath isEqualToString:@"allUnlockedGamesData"]) {
+    //        [self allUnlockedGamesDataParse];
+    //    }
+    if ([keyPath isEqualToString:@"nextConceptData"]) {
+        [self nextConceptDataParse];
+    }
+}
+
 - (void)initializeDataSource
 {
     //2:World    3:
@@ -151,19 +162,8 @@
     }
    
     
-    [self reloadConceptGamesData:nil];                      //有bug   
+    [self reloadConceptGamesData:nil];                      //有bug （相当于直接请求数据GetNextConceptData）
 //    [self getNextConceptData:nil];
-}
-
-#pragma mark -- observe
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-//    if ([keyPath isEqualToString:@"allUnlockedGamesData"]) {
-//        [self allUnlockedGamesDataParse];
-//    }
-    if ([keyPath isEqualToString:@"nextConceptData"]) {
-        [self nextConceptDataParse];
-    }
 }
 
 - (void)whenClickImage: (UITapGestureRecognizer *)gesture
@@ -253,7 +253,7 @@
 //}
 
 #pragma mark - 自定义
-//刷新解锁情况
+//刷新解锁情况(少一层判断，判断是否为进入APP之后没有进行任何游戏，没有进行过游戏则全部的场景打开，不上锁)
 - (void)refreshLockList
 {
     NSArray *sceneArray = @[@"school",@"world",@"playground",@"city",@"home"];
@@ -262,12 +262,20 @@
         NSArray *sceneGamesArray = self.conceptGamesArray[i];
         NSArray *newSceneGamesArray = [LBUserDefaults getNewSceneGanmesArrayWithSceneName:sceneArray[i]];
         BOOL isLock = !(sceneGamesArray.count > 0);
-        if (i==0) {
+        if (i==0) {//school场景永远不会被锁住
             isLock = NO;
         }
         if (![LBUserDefaults getCurrentCalss]) {
             isLock = NO;
         }
+        
+        //判断没玩游戏时候是否打开场景(刚进入APP，没玩游戏的时候，全部场景打开)
+        if (i >= 1) {
+            if (sceneGamesArray.count == 0) {
+                isLock = NO;
+            }
+        }
+        
 //#warning -- test word 暂时设置为no
 //        isLock = NO;
         [self addNumWithButtonTag:BUTTON_TAG+10+i Number:newSceneGamesArray.count isLock:isLock];

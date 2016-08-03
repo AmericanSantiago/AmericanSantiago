@@ -62,6 +62,8 @@
             [WINDOW.rootViewController presentViewController:nav animated:YES completion:^{
                 WINDOW.rootViewController = nav;
             }];
+            
+            
         }
         
         

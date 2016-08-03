@@ -67,6 +67,10 @@ static NSString *currentClassNameKey = @"currentCalss";
     NSDictionary *userDic = [self getUserDic];
     NSString *key = [NSString stringWithFormat:@"%@_%@",userDic[@"username"],currentConceptGamesKey];
     return key;
+    
+    NSString * currentCouceptGamesKey1 = @"currentConceptGamesKey";
+    NSDictionary * userDic1 = [self getUserDic];
+    
 }
 
 + (void)saveCurrentConceptGamesArray:(NSArray *)currentConceptGamesArray
@@ -140,7 +144,7 @@ static NSString *currentClassNameKey = @"currentCalss";
 //增加新的场景游戏，（已有的不会增加）
 + (void)addSaveNewSceneGamesArray:(NSArray *)newSceneGamesArray sceneName:(NSString *)sceneName
 {
-    NSArray *lastArray = [self getNewSceneGanmesArrayWithSceneName:sceneName];
+    NSArray * lastArray = [self getNewSceneGanmesArrayWithSceneName:sceneName];
     NSMutableArray *tempArray = [NSMutableArray array];
     if (lastArray) {
         tempArray = [NSMutableArray arrayWithArray:lastArray];

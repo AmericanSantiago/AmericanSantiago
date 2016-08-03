@@ -399,6 +399,8 @@
     //        reviewImageView.center = CGPointMake(MAINSCRREN_W/2, MAINSCRREN_H/2);
     [reviewImageView setImage:[UIImage imageNamed:@"复习界面选择数学"]];
 //    reviewImageView.alpha = 0;
+//    reviewImageView.layer.cornerRadius = FLEXIBLE_NUM(10);
+//    reviewImageView.backgroundColor = [UIColor ]
     reviewImageView.tag = 10000;
     reviewImageView.userInteractionEnabled = NO;
     [view2 addSubview:reviewImageView];
@@ -410,11 +412,7 @@
         reviewImageView.alpha = 1;
     }];
     
-    
 
-    
-    
-    
 }
 
 - (void)dissmissButtonClick: (UIButton *) sender{
