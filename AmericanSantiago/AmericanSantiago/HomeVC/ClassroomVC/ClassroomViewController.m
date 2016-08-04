@@ -350,11 +350,10 @@
             gameVC.subjectId = self.currentSubjectId;
             [self.translationController pushViewController:gameVC];
         }else{
-            GameViewController * gameVC = [[GameViewController alloc] init];
-            gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
-            gameVC.subjectId = @"Math";
-            [self.translationController pushViewController:gameVC];
-
+//            GameViewController * gameVC = [[GameViewController alloc] init];
+//            gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
+//            gameVC.subjectId = @"Math";
+//            [self.translationController pushViewController:gameVC];
         }
     }
     

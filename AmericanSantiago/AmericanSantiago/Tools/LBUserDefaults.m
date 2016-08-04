@@ -67,10 +67,6 @@ static NSString *currentClassNameKey = @"currentCalss";
     NSDictionary *userDic = [self getUserDic];
     NSString *key = [NSString stringWithFormat:@"%@_%@",userDic[@"username"],currentConceptGamesKey];
     return key;
-    
-    NSString * currentCouceptGamesKey1 = @"currentConceptGamesKey";
-    NSDictionary * userDic1 = [self getUserDic];
-    
 }
 
 + (void)saveCurrentConceptGamesArray:(NSArray *)currentConceptGamesArray

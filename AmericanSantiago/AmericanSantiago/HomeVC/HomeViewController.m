@@ -135,7 +135,6 @@
     CGFloat maxY = BASESCRREN_H - (BASESCRREN_H-CGRectGetMaxY(_bigImageView.frame))/2 - height/2;
     
     for (int i = 0 ; i < 5; i ++) {
-        
         UIImageView *smallImageView = [[UIImageView alloc] initWithFrame:CGRectMake(maxX+offset,maxY,width,height)];
         [smallImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",picArray[i]]]];
         smallImageView.layer.cornerRadius = FLEXIBLE_NUM(8);
@@ -163,7 +162,8 @@
    
     
     [self reloadConceptGamesData:nil];                      //有bug （相当于直接请求数据GetNextConceptData）
-//    [self getNextConceptData:nil];
+    
+    
 }
 
 - (void)whenClickImage: (UITapGestureRecognizer *)gesture
@@ -257,6 +257,7 @@
 - (void)refreshLockList
 {
     NSArray *sceneArray = @[@"school",@"world",@"playground",@"city",@"home"];
+    
     for (NSInteger i = 0; i < self.conceptGamesArray.count; i++) {
         //        UIButton *lockBtn = (UIButton *)[self.view viewWithTag:BUTTON_TAG+i];
         NSArray *sceneGamesArray = self.conceptGamesArray[i];
@@ -269,16 +270,10 @@
             isLock = NO;
         }
         
-        //判断没玩游戏时候是否打开场景(刚进入APP，没玩游戏的时候，全部场景打开)
-        if (i >= 1) {
-            if (sceneGamesArray.count == 0) {
-                isLock = NO;
-            }
-        }
-        
-//#warning -- test word 暂时设置为no
+//#warning -- test word 暂时设置为no（场景全部打开）
 //        isLock = NO;
         [self addNumWithButtonTag:BUTTON_TAG+10+i Number:newSceneGamesArray.count isLock:isLock];
+        
     }
 }
 
