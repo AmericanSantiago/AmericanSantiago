@@ -63,14 +63,25 @@
                 WINDOW.rootViewController = rootViewController;
                 [AppDelegate showHintLabelWithMessage:@"登录成功~"];
                 
-                
-                
 //                [[NSUserDefaults standardUserDefaults] setObject:_passwdTextField.text forKey:@"password"];
                 
                 //发通知请求数据
 //                [[NSNotificationCenter defaultCenter] postNotificationName:@"firstGetAllUnlockedGames" object:nil];
                 
                 //            [WINDOW.rootViewController dismissViewControllerAnimated:YES completion:^{
+                
+                
+                //判断是否为新用户，1为新用户，0为老用户
+                if ([[_loginModel.loginData valueForKey:@"isNewUser"] integerValue] == 1) {
+                    NSLog(@"新用户！");
+                    
+                }else{
+                    NSLog(@"老用户!");
+                    
+                }
+                
+                
+                
             }];
         }else{
             [AppDelegate showHintLabelWithMessage:@"登录失败~"];
@@ -91,6 +102,8 @@
     [_loginModel addObserver:self forKeyPath:@"registerData" options:NSKeyValueObservingOptionNew context:nil];
     [_loginModel addObserver:self forKeyPath:@"loginData" options:NSKeyValueObservingOptionNew context:nil];
     
+    //刷新首页数字
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updataUserName:) name:@"updataUserName" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updataPassword:) name:@"updataPassword" object:nil];
@@ -224,13 +237,13 @@
 #pragma mark -- NSNotification
 - (void) updataUserName:(NSNotification *)notifi
 {
-    _userNameTextField.text = notifi.object;
+    _userNameTextField.text = [NSString stringWithFormat:@"%@",notifi.object];
     
 }
 
 - (void) updataPassword:(NSNotification *)notifi
 {
-    _passwdTextField.text = notifi.object;
+    _passwdTextField.text = [NSString stringWithFormat:@"%@",notifi.object];
 }
 
 

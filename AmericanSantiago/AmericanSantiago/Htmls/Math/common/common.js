@@ -234,10 +234,10 @@
             this.target = target;
         },
         pauseAudio: function () {
-            if(this.player && !this._isPlaying) {
+         //   if(this.player && !this._isPlaying) {
                 this.player.pause();
                 this._isPlaying = false;
-            }
+           // }
         },
         resumeAudio: function () {
             if(!this.currentAudioUrl) return;
@@ -249,8 +249,9 @@
             this.player.addEventListener("error",this._playErrorHandler,false);
 
             cc.eventManager.addCustomListener(cc.game.EVENT_HIDE, function () {
+                                              cc.log("come in event HIDE!!!");
                 cc.audioPlayer.pauseAudio();
-                if(cc.bgm) cc.bgm.pauseAudio();
+                cc.bgm.pauseAudio();
             });
             cc.eventManager.addCustomListener(cc.game.EVENT_SHOW, function () {
                 cc.audioPlayer.resumeAudio();

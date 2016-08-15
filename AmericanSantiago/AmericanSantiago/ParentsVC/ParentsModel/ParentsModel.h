@@ -13,6 +13,6 @@
 @property (nonatomic ,strong, readonly) id                        learningStatisticsData;
 
 
-- (void) getLearningStatisticsWithUsername:(NSString *) username;
+- (void) getLearningStatisticsWithUsername:(NSString *) username rangeType:(NSNumber *) rangeType;
 
 @end

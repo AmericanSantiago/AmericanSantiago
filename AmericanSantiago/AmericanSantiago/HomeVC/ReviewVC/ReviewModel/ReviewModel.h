@@ -10,4 +10,9 @@
 
 @interface ReviewModel : NSObject
 
+@property (nonatomic, strong, readonly) id                    reviewGameData;
+
+
+- (void) getReviewGamesWithUsername: (NSString *) username subjectId:(NSString *) subjectId sceneType:(NSString *)sceneType;
+
 @end

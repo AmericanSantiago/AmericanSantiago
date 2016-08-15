@@ -242,12 +242,13 @@
 		D8A93A861D246D42007EDEC3 /* 英语记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */; };
 		D8A93A871D246D42007EDEC3 /* 语文记录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */; };
 		D8BA930C1D5042AF003A2592 /* 经典中圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */; };
-		D8BA930E1D504C73003A2592 /* JD中圆简.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D8BA930D1D504C73003A2592 /* JD中圆简.TTF */; };
 		D8BA93141D506766003A2592 /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BA93131D506766003A2592 /* ReviewModel.m */; };
 		D8BA93171D509A71003A2592 /* 六边形@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8BA93151D509A71003A2592 /* 六边形@2x.png */; };
 		D8BA93181D509A71003A2592 /* 六边形@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8BA93161D509A71003A2592 /* 六边形@3x.png */; };
 		D8C6FED41D4B2715001CC494 /* 经典细圆简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */; };
 		D8CD9CAB1D483B7600625231 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8CD9CAA1D483B7600625231 /* back.png */; };
+		D8D373A71D543D83002DB3E0 /* 经典中圆简.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */; };
+		D8D373A91D544291002DB3E0 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = D8D373A81D544291002DB3E0 /* TsukushiAMaruGothic.ttc */; };
 		D8D8A41C1D20BF1A006CE629 /* boy1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41A1D20BF1A006CE629 /* boy1.png */; };
 		D8D8A41D1D20BF1A006CE629 /* girl1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41B1D20BF1A006CE629 /* girl1.png */; };
 		D8D8A4201D218C61006CE629 /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D8A41E1D218C61006CE629 /* boy.png */; };
@@ -279,6 +280,7 @@
 		D8FE90711D3F0FDD00C29CAF /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE90601D3F0FDD00C29CAF /* IQToolbar.m */; };
 		D8FE90721D3F0FDD00C29CAF /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE90621D3F0FDD00C29CAF /* IQUIView+IQKeyboardToolbar.m */; };
 		D8FE90731D3F0FDD00C29CAF /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8FE90651D3F0FDD00C29CAF /* IQKeyboardManager.bundle */; };
+		D8FFF1711D5DB298002EDD31 /* HexagonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFF1701D5DB298002EDD31 /* HexagonButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -617,13 +619,13 @@
 		D8A93A801D246D42007EDEC3 /* 英语记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "英语记录@2x.png"; sourceTree = "<group>"; };
 		D8A93A811D246D42007EDEC3 /* 语文记录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "语文记录@2x.png"; sourceTree = "<group>"; };
 		D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "经典中圆简.ttf"; sourceTree = "<group>"; };
-		D8BA930D1D504C73003A2592 /* JD中圆简.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JD中圆简.TTF"; sourceTree = "<group>"; };
 		D8BA93121D506766003A2592 /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
 		D8BA93131D506766003A2592 /* ReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewModel.m; sourceTree = "<group>"; };
 		D8BA93151D509A71003A2592 /* 六边形@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "六边形@2x.png"; sourceTree = "<group>"; };
 		D8BA93161D509A71003A2592 /* 六边形@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "六边形@3x.png"; sourceTree = "<group>"; };
 		D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "经典细圆简.ttf"; sourceTree = "<group>"; };
 		D8CD9CAA1D483B7600625231 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		D8D373A81D544291002DB3E0 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
 		D8D8A41A1D20BF1A006CE629 /* boy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy1.png; sourceTree = "<group>"; };
 		D8D8A41B1D20BF1A006CE629 /* girl1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl1.png; sourceTree = "<group>"; };
 		D8D8A41E1D218C61006CE629 /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
@@ -680,6 +682,8 @@
 		D8FE90621D3F0FDD00C29CAF /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		D8FE90631D3F0FDD00C29CAF /* KeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardManager.h; sourceTree = "<group>"; };
 		D8FE90651D3F0FDD00C29CAF /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		D8FFF16F1D5DB298002EDD31 /* HexagonButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexagonButton.h; sourceTree = "<group>"; };
+		D8FFF1701D5DB298002EDD31 /* HexagonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexagonButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -809,10 +813,10 @@
 				8C0EF3001D0417A700194D16 /* AppDelegate.h */,
 				8C0EF3011D0417A700194D16 /* AppDelegate.m */,
 				8C1DDCB41D1CDC53005D1F24 /* Htmls */,
+				8C0EF3381D0418A400194D16 /* HighTech */,
 				D8FE72F01D1E8A7F00025F32 /* Font */,
 				8C0EF3CC1D043F4900194D16 /* Images */,
 				8C0EED231D183B80007ADAC4 /* Tools */,
-				8C0EF3381D0418A400194D16 /* HighTech */,
 				8C0EED111D183213007ADAC4 /* Category */,
 				8C0EED121D183232007ADAC4 /* CustomUI */,
 				8C0EF3301D0417F500194D16 /* BaseClass */,
@@ -883,6 +887,7 @@
 		8C0EF3381D0418A400194D16 /* HighTech */ = {
 			isa = PBXGroup;
 			children = (
+				D8FFF16B1D5DB15A002EDD31 /* HexagonButton */,
 				D893887E1D4EF83D0055AB1A /* 网络判断 */,
 				D8FE90411D3F0FDD00C29CAF /* IQKeyBoardManager */,
 				D8A93A581D2411D0007EDEC3 /* NewDatePicker */,
@@ -1549,7 +1554,7 @@
 		D8FE72F01D1E8A7F00025F32 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				D8BA930D1D504C73003A2592 /* JD中圆简.TTF */,
+				D8D373A81D544291002DB3E0 /* TsukushiAMaruGothic.ttc */,
 				D8C6FED31D4B2715001CC494 /* 经典细圆简.ttf */,
 				D8BA930B1D5042AF003A2592 /* 经典中圆简.ttf */,
 				D80D51991D41CAC500922203 /* 雅痞-简.otf */,
@@ -1660,6 +1665,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D8FFF16B1D5DB15A002EDD31 /* HexagonButton */ = {
+			isa = PBXGroup;
+			children = (
+				D8FFF16F1D5DB298002EDD31 /* HexagonButton.h */,
+				D8FFF1701D5DB298002EDD31 /* HexagonButton.m */,
+			);
+			path = HexagonButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1727,7 +1741,7 @@
 				TargetAttributes = {
 					8C0EF2F91D0417A700194D16 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = NN7B8X2LU6;
+						DevelopmentTeam = J9336QTRA9;
 					};
 					8C0EF3121D0417A800194D16 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1812,7 +1826,6 @@
 				D85317DA1D1A6E1E00BBA6D3 /* 主页@2x.png in Resources */,
 				8C2299151D199BF9002C0F80 /* 向右@2x.png in Resources */,
 				D80BFC5E1D1CCF9500830B55 /* 调节钮@2x.png in Resources */,
-				D8BA930E1D504C73003A2592 /* JD中圆简.TTF in Resources */,
 				D80D51C11D46BFCF00922203 /* 浅色中间@2x.png in Resources */,
 				D80D51A91D46BEE700922203 /* 复习界面选择2bg.png in Resources */,
 				8C15F1731D1FC55A0094350C /* world_planeup_btn.png in Resources */,
@@ -1849,6 +1862,7 @@
 				D85317D71D1A6E1E00BBA6D3 /* 截图@2x.png in Resources */,
 				D85318791D1BB48200BBA6D3 /* 黄向右@2x.png in Resources */,
 				D80BFC641D1CD0E000830B55 /* 屏幕快照 2016-06-24 上午10.21.39.png in Resources */,
+				D8D373A91D544291002DB3E0 /* TsukushiAMaruGothic.ttc in Resources */,
 				D8A93A471D2402BD007EDEC3 /* 宠物店bg.png in Resources */,
 				D8A93A3B1D24002E007EDEC3 /* 主界面3.png in Resources */,
 				D8A93A571D240671007EDEC3 /* 城市bg.png in Resources */,
@@ -1956,6 +1970,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D373A71D543D83002DB3E0 /* 经典中圆简.ttf in Sources */,
 				D80D519B1D41CAE900922203 /* 雅痞-简.otf in Sources */,
 				D80D51A71D46BE5F00922203 /* ReviewViewController.m in Sources */,
 				D8FE72EA1D1E770400025F32 /* UUBar.m in Sources */,
@@ -1975,6 +1990,7 @@
 				8C1DDA361D1C1FE3005D1F24 /* UIRefreshControl+AFNetworking.m in Sources */,
 				D89388851D4EF83D0055AB1A /* FGGReachability.m in Sources */,
 				D8FE90691D3F0FDD00C29CAF /* IQUIViewController+Additions.m in Sources */,
+				D8FFF1711D5DB298002EDD31 /* HexagonButton.m in Sources */,
 				8C2298AE1D199B70002C0F80 /* FigureViewController.m in Sources */,
 				8C0EF3021D0417A700194D16 /* AppDelegate.m in Sources */,
 				8C1DDA211D1C1FE3005D1F24 /* SDImageCache.m in Sources */,
@@ -2196,7 +2212,7 @@
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago;
+				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago0011;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -2213,7 +2229,7 @@
 				INFOPLIST_FILE = AmericanSantiago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago;
+				PRODUCT_BUNDLE_IDENTIFIER = AmericanSantiago0011;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;

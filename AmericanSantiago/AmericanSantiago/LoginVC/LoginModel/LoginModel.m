@@ -28,7 +28,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.loginData = resultDic;
-//            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
+            NSLog(@"HTTP Response Body  loginData == : %@", resultDic);
         }
     }];
     

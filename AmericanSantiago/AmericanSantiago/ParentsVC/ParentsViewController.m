@@ -64,6 +64,7 @@
             [_subjectNameArray addObject:[[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"subjects"]valueForKey:@"subjectName"]];
             _subjectLabel.text = [NSString stringWithFormat:@"%@",_subjectNameArray[0][0]];
             _numLabel.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"totalReward"]];
+            _detailTextView.text = [NSString stringWithFormat:@"%@",[[_parentsModel.learningStatisticsData valueForKey:@"data"] valueForKey:@"message"]];
         }else{
             [AppDelegate showHintLabelWithMessage:@"learningStatisticsData获取失败"];
         }
@@ -90,7 +91,7 @@
     }
     
     NSDictionary *userDic = [LBUserDefaults getUserDic];
-    [_parentsModel getLearningStatisticsWithUsername:userDic[@"nickname"]];
+    [_parentsModel getLearningStatisticsWithUsername:userDic[@"nickname"] rangeType:@1];
     
 }
 
@@ -160,7 +161,7 @@
     
     _detailTextView = ({
         UITextView * label = [[UITextView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(110), FLEXIBLE_NUM(160), FLEXIBLE_NUM(640), FLEXIBLE_NUM(170))];
-        label.text = @"At WWDC we made lots of major announcements. iOS 10 is our biggest release yet, with incredible features in Messages and an all-new design for Maps, Photos, and Apple Music. With macOS Sierra, Siri makes its debut on your desktop and Apple Pay comes to the web. The latest watchOS offers easier navigation and a big boost in performance. And the updated tvOS brings expanded Siri searches.";
+//        label.text = @"At WWDC we made lots of major announcements. iOS 10 is our biggest release yet, with incredible features in Messages and an all-new design for Maps, Photos, and Apple Music. With macOS Sierra, Siri makes its debut on your desktop and Apple Pay comes to the web. The latest watchOS offers easier navigation and a big boost in performance. And the updated tvOS brings expanded Siri searches.";
 //        [label sizeToFit];
         label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(27)];
         label.backgroundColor = [UIColor clearColor];

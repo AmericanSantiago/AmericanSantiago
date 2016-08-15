@@ -93,13 +93,10 @@ static NSString *loginInfoSaveKey = @"loginInfo";
     NSDictionary *userDic = [self getUserDic];
     NSString *key = [NSString stringWithFormat:@"%@_%@",userDic[@"username"],currentConceptGamesKey];
     return key;
-<<<<<<< HEAD
-=======
     
 //    NSString * currentCouceptGamesKey1 = @"currentConceptGamesKey";
 //    NSDictionary * userDic1 = [self getUserDic];
     
->>>>>>> origin/master
 }
 
 + (void)saveCurrentConceptGamesArray:(NSArray *)currentConceptGamesArray

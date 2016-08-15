@@ -26,7 +26,7 @@
 //@property (nonatomic, strong) UIWebView                     * webView;
 
 @property (nonatomic, strong) GameModel                       * gameModel;
-@property (strong, nonatomic) NSString *currentSubjectId;//当前选择的课程id;
+@property (strong, nonatomic) NSString *currentSubjectId;   //当前选择的课程id;
 
 
 @end
@@ -54,26 +54,7 @@
     if ([keyPath isEqualToString:@"nextConceptData"]) {
         [self nextConceptDataParse];
     }
-//    if ([keyPath isEqualToString:@"unlockedGamesData"]) {
-//        
-//        
-//        
-//    }
-//    
-//    if ([keyPath isEqualToString:@"gameNewData"]) {
-//        if ([[_gameModel.gameNewData valueForKey:@"errorCode"] integerValue] == 0) {
-////            UIAlertController  * alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"已解锁新游戏" preferredStyle:UIAlertControllerStyleAlert];
-////            UIAlertAction * sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-////                
-////                
-////            }];
-////            [alertController addAction:sureAction];
-////            [self presentViewController:alertController animated:YES completion:nil];
-//            
-////            [AppDelegate showHintLabelWithMessage:@"已解锁新游戏"];
-//            
-//        }
-//    }
+
 }
 
 #pragma mark -- initialize
@@ -100,7 +81,6 @@
     UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, MAINSCRREN_H)];
     [backgroundView setImage:[UIImage imageNamed:@"课堂bg.png"]];
     [self.view addSubview:backgroundView];
-    
     
     _englishButton = ({
         UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(530), FLEXIBLE_NUM(110), FLEXIBLE_NUM(80))];
@@ -157,57 +137,10 @@
         button.backgroundColor = [UIColor clearColor];
         [button setImage:[UIImage imageNamed:picArray[i]] forState:UIControlStateNormal];
         button.tag = 200 + i;
-//        if (i>_classroomGamesArray.count) {
-//            button.alpha = 0.1;
-//        }else{
-//            button.alpha = 0;
-//        }
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
     }
-    
-    
-//    //测试按钮
-//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(300), FLEXIBLE_NUM(150), FLEXIBLE_NUM(60), FLEXIBLE_NUM(60))];
-//    button.backgroundColor = [UIColor blackColor];
-//    [button setTitle:@"test" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(textButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-    
-    
-    
-    
-    
-}
-
-- (void) textButtonClick: (UIButton *)sender
-{
-    NSLog(@"textButton!");
-    
-//    NSDictionary *userDic = [LBUserDefaults getUserDic];
-//    [_homeModel getNextConceptWithUsername:userDic[@"username"] SubjectId:@"Math"];
-
-//    NSDictionary *userDic = [LBUserDefaults getUserDic];
-    NSString * urlString = @"/ConceptFinish";
-    NSDictionary* bodyObject = @{@"username":@"123",
-                                 @"subjectId":@"Math"};
-    
-    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
-//        if (complete) {
-//            complete(resultDic,errorString);
-//        }
-        if (!errorString) {
-//            self.conceptFinishData = resultDic;
-            NSLog(@"++++++++++resultDic = %@",resultDic);
-            //刷新首页的数字
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:@(1)];
-        }
-    }];
-
-    
-    
-    
     
     
 }
@@ -223,21 +156,6 @@
 {
     self.currentSubjectId = @"Math";
     [self getNextConceptDataWithSubjectId:@"Math"];
-    
-////    [_homeModel getGetUnlockedGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] SubjectId:@"Math" SceneType:@"classroom"];
-////    
-//    GameViewController * gameVC = [[GameViewController alloc] init];
-////    if (_classroomGamesArray) {
-////        gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray valueForKey:@"location"]];
-////    }else{
-//        gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
-//    gameVC.subjectId = @"Math";
-////    }
-//
-////    gameVC.urlString = [NSString stringWithFormat:@"%@",[_classroomGamesArray[0] valueForKey:@"location"]];
-////    gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
-////    NSLog(@"location = %@",gameVC.urlString);
-//    [self.translationController pushViewController:gameVC];    
 }
 - (void) englishButtonClick: (UIButton *) sender
 {
@@ -246,14 +164,6 @@
 }
 - (void) earthButtonClick: (UIButton *) sender
 {
-//    GameViewController * gameVC = [[GameViewController alloc] init];
-//    if (_classroomGamesArray.count > 2) {
-//        gameVC.urlString = [_classroomGamesArray[2] valueForKey:@"location"];
-//        [self.translationController pushViewController:gameVC];
-//    }else{
-//        [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
-//    }
-
     self.currentSubjectId = @"Earth";
     [self getNextConceptDataWithSubjectId:@"Earth"];
     
@@ -288,6 +198,8 @@
     }else{
         [AppDelegate showHintLabelWithMessage:@"此游戏未解锁"];
     }
+    
+    
 }
 
 
@@ -312,14 +224,12 @@
 - (void) getNewGamesNotifi:(NSNotification *)notifi
 {
     [_gameModel getNewGamesWithUsername:[[LBUserDefaults getUserDic] valueForKey:@"username"] subjectId:@"Math"];//获取新解锁游戏
-    
 }
 
 
 #pragma mark - 数据处理
 - (void)nextConceptDataParse
 {
-    
     if ([_homeModel.nextConceptData[@"errorCode"] integerValue]) {
         [AppDelegate showHintLabelWithMessage:@"获取教学知识点游戏失败~"];
         return;
@@ -350,17 +260,19 @@
             gameVC.subjectId = self.currentSubjectId;
             [self.translationController pushViewController:gameVC];
         }else{
-//            GameViewController * gameVC = [[GameViewController alloc] init];
-//            gameVC.urlString = @"Math/GE_STSO_0dot2/school_classroom_13_60_01/13_I.1_COMPARE";
-//            gameVC.subjectId = @"Math";
-//            [self.translationController pushViewController:gameVC];
+            GameViewController * gameVC = [[GameViewController alloc] init];
+            gameVC.urlString = @"Math/ME_ME_0dot2/school_classroom_13_19_04/13_I.1_COMPARE";
+            gameVC.subjectId = @"Math";
+            [self.translationController pushViewController:gameVC];
         }
     }
+//    /Users/Mervin/Desktop/合源美智（github）/AmericanSantiago/AmericanSantiago/AmericanSantiago/Htmls/Math/ME_0dot2/school_classroom_13_19_04/13_I.1_COMPARE
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadConceptGamesData" object:nil];
     
 }
 
+//添加复习进度界面
 - (void) creatView
 {
     UIView * view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
@@ -368,7 +280,6 @@
     view1.tag = 10003;
     [self.view addSubview:view1];
     
-
     //  创建需要的毛玻璃特效类型
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     //  毛玻璃view 视图
@@ -380,14 +291,12 @@
         effectView.alpha = 0;
     [view1 addSubview:effectView];
     
-    
     UIButton * dissmissButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BASESCRREN_W, BASESCRREN_H)];
 //    dissmissButton.alpha = 0;
     [dissmissButton addTarget:self action:@selector(dissmissButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     dissmissButton.backgroundColor = [UIColor clearColor];
     dissmissButton.tag = 10001;
     [view1 addSubview:dissmissButton];
-    
     
     UIView * view2 = [[UIView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(130), FLEXIBLE_NUM(100), FLEXIBLE_NUM(760), FLEXIBLE_NUM(550))];
     view2.backgroundColor = [UIColor clearColor];

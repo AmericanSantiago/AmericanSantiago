@@ -91,6 +91,12 @@
         button;
     });
     
+    _storeButton = ({
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(900), FLEXIBLE_NUM(100), FLEXIBLE_NUM(170), FLEXIBLE_NUM(450))];
+        
+        [self.view addSubview:button];
+        button;
+    });
     
 //    _backBuutton = ({
 //        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(30), FLEXIBLE_NUM(35), FLEXIBLE_NUM(40), FLEXIBLE_NUM(40))];
@@ -106,8 +112,6 @@
     [reviewButton setBackgroundImage:[UIImage imageNamed:@"复习@3x"] forState:UIControlStateNormal];
     [reviewButton addTarget:self action:@selector(reviewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:reviewButton];
-    
-    
     
     
 }

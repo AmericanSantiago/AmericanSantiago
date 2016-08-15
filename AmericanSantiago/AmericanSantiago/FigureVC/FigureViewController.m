@@ -96,7 +96,7 @@
     view1.layer.borderColor = [[UIColor orangeColor] CGColor];
     [self.view addSubview:view1];
     
-//    //遍历字体名称
+    //遍历字体名称
 //    for(NSString *fontfamilyname in [UIFont familyNames])
 //    {
 //        NSLog(@"family:'%@'",fontfamilyname);
@@ -107,7 +107,8 @@
 //        NSLog(@"-------------");
 //    }
     
-    NSArray * titleArray = [[NSArray alloc] initWithObjects:@"全名",@"昵称",@"生日",@"年龄",@"性别" ,nil];
+    
+    NSArray * titleArray = [[NSArray alloc] initWithObjects:@"用户名",@"昵  称",@"生  日",@"年  龄",@"性  别" ,nil];
     for (int i = 0; i < 5; i ++) {
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(40), FLEXIBLE_NUM(40) + FLEXIBLE_NUM(90) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
         label.text = titleArray[i];
@@ -115,41 +116,42 @@
         label.textColor = [UIColor orangeColor];
 //        label.font = [UIFont systemFontOfSize:FLEXIBLE_NUM(30)];
 //        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(30)];
-        label.font = [UIFont fontWithName:@"Lao Sangam MN" size:FLEXIBLE_NUM(30)];
+        label.font = [UIFont fontWithName:@"经典细圆简" size:FLEXIBLE_NUM(30)];
+//        label.font = [UIFont fontWithName:@"Tsukushi A Round Gothic" size:FLEXIBLE_NUM(30)];
         [view1 addSubview:label];
     }
     
     
     _nameTextField = ({
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(40), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(155), FLEXIBLE_NUM(40), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
-        textField.text = [userDic valueForKey:@"username"];
+        textField.text = [NSString stringWithFormat:@"%@",[userDic valueForKey:@"username"]];
         [view1 addSubview:textField];
         textField;
     });
     
     _nicknameTextField = ({
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(130), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(155), FLEXIBLE_NUM(130), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.text = [userDic valueForKey:@"nickname"];
+        textField.text = [NSString stringWithFormat:@"%@",[userDic valueForKey:@"nickname"]];
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
         textField;
     });
     
     _birthdayTextField = ({
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(220), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(155), FLEXIBLE_NUM(220), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.textAlignment = NSTextAlignmentCenter;
-        textField.text = [userDic valueForKey:@"birthday"];
+        textField.text = [NSString stringWithFormat:@"%@",[userDic valueForKey:@"birthday"]];
         textField.delegate = self;
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         [view1 addSubview:textField];
@@ -157,7 +159,7 @@
     });
     
     _ageTextField = ({
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(310), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(155), FLEXIBLE_NUM(310), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
@@ -168,22 +170,21 @@
     });
     
     _genderTextField = ({
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(140), FLEXIBLE_NUM(400), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
+        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(155), FLEXIBLE_NUM(400), FLEXIBLE_NUM(220), FLEXIBLE_NUM(40))];
         textField.backgroundColor = [UIColor orangeColor];
         textField.layer.cornerRadius = FLEXIBLE_NUM(20);
         textField.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(20)];
         textField.textAlignment = NSTextAlignmentCenter;
 //        textField.userInteractionEnabled = NO;
-        textField.text = @"男";
+        
+        if ([[userDic valueForKey:@"gender"] integerValue] == 0) {
+            textField.text = @"女";
+        }else{
+            textField.text = @"男";
+        }
         [view1 addSubview:textField];
         textField;
     });
-    
-    if ([[userDic valueForKey:@"gender"] integerValue] == 0) {
-        _genderTextField.text = @"男";
-    }else{
-        _genderTextField.text = @"女";
-    }
     
     _pickerView = ({
         UIPickerView * pickerView = [[UIPickerView alloc] init];
@@ -219,6 +220,11 @@
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(350), FLEXIBLE_NUM(70), FLEXIBLE_NUM(750), FLEXIBLE_NUM(600))];
         imageView.backgroundColor = [UIColor clearColor];
         imageView.image = [UIImage imageNamed:@"boy.png"];
+        if ([[userDic valueForKey:@"characterType"] isEqualToString:@"boy"]) {
+            imageView.image = [UIImage imageNamed:@"boy.png"];
+        }else{
+            imageView.image = [UIImage imageNamed:@"girl.png"];
+        }
         [self.view addSubview:imageView];
         imageView;
     });
@@ -259,7 +265,6 @@
     NSLog(@"year %d",age);
     _ageTextField.text = [NSString stringWithFormat:@"%d岁",age];
     
-    
 }
 
 #pragma mark -- buttonClick
@@ -267,12 +272,12 @@
 {
     NSLog(@"buttonIndex == %@",_buttonIndex);
     if ([_buttonIndex isEqualToString:@"1"]) {
-        [_figerImageView setImage:[UIImage imageNamed:@"girl.png"]];
+        [_figerImageView setImage:[UIImage imageNamed:@"boy.png"]];
         _buttonIndex = @"0";
 //        _genderTextField.text = @"女";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向左@3x"] forState:UIControlStateNormal];
     }else{
-        [_figerImageView setImage:[UIImage imageNamed:@"boy.png"]];
+        [_figerImageView setImage:[UIImage imageNamed:@"girl.png"]];
         _buttonIndex = @"1";
 //        _genderTextField.text = @"男";
         [_genderButton setBackgroundImage:[UIImage imageNamed:@"向右@3x"] forState:UIControlStateNormal];
@@ -291,14 +296,6 @@
     
     
 }
-
-- (void) buttonClick:(UIButton *) sender
-{
-    NSLog(@"button.tag = %ld",(long)sender.tag);
-    
-}
-
-
 
 #pragma mark - SRMonthPickerDelegate
 - (NSString*)formatDate:(NSDate *)date

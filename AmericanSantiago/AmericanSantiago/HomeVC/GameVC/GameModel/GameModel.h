@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readonly) id                                    gameNewData;
 @property (nonatomic, strong, readonly) id                                    conceptFinishData;
 
+@property (nonatomic, strong, readonly) id                                     finishGameData;
 
 - (void) getGameData;
 - (void) getNewGamesWithUsername: (NSString *) username subjectId:(NSString *) subjectId;
@@ -22,6 +23,7 @@
 #pragma mark - 完成当前场景
 - (void)getConceptFinishDataWithSubjectId:(NSString *)subjectId Username: (NSString *) username complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
 
+- (void) sendFinishedGameDataWithUsername:(NSString *)username gameId:(NSString *)gameId complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete;
 
 
 @end

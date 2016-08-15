@@ -18,12 +18,13 @@
 @implementation ParentsModel
 
 #pragma mark -- 获取学生学习统计数据
-- (void) getLearningStatisticsWithUsername:(NSString *) username
+- (void) getLearningStatisticsWithUsername:(NSString *) username rangeType:(NSNumber *) rangeType
 {
     // JSON Body
     NSDictionary* bodyObject = @{
                                  
                                  @"username":username,
+                                 @"rangeType":rangeType
                                  
                                  };
     
@@ -32,7 +33,7 @@
     [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
         if (!errorString) {
             self.learningStatisticsData = resultDic;
-//            NSLog(@"HTTP Response Body  learningStatisticsData == : %@", resultDic);
+            NSLog(@"HTTP Response Body  learningStatisticsData == : %@", resultDic);
         }
     }];
     

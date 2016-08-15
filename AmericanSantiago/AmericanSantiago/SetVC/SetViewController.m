@@ -125,7 +125,7 @@
         UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(100) + FLEXIBLE_NUM(105) * i, FLEXIBLE_NUM(150), FLEXIBLE_NUM(40))];
         label.text = titleArray[i];
         label.textColor = [UIColor colorWithRed:146/255.0 green:107/255.0 blue:40/255.0 alpha:1];
-        label.font = [UIFont fontWithName:@"YuppySC-Regular" size:FLEXIBLE_NUM(28)];
+        label.font = [UIFont fontWithName:@"经典细圆简" size:FLEXIBLE_NUM(28)];
 //        label.font = [UIFont fontWithName:@"CTZhongYuanSJ" size:FLEXIBLE_NUM(28)];
 //        label.backgroundColor = [UIColor yellowColor];
         [view1 addSubview:label];
@@ -230,6 +230,13 @@
         button;
     });
     
+    UIButton * cleanButton = [[UIButton alloc] initWithFrame:CGRectMake(FLEXIBLE_NUM(100), FLEXIBLE_NUM(600), FLEXIBLE_NUM(100), FLEXIBLE_NUM(50))];
+    [cleanButton setTitle:@"清理缓存" forState:UIControlStateNormal];
+    cleanButton.backgroundColor =[UIColor blackColor];
+    [cleanButton addTarget:self action:@selector(cleanButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:cleanButton];
+    
+    
 }
 
 #pragma mark -- buttonClick
@@ -253,7 +260,6 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 
-    
 }
 
 
@@ -319,6 +325,67 @@
     silder.value = volume;
 //    NSLog(@"current volume = %f", volume);
 }
+
+
+#pragma mark -- 清理缓存数据
+- (void)clearCache
+{
+    //彻底清除缓存第一种方法
+//    UIButton * button = sender;
+//    [button setTitle:@"清理完毕" forState:UIControlStateNormal];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths lastObject];
+    
+    NSLog(@"缓存为 ==== %fM",[self folderSizeAtPath:path]);
+    NSString *str = [NSString stringWithFormat:@"缓存已清除%.1fM", [self folderSizeAtPath:path]];
+    NSLog(@"%@",str);
+    
+    NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:path];
+    for (NSString *p in files) {
+        NSError *error;
+        NSString *Path = [path stringByAppendingPathComponent:p];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:Path]) {
+            [[NSFileManager defaultManager] removeItemAtPath:Path error:&error];
+        }
+    }
+}
+
+/**
+ *  计算单个文件大小
+ */
+- (long long) fileSizeAtPath:(NSString*) filePath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+
+/**
+ *  计算目录大小  遍历文件夹获得文件夹大小，返回多少M
+ */
+- (float ) folderSizeAtPath:(NSString*) folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    return folderSize/(1024.0*1024.0);
+}
+
+- (void) cleanButtonClick:(UIButton *) sender
+{
+    [self clearCache];
+    
+}
+
+
+
+
 
 
 @end

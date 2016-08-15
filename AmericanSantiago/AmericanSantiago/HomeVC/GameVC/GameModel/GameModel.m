@@ -14,6 +14,7 @@
 @property (nonatomic, strong) id                                    gameData;
 @property (nonatomic, strong) id                                    conceptFinishData;
 
+@property (nonatomic, strong) id                                     finishGameData;
 
 @end
 
@@ -92,6 +93,36 @@
         }
     }];
 }
+
+#pragma mark -- 单个游戏完成后，告诉后台
+- (void) sendFinishedGameDataWithUsername:(NSString *)username gameId:(NSString *)gameId complete:(void (^)(NSDictionary *resultDic,NSString *errorString))complete
+{
+    //通知后台游戏完成
+    NSDictionary *userDic = [LBUserDefaults getUserDic];
+    NSString * urlString = @"/SendGameLog";
+    NSDictionary* bodyObject = @{
+                                 //                                 @"username":userDic[@"username"],
+                                 @"username":username,
+                                 @"gameId":gameId,
+                                @"success":@"true",
+                                 @"duration":@100,              //int类型
+                                 @"clickCount":@200            //int类型
+                                 };
+    
+    //    NSLog(@"123321   ===   %@",bodyObject);
+    [LBNetWorkingManager loadPostAfNetWorkingWithUrl:urlString andParameters:bodyObject complete:^(NSDictionary *resultDic, NSString *errorString) {
+        if (complete) {
+            complete(resultDic,errorString);
+        }
+        if (!errorString) {
+            self.conceptFinishData = resultDic;
+        }
+    }];
+
+    
+}
+
+
 
 
 @end

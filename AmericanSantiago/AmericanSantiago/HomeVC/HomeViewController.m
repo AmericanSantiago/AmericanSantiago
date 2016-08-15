@@ -14,7 +14,7 @@
 #import "BuildingViewController.h"
 #import "PlaygroundViewController.h"
 #import "HomeModel.h"
-
+//#import "n"
 
 //当前没有教学知识点-进入游戏-选择课程-完成教学游戏-获取教学知识点-
 
@@ -96,7 +96,6 @@
 #pragma mark - 视图初始化
 - (void)initializeUserInterface
 {
-    
     _backgroundView = ({
         UIImageView * backgroundView = [[UIImageView alloc] initWithFrame:BASESCRREN_B];
         backgroundView.backgroundColor = [UIColor whiteColor];
@@ -117,6 +116,7 @@
         bigView.layer.borderWidth = FLEXIBLE_NUM(4);
         bigView.userInteractionEnabled = YES;
         bigView.tag = 0;
+        
         UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(whenClickImage:)];
         //        singleTap.numberOfTouchesRequired = 1; //手指数
         //        singleTap.numberOfTapsRequired = 1; //tap次数
@@ -161,7 +161,7 @@
     }
    
     
-    [self reloadConceptGamesData:nil];                      //有bug （相当于直接请求数据GetNextConceptData）
+    [self reloadConceptGamesData:nil];               //有bug （相当于直接请求数据GetNextConceptData）(bug待验证是否更改)
     
     
 }
@@ -234,6 +234,7 @@
         }
         
     }
+    
 }
 
 //- (void)addLockWithButtonTag:(int)tag
@@ -257,7 +258,6 @@
 - (void)refreshLockList
 {
     NSArray *sceneArray = @[@"school",@"world",@"playground",@"city",@"home"];
-    
     for (NSInteger i = 0; i < self.conceptGamesArray.count; i++) {
         //        UIButton *lockBtn = (UIButton *)[self.view viewWithTag:BUTTON_TAG+i];
         NSArray *sceneGamesArray = self.conceptGamesArray[i];
@@ -284,7 +284,6 @@
 //    
 //}
 
-
 - (void)reloadConceptGamesData:(NSNotification  *)notif
 {
     if (!notif.object) {//如果没有，则直接请求
@@ -301,6 +300,7 @@
     }else{//如果有参数，则直接刷新。
         [self nextConceptDataParse];
     }
+    
 }
 
 #pragma mark - 数据处理
@@ -319,6 +319,59 @@
         [self.conceptGamesArray replaceObjectAtIndex:index withObject:sceneGameArray];
     }
     [self refreshLockList];
+    
 }
+
+
+
+
+#pragma mark -- 清理缓存数据
+- (void)clearCache:(UIButton *)sender
+{
+    //彻底清除缓存第一种方法
+    UIButton * button = sender;
+    [button setTitle:@"清理完毕" forState:UIControlStateNormal];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *path = [paths lastObject];
+    
+    NSString *str = [NSString stringWithFormat:@"缓存已清除%.1fM", [self folderSizeAtPath:path]];
+    NSLog(@"%@",str);
+    NSArray *files = [[NSFileManager defaultManager] subpathsAtPath:path];
+    for (NSString *p in files) {
+        NSError *error;
+        NSString *Path = [path stringByAppendingPathComponent:p];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:Path]) {
+            [[NSFileManager defaultManager] removeItemAtPath:Path error:&error];
+        }
+    }
+}
+/**
+ *  计算单个文件大小
+ */
+- (long long) fileSizeAtPath:(NSString*) filePath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+
+/**
+ *  计算目录大小  遍历文件夹获得文件夹大小，返回多少M
+ */
+- (float ) folderSizeAtPath:(NSString*) folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    return folderSize/(1024.0*1024.0);
+}
+
+
 
 @end

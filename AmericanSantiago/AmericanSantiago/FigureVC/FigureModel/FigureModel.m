@@ -16,7 +16,7 @@
 
 @implementation FigureModel
 
-#pragma mark -- 获取已解锁游戏列表
+#pragma mark -- 更新人物数据
 - (void) updateInfoWithNickname: (NSString *) nickname Name:(NSString *) name Birthday:(NSString *)birthday Gender:(NSString *)gender Charactertype: (NSString *)charactertype username:(NSString *) username
 {
     NSString * urlString = @"/UpdateInfo";
